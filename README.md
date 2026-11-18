@@ -8,7 +8,7 @@
 
 | | Link | Qué permite |
 |---|---|---|
-| **Sistema completo** | Publicado en Render (ver abajo) | Registrar, editar, despachar, correr la optimización… |
+| **Sistema completo** | <https://sgm-liftrental.onrender.com> | Registrar, editar, despachar, correr la optimización… |
 | **Copia de consulta** | <https://ulisesvasquezgallardo.github.io/SGM-LiftRental/> | Recorrer todas las páginas (sólo lectura) |
 
 ### Publicar el sistema completo en Render (gratis)
