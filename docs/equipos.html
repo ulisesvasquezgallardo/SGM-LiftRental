@@ -1,0 +1,1632 @@
+
+
+<!doctype html>
+<html lang="es">
+<head>
+<script>/* copia estática */(function(){var r=history.replaceState;
+history.replaceState=function(){try{return r.apply(history,arguments)}catch(e){}};
+var M='Esta es una copia de consulta del SGM Lift Rental: aquí no se pueden registrar ni modificar datos. Esa acción está disponible en el sistema original.';
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-sin-copia]');
+if(a){e.preventDefault();e.stopImmediatePropagation();alert(M);}},true);
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();alert(M);},true);
+})();</script>
+<style>.aviso-copia{position:sticky;top:0;z-index:50;background:#fff4cc;color:#5a4300;border-bottom:1px solid #f2b200;
+padding:6px 16px;font:12.5px/1.4 "Segoe UI",system-ui,sans-serif;text-align:center}
+@media print{.aviso-copia{display:none}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Almacén de equipos · Lift Rental</title>
+<link rel="stylesheet" href="static/estilos.css">
+<link rel="icon" type="image/jpeg" href="static/logo_liftrental.jpg">
+</head>
+<body>
+<div class="aviso-copia">Copia de consulta del SGM Lift Rental generada el 17/11/2026 23:04 · sólo lectura: los formularios y documentos PDF están disponibles en el sistema original.</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="marca">
+      <img class="logo" src="static/logo_liftrental.jpg" alt="Lift Rental Solutions" width="64" height="64">
+      <div><b>SGM Lift Rental</b><span>Gestión de mantenimiento</span></div>
+    </div>
+    <a class="nav " href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Almacén en vivo</a>
+    <a class="nav " href="panel.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+</svg> Panel de control</a>
+    <a class="nav " href="estatus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Estatus diario </a>
+    <div class="nav-sec">Almacén virtual</div>
+    <a class="nav on" href="equipos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Equipos y expedientes</a>
+    <a class="nav " href="alquileres.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20l12-7M6 13l12 7M5 10h14M9 10V6h6v4"/>
+</svg> Uso y alquileres</a>
+    <a class="nav " href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+    <div class="nav-sec">Mantenimiento</div>
+    <a class="nav " href="mantenimiento.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> Órdenes de trabajo <span class="badge">10</span></a>
+    <a class="nav " href="documentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Documentos de mantto.</a>
+    <a class="nav " href="taller.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programa del taller</a>
+    <a class="nav " href="incidentes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.2v.3"/>
+</svg> Incidentes en obra</a>
+    <div class="nav-sec">Planificación</div>
+    <a class="nav " href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Cartera de pedidos</a>
+    <a class="nav " href="optimizacion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+</svg> Optimización (PLEM)</a>
+    <div class="nav-sec">Personal</div>
+    <a class="nav " href="personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+</svg> Técnicos</a>
+    <a class="nav " href="configuracion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z"/>
+</svg> Configuración</a>
+    <div class="side-pie">
+      Fecha de evaluación<br><b>17/11/2026</b><br>
+      Taller Comas · 3 técnicos
+      <br><span>Estatus real al 17/11/2026</span>
+      
+    </div>
+  </aside>
+  <main>
+    
+    
+      
+    
+    
+<div class="cab">
+  <div>
+    <h1>Almacén virtual de equipos</h1>
+    <p>85 equipos. Cada ficha reúne datos técnicos, uso, horómetro, mantenimiento y expediente documental.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="exportar--equipos.csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>
+</svg> CSV</a>
+    <a class="btn pri" href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/>
+</svg> Nuevo equipo</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="filtros" id="filtros">
+    <input type="search" id="f-q" placeholder="Buscar código, marca, modelo, serie, cliente u obra…">
+    <select id="f-categoria"><option value="">Todas las categorías</option><option>Tijera eléctrica</option><option>Brazo articulado eléctrico</option><option>Brazo articulado combustión</option><option>Mástil vertical</option></select>
+    <select id="f-situacion"><option value="">Toda situación</option><option>Disponible</option><option>En obra</option><option>En taller</option><option>Fuera de servicio</option></select>
+    <select id="f-marca"><option value="">Todas las marcas</option><option>Fork Lift</option><option>Genie</option><option>Haulotte</option><option>Jinan Lift</option><option>Jlg</option><option>Lift Rental</option><option>Skyjack</option><option>Snorkel</option></select>
+    <div class="seg" id="f-estado">
+      <button type="button" data-v="" class="on">Todos</button>
+      <button type="button" data-v="Vigente">Vigentes</button>
+      <button type="button" data-v="Por vencer">Por vencer</button>
+      <button type="button" data-v="Vencido">Vencidos</button>
+      <button type="button" data-v="Sin datos">Sin datos</button>
+    </div>
+    <span class="muted" id="f-cuenta" style="margin-left:auto"></span>
+  </div>
+  <div class="tabla-wrap">
+    <table id="tabla-equipos">
+      <thead>
+        <tr>
+          <th data-orden="codigo">Código</th><th>Equipo</th><th class="n" data-orden="altura">Alt. trabajo</th>
+          <th class="n">Año</th><th>Situación</th><th>Mantenimiento</th><th data-orden="rest">Restante</th>
+          <th>Último servicio</th><th class="n">Horómetro est.</th><th>Ubicación</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+        <tr class="fila-link" data-href="equipos--BCCL-001.html"
+            data-categoria="Brazo articulado combustión" data-situacion="Disponible" data-marca="Haulotte"
+            data-estado="Vigente" data-codigo="BCCL-001" data-altura="17.2"
+            data-rest="54"
+            data-texto="bccl-001 haulotte ha-18pxnt ad-110725">
+          <td><a class="cod" href="equipos--BCCL-001.html">BCCL-001</a></td>
+          <td style="min-width:200px">Haulotte HA-18PXNT<br><small>Brazo articulado combustión</small></td>
+          <td class="n">17.2 m</td>
+          <td class="n">2005</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>54 d · 233 h</td>
+          <td>07/07/2026</td>
+          <td class="n">2,216.9</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BCCL-002.html"
+            data-categoria="Brazo articulado combustión" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="BCCL-002" data-altura="15.72"
+            data-rest="90"
+            data-texto="bccl-002 jlg 450 aj 0300126253 cliente 24 obra 04">
+          <td><a class="cod" href="equipos--BCCL-002.html">BCCL-002</a></td>
+          <td style="min-width:200px">Jlg 450 AJ<br><small>Brazo articulado combustión</small></td>
+          <td class="n">15.7 m</td>
+          <td class="n">2008</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>90 d · 216 h</td>
+          <td>10/05/2026</td>
+          <td class="n">6,875.0</td>
+          <td>Obra 04
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BCCL-003.html"
+            data-categoria="Brazo articulado combustión" data-situacion="En obra" data-marca="Haulotte"
+            data-estado="Sin datos" data-codigo="BCCL-003" data-altura="0"
+            data-rest="-9999"
+            data-texto="bccl-003 haulotte ha16spx cliente 08 obra 02">
+          <td><a class="cod" href="equipos--BCCL-003.html">BCCL-003</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Haulotte HA16SPX<br><small>Brazo articulado combustión</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip none">Sin datos</span></td>
+          <td><span class="muted">Sin servicio documentado</span></td>
+          <td>—</td>
+          <td class="n">—</td>
+          <td>Obra 02 <span class="chip bad plain" title="Contrato vencido el 16/09/2026">+62 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BCCL-004.html"
+            data-categoria="Brazo articulado combustión" data-situacion="Disponible" data-marca="Haulotte"
+            data-estado="Vigente" data-codigo="BCCL-004" data-altura="16.0"
+            data-rest="83"
+            data-texto="bccl-004 haulotte ha-16pxnt ad-111377">
+          <td><a class="cod" href="equipos--BCCL-004.html">BCCL-004</a></td>
+          <td style="min-width:200px">Haulotte HA-16PXNT<br><small>Brazo articulado combustión</small></td>
+          <td class="n">16.0 m</td>
+          <td class="n">2006</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>83 d · 223 h</td>
+          <td>20/07/2026</td>
+          <td class="n">10,927.3</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BECL-001.html"
+            data-categoria="Brazo articulado eléctrico" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="BECL-001" data-altura="15.94"
+            data-rest="86"
+            data-texto="becl-001 genie z-45/25 jdc z452507-32471 cliente 18 obra 08">
+          <td><a class="cod" href="equipos--BECL-001.html">BECL-001</a></td>
+          <td style="min-width:200px">Genie Z-45/25 JDC<br><small>Brazo articulado eléctrico</small></td>
+          <td class="n">15.9 m</td>
+          <td class="n">2007</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>86 d · 132 h</td>
+          <td>05/09/2026</td>
+          <td class="n">3,496.4</td>
+          <td>Obra 08
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BECL-002.html"
+            data-categoria="Brazo articulado eléctrico" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="BECL-002" data-altura="15.79"
+            data-rest="34"
+            data-texto="becl-002 jlg e-450 aj 0300145823 cliente 37 obra 52">
+          <td><a class="cod" href="equipos--BECL-002.html">BECL-002</a></td>
+          <td style="min-width:200px">Jlg E-450 AJ<br><small>Brazo articulado eléctrico</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2011</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>34 d · 80 h</td>
+          <td>10/07/2026</td>
+          <td class="n">3,870.3</td>
+          <td>Obra 52 <span class="chip bad plain" title="Contrato vencido el 28/10/2026">+20 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BECL-003.html"
+            data-categoria="Brazo articulado eléctrico" data-situacion="Disponible" data-marca="Haulotte"
+            data-estado="Vigente" data-codigo="BECL-003" data-altura="14.87"
+            data-rest="64"
+            data-texto="becl-003 haulotte ha-15ip ae-103261">
+          <td><a class="cod" href="equipos--BECL-003.html">BECL-003</a></td>
+          <td style="min-width:200px">Haulotte HA-15IP<br><small>Brazo articulado eléctrico</small></td>
+          <td class="n">14.9 m</td>
+          <td class="n">2005</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>64 d · 225 h</td>
+          <td>20/09/2026</td>
+          <td class="n">1,057.6</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BECL-004.html"
+            data-categoria="Brazo articulado eléctrico" data-situacion="En obra" data-marca="Haulotte"
+            data-estado="Vigente" data-codigo="BECL-004" data-altura="14.87"
+            data-rest="84"
+            data-texto="becl-004 haulotte ha-15ip ae-108282 cliente 15 obra 19">
+          <td><a class="cod" href="equipos--BECL-004.html">BECL-004</a></td>
+          <td style="min-width:200px">Haulotte HA-15IP<br><small>Brazo articulado eléctrico</small></td>
+          <td class="n">14.9 m</td>
+          <td class="n">2012</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>84 d · 236 h</td>
+          <td>20/07/2026</td>
+          <td class="n">964.3</td>
+          <td>Obra 19 <span class="chip bad plain" title="Contrato vencido el 25/10/2026">+23 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BECL-005.html"
+            data-categoria="Brazo articulado eléctrico" data-situacion="Disponible" data-marca="Haulotte"
+            data-estado="Vigente" data-codigo="BECL-005" data-altura="12.0"
+            data-rest="88"
+            data-texto="becl-005 haulotte ha-12ip ae-104168">
+          <td><a class="cod" href="equipos--BECL-005.html">BECL-005</a></td>
+          <td style="min-width:200px">Haulotte HA-12IP<br><small>Brazo articulado eléctrico</small></td>
+          <td class="n">12.0 m</td>
+          <td class="n">2006</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>88 d · 224 h</td>
+          <td>20/05/2026</td>
+          <td class="n">931.2</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BECL-006.html"
+            data-categoria="Brazo articulado eléctrico" data-situacion="Disponible" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="BECL-006" data-altura="14.19"
+            data-rest="90"
+            data-texto="becl-006 jlg e-40 047364-0300029739">
+          <td><a class="cod" href="equipos--BECL-006.html">BECL-006</a></td>
+          <td style="min-width:200px">Jlg E-40<br><small>Brazo articulado eléctrico</small></td>
+          <td class="n">14.2 m</td>
+          <td class="n">1997</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>90 d · 82 h</td>
+          <td>01/11/2026</td>
+          <td class="n">638.0</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BECL-007.html"
+            data-categoria="Brazo articulado eléctrico" data-situacion="Disponible" data-marca="Jlg"
+            data-estado="Sin datos" data-codigo="BECL-007" data-altura="0"
+            data-rest="-9999"
+            data-texto="becl-007 jlg e40">
+          <td><a class="cod" href="equipos--BECL-007.html">BECL-007</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Jlg E40<br><small>Brazo articulado eléctrico</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip none">Sin datos</span></td>
+          <td><span class="muted">Sin servicio documentado</span></td>
+          <td>—</td>
+          <td class="n">—</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--BECL-008.html"
+            data-categoria="Brazo articulado eléctrico" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Sin datos" data-codigo="BECL-008" data-altura="0"
+            data-rest="-9999"
+            data-texto="becl-008 jlg e40 cliente 40 obra 11">
+          <td><a class="cod" href="equipos--BECL-008.html">BECL-008</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Jlg E40<br><small>Brazo articulado eléctrico</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip none">Sin datos</span></td>
+          <td><span class="muted">Sin servicio documentado</span></td>
+          <td>—</td>
+          <td class="n">—</td>
+          <td>Obra 11 <span class="chip bad plain" title="Contrato vencido el 05/03/2026">+257 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-001.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-001" data-altura="9.92"
+            data-rest="82"
+            data-texto="tecl-001 genie gs-2646 gs4607-83055 cliente 41 obra 25">
+          <td><a class="cod" href="equipos--TECL-001.html">TECL-001</a></td>
+          <td style="min-width:200px">Genie GS-2646<br><small>Tijera eléctrica</small></td>
+          <td class="n">9.9 m</td>
+          <td class="n">2007</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>82 d · 82 h</td>
+          <td>20/06/2026</td>
+          <td class="n">1,578.8</td>
+          <td>Obra 25 <span class="chip bad plain" title="Contrato vencido el 11/11/2026">+6 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-002.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-002" data-altura="0"
+            data-rest="85"
+            data-texto="tecl-002 genie gs-2632 cliente 33 obra 31">
+          <td><a class="cod" href="equipos--TECL-002.html">TECL-002</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Genie GS-2632<br><small>Tijera eléctrica</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>85 d · 85 h</td>
+          <td>30/09/2026</td>
+          <td class="n">1,511.8</td>
+          <td>Obra 31
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-003.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vencido" data-codigo="TECL-003" data-altura="7.79"
+            data-rest="-56"
+            data-texto="tecl-003 genie gs-1930 gs3003-54502 cliente 28 obra 50">
+          <td><a class="cod" href="equipos--TECL-003.html">TECL-003</a></td>
+          <td style="min-width:200px">Genie GS-1930<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2003</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">56 d vencido</b></td>
+          <td>30/07/2025</td>
+          <td class="n">1,499.0</td>
+          <td>Obra 50 <span class="chip bad plain" title="Contrato vencido el 17/10/2026">+31 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-004.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-004" data-altura="9.92"
+            data-rest="54"
+            data-texto="tecl-004 genie gs-2646 gs4602-49373 cliente 53 obra 45">
+          <td><a class="cod" href="equipos--TECL-004.html">TECL-004</a></td>
+          <td style="min-width:200px">Genie GS-2646<br><small>Tijera eléctrica</small></td>
+          <td class="n">9.9 m</td>
+          <td class="n">2002</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>54 d · 58 h</td>
+          <td>17/08/2026</td>
+          <td class="n">1,491.7</td>
+          <td>Obra 45 <span class="chip bad plain" title="Contrato vencido el 27/10/2026">+21 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-005.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Skyjack"
+            data-estado="Vigente" data-codigo="TECL-005" data-altura="9.75"
+            data-rest="82"
+            data-texto="tecl-005 skyjack sjiii-3226 270875 cliente 32 obra 57">
+          <td><a class="cod" href="equipos--TECL-005.html">TECL-005</a></td>
+          <td style="min-width:200px">Skyjack SJIII-3226<br><small>Tijera eléctrica</small></td>
+          <td class="n">9.8 m</td>
+          <td class="n">2008</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>82 d · 89 h</td>
+          <td>05/05/2026</td>
+          <td class="n">646.3</td>
+          <td>Obra 57
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-006.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-006" data-altura="13.7"
+            data-rest="35"
+            data-texto="tecl-006 genie gs-4047 gs4713c-470">
+          <td><a class="cod" href="equipos--TECL-006.html">TECL-006</a></td>
+          <td style="min-width:200px">Genie GS-4047<br><small>Tijera eléctrica</small></td>
+          <td class="n">13.7 m</td>
+          <td class="n">2013</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>35 d · 90 h</td>
+          <td>25/07/2026</td>
+          <td class="n">1,200.2</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-007.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Genie"
+            data-estado="Vencido" data-codigo="TECL-007" data-altura="13.7"
+            data-rest="-2"
+            data-texto="tecl-007 genie gs-4047 gs4712c-420">
+          <td><a class="cod" href="equipos--TECL-007.html">TECL-007</a></td>
+          <td style="min-width:200px">Genie GS-4047<br><small>Tijera eléctrica</small></td>
+          <td class="n">13.7 m</td>
+          <td class="n">2013</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">2 d vencido</b></td>
+          <td>20/05/2026</td>
+          <td class="n">493.4</td>
+          <td><a href="mantenimiento--116.html">OT-0116</a> <small>programada</small>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-008.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-008" data-altura="14.19"
+            data-rest="56"
+            data-texto="tecl-008 jlg 4069 le 0200186997">
+          <td><a class="cod" href="equipos--TECL-008.html">TECL-008</a></td>
+          <td style="min-width:200px">Jlg 4069 LE<br><small>Tijera eléctrica</small></td>
+          <td class="n">14.2 m</td>
+          <td class="n">2006</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>56 d · 81 h</td>
+          <td>20/05/2026</td>
+          <td class="n">978.7</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-009.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-009" data-altura="0"
+            data-rest="84"
+            data-texto="tecl-009 genie gs-1930 cliente 10 obra 16">
+          <td><a class="cod" href="equipos--TECL-009.html">TECL-009</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Genie GS-1930<br><small>Tijera eléctrica</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>84 d · 86 h</td>
+          <td>16/09/2026</td>
+          <td class="n">615.9</td>
+          <td>Obra 16
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-010.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Haulotte"
+            data-estado="Por vencer" data-codigo="TECL-010" data-altura="10.0"
+            data-rest="62"
+            data-texto="tecl-010 haulotte h-960e cd-114033">
+          <td><a class="cod" href="equipos--TECL-010.html">TECL-010</a></td>
+          <td style="min-width:200px">Haulotte H-960E<br><small>Tijera eléctrica</small></td>
+          <td class="n">10.0 m</td>
+          <td class="n">2005</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip warn">Por vencer</span></td>
+          <td>62 d · 10 h</td>
+          <td>10/05/2026</td>
+          <td class="n">983.8</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-011.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-011" data-altura="11.79"
+            data-rest="85"
+            data-texto="tecl-011 genie gs-3246 gs4600-26248 cliente 50 obra 27">
+          <td><a class="cod" href="equipos--TECL-011.html">TECL-011</a></td>
+          <td style="min-width:200px">Genie GS-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">1999</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>85 d · 246 h</td>
+          <td>10/09/2026</td>
+          <td class="n">13,272.8</td>
+          <td>Obra 27
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-012.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Haulotte"
+            data-estado="Por vencer" data-codigo="TECL-012" data-altura="12.0"
+            data-rest="12"
+            data-texto="tecl-012 haulotte compact 12 ce-125901">
+          <td><a class="cod" href="equipos--TECL-012.html">TECL-012</a></td>
+          <td style="min-width:200px">Haulotte COMPACT 12<br><small>Tijera eléctrica</small></td>
+          <td class="n">12.0 m</td>
+          <td class="n">2007</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip warn">Por vencer</span></td>
+          <td>12 d · 91 h</td>
+          <td>20/07/2026</td>
+          <td class="n">1,203.4</td>
+          <td><a href="mantenimiento--82.html">OT-0082</a> <small>programada</small>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-013.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-013" data-altura="11.79"
+            data-rest="61"
+            data-texto="tecl-013 genie gs-3246 gs4603-49903 cliente 53 obra 26">
+          <td><a class="cod" href="equipos--TECL-013.html">TECL-013</a></td>
+          <td style="min-width:200px">Genie GS-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2003</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>61 d · 83 h</td>
+          <td>25/07/2026</td>
+          <td class="n">1,796.6</td>
+          <td>Obra 26 <span class="chip bad plain" title="Contrato vencido el 16/11/2026">+1 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-014.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-014" data-altura="11.79"
+            data-rest="69"
+            data-texto="tecl-014 genie gs-3246 gs4607-84054 cliente 30 obra 12">
+          <td><a class="cod" href="equipos--TECL-014.html">TECL-014</a></td>
+          <td style="min-width:200px">Genie GS-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2007</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>69 d · 66 h</td>
+          <td>27/06/2026</td>
+          <td class="n">1,349.0</td>
+          <td>Obra 12
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-015.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-015" data-altura="11.79"
+            data-rest="71"
+            data-texto="tecl-015 genie gs-3246 gs4607-84009 cliente 53 obra 26">
+          <td><a class="cod" href="equipos--TECL-015.html">TECL-015</a></td>
+          <td style="min-width:200px">Genie GS-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2007</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>71 d · 68 h</td>
+          <td>10/05/2026</td>
+          <td class="n">1,362.5</td>
+          <td>Obra 26 <span class="chip bad plain" title="Contrato vencido el 16/11/2026">+1 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-016.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-016" data-altura="11.79"
+            data-rest="85"
+            data-texto="tecl-016 jlg 3246 es 0200143646 cliente 50 obra 27">
+          <td><a class="cod" href="equipos--TECL-016.html">TECL-016</a></td>
+          <td style="min-width:200px">Jlg 3246 ES<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2006</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>85 d · 89 h</td>
+          <td>20/06/2026</td>
+          <td class="n">1,516.1</td>
+          <td>Obra 27
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-017.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-017" data-altura="11.79"
+            data-rest="54"
+            data-texto="tecl-017 jlg 3246 es 0200145463 cliente 53 obra 45">
+          <td><a class="cod" href="equipos--TECL-017.html">TECL-017</a></td>
+          <td style="min-width:200px">Jlg 3246 ES<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2006</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>54 d · 57 h</td>
+          <td>09/01/2026</td>
+          <td class="n">1,299.5</td>
+          <td>Obra 45 <span class="chip bad plain" title="Contrato vencido el 27/10/2026">+21 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-018.html"
+            data-categoria="Tijera eléctrica" data-situacion="Fuera de servicio" data-marca="Haulotte"
+            data-estado="Vigente" data-codigo="TECL-018" data-altura="12.0"
+            data-rest="55"
+            data-texto="tecl-018 haulotte compact 12 ce-121952">
+          <td><a class="cod" href="equipos--TECL-018.html">TECL-018</a></td>
+          <td style="min-width:200px">Haulotte COMPACT 12<br><small>Tijera eléctrica</small></td>
+          <td class="n">12.0 m</td>
+          <td class="n">2006</td>
+          <td><span class="chip bad">Fuera de servicio</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>55 d · 97 h</td>
+          <td>24/09/2026</td>
+          <td class="n">1,779.6</td>
+          <td><span class="muted">En reparación (estatus 17/11/2026)</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-019.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-019" data-altura="11.79"
+            data-rest="85"
+            data-texto="tecl-019 genie gs-3246 gs4605-76665 cliente 50 obra 27">
+          <td><a class="cod" href="equipos--TECL-019.html">TECL-019</a></td>
+          <td style="min-width:200px">Genie GS-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2005</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>85 d · 94 h</td>
+          <td>01/10/2026</td>
+          <td class="n">742.9</td>
+          <td>Obra 27
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-020.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Haulotte"
+            data-estado="Vencido" data-codigo="TECL-020" data-altura="7.79"
+            data-rest="-6"
+            data-texto="tecl-020 haulotte optimum 8 ce-118810">
+          <td><a class="cod" href="equipos--TECL-020.html">TECL-020</a></td>
+          <td style="min-width:200px">Haulotte OPTIMUM 8<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2006</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">6 d vencido</b></td>
+          <td>20/05/2026</td>
+          <td class="n">1,168.3</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-021.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vencido" data-codigo="TECL-021" data-altura="7.79"
+            data-rest="-14"
+            data-texto="tecl-021 genie gs-1930 gs3007b-88374 cliente 51 obra 53">
+          <td><a class="cod" href="equipos--TECL-021.html">TECL-021</a></td>
+          <td style="min-width:200px">Genie GS-1930<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2007</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">14 d vencido</b></td>
+          <td>20/06/2026</td>
+          <td class="n">476.3</td>
+          <td>Obra 53 <span class="chip bad plain" title="Contrato vencido el 14/10/2026">+34 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-022.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vencido" data-codigo="TECL-022" data-altura="7.79"
+            data-rest="-56"
+            data-texto="tecl-022 genie gs-1930 gs3099-21304 cliente 28 obra 50">
+          <td><a class="cod" href="equipos--TECL-022.html">TECL-022</a></td>
+          <td style="min-width:200px">Genie GS-1930<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">1999</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">56 d vencido</b></td>
+          <td>05/04/2026</td>
+          <td class="n">358.2</td>
+          <td>Obra 50 <span class="chip bad plain" title="Contrato vencido el 17/10/2026">+31 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-023.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Vencido" data-codigo="TECL-023" data-altura="7.79"
+            data-rest="-107"
+            data-texto="tecl-023 jlg 1930 es 0200200543 cliente 08 obra 02">
+          <td><a class="cod" href="equipos--TECL-023.html">TECL-023</a></td>
+          <td style="min-width:200px">Jlg 1930 ES<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2011</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">107 d vencido</b></td>
+          <td>15/03/2026</td>
+          <td class="n">1,146.7</td>
+          <td>Obra 02 <span class="chip bad plain" title="Contrato vencido el 08/10/2026">+40 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-024.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-024" data-altura="7.79"
+            data-rest="23"
+            data-texto="tecl-024 jlg 1930 es 0200200546">
+          <td><a class="cod" href="equipos--TECL-024.html">TECL-024</a></td>
+          <td style="min-width:200px">Jlg 1930 ES<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2011</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>23 d · 65 h</td>
+          <td>20/06/2026</td>
+          <td class="n">585.8</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-025.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-025" data-altura="7.79"
+            data-rest="23"
+            data-texto="tecl-025 jlg 1930 es 1200020280">
+          <td><a class="cod" href="equipos--TECL-025.html">TECL-025</a></td>
+          <td style="min-width:200px">Jlg 1930 ES<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2008</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>23 d · 50 h</td>
+          <td>20/06/2026</td>
+          <td class="n">1,423.4</td>
+          <td><a href="mantenimiento--84.html">OT-0084</a> <small>pendiente</small>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-027.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-027" data-altura="0"
+            data-rest="84"
+            data-texto="tecl-027 jlg 1930 es cliente 10 obra 16">
+          <td><a class="cod" href="equipos--TECL-027.html">TECL-027</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Jlg 1930 ES<br><small>Tijera eléctrica</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>84 d · 99 h</td>
+          <td>09/10/2026</td>
+          <td class="n">790.5</td>
+          <td>Obra 16
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-028.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Haulotte"
+            data-estado="Vigente" data-codigo="TECL-028" data-altura="10.0"
+            data-rest="62"
+            data-texto="tecl-028 haulotte compact 10 ce-131057">
+          <td><a class="cod" href="equipos--TECL-028.html">TECL-028</a></td>
+          <td style="min-width:200px">Haulotte COMPACT 10<br><small>Tijera eléctrica</small></td>
+          <td class="n">10.0 m</td>
+          <td class="n">2007</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>62 d · 97 h</td>
+          <td>20/09/2026</td>
+          <td class="n">822.7</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-029.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Skyjack"
+            data-estado="Vencido" data-codigo="TECL-029" data-altura="7.79"
+            data-rest="-1"
+            data-texto="tecl-029 skyjack sjiii-3219 22034229 cliente 49 obra 58">
+          <td><a class="cod" href="equipos--TECL-029.html">TECL-029</a></td>
+          <td style="min-width:200px">Skyjack SJIII-3219<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2012</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">1 d vencido</b></td>
+          <td>20/05/2026</td>
+          <td class="n">555.2</td>
+          <td>Obra 58 <span class="chip bad plain" title="Contrato vencido el 20/09/2026">+58 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-030.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Skyjack"
+            data-estado="Vigente" data-codigo="TECL-030" data-altura="7.79"
+            data-rest="89"
+            data-texto="tecl-030 skyjack sjiii-3219 22020649">
+          <td><a class="cod" href="equipos--TECL-030.html">TECL-030</a></td>
+          <td style="min-width:200px">Skyjack SJIII-3219<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2010</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>89 d · 82 h</td>
+          <td>10/05/2026</td>
+          <td class="n">340.2</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-031.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Skyjack"
+            data-estado="Por vencer" data-codigo="TECL-031" data-altura="7.79"
+            data-rest="14"
+            data-texto="tecl-031 skyjack sjiii-3219 22013850 cliente 28 obra 58">
+          <td><a class="cod" href="equipos--TECL-031.html">TECL-031</a></td>
+          <td style="min-width:200px">Skyjack SJIII-3219<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2009</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip warn">Por vencer</span></td>
+          <td>14 d · 91 h</td>
+          <td>20/05/2026</td>
+          <td class="n">558.6</td>
+          <td>Obra 58 <span class="chip bad plain" title="Contrato vencido el 31/10/2026">+17 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-032.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Skyjack"
+            data-estado="Vigente" data-codigo="TECL-032" data-altura="0"
+            data-rest="89"
+            data-texto="tecl-032 skyjack sjiii3219 cliente 13 obra 21">
+          <td><a class="cod" href="equipos--TECL-032.html">TECL-032</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Skyjack SJIII3219<br><small>Tijera eléctrica</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>89 d · 89 h</td>
+          <td>25/08/2026</td>
+          <td class="n">349.0</td>
+          <td>Obra 21
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-033.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Skyjack"
+            data-estado="Vigente" data-codigo="TECL-033" data-altura="9.75"
+            data-rest="78"
+            data-texto="tecl-033 skyjack sjiii-3226 27010864 cliente 06 obra 46">
+          <td><a class="cod" href="equipos--TECL-033.html">TECL-033</a></td>
+          <td style="min-width:200px">Skyjack SJIII-3226<br><small>Tijera eléctrica</small></td>
+          <td class="n">9.8 m</td>
+          <td class="n">2012</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>78 d · 58 h</td>
+          <td>05/05/2026</td>
+          <td class="n">546.2</td>
+          <td>Obra 46
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-034.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vencido" data-codigo="TECL-034" data-altura="7.79"
+            data-rest="-39"
+            data-texto="tecl-034 genie gs-1930 gs3012a-115732 cliente 22 obra 50">
+          <td><a class="cod" href="equipos--TECL-034.html">TECL-034</a></td>
+          <td style="min-width:200px">Genie GS-1930<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2012</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">39 d vencido</b></td>
+          <td>22/06/2026</td>
+          <td class="n">993.1</td>
+          <td>Obra 50 <span class="chip bad plain" title="Contrato vencido el 11/08/2026">+98 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-035.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Skyjack"
+            data-estado="Vigente" data-codigo="TECL-035" data-altura="7.79"
+            data-rest="89"
+            data-texto="tecl-035 skyjack sjiii-3219 22052293">
+          <td><a class="cod" href="equipos--TECL-035.html">TECL-035</a></td>
+          <td style="min-width:200px">Skyjack SJIII-3219<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2013</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>89 d · 85 h</td>
+          <td>10/05/2026</td>
+          <td class="n">375.3</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-036.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Sin datos" data-codigo="TECL-036" data-altura="0"
+            data-rest="-9999"
+            data-texto="tecl-036 genie gs-1930 cliente 22 obra 50">
+          <td><a class="cod" href="equipos--TECL-036.html">TECL-036</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Genie GS-1930<br><small>Tijera eléctrica</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip none">Sin datos</span></td>
+          <td><span class="muted">Sin servicio documentado</span></td>
+          <td>—</td>
+          <td class="n">—</td>
+          <td>Obra 50 <span class="chip bad plain" title="Contrato vencido el 11/08/2026">+98 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-037.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Skyjack"
+            data-estado="Vigente" data-codigo="TECL-037" data-altura="7.79"
+            data-rest="84"
+            data-texto="tecl-037 skyjack sjiii-3219 22090275 cliente 33 obra 31">
+          <td><a class="cod" href="equipos--TECL-037.html">TECL-037</a></td>
+          <td style="min-width:200px">Skyjack SJIII-3219<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2016</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>84 d · 148 h</td>
+          <td>20/07/2026</td>
+          <td class="n">297.3</td>
+          <td>Obra 31
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-038.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-038" data-altura="11.75"
+            data-rest="21"
+            data-texto="tecl-038 genie gs-3232 gs3214a-120188 cliente 33 obra 51">
+          <td><a class="cod" href="equipos--TECL-038.html">TECL-038</a></td>
+          <td style="min-width:200px">Genie GS-3232<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2014</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>21 d · 79 h</td>
+          <td>05/04/2026</td>
+          <td class="n">862.3</td>
+          <td>Obra 51
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-039.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vencido" data-codigo="TECL-039" data-altura="7.79"
+            data-rest="-56"
+            data-texto="tecl-039 genie gs-1930 gs3007b-85809 cliente 28 obra 50">
+          <td><a class="cod" href="equipos--TECL-039.html">TECL-039</a></td>
+          <td style="min-width:200px">Genie GS-1930<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2007</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">56 d vencido</b></td>
+          <td>15/06/2026</td>
+          <td class="n">1,123.3</td>
+          <td>Obra 50 <span class="chip bad plain" title="Contrato vencido el 17/10/2026">+31 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-040.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vencido" data-codigo="TECL-040" data-altura="7.79"
+            data-rest="-56"
+            data-texto="tecl-040 genie gs-1930 gs3003-21265 cliente 28 obra 50">
+          <td><a class="cod" href="equipos--TECL-040.html">TECL-040</a></td>
+          <td style="min-width:200px">Genie GS-1930<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2003</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">56 d vencido</b></td>
+          <td>15/06/2026</td>
+          <td class="n">1,510.5</td>
+          <td>Obra 50 <span class="chip bad plain" title="Contrato vencido el 17/10/2026">+31 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-041.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-041" data-altura="9.92"
+            data-rest="58"
+            data-texto="tecl-041 jlg 2646 es 0200106945">
+          <td><a class="cod" href="equipos--TECL-041.html">TECL-041</a></td>
+          <td style="min-width:200px">Jlg 2646 ES<br><small>Tijera eléctrica</small></td>
+          <td class="n">9.9 m</td>
+          <td class="n">2003</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>58 d · 91 h</td>
+          <td>20/07/2026</td>
+          <td class="n">682.1</td>
+          <td><a href="mantenimiento--86.html">OT-0086</a> <small>programada</small>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-042.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Por vencer" data-codigo="TECL-042" data-altura="14.19"
+            data-rest="5"
+            data-texto="tecl-042 jlg 4069 le 0200239660 cliente 23 obra 55">
+          <td><a class="cod" href="equipos--TECL-042.html">TECL-042</a></td>
+          <td style="min-width:200px">Jlg 4069 LE<br><small>Tijera eléctrica</small></td>
+          <td class="n">14.2 m</td>
+          <td class="n">2015</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip warn">Por vencer</span></td>
+          <td>5 d · 74 h</td>
+          <td>20/06/2026</td>
+          <td class="n">325.8</td>
+          <td>Obra 55 <span class="chip bad plain" title="Contrato vencido el 23/10/2026">+25 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-043.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-043" data-altura="14.19"
+            data-rest="83"
+            data-texto="tecl-043 jlg 4069 le 0200239376">
+          <td><a class="cod" href="equipos--TECL-043.html">TECL-043</a></td>
+          <td style="min-width:200px">Jlg 4069 LE<br><small>Tijera eléctrica</small></td>
+          <td class="n">14.2 m</td>
+          <td class="n">2015</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>83 d · 90 h</td>
+          <td>20/07/2026</td>
+          <td class="n">520.2</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-044.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-044" data-altura="0"
+            data-rest="83"
+            data-texto="tecl-044 genie gs2032 cliente 31 obra 13">
+          <td><a class="cod" href="equipos--TECL-044.html">TECL-044</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Genie GS2032<br><small>Tijera eléctrica</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>83 d · 89 h</td>
+          <td>30/09/2026</td>
+          <td class="n">1,392.9</td>
+          <td>Obra 13 <span class="chip bad plain" title="Contrato vencido el 12/11/2026">+5 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-045.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Skyjack"
+            data-estado="Vencido" data-codigo="TECL-045" data-altura="7.79"
+            data-rest="-6"
+            data-texto="tecl-045 skyjack sjiii-3219 22020654">
+          <td><a class="cod" href="equipos--TECL-045.html">TECL-045</a></td>
+          <td style="min-width:200px">Skyjack SJIII-3219<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2010</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">6 d vencido</b></td>
+          <td>20/05/2026</td>
+          <td class="n">342.0</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-046.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Sin datos" data-codigo="TECL-046" data-altura="0"
+            data-rest="-9999"
+            data-texto="tecl-046 jlg 4069 le cliente 40 obra 11">
+          <td><a class="cod" href="equipos--TECL-046.html">TECL-046</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Jlg 4069 LE<br><small>Tijera eléctrica</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip none">Sin datos</span></td>
+          <td><span class="muted">Sin servicio documentado</span></td>
+          <td>—</td>
+          <td class="n">—</td>
+          <td>Obra 11 <span class="chip bad plain" title="Contrato vencido el 05/03/2026">+257 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-047.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-047" data-altura="11.79"
+            data-rest="77"
+            data-texto="tecl-047 genie gs-3246 gs4603-50151 cliente 28 obra 49">
+          <td><a class="cod" href="equipos--TECL-047.html">TECL-047</a></td>
+          <td style="min-width:200px">Genie GS-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2003</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>77 d · 37 h</td>
+          <td>22/07/2026</td>
+          <td class="n">1,893.3</td>
+          <td>Obra 49 <span class="chip bad plain" title="Contrato vencido el 12/11/2026">+5 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-048.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-048" data-altura="0"
+            data-rest="88"
+            data-texto="tecl-048 jlg 2646 es cliente 05 obra 18">
+          <td><a class="cod" href="equipos--TECL-048.html">TECL-048</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Jlg 2646 ES<br><small>Tijera eléctrica</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>88 d · 100 h</td>
+          <td>13/11/2026</td>
+          <td class="n">19,050.3</td>
+          <td>Obra 18
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-049.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-049" data-altura="9.8"
+            data-rest="88"
+            data-texto="tecl-049 genie gs-2646 gs4603-14596 cliente 05 obra 18">
+          <td><a class="cod" href="equipos--TECL-049.html">TECL-049</a></td>
+          <td style="min-width:200px">Genie GS-2646<br><small>Tijera eléctrica</small></td>
+          <td class="n">9.8 m</td>
+          <td class="n">2003</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>88 d · 75 h</td>
+          <td>20/05/2026</td>
+          <td class="n">1,065.7</td>
+          <td>Obra 18
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-051.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Jlg"
+            data-estado="Vigente" data-codigo="TECL-051" data-altura="11.79"
+            data-rest="51"
+            data-texto="tecl-051 jlg 3246 es 0200201432">
+          <td><a class="cod" href="equipos--TECL-051.html">TECL-051</a></td>
+          <td style="min-width:200px">Jlg 3246 ES<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2011</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>51 d · 74 h</td>
+          <td>04/07/2026</td>
+          <td class="n">1,031.3</td>
+          <td><a href="mantenimiento--80.html">OT-0080</a> <small>programada</small>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-053.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vencido" data-codigo="TECL-053" data-altura="7.79"
+            data-rest="-14"
+            data-texto="tecl-053 genie gs-1930 gs3008b-94395 cliente 51 obra 53">
+          <td><a class="cod" href="equipos--TECL-053.html">TECL-053</a></td>
+          <td style="min-width:200px">Genie GS-1930<br><small>Tijera eléctrica</small></td>
+          <td class="n">7.8 m</td>
+          <td class="n">2008</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">14 d vencido</b></td>
+          <td>20/06/2026</td>
+          <td class="n">686.3</td>
+          <td>Obra 53 <span class="chip bad plain" title="Contrato vencido el 14/10/2026">+34 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-054.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Skyjack"
+            data-estado="Vigente" data-codigo="TECL-054" data-altura="0"
+            data-rest="84"
+            data-texto="tecl-054 skyjack sjiii3219 cliente 10 obra 16">
+          <td><a class="cod" href="equipos--TECL-054.html">TECL-054</a><br><span class="tag">sin expediente</span></td>
+          <td style="min-width:200px">Skyjack SJIII3219<br><small>Tijera eléctrica</small></td>
+          <td class="n">—</td>
+          <td class="n">—</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>84 d · 92 h</td>
+          <td>30/09/2026</td>
+          <td class="n">371.5</td>
+          <td>Obra 16
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-055.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-055" data-altura="11.79"
+            data-rest="69"
+            data-texto="tecl-055 genie gs-3246 gs4611a-97848 cliente 33 obra 51">
+          <td><a class="cod" href="equipos--TECL-055.html">TECL-055</a></td>
+          <td style="min-width:200px">Genie GS-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2011</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>69 d · 77 h</td>
+          <td>20/07/2026</td>
+          <td class="n">1,111.1</td>
+          <td>Obra 51
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-056.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Genie"
+            data-estado="Vencido" data-codigo="TECL-056" data-altura="11.79"
+            data-rest="82"
+            data-texto="tecl-056 genie gs-3246 gs4611a-97861 cliente 44 obra 20">
+          <td><a class="cod" href="equipos--TECL-056.html">TECL-056</a></td>
+          <td style="min-width:200px">Genie GS-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2011</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">33 h excedido</b></td>
+          <td>22/07/2025</td>
+          <td class="n">627.9</td>
+          <td>Obra 20
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-057.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Genie"
+            data-estado="Vigente" data-codigo="TECL-057" data-altura="11.79"
+            data-rest="55"
+            data-texto="tecl-057 genie gs-3246 gs4613a-113141">
+          <td><a class="cod" href="equipos--TECL-057.html">TECL-057</a></td>
+          <td style="min-width:200px">Genie GS-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2013</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>55 d · 52 h</td>
+          <td>05/05/2026</td>
+          <td class="n">146.2</td>
+          <td><a href="mantenimiento--89.html">OT-0089</a> <small>programada</small>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-058.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Snorkel"
+            data-estado="Vigente" data-codigo="TECL-058" data-altura="11.8"
+            data-rest="82"
+            data-texto="tecl-058 snorkel s-3246 dc06210">
+          <td><a class="cod" href="equipos--TECL-058.html">TECL-058</a></td>
+          <td style="min-width:200px">Snorkel S-3246<br><small>Tijera eléctrica</small></td>
+          <td class="n">11.8 m</td>
+          <td class="n">2006</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>82 d · 86 h</td>
+          <td>10/05/2026</td>
+          <td class="n">1,114.4</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-059.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Fork Lift"
+            data-estado="Por vencer" data-codigo="TECL-059" data-altura="15.8"
+            data-rest="71"
+            data-texto="tecl-059 fork lift gtjz14 2024071801 cliente 21 obra 41">
+          <td><a class="cod" href="equipos--TECL-059.html">TECL-059</a></td>
+          <td style="min-width:200px">Fork Lift GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2024</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip warn">Por vencer</span></td>
+          <td>71 d · 13 h</td>
+          <td>26/12/2025</td>
+          <td class="n">1,090.7</td>
+          <td>Obra 41
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-060.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Fork Lift"
+            data-estado="Vigente" data-codigo="TECL-060" data-altura="15.8"
+            data-rest="77"
+            data-texto="tecl-060 fork lift gtjz14 2024071802 cliente 21 obra 41">
+          <td><a class="cod" href="equipos--TECL-060.html">TECL-060</a></td>
+          <td style="min-width:200px">Fork Lift GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2024</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>77 d · 217 h</td>
+          <td>25/04/2026</td>
+          <td class="n">1,254.8</td>
+          <td>Obra 41
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-061.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Jinan Lift"
+            data-estado="Vigente" data-codigo="TECL-061" data-altura="13.8"
+            data-rest="69"
+            data-texto="tecl-061 jinan lift gtjz12 202410135928 cliente 30 obra 12">
+          <td><a class="cod" href="equipos--TECL-061.html">TECL-061</a></td>
+          <td style="min-width:200px">Jinan Lift GTJZ12<br><small>Tijera eléctrica</small></td>
+          <td class="n">13.8 m</td>
+          <td class="n">2024</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>69 d · 100 h</td>
+          <td>19/10/2026</td>
+          <td class="n">260.0</td>
+          <td>Obra 12
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-062.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Jinan Lift"
+            data-estado="Vigente" data-codigo="TECL-062" data-altura="15.8"
+            data-rest="29"
+            data-texto="tecl-062 jinan lift gtjz14 202410135929">
+          <td><a class="cod" href="equipos--TECL-062.html">TECL-062</a></td>
+          <td style="min-width:200px">Jinan Lift GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2024</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>29 d · 86 h</td>
+          <td>08/08/2026</td>
+          <td class="n">174.1</td>
+          <td><a href="mantenimiento--115.html">OT-0115</a> <small>programada</small>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-063.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Jinan Lift"
+            data-estado="Vigente" data-codigo="TECL-063" data-altura="15.8"
+            data-rest="90"
+            data-texto="tecl-063 jinan lift gtjz14 202410135930">
+          <td><a class="cod" href="equipos--TECL-063.html">TECL-063</a></td>
+          <td style="min-width:200px">Jinan Lift GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2024</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>90 d · 75 h</td>
+          <td>20/05/2026</td>
+          <td class="n">172.1</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-064.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Jinan Lift"
+            data-estado="Vencido" data-codigo="TECL-064" data-altura="15.8"
+            data-rest="-9"
+            data-texto="tecl-064 jinan lift gtjz14 202410135931 cliente 23 obra 56">
+          <td><a class="cod" href="equipos--TECL-064.html">TECL-064</a></td>
+          <td style="min-width:200px">Jinan Lift GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2024</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">9 d vencido</b></td>
+          <td>10/05/2026</td>
+          <td class="n">287.3</td>
+          <td>Obra 56 <span class="chip bad plain" title="Contrato vencido el 09/10/2026">+39 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-065.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Haulotte"
+            data-estado="Vigente" data-codigo="TECL-065" data-altura="13.8"
+            data-rest="21"
+            data-texto="tecl-065 haulotte compact 14 2025503">
+          <td><a class="cod" href="equipos--TECL-065.html">TECL-065</a></td>
+          <td style="min-width:200px">Haulotte COMPACT 14<br><small>Tijera eléctrica</small></td>
+          <td class="n">13.8 m</td>
+          <td class="n">2017</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>21 d · 53 h</td>
+          <td>10/05/2026</td>
+          <td class="n">397.0</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-066.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Lift Rental"
+            data-estado="Vigente" data-codigo="TECL-066" data-altura="15.8"
+            data-rest="21"
+            data-texto="tecl-066 lift rental gtjz14 20251121 cliente 48 obra 39">
+          <td><a class="cod" href="equipos--TECL-066.html">TECL-066</a></td>
+          <td style="min-width:200px">Lift Rental GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>21 d · 81 h</td>
+          <td>20/06/2026</td>
+          <td class="n">59.1</td>
+          <td>Obra 39 <span class="chip bad plain" title="Contrato vencido el 08/11/2026">+9 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-067.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Lift Rental"
+            data-estado="Vigente" data-codigo="TECL-067" data-altura="15.8"
+            data-rest="86"
+            data-texto="tecl-067 lift rental gtjz14 20251122 cliente 25 obra 06">
+          <td><a class="cod" href="equipos--TECL-067.html">TECL-067</a></td>
+          <td style="min-width:200px">Lift Rental GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>86 d · 48 h</td>
+          <td>12/12/2025</td>
+          <td class="n">52.1</td>
+          <td>Obra 06
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-068.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Lift Rental"
+            data-estado="Vencido" data-codigo="TECL-068" data-altura="15.8"
+            data-rest="-118"
+            data-texto="tecl-068 lift rental gtjz14 20251123 cliente 08 obra 02">
+          <td><a class="cod" href="equipos--TECL-068.html">TECL-068</a></td>
+          <td style="min-width:200px">Lift Rental GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip bad">Vencido</span></td>
+          <td><b style="color:var(--bad)">118 d vencido</b></td>
+          <td>12/12/2025</td>
+          <td class="n">46.4</td>
+          <td>Obra 02 <span class="chip bad plain" title="Contrato vencido el 08/10/2026">+40 d</span>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-070.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Lift Rental"
+            data-estado="Vigente" data-codigo="TECL-070" data-altura="15.8"
+            data-rest="84"
+            data-texto="tecl-070 lift rental gtjz14 20251125 cliente 25 obra 06">
+          <td><a class="cod" href="equipos--TECL-070.html">TECL-070</a></td>
+          <td style="min-width:200px">Lift Rental GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>84 d · 94 h</td>
+          <td>12/08/2026</td>
+          <td class="n">76.4</td>
+          <td>Obra 06
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-071.html"
+            data-categoria="Tijera eléctrica" data-situacion="En obra" data-marca="Lift Rental"
+            data-estado="Vigente" data-codigo="TECL-071" data-altura="15.8"
+            data-rest="86"
+            data-texto="tecl-071 lift rental gtjz14 20251126 cliente 25 obra 06">
+          <td><a class="cod" href="equipos--TECL-071.html">TECL-071</a></td>
+          <td style="min-width:200px">Lift Rental GTJZ14<br><small>Tijera eléctrica</small></td>
+          <td class="n">15.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>86 d · 79 h</td>
+          <td>12/07/2026</td>
+          <td class="n">81.4</td>
+          <td>Obra 06
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-072.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Lift Rental"
+            data-estado="Vigente" data-codigo="TECL-072" data-altura="13.8"
+            data-rest="67"
+            data-texto="tecl-072 lift rental gtjz12 20251131">
+          <td><a class="cod" href="equipos--TECL-072.html">TECL-072</a></td>
+          <td style="min-width:200px">Lift Rental GTJZ12<br><small>Tijera eléctrica</small></td>
+          <td class="n">13.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>67 d · 97 h</td>
+          <td>15/09/2026</td>
+          <td class="n">66.1</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-073.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Lift Rental"
+            data-estado="Vigente" data-codigo="TECL-073" data-altura="13.8"
+            data-rest="63"
+            data-texto="tecl-073 lift rental gtjz12 20251132">
+          <td><a class="cod" href="equipos--TECL-073.html">TECL-073</a></td>
+          <td style="min-width:200px">Lift Rental GTJZ12<br><small>Tijera eléctrica</small></td>
+          <td class="n">13.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>63 d · 98 h</td>
+          <td>15/09/2026</td>
+          <td class="n">32.5</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-074.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Lift Rental"
+            data-estado="Vigente" data-codigo="TECL-074" data-altura="13.8"
+            data-rest="56"
+            data-texto="tecl-074 lift rental gtjz12 20251133">
+          <td><a class="cod" href="equipos--TECL-074.html">TECL-074</a></td>
+          <td style="min-width:200px">Lift Rental GTJZ12<br><small>Tijera eléctrica</small></td>
+          <td class="n">13.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>56 d · 90 h</td>
+          <td>15/09/2026</td>
+          <td class="n">55.9</td>
+          <td><a href="mantenimiento--81.html">OT-0081</a> <small>pendiente</small>
+              </td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-075.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Lift Rental"
+            data-estado="Vigente" data-codigo="TECL-075" data-altura="13.8"
+            data-rest="86"
+            data-texto="tecl-075 lift rental gtjz12 20251134">
+          <td><a class="cod" href="equipos--TECL-075.html">TECL-075</a></td>
+          <td style="min-width:200px">Lift Rental GTJZ12<br><small>Tijera eléctrica</small></td>
+          <td class="n">13.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>86 d · 98 h</td>
+          <td>15/09/2026</td>
+          <td class="n">60.1</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--TECL-076.html"
+            data-categoria="Tijera eléctrica" data-situacion="Disponible" data-marca="Jinan Lift"
+            data-estado="Vigente" data-codigo="TECL-076" data-altura="13.8"
+            data-rest="83"
+            data-texto="tecl-076 jinan lift gtjz12 20251135">
+          <td><a class="cod" href="equipos--TECL-076.html">TECL-076</a></td>
+          <td style="min-width:200px">Jinan Lift GTJZ12<br><small>Tijera eléctrica</small></td>
+          <td class="n">13.8 m</td>
+          <td class="n">2025</td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span></td>
+          <td>83 d · 99 h</td>
+          <td>15/07/2026</td>
+          <td class="n">40.8</td>
+          <td><span class="muted">Patio Comas</span></td>
+        </tr>
+      
+        <tr class="fila-link" data-href="equipos--UPCL-001.html"
+            data-categoria="Mástil vertical" data-situacion="En obra" data-marca="Jlg"
+            data-estado="Por vencer" data-codigo="UPCL-001" data-altura="7.94"
+            data-rest="13"
+            data-texto="upcl-001 jlg 20 msp 0130013179 cliente 09 obra 15">
+          <td><a class="cod" href="equipos--UPCL-001.html">UPCL-001</a></td>
+          <td style="min-width:200px">Jlg 20 MSP<br><small>Mástil vertical</small></td>
+          <td class="n">7.9 m</td>
+          <td class="n">2009</td>
+          <td><span class="chip info">En obra</span></td>
+          <td><span class="chip warn">Por vencer</span></td>
+          <td>13 d · 92 h</td>
+          <td>04/07/2026</td>
+          <td class="n">293.8</td>
+          <td>Obra 15 <span class="chip bad plain" title="Contrato vencido el 31/10/2026">+17 d</span>
+              </td>
+        </tr>
+      
+      </tbody>
+    </table>
+    <div class="vacio" id="sin-resultados" hidden>Ningún equipo coincide con los filtros.</div>
+  </div>
+</div>
+
+  </main>
+</div>
+<script src="static/app.js"></script>
+<script>filtrarTabla('tabla-equipos');</script>
+</body>
+</html>

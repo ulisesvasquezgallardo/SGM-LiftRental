@@ -1,0 +1,11 @@
+# Despliegue en Render (plan gratuito): https://render.com/deploy
+services:
+  - type: web
+    name: sgm-liftrental
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 1 --threads 4 --timeout 180 --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7

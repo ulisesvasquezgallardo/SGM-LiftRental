@@ -1,0 +1,54 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, icono %}
+{% block titulo %}Personal de mantenimiento{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Personal de mantenimiento</h1>
+    <p>Técnicos del taller, su carga de trabajo de las próximas dos semanas y los servicios que han ejecutado.</p>
+  </div>
+  <div class="acciones"><a class="btn pri" href="{{ url_for('tecnico_form') }}">{{ icono('mas') }} Nuevo técnico</a></div>
+</div>
+
+<div class="grid g3">
+  {% for t in tecs %}
+  {% set s = stats[t.id] %}
+  <div class="card" style="{{ 'opacity:.6' if not t.activo }}">
+    <div class="hd">
+      <div class="persona"><span class="avatar">{{ t.nombre[:1] }}{{ t.nombre.split(' ')[-1][:1] }}</span>
+        <div><a href="{{ url_for('tecnico', tid=t.id) }}"><b>{{ t.nombre }}</b></a><br><small>{{ t.cargo or 'Técnico' }}</small></div></div>
+      {{ chip('Disponible' if t.activo else 'Cancelada', 'Activo' if t.activo else 'Inactivo') }}
+    </div>
+    {% if not t.ejecuta %}
+    <div class="bd stack" style="gap:10px">
+      <dl class="dl"><dt>Rol</dt><dd>{{ t.especialidad or 'Supervisión' }}</dd>{% if t.correo %}<dt>Correo</dt><dd><small>{{ t.correo }}</small></dd>{% endif %}</dl>
+      {% if t.notas %}<div class="nota">{{ t.notas }}</div>{% endif %}
+    </div>
+    {% else %}
+    <div class="bd stack" style="gap:12px">
+      <div style="display:flex;gap:20px">
+        <div class="kpi" style="padding:0"><span class="v" style="font-size:22px">{{ s.ejec or 0 }}</span><span class="s">en ejecución</span></div>
+        <div class="kpi" style="padding:0"><span class="v" style="font-size:22px">{{ s.prog or 0 }}</span><span class="s">programadas</span></div>
+        <div class="kpi" style="padding:0"><span class="v" style="font-size:22px">{{ s.comp or 0 }}</span><span class="s">completadas</span></div>
+      </div>
+      <div class="medidor">
+        <div class="fila"><span>Ocupación próximos 14 días</span><span><b>{{ s.dias_ocupados }}</b> de 12 días hábiles</span></div>
+        <div class="prog"><span class="{{ 'bad' if s.ocupacion >= 1 else ('warn' if s.ocupacion >= 0.8 else 'ok') }}" style="width: {{ [s.ocupacion * 100, 100]|min }}%"></span></div>
+      </div>
+      <dl class="dl">
+        <dt>Especialidad</dt><dd>{{ t.especialidad or '—' }}</dd>
+        <dt>Último servicio</dt><dd>{{ s.ultimo|fecha }}</dd>
+        <dt>Participación</dt><dd>{{ ((s.comp or 0) / total_comp * 100)|num(0) }} % de los servicios</dd>
+        {% if t.telefono %}<dt>Teléfono</dt><dd>{{ t.telefono }}</dd>{% endif %}
+      </dl>
+      {% if t.notas %}<div class="ayuda">{{ t.notas }}</div>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% if tecs and (stats.values()|map(attribute='comp')|map('default', 0, true)|max) / total_comp > 0.8 %}
+<div class="nota warn" style="margin-top:16px">Un solo técnico concentra más del 80 % de los servicios ejecutados. La capacidad nominal del taller no se está dedicando por completo al mantenimiento preventivo.</div>
+{% endif %}
+{% endblock %}

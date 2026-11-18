@@ -1,0 +1,321 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, restante, medidor, icono %}
+{% block titulo %}{{ eq.codigo }}{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <div class="migas"><a href="{{ url_for('equipos') }}">Almacén</a> / {{ eq.categoria }}</div>
+    <h1><span class="mono" style="font-size:22px">{{ eq.codigo }}</span> · {{ eq.marca or '' }} {{ eq.modelo or '' }}</h1>
+    <p>{{ chip(eq.situacion) }} {{ chip(m.estado, 'Mantenimiento ' ~ m.estado|lower) }}
+      {% if not eq.con_expediente %}<span class="tag">sin expediente técnico</span>{% endif %}
+      {% if not eq.activo %}<span class="chip bad">dado de baja</span>{% endif %}
+      {% if eq.ubicacion_detalle %}<span class="muted"> · {{ eq.ubicacion_detalle }}</span>{% endif %}</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('equipo_editar', codigo=eq.codigo) }}">Editar</a>
+    <a class="btn" href="{{ url_for('equipo_certificado', codigo=eq.codigo) }}">{{ icono('doc') }} Certificado</a>
+    {% if alq_activo %}
+      <a class="btn osc" href="{{ url_for('retorno', aid=alq_activo.id) }}">Registrar retorno</a>
+    {% elif eq.situacion == 'Disponible' %}
+      <a class="btn" href="{{ url_for('despacho', categoria=eq.categoria, buscar=1, equipo_id=eq.id) }}">{{ icono('despacho') }} Despachar</a>
+    {% endif %}
+    {% if orden_abierta %}
+      <a class="btn pri" href="{{ url_for('orden', oid=orden_abierta.id) }}">{{ icono('mant') }} {{ orden_abierta.id|ot }} · {{ orden_abierta.estado }}</a>
+    {% else %}
+      <a class="btn pri" href="{{ url_for('orden_nueva', equipo=eq.codigo) }}">{{ icono('mant') }} Orden de trabajo</a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="tabs">
+  {% for k, t, n in [('resumen','Resumen',None),('uso','Uso y alquileres',alqs|length),('mant','Mantenimiento',ords|length),('horometro','Horómetro',lects|length),('incidentes','Incidentes',incs|length),('documentos','Expediente',docs|length)] %}
+    <a href="{{ url_for('equipo', codigo=eq.codigo, tab=k) }}" class="{{ 'on' if tab == k }}">{{ t }}{% if n is not none %}<span class="cnt">{{ n }}</span>{% endif %}</a>
+  {% endfor %}
+</div>
+
+{% if tab == 'resumen' %}
+<div class="grid g-12">
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Estado de mantenimiento</h2><small>al {{ REF|fecha }}</small></div>
+      <div class="bd stack" style="gap:14px">
+        <div class="estado-grande">
+          <div class="ico {{ m.estado|clase }}">{{ icono('ok' if m.estado == 'Vigente' else ('reloj' if m.estado == 'Por vencer' else 'x')) }}</div>
+          <div><b>{{ m.estado }}</b><br>
+            {% if m.fecha_vence %}<span class="muted">{{ 'Venció' if m.estado == 'Vencido' else 'Vence' }} el {{ m.fecha_vence|fecha }} por {{ m.vence_por|lower }}</span>
+            {% else %}<span class="muted">No hay un servicio preventivo registrado.</span>{% endif %}</div>
+        </div>
+        {% if m.fecha_pm %}
+          {{ medidor('Calendario desde el certificado de operatividad' if m.fecha_inspeccion else 'Calendario desde el último servicio', m.dias_desde, m.intervalo, 'd') }}
+          {{ medidor('Horas desde el último servicio (proyectadas)', m.horas_desde, m.frecuencia, 'h') }}
+          <dl class="dl">
+            <dt>Último servicio</dt><dd>{{ m.fecha_pm|fecha }} · {{ m.horometro_pm|num(1) }} h</dd>
+            {% if m.fecha_inspeccion %}<dt>Plazo renovado</dt><dd>Certificado de operatividad del {{ m.fecha_inspeccion|fecha }}</dd>{% endif %}
+            <dt>Próximo servicio</dt><dd>Nivel {{ m.nivel }} a las {{ m.proximo_h|num(1) }} h</dd>
+            <dt>Restante</dt><dd>{{ restante(m) }}</dd>
+            <dt>Horómetro estimado</dt><dd>{{ m.horometro_est|num(1) }} h <small>(última lectura {{ m.fecha_lectura|fecha }})</small></dd>
+            <dt>Tasa de uso</dt><dd>{{ eq.tasa_uso|num(3) }} h/día</dd>
+          </dl>
+        {% endif %}
+        {% if m.estado in ('Vencido', 'Sin datos') %}
+          <div class="nota bad">Este equipo no debe salir a obra ni recibir certificado de operatividad hasta completar su servicio.</div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Indicadores de uso</h2></div>
+      <div class="bd">
+        <dl class="dl">
+          <dt>Alquileres registrados</dt><dd>{{ alqs|length }}</dd>
+          <dt>Días en obra registrados</dt><dd>{{ dias_alquiler }}</dd>
+          <dt>Servicios ejecutados</dt><dd>{{ ords|selectattr('estado','equalto','Completada')|list|length }}</dd>
+          <dt>Costo de mantenimiento</dt><dd>{{ costo_mant|soles if costo_mant else '—' }}</dd>
+          <dt>Incidentes en obra</dt><dd>{{ incs|length }}</dd>
+          <dt>Tarifa de referencia</dt><dd>{{ tarifa|soles }} por día</dd>
+        </dl>
+      </div>
+    </div>
+    {% if exp %}
+    <div class="card">
+      <div class="hd"><h2>Lo que dice el expediente</h2><a href="{{ url_for('equipo', codigo=eq.codigo, tab='documentos') }}">Documentos →</a></div>
+      <div class="bd stack" style="gap:12px">
+        {% if exp.pm %}
+        <dl class="dl">
+          <dt>Último PM</dt><dd>{{ exp.pm.fecha|fecha }} · {{ exp.pm.horometro|num(1) }} h → próximo {{ exp.pm.proximo_h|num(1) }} h</dd>
+          <dt>Ejecutor</dt><dd>{{ exp.pm.ejecutor or '—' }}</dd>
+          <dt>Supervisor / jefe</dt><dd>{{ exp.pm.supervisor or '—' }}</dd>
+          <dt>Formato</dt><dd><small>{{ exp.pm.formato or '—' }}</small></dd>
+          <dt>Archivo</dt><dd><small class="mono">{{ exp.pm.archivo or '—' }}</small></dd>
+        </dl>
+        {% endif %}
+        {% if exp.cert_operatividad and exp.cert_operatividad.fecha %}
+        <div class="nota ok"><b>Certificado de operatividad {{ exp.cert_operatividad.fecha|fecha }}</b> · {{ exp.cert_operatividad.horometro|num(1) }} h ·
+          {{ exp.cert_operatividad.observaciones or '' }}{% if exp.cert_operatividad.recomendaciones %}<br>Recomendación: {{ exp.cert_operatividad.recomendaciones }}{% endif %}</div>
+        {% endif %}
+        {% if exp.inconsistencias %}
+          <div class="nota warn">{{ exp.inconsistencias|length }} observación(es) en la documentación — ver la pestaña <a href="{{ url_for('equipo', codigo=eq.codigo, tab='documentos') }}">Expediente</a>.</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="stack">
+    {% if alq_activo %}
+    <div class="card">
+      <div class="hd"><h2>En obra</h2>{% if alq_activo.fecha_vencimiento and alq_activo.fecha_vencimiento < REF.isoformat() %}{{ chip('Vencido', 'Contrato vencido') }}{% endif %}</div>
+      <div class="bd">
+        <dl class="dl">
+          <dt>Cliente</dt><dd>{{ alq_activo.cliente or '—' }}</dd>
+          <dt>Obra</dt><dd>{{ alq_activo.obra or '—' }} <small>{{ alq_activo.zona or '' }}</small></dd>
+          <dt>Salida</dt><dd>{{ alq_activo.fecha_salida|fecha }}{% if alq_activo.horometro_salida %} · {{ alq_activo.horometro_salida|num(1) }} h{% endif %}</dd>
+          <dt>Vencimiento</dt><dd>{{ alq_activo.fecha_vencimiento|fecha }}</dd>
+          {% if alq_activo.excepcion_motivo %}<dt>Excepción</dt><dd>{{ alq_activo.excepcion_motivo }} <small>— autorizó {{ alq_activo.excepcion_autoriza }}</small></dd>{% endif %}
+        </dl>
+        <form method="post" action="{{ url_for('prorroga', aid=alq_activo.id) }}" class="acciones" style="margin-top:12px">
+          <input type="date" name="fecha_vencimiento" style="width:auto" required>
+          <button class="btn sm">Registrar prórroga</button>
+        </form>
+      </div>
+    </div>
+    {% endif %}
+    <div class="card">
+      <div class="hd"><h2>Datos técnicos</h2></div>
+      <div class="bd">
+        <div class="grid g2">
+          <dl class="dl">
+            <dt>Categoría</dt><dd>{{ eq.categoria }}</dd>
+            <dt>Marca / modelo</dt><dd>{{ eq.marca or '—' }} {{ eq.modelo or '' }}</dd>
+            <dt>Serie</dt><dd class="mono">{{ eq.serie or '—' }}</dd>
+            <dt>Año de fabricación</dt><dd>{{ eq.anio or '—' }}{% if eq.anio %} <small>({{ REF.year - eq.anio }} años)</small>{% endif %}</dd>
+            <dt>Valor asegurado</dt><dd>{{ ('US$ ' ~ (eq.valor_usd|num(0))) if eq.valor_usd else '—' }}</dd>
+          </dl>
+          <dl class="dl">
+            <dt>Altura de plataforma</dt><dd>{{ (eq.altura_plataforma|num(2) ~ ' m') if eq.altura_plataforma else '—' }}</dd>
+            <dt>Altura de trabajo</dt><dd>{{ (eq.altura_trabajo|num(2) ~ ' m') if eq.altura_trabajo else '—' }}</dd>
+            <dt>Capacidad</dt><dd>{{ (eq.capacidad_kg|num(0) ~ ' kg') if eq.capacidad_kg else '—' }}</dd>
+            <dt>Peso</dt><dd>{{ (eq.peso_kg|num(0) ~ ' kg') if eq.peso_kg else '—' }}</dd>
+            <dt>Frecuencia de servicio</dt><dd>{{ eq.frecuencia_h|num(0) }} h o {{ m.intervalo }} días</dd>
+          </dl>
+        </div>
+        {% if eq.notas %}<div class="nota" style="margin-top:12px">{{ eq.notas }}</div>{% endif %}
+      </div>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Actividad reciente</h2></div>
+      <ul class="lista">
+        {% for o in ords[:4] %}
+          <li><span>{{ icono('mant') }} <a href="{{ url_for('orden', oid=o.id) }}" class="mono">{{ o.id|ot }}</a> {{ o.tipo }} {{ o.nivel or '' }} <small>{{ o.tecnicos or '' }}</small></span><span>{{ chip(o.estado) }} <small>{{ (o.fecha_fin or o.fecha_programada)|fecha }}</small></span></li>
+        {% endfor %}
+        {% for a in alqs[:3] %}
+          <li><span>{{ icono('uso') }} {{ a.cliente or '—' }} · <small>{{ a.obra or '' }}</small></span><span>{{ chip(a.estado) }} <small>{{ a.fecha_salida|fecha }}</small></span></li>
+        {% endfor %}
+        {% if not ords and not alqs %}<li class="muted">Sin actividad registrada.</li>{% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% elif tab == 'uso' %}
+<div class="card"><div class="bd flush tabla-wrap">
+  {% if alqs %}
+  <table>
+    <thead><tr><th>Cliente</th><th>Obra</th><th>Zona</th><th>Salida</th><th>Vencimiento</th><th>Retorno</th><th class="n">Días</th><th class="n">Horas usadas</th><th>Mant. a la salida</th><th>Estado</th></tr></thead>
+    <tbody>
+    {% for a in alqs %}
+      <tr>
+        <td>{{ a.cliente or '—' }}</td><td>{{ a.obra or '—' }}</td><td>{{ a.zona or '—' }}</td>
+        <td>{{ a.fecha_salida|fecha }}</td><td>{{ a.fecha_vencimiento|fecha }}</td><td>{{ a.fecha_retorno|fecha }}</td>
+        <td class="n">{{ a.fecha_salida|dias_hasta(a.fecha_retorno or REF) }}</td>
+        <td class="n">{{ ((a.horometro_retorno - a.horometro_salida)|num(1)) if a.horometro_retorno and a.horometro_salida else '—' }}</td>
+        <td>{% if a.mant_estado_salida %}{{ chip(a.mant_estado_salida) }}{% else %}<small class="muted">no registrado</small>{% endif %}
+          {% if a.excepcion_motivo %}<br><small title="{{ a.excepcion_motivo }}">Excepción: {{ a.excepcion_autoriza }}</small>{% endif %}</td>
+        <td>{{ chip(a.estado) }}{% if a.estado == 'En obra' %} <a class="btn sm" href="{{ url_for('retorno', aid=a.id) }}">Retorno</a>{% endif %}</td>
+      </tr>
+      {% if a.notas %}<tr class="atenuada"><td colspan="10"><small>{{ a.notas }}</small></td></tr>{% endif %}
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}<div class="vacio">Este equipo no tiene alquileres registrados.</div>{% endif %}
+</div></div>
+
+{% elif tab == 'mant' %}
+<div class="card"><div class="bd flush tabla-wrap">
+  {% if ords %}
+  <table>
+    <thead><tr><th>OT</th><th>Tipo</th><th>Nivel</th><th>Estado</th><th>Programada</th><th>Ejecutada</th><th class="n">Horómetro</th><th>Técnicos</th><th class="n">Costo</th><th>Origen</th></tr></thead>
+    <tbody>
+    {% for o in ords %}
+      <tr class="fila-link" data-href="{{ url_for('orden', oid=o.id) }}">
+        <td><a class="mono" href="{{ url_for('orden', oid=o.id) }}">{{ o.id|ot }}</a></td>
+        <td>{{ o.tipo }}</td><td>{{ o.nivel or '—' }}</td><td>{{ chip(o.estado) }}</td>
+        <td>{{ o.fecha_programada|fecha }}</td><td>{{ o.fecha_fin|fecha }}</td>
+        <td class="n">{{ o.horometro|num(1) if o.horometro is not none else '—' }}</td>
+        <td>{{ o.tecnicos or '—' }}</td>
+        <td class="n">{{ (o.costo_real or o.costo_estimado)|soles }}</td>
+        <td><small>{{ o.origen or '' }}</small></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}<div class="vacio">Sin órdenes de trabajo.</div>{% endif %}
+</div></div>
+
+{% elif tab == 'horometro' %}
+<div class="grid g-21">
+  <div class="card">
+    <div class="hd"><h2>Lecturas de horómetro</h2></div>
+    {% if serie|length > 1 %}
+    {% set h0 = serie|map(attribute=1)|min %}{% set h1 = serie|map(attribute=1)|max %}
+    {% set rango_h = (h1 - h0) or 1 %}
+    <div class="bd">
+      <svg viewBox="0 0 600 140" width="100%" height="140" role="img" aria-label="Evolución del horómetro">
+        <line x1="40" y1="120" x2="590" y2="120" stroke="#e2e5ea"/>
+        {% set n = serie|length %}
+        <polyline fill="none" stroke="#2f6fd6" stroke-width="2"
+          points="{% for f, h in serie %}{{ 40 + loop.index0 / (n - 1) * 550 }},{{ 120 - (h - h0) / rango_h * 100 }} {% endfor %}"/>
+        {% for f, h in serie %}
+          <circle cx="{{ 40 + loop.index0 / (n - 1) * 550 }}" cy="{{ 120 - (h - h0) / rango_h * 100 }}" r="3.5" fill="#2f6fd6"><title>{{ f|fecha }}: {{ h|num(1) }} h</title></circle>
+        {% endfor %}
+        <text x="36" y="24" text-anchor="end" font-size="11" fill="#8a93a3">{{ h1|num(0) }}</text>
+        <text x="36" y="124" text-anchor="end" font-size="11" fill="#8a93a3">{{ h0|num(0) }}</text>
+        <text x="40" y="137" font-size="11" fill="#8a93a3">{{ serie[0][0]|fecha }}</text>
+        <text x="590" y="137" text-anchor="end" font-size="11" fill="#8a93a3">{{ serie[-1][0]|fecha }}</text>
+      </svg>
+    </div>
+    {% endif %}
+    <div class="bd flush tabla-wrap">
+      <table>
+        <thead><tr><th>Fecha</th><th class="n">Horómetro</th><th>Fuente</th></tr></thead>
+        <tbody>
+          {% for l in lects %}<tr><td>{{ l.fecha|fecha }}</td><td class="n">{{ l.horometro|num(1) }} h</td><td>{{ l.fuente or '—' }}</td></tr>{% endfor %}
+          {% if not lects %}<tr><td colspan="3" class="vacio">Sin lecturas.</td></tr>{% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Registrar lectura</h2></div>
+    <form class="bd stack" method="post" action="{{ url_for('equipo_lectura', codigo=eq.codigo) }}" style="gap:12px">
+      <div><label>Fecha</label><input type="date" name="fecha" value="{{ REF.isoformat() }}" required></div>
+      <div><label>Horómetro (h)</label><input type="number" step="0.1" name="horometro" required></div>
+      <div><label>Fuente</label><input name="fuente" placeholder="Visita a obra, check list del operador…"></div>
+      <label class="check"><input type="checkbox" name="recalcular" value="1"> Recalcular la tasa de uso con esta lectura</label>
+      <button class="btn pri">Guardar lectura</button>
+      <div class="ayuda">El registro del horómetro a la salida y al retorno de cada alquiler es lo que permite controlar el disparador por horas.</div>
+    </form>
+  </div>
+</div>
+
+{% elif tab == 'incidentes' %}
+<div class="card">
+  <div class="hd"><h2>Incidentes en obra</h2><a class="btn sm" href="{{ url_for('incidente_nuevo', equipo=eq.id) }}">Registrar incidente</a></div>
+  <div class="bd flush tabla-wrap">
+  {% if incs %}
+    <table><thead><tr><th>Fecha</th><th>Descripción</th><th class="n">Horómetro</th><th>Mantenimiento ese día</th><th class="n">Costo</th><th class="n">Días parado</th></tr></thead>
+    <tbody>{% for i in incs %}<tr><td>{{ i.fecha|fecha }}</td><td>{{ i.descripcion }}</td><td class="n">{{ i.horometro|num(1) if i.horometro else '—' }}</td><td>{{ chip(i.mant_estado) }}</td><td class="n">{{ i.costo|soles }}</td><td class="n">{{ i.dias_parado|num(1) if i.dias_parado else '—' }}</td></tr>{% endfor %}</tbody></table>
+  {% else %}<div class="vacio">Sin incidentes registrados.</div>{% endif %}
+  </div>
+</div>
+
+{% elif tab == 'documentos' %}
+<div class="grid g-21">
+  <div class="card">
+    <div class="hd"><h2>Expediente del equipo</h2><small class="mono">{{ eq.codigo|replace('-', '') }}/</small></div>
+    <div class="bd flush tabla-wrap">
+      {% if docs %}
+      <table>
+        <thead><tr><th>Documento</th><th>Tipo</th><th>Origen</th><th class="n">Tamaño</th></tr></thead>
+        <tbody>
+          {% for d in docs %}
+          <tr>
+            <td><a href="{{ url_for('equipo_doc', codigo=eq.codigo, origen=d.origen, nombre=d.nombre) }}" target="_blank">{{ icono('doc') }} {{ d.nombre }}</a></td>
+            <td>{{ d.tipo }}</td><td><span class="tag">{{ d.origen }}</span></td><td class="n">{{ d.kb|num(0) }} KB</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}<div class="vacio">No se encontró la carpeta del expediente de este equipo.</div>{% endif %}
+    </div>
+  </div>
+  <div class="stack">
+  {% if exp %}
+  <div class="card">
+    <div class="hd"><h2>Lectura del expediente</h2>{% if exp.confianza %}<span class="tag">confianza {{ exp.confianza }}</span>{% endif %}</div>
+    <div class="bd stack" style="gap:10px">
+      {% if exp.pistas %}
+      <div><h3 class="sub">Estado según los documentos</h3>
+        <ul style="margin:0;padding-left:18px">{% for p in exp.pistas %}<li><small>{{ p }}</small></li>{% endfor %}</ul></div>
+      {% endif %}
+      {% if exp.cert_mantenimiento and exp.cert_mantenimiento.programa %}
+        <div><h3 class="sub">Programa del certificado de mantenimiento</h3><small>{{ exp.cert_mantenimiento.programa }}</small></div>
+      {% endif %}
+      {% if formato %}
+        <div><h3 class="sub">Plan aplicable</h3><small>Formato «{{ formato.formato }}»: {% for l in formato.leyenda %}{{ l.nivel }} {{ l.criterio.rstrip('.') }}{{ '; ' if not loop.last }}{% endfor %}.</small></div>
+      {% endif %}
+    </div>
+  </div>
+  {% if exp.inconsistencias %}
+  <div class="card">
+    <div class="hd"><h2>Inconsistencias en la documentación</h2><span class="muted">{{ exp.inconsistencias|length }}</span></div>
+    <ul class="lista">
+      {% for i in exp.inconsistencias %}
+      <li style="display:block"><b style="font-size:12.5px">{{ i.campo }}</b> <span class="tag">{{ i.fuente }}</span><br><small>{{ i.detalle }}</small>
+        {% if i.archivo %}<br><small class="mono">{{ i.archivo }}</small>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  {% endif %}
+  <div class="card">
+    <div class="hd"><h2>Agregar documento</h2></div>
+    <form class="bd stack" method="post" enctype="multipart/form-data" action="{{ url_for('equipo_subir', codigo=eq.codigo) }}" style="gap:12px">
+      <input type="file" name="archivo" required>
+      <button class="btn pri">Subir al expediente virtual</button>
+      <div class="ayuda">Los archivos nuevos se guardan en la carpeta del sistema y no modifican la documentación original de la empresa.</div>
+    </form>
+  </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

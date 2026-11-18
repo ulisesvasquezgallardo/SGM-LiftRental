@@ -1,0 +1,127 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, restante, eq_link, icono %}
+{% block titulo %}{{ o.id|ot }}{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <div class="migas"><a href="{{ url_for('mantenimiento') }}">Órdenes</a> / {{ eq_link(o.codigo) }}</div>
+    <h1><span class="mono" style="font-size:22px">{{ o.id|ot }}</span> · {{ o.tipo }}{% if o.nivel %} {{ o.nivel }}{% endif %} — {{ o.codigo }}</h1>
+    <p>{{ chip(o.estado) }} {{ chip(o.prioridad or 'Normal', 'Prioridad ' ~ (o.prioridad or 'Normal')|lower) }} <span class="muted">· {{ o.origen or 'Manual' }} · creada {{ o.creado|fecha }}</span></p>
+  </div>
+  <div class="acciones">
+    {% if o.estado in ('Pendiente', 'Programada', 'En ejecución') %}<a class="btn" href="{{ url_for('orden_editar', oid=o.id) }}">Editar</a>{% endif %}
+    {% if o.estado in ('Pendiente', 'Programada', 'En ejecución') %}
+      <form method="post" action="{{ url_for('orden_accion', oid=o.id, accion='cancelar') }}" data-confirmar="¿Cancelar la {{ o.id|ot }}?"><button class="btn peligro">Cancelar orden</button></form>
+    {% endif %}
+  </div>
+</div>
+{% for a in avisos %}<div class="flash warn">{{ a }}</div>{% endfor %}
+
+<div class="grid g-21">
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Detalle</h2></div>
+      <div class="bd">
+        <div class="grid g2">
+          <dl class="dl">
+            <dt>Equipo</dt><dd>{{ eq_link(o.codigo) }} <small>{{ eq.marca }} {{ eq.modelo }}</small></dd>
+            <dt>Situación</dt><dd>{{ chip(eq.situacion) }}</dd>
+            <dt>Programada</dt><dd>{{ o.fecha_programada|fecha }}</dd>
+            <dt>Inicio</dt><dd>{{ o.fecha_inicio|fecha }}</dd>
+            <dt>Fin</dt><dd>{{ o.fecha_fin|fecha }}</dd>
+          </dl>
+          <dl class="dl">
+            <dt>Duración</dt><dd>{{ o.duracion_dias or 1 }} día(s) hábil(es)</dd>
+            <dt>Técnico-días</dt><dd>{{ o.tecnico_dias|num(1) }}</dd>
+            <dt>Costo estimado</dt><dd>{{ o.costo_estimado|soles }}</dd>
+            <dt>Costo real</dt><dd>{{ o.costo_real|soles }}</dd>
+            <dt>Horómetro</dt><dd>{{ (o.horometro|num(1) ~ ' h') if o.horometro is not none else '—' }}</dd>
+          </dl>
+        </div>
+        {% if dias %}<p style="margin:12px 0 0"><small>Días de taller:</small> {% for d in dias %}<span class="tag">{{ d|dia }} {{ d.strftime('%d/%m') }}</span> {% endfor %}</p>{% endif %}
+        {% if o.descripcion %}<div class="nota" style="margin-top:12px"><b>Trabajo:</b> {{ o.descripcion }}</div>{% endif %}
+        {% if o.observaciones %}<div class="nota" style="margin-top:8px"><b>Observaciones:</b> {{ o.observaciones }}</div>{% endif %}
+      </div>
+    </div>
+
+    {% if o.estado in ('Pendiente', 'Programada') %}
+    <form class="card" method="post" action="{{ url_for('orden_accion', oid=o.id, accion='iniciar') }}">
+      <div class="hd"><h2>Iniciar servicio</h2></div>
+      <div class="bd acciones">
+        <div><label>Fecha de inicio</label><input type="date" name="fecha_inicio" value="{{ REF.isoformat() }}"></div>
+        <button class="btn osc" style="align-self:end">Iniciar — el equipo pasa a taller</button>
+      </div>
+    </form>
+    {% endif %}
+
+    {% if o.estado in ('Pendiente', 'Programada', 'En ejecución') %}
+    <form class="card" method="post" action="{{ url_for('orden_accion', oid=o.id, accion='completar') }}">
+      <div class="hd"><h2>Cerrar orden</h2></div>
+      <div class="bd">
+        <div class="campos">
+          <div><label>Fecha de término</label><input type="date" name="fecha_fin" value="{{ REF.isoformat() }}" required></div>
+          <div><label>Horómetro al cierre (h)</label><input type="number" step="0.1" name="horometro" required {% if ult %}min="{{ ult.horometro }}" placeholder="≥ {{ ult.horometro|num(1) }}"{% endif %}></div>
+          <div><label>Nivel ejecutado</label><select name="nivel"><option value="">—</option>{% for n in NIVELES %}<option {{ 'selected' if o.nivel == n }}>{{ n }}</option>{% endfor %}</select></div>
+          <div><label>Costo real (S/)</label><input type="number" step="any" name="costo_real" value="{{ o.costo_estimado or '' }}"></div>
+          <div class="ancho"><label>Trabajos realizados / repuestos</label><textarea name="observaciones"></textarea></div>
+        </div>
+        {% if plan %}
+        <fieldset style="margin-top:14px">
+          <legend>Lista de tareas del plan — servicio {{ o.nivel }}{% if formato %} · formato «{{ formato.formato }}»{% endif %}</legend>
+          <div class="acciones" style="margin-bottom:8px"><button type="button" class="btn sm" data-marcar-todo>Marcar todas</button>
+            <span class="ayuda">{{ plan|map(attribute=1)|map('length')|sum }} tareas · el supervisor ({{ o.supervisor or CFG.jefe_mantenimiento or '—' }}) firma la conformidad</span></div>
+          {% for lista, tareas in plan %}
+            <h3 class="sub" style="margin:8px 0 4px">Lista {{ lista }}</h3>
+            <div class="tareas">{% for t in tareas %}<label class="check"><input type="checkbox" name="tareas" value="{{ t.codigo }}"> <span><b class="mono">{{ t.codigo }}</b> {{ t.tarea }}</span></label>{% endfor %}</div>
+          {% endfor %}
+          <label class="check" style="margin-top:10px"><input type="checkbox" name="confirmar_incompleto" value="1"> Cerrar aunque queden tareas sin marcar (anótelas en «Trabajos realizados»)</label>
+        </fieldset>
+        {% endif %}
+        <div class="acciones" style="margin-top:12px"><button class="btn pri">{{ icono('ok') }} Completar servicio</button>
+          {% if o.tipo == 'Preventivo' %}<span class="ayuda">Al completar, el contador de días y de horas del equipo se reinicia.</span>{% endif %}</div>
+      </div>
+    </form>
+    {% endif %}
+  </div>
+
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Técnicos</h2>{% if o.estado in ('Pendiente','Programada','En ejecución') %}<a href="{{ url_for('orden_editar', oid=o.id) }}">Asignar</a>{% endif %}</div>
+      <ul class="lista">
+        {% for t in tecs %}<li><span class="persona"><span class="avatar">{{ t.nombre[:1] }}{{ t.nombre.split(' ')[-1][:1] }}</span><a href="{{ url_for('tecnico', tid=t.id) }}">{{ t.nombre }}</a></span><small>{{ t.especialidad or '' }}</small></li>{% endfor %}
+        {% if not tecs %}<li class="muted">Sin técnico asignado.</li>{% endif %}
+      </ul>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Estado del equipo</h2>{{ chip(m.estado) }}</div>
+      <div class="bd">
+        <dl class="dl">
+          <dt>Restante</dt><dd>{{ restante(m) }}</dd>
+          <dt>Último servicio</dt><dd>{{ m.fecha_pm|fecha }}</dd>
+          <dt>Próximo</dt><dd>{{ m.nivel or '—' }} a {{ m.proximo_h|num(0) }} h</dd>
+          <dt>Última lectura</dt><dd>{{ (ult.horometro|num(1) ~ ' h · ' ~ (ult.fecha|fecha)) if ult else '—' }}</dd>
+        </dl>
+        {% if alq %}<div class="nota warn" style="margin-top:10px">El equipo está en obra ({{ alq.obra }}). El servicio se ejecutará en obra o al retorno.</div>{% endif %}
+      </div>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Supervisión</h2></div>
+      <div class="bd"><dl class="dl"><dt>SUPRV./JEFE</dt><dd>{{ o.supervisor or CFG.jefe_mantenimiento or '—' }}</dd></dl></div>
+    </div>
+    {% if o.estado == 'Completada' and plan %}
+    <div class="card">
+      <div class="hd"><h2>Tareas del servicio {{ o.nivel }}</h2>
+        {% if hechas is not none %}<span class="muted">{{ hechas|length }} registradas</span>{% else %}<span class="tag">no registradas</span>{% endif %}</div>
+      <div class="bd" style="max-height:360px;overflow:auto">
+        {% if hechas is none %}<p class="ayuda" style="margin-top:0">La orden se cerró sin registrar la lista. Tareas que corresponden al nivel según el formato:</p>{% endif %}
+        {% for lista, tareas in plan %}
+          <h3 class="sub" style="margin:6px 0 4px">Lista {{ lista }}</h3>
+          <ul class="lista-tareas">{% for t in tareas %}<li class="{{ 'hecha' if hechas and t.codigo in hechas else ('falta' if hechas is not none else '') }}"><b class="mono">{{ t.codigo }}</b> {{ t.tarea }}</li>{% endfor %}</ul>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% from '_m.html' import chip, eq_link, icono, restante %}
+{% block titulo %}Documentos de mantenimiento{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Documentos de mantenimiento</h1>
+    <p>El último servicio de cada equipo se toma de su carpeta (<span class="mono">{{ docs_dir }}</span>): el formato «Plan de Procesos de Mantenimiento» y el certificado de mantenimiento dan la fecha y el horómetro del preventivo; el certificado de operatividad, emitido al despachar, da una lectura de horómetro. Se leen también las subcarpetas y los .zip. Al volver a leer sólo se agrega lo que el sistema aún no tiene.</p>
+  </div>
+  <div class="acciones">
+    <form method="post" action="{{ url_for('documentos_releer') }}"><button class="btn osc">{{ icono('doc') }} Volver a leer las carpetas</button></form>
+    <a class="btn" href="{{ url_for('almacen') }}">{{ icono('almacen') }} Almacén en vivo</a>
+  </div>
+</div>
+
+{% if inf %}
+<div class="grid g5" style="margin-bottom:16px">
+  <div class="card kpi"><span class="l">Leído el</span><span class="v">{{ inf.fecha|fecha('%d/%m') }}</span><span class="s">{{ inf.documentos or '—' }} documentos de {{ inf.carpetas or inf.equipos|length }} carpetas</span></div>
+  <div class="card kpi"><span class="l">Servicios desde las carpetas</span><span class="v">{{ inf.total_servicios if inf.total_servicios is defined else inf.nuevos_servicios }}</span><span class="s">que no estaban en el registro del 22/09 · {{ inf.nuevos_servicios }} en la última lectura</span></div>
+  <div class="card kpi"><span class="l">Vigentes</span><span class="v" style="color:var(--ok)">{{ est['Vigente'] or 0 }}</span><span class="s">{{ est['Por vencer'] or 0 }} por vencer</span></div>
+  <div class="card kpi"><span class="l">Vencidos</span><span class="v" style="color:var(--bad)">{{ est['Vencido'] or 0 }}</span><span class="s">{{ solo_cal }} sólo por calendario ({{ CFG.intervalo_tijeras or 90 }} d) · {{ (est['Vencido'] or 0) - solo_cal }} por horas</span></div>
+  <div class="card kpi"><span class="l">Observaciones</span><span class="v">{{ inf.incoherencias }}</span><span class="s">documentos que no cuadran entre sí</span></div>
+</div>
+
+<div class="card">
+  <div class="hd"><h2>Último servicio por equipo</h2>
+    <div class="seg">
+      <a class="btn-seg {{ 'on' if filtro == 'todos' }}" href="{{ url_for('documentos') }}">Todos</a>
+      <a class="btn-seg {{ 'on' if filtro == 'nuevos' }}" href="{{ url_for('documentos', ver='nuevos') }}">Servicios tomados de la carpeta</a>
+      <a class="btn-seg {{ 'on' if filtro == 'obs' }}" href="{{ url_for('documentos', ver='obs') }}">Con observaciones</a>
+    </div>
+  </div>
+  <div class="bd flush tabla-wrap">
+    <table>
+      <thead><tr><th>Equipo</th><th>Último preventivo documentado</th><th>Horómetro</th><th>Último cert. de operatividad</th><th>Estado hoy</th><th>Observaciones</th></tr></thead>
+      <tbody>{% for f in filas %}{% set u = f.ultimo %}{% set m = f.mant %}
+        <tr>
+          <td>{% if f.en_sistema %}{{ eq_link(f.codigo) }}{% else %}<b>{{ f.codigo }}</b>{% endif %}{% if f.en_sistema and not f.activo %}<br><small class="muted">fuera de flota</small>{% endif %}</td>
+          <td style="white-space:nowrap">{% if u %}<b>{{ u.fecha|fecha }}</b>{% if u.fecha in (f.de_carpeta or []) %} <span class="chip info plain">de la carpeta</span>{% endif %}<br><small class="muted">{{ u.archivo }}</small>{% else %}<span class="muted">sin formato PM</span>{% endif %}</td>
+          <td style="white-space:nowrap">{% if u and u.horometro is not none %}{{ u.horometro|num(1) }} h{% if u.proximo_h %}<br><small class="muted">próximo {{ u.proximo_h|num(1) }} h</small>{% endif %}{% else %}—{% endif %}</td>
+          <td style="white-space:nowrap">{% if f.ult_co %}{{ f.ult_co.fecha|fecha }} · {{ f.ult_co.horometro|num(1) }} h{% if m and m.fecha_inspeccion == f.ult_co.fecha %}<br><small class="muted">renueva el plazo</small>{% endif %}{% else %}<span class="muted">—</span>{% endif %}</td>
+          <td style="white-space:nowrap">{% if m %}{{ chip(m.estado) }}<br><small>{{ restante(m) }}</small>{% else %}—{% endif %}</td>
+          <td>{% if f.incoherencias %}<ul class="obs">{% for i in f.incoherencias %}<li>{{ i }}</li>{% endfor %}</ul>{% else %}<span class="muted">—</span>{% endif %}</td>
+        </tr>
+      {% else %}<tr><td colspan="6"><div class="vacio">Nada que mostrar con este filtro.</div></td></tr>{% endfor %}</tbody>
+    </table>
+  </div>
+</div>
+<div class="nota" style="margin-top:12px">El semáforo usa el intervalo de calendario de <a href="{{ url_for('configuracion') }}">Configuración</a> y la frecuencia en horas de cada equipo, lo que ocurra primero. {% if CFG.inspeccion_reinicia != '0' %}El plazo de calendario corre desde el último certificado de operatividad emitido después del preventivo (la inspección al despachar lo renueva); las horas se cuentan siempre desde el preventivo.{% else %}El certificado de operatividad no reinicia el plazo: sólo actualiza el horómetro.{% endif %}</div>
+{% else %}
+<div class="card"><div class="vacio">Aún no se han leído las carpetas de los equipos. Pulse «Volver a leer las carpetas».</div></div>
+{% endif %}
+{% endblock %}

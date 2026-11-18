@@ -1,0 +1,33 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, eq_link, icono %}
+{% block titulo %}Incidentes en obra{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Registro de incidentes en obra</h1>
+    <p>Cada falla queda asociada al estado de mantenimiento que tenía el equipo ese día: es la base para estimar la probabilidad real de falla.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('exportar', tabla='incidentes') }}">{{ icono('csv') }} CSV</a>
+    <a class="btn pri" href="{{ url_for('incidente_nuevo') }}">{{ icono('mas') }} Registrar incidente</a>
+  </div>
+</div>
+<div class="grid g4" style="margin-bottom:16px">
+  <div class="card kpi"><span class="l">Incidentes registrados</span><span class="v">{{ n }}</span></div>
+  <div class="card kpi {{ 'alerta' if venc }}"><span class="l">Con mantenimiento vencido</span><span class="v">{{ venc }}</span><span class="s">{{ ((venc / n * 100)|num(0) ~ ' % del total') if n else '' }}</span></div>
+  <div class="card kpi"><span class="l">Costo de atención</span><span class="v" style="font-size:24px">{{ costo|soles }}</span></div>
+  <div class="card kpi"><span class="l">Días de equipo parado</span><span class="v">{{ dias|num(1) }}</span></div>
+</div>
+<div class="card"><div class="bd flush tabla-wrap">
+  {% if filas %}
+  <table><thead><tr><th>Fecha</th><th>Equipo</th><th>Cliente · obra</th><th>Descripción</th><th class="n">Horómetro</th><th>Mantenimiento ese día</th><th>Técnico</th><th class="n">Costo</th><th class="n">Días parado</th><th>OT</th></tr></thead>
+  <tbody>{% for i in filas %}
+    <tr><td>{{ i.fecha|fecha }}</td><td>{{ eq_link(i.codigo) }}</td><td>{{ i.cliente or '—' }}<br><small>{{ i.obra or '' }}</small></td>
+      <td>{{ i.descripcion }}</td><td class="n">{{ i.horometro|num(1) if i.horometro else '—' }}</td><td>{{ chip(i.mant_estado) }}</td>
+      <td>{{ i.tecnico or '—' }}</td><td class="n">{{ i.costo|soles }}</td><td class="n">{{ i.dias_parado|num(1) if i.dias_parado else '—' }}</td>
+      <td>{% if i.orden_id %}<a class="mono" href="{{ url_for('orden', oid=i.orden_id) }}">{{ i.orden_id|ot }}</a>{% endif %}</td></tr>
+  {% endfor %}</tbody></table>
+  {% else %}<div class="vacio">Aún no hay incidentes registrados. Registrar cada falla en obra —equipo, fecha, horómetro y costo— permitirá reemplazar la probabilidad de falla supuesta por una medida real.</div>{% endif %}
+</div></div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, restante, eq_link, icono %}
+{% block titulo %}Uso y alquileres{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Uso de los equipos</h1>
+    <p>Contratos en obra y su historial. El estado de mantenimiento se muestra junto a cada contrato.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('exportar', tabla='alquileres') }}">{{ icono('csv') }} CSV</a>
+    <a class="btn pri" href="{{ url_for('despacho') }}">{{ icono('despacho') }} Despachar equipo</a>
+  </div>
+</div>
+<div class="tabs">
+  <a href="{{ url_for('alquileres', estado='En obra') }}" class="{{ 'on' if estado == 'En obra' }}">En obra</a>
+  <a href="{{ url_for('alquileres', estado='Cerrado') }}" class="{{ 'on' if estado == 'Cerrado' }}">Cerrados</a>
+</div>
+
+{% if estado == 'En obra' %}
+{% set venc = filas|selectattr('fecha_vencimiento')|selectattr('fecha_vencimiento', 'lt', REF.isoformat())|list %}
+<div class="grid g4" style="margin-bottom:16px">
+  <div class="card kpi"><span class="l">Equipos en obra</span><span class="v">{{ filas|length }}</span></div>
+  <div class="card kpi {{ 'alerta' if venc }}"><span class="l">Contratos vencidos sin retorno</span><span class="v">{{ venc|length }}</span><span class="s">registre la prórroga o el retorno</span></div>
+  <div class="card kpi"><span class="l">Obras atendidas</span><span class="v">{{ filas|map(attribute='obra')|unique|list|length }}</span></div>
+  <div class="card kpi"><span class="l">Clientes</span><span class="v">{{ filas|map(attribute='cliente')|unique|list|length }}</span>
+    <span class="s">{% for c in clientes[:2] %}{{ c.cliente }} ({{ c.n }}){{ ', ' if not loop.last }}{% endfor %}</span></div>
+</div>
+{% endif %}
+
+<div class="card">
+  <div class="filtros"><input type="search" placeholder="Filtrar por equipo, cliente u obra…" oninput="for (const tr of document.querySelectorAll('#t-alq tbody tr')) tr.hidden = !tr.textContent.toLowerCase().includes(this.value.toLowerCase())"></div>
+  <div class="tabla-wrap">
+  {% if filas %}
+  <table id="t-alq">
+    <thead><tr><th>Equipo</th><th>Cliente</th><th>Obra</th><th>Zona</th><th>Salida</th><th>Vencimiento</th>
+      {% if estado == 'Cerrado' %}<th>Retorno</th><th class="n">Horas usadas</th>{% else %}<th>Mantenimiento hoy</th>{% endif %}<th>A la salida</th><th></th></tr></thead>
+    <tbody>
+    {% for a in filas %}
+      {% set e = flota.get(a.equipo_id) %}
+      {% set vencido = a.fecha_vencimiento and a.fecha_vencimiento < REF.isoformat() %}
+      <tr>
+        <td>{{ eq_link(a.codigo) }}<br><small>{{ a.marca }} {{ a.modelo }}</small></td>
+        <td>{{ a.cliente or '—' }}</td><td>{{ a.obra or '—' }}</td><td>{{ a.zona or '—' }}</td>
+        <td>{{ a.fecha_salida|fecha }}</td>
+        <td>{{ a.fecha_vencimiento|fecha }}{% if estado == 'En obra' and vencido %}<br><span class="chip bad plain">+{{ a.fecha_vencimiento|dias_hasta(REF) }} d</span>{% endif %}</td>
+        {% if estado == 'Cerrado' %}
+          <td>{{ a.fecha_retorno|fecha }}</td>
+          <td class="n">{{ ((a.horometro_retorno - a.horometro_salida)|num(1)) if a.horometro_retorno and a.horometro_salida else '—' }}</td>
+        {% else %}
+          <td>{% if e %}{{ chip(e.mant.estado) }}<br><small>{{ restante(e.mant) }}</small>{% endif %}</td>
+        {% endif %}
+        <td>{% if a.mant_estado_salida %}{{ chip(a.mant_estado_salida) }}{% else %}<small class="muted">sin registro</small>{% endif %}
+          {% if a.excepcion_motivo %}<br><small title="{{ a.excepcion_motivo }}">⚑ excepción: {{ a.excepcion_autoriza }}</small>{% endif %}</td>
+        <td class="n">{% if estado == 'En obra' %}
+          <a class="btn sm osc" href="{{ url_for('retorno', aid=a.id) }}">Retorno</a>
+          <details style="display:inline-block;position:relative"><summary class="btn sm" style="list-style:none">Prórroga</summary>
+            <form method="post" action="{{ url_for('prorroga', aid=a.id) }}" class="card" style="position:absolute;right:0;z-index:5;padding:10px;display:flex;gap:6px;width:250px">
+              <input type="date" name="fecha_vencimiento" required><button class="btn sm pri">OK</button></form>
+          </details>
+        {% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}<div class="vacio">No hay contratos en este estado.</div>{% endif %}
+  </div>
+</div>
+{% endblock %}

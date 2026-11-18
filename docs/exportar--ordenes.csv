@@ -1,0 +1,118 @@
+﻿OT;Equipo;Tipo;Nivel;Estado;Prioridad;Programada;Inicio;Fin;Horómetro;Técnicos;Costo estimado;Costo real;Origen;Descripción
+OT-0117;TECL-029;Preventivo;A+B;Programada;Alta;2026-11-20;;;;Técnico A;650.0;;Optimización PLEM · corrida 4 (E3);Servicio A+B programado por el modelo de optimización
+OT-0116;TECL-007;Preventivo;A+B+C;Programada;Alta;2026-11-19;;;;Técnico B;1200.0;;Optimización PLEM · corrida 4 (E3);Servicio A+B+C programado por el modelo de optimización
+OT-0115;TECL-062;Preventivo;A;Programada;Alta;2026-11-17;;;;Técnico B;280.0;;Optimización PLEM · corrida 4 (E3);Servicio A programado por el modelo de optimización
+OT-0114;TECL-076;Preventivo;A+B+C+D;Completada;Normal;2026-07-15;2026-07-15;2026-07-15;40.0;Técnico A;;;Documento de carpeta;Servicio A+B+C+D documentado en la carpeta del equipo
+OT-0113;TECL-075;Preventivo;A+B+C+D;Completada;Normal;2026-09-15;2026-09-15;2026-09-15;58.0;Técnico A;;;Documento de carpeta;Servicio A+B+C+D documentado en la carpeta del equipo
+OT-0112;TECL-074;Preventivo;A+B+C+D;Completada;Normal;2026-09-15;2026-09-15;2026-09-15;46.0;Técnico A;;;Documento de carpeta;Servicio A+B+C+D documentado en la carpeta del equipo
+OT-0111;TECL-073;Preventivo;A+B+C+D;Completada;Normal;2026-09-15;2026-09-15;2026-09-15;30.0;Técnico A;;;Documento de carpeta;Servicio A+B+C+D documentado en la carpeta del equipo
+OT-0110;TECL-072;Preventivo;A+B+C+D;Completada;Normal;2026-09-15;2026-09-15;2026-09-15;63.0;Técnico A;;;Documento de carpeta;Servicio A+B+C+D documentado en la carpeta del equipo
+OT-0109;TECL-070;Preventivo;A+B+C+D;Completada;Normal;2026-08-12;2026-08-12;2026-08-12;70.0;Técnico A;;;Documento de carpeta;Servicio A+B+C+D documentado en la carpeta del equipo
+OT-0108;TECL-069;Preventivo;A+B+C+D;Completada;Normal;2026-11-06;2026-11-06;2026-11-06;42.2;Técnico A;;;Documento de carpeta;Servicio A+B+C+D documentado en la carpeta del equipo
+OT-0107;TECL-061;Preventivo;A;Completada;Normal;2026-10-19;2026-10-19;2026-10-19;260.0;Técnico B;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0106;TECL-054;Preventivo;A+B;Completada;Normal;2026-09-30;2026-09-30;2026-09-30;363.0;Técnico A;;;Documento de carpeta;Servicio A+B documentado en la carpeta del equipo
+OT-0105;TECL-048;Preventivo;A+B+C+D;Completada;Normal;2026-11-13;2026-11-13;2026-11-13;19050.0;Técnico A;;;Documento de carpeta;Servicio A+B+C+D documentado en la carpeta del equipo
+OT-0104;TECL-044;Preventivo;A;Completada;Normal;2026-09-30;2026-09-30;2026-09-30;1381.6;Técnico A;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0103;TECL-043;Preventivo;A+B+C;Completada;Normal;2026-07-20;2026-07-20;2026-07-20;510.0;Técnico A;;;Documento de carpeta;Servicio A+B+C documentado en la carpeta del equipo
+OT-0102;TECL-037;Preventivo;A+B;Completada;Normal;2026-07-20;2026-07-20;2026-07-20;345.0;Técnico A;;;Documento de carpeta;Servicio A+B documentado en la carpeta del equipo
+OT-0101;TECL-032;Preventivo;A+B;Completada;Normal;2026-08-25;2026-08-25;2026-08-25;338.0;Técnico A;;;Documento de carpeta;Servicio A+B documentado en la carpeta del equipo
+OT-0100;TECL-028;Preventivo;A;Completada;Normal;2026-09-20;2026-09-20;2026-09-20;820.0;Técnico B;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0099;TECL-027;Preventivo;A;Completada;Normal;2026-10-09;2026-10-09;2026-10-09;789.7;Técnico A;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0098;TECL-019;Preventivo;A;Completada;Normal;2026-10-01;2026-10-01;2026-10-01;737.0;Técnico A;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0097;TECL-018;Preventivo;A;Completada;Normal;2026-09-24;2026-09-24;2026-09-24;1777.0;Técnico A;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0096;TECL-011;Preventivo;A;Completada;Normal;2026-09-10;2026-09-10;2026-09-10;13269.2;Técnico A;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0095;TECL-009;Preventivo;A+B;Completada;Normal;2026-09-16;2026-09-16;2026-09-16;602.0;Técnico A;;;Documento de carpeta;Servicio A+B documentado en la carpeta del equipo
+OT-0094;TECL-006;Preventivo;A;Completada;Normal;2026-07-25;2026-07-25;2026-07-25;1190.0;Técnico A;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0093;TECL-002;Preventivo;A;Completada;Normal;2026-09-30;2026-09-30;2026-09-30;1497.0;Técnico A;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0092;BECL-006;Preventivo;A;Completada;Normal;2026-11-01;2026-11-01;2026-11-01;470.0;Técnico A;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0091;BECL-003;Preventivo;A+B+C;Completada;Normal;2026-09-20;2026-09-20;2026-09-20;1032.9;Técnico A;;;Documento de carpeta;Servicio A+B+C documentado en la carpeta del equipo
+OT-0090;BECL-001;Preventivo;A;Completada;Normal;2026-09-05;2026-09-05;2026-09-05;3378.0;Técnico A;;;Documento de carpeta;Servicio A documentado en la carpeta del equipo
+OT-0089;TECL-057;Preventivo;A;Programada;Alta;2026-11-18;;;;Técnico C;280.0;;Optimización PLEM · corrida 4 (E3);Servicio A programado por el modelo de optimización
+OT-0088;TECL-042;Preventivo;A;Programada;Alta;2026-11-23;;;;Técnico C;280.0;;Optimización PLEM · corrida 4 (E3);Servicio A programado por el modelo de optimización
+OT-0087;TECL-028;Preventivo;A+B;Cancelada;Alta;;;;;;650.0;;Optimización PLEM · corrida 3 (E3);Servicio A+B programado por el modelo de optimización
+OT-0086;TECL-041;Preventivo;A;Programada;Alta;2026-11-21;;;;Técnico C;280.0;;Optimización PLEM · corrida 4 (E3);Servicio A programado por el modelo de optimización
+OT-0085;TECL-030;Preventivo;A;Cancelada;Alta;;;;;;280.0;;Optimización PLEM · corrida 3 (E3);Servicio A programado por el modelo de optimización
+OT-0084;TECL-025;Preventivo;A;Pendiente;Alta;2026-11-26;;;;;280.0;;Optimización PLEM · corrida 3 (E3);Servicio A programado por el modelo de optimización
+OT-0083;TECL-058;Preventivo;A+B;Cancelada;Alta;;;;;;650.0;;Optimización PLEM · corrida 3 (E3);Servicio A+B programado por el modelo de optimización
+OT-0082;TECL-012;Preventivo;A+B;Programada;Alta;2026-11-17;;;;Técnico A;650.0;;Optimización PLEM · corrida 4 (E3);Servicio A+B programado por el modelo de optimización
+OT-0081;TECL-074;Preventivo;A;Pendiente;Alta;2026-11-24;;;;;280.0;;Optimización PLEM · corrida 3 (E3);Servicio A programado por el modelo de optimización
+OT-0080;TECL-051;Preventivo;A;Programada;Alta;2026-11-19;;;;Técnico C;280.0;;Optimización PLEM · corrida 4 (E3);Servicio A programado por el modelo de optimización
+OT-0079;TECL-043;Preventivo;A+B+C;Cancelada;Alta;;;;;;1200.0;;Optimización PLEM · corrida 3 (E3);Servicio A+B+C programado por el modelo de optimización
+OT-0078;TECL-076;Preventivo;A;Cancelada;Alta;;;;;;280.0;;Optimización PLEM · corrida 3 (E3);Servicio A programado por el modelo de optimización
+OT-0077;TECL-075;Preventivo;A;Cancelada;Alta;;;;;;280.0;;Optimización PLEM · corrida 3 (E3);Servicio A programado por el modelo de optimización
+OT-0076;TECL-073;Preventivo;A;Cancelada;Alta;;;;;;280.0;;Optimización PLEM · corrida 3 (E3);Servicio A programado por el modelo de optimización
+OT-0075;UPCL-001;Preventivo;A;Completada;Normal;2026-07-04;2026-07-04;2026-07-04;285.9;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0074;TECL-076;Preventivo;A;Completada;Normal;2025-12-15;2025-12-15;2025-12-15;0.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0073;TECL-075;Preventivo;A;Completada;Normal;2025-12-15;2025-12-15;2025-12-15;0.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0072;TECL-074;Preventivo;A;Completada;Normal;2025-12-15;2025-12-15;2025-12-15;0.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0071;TECL-073;Preventivo;A;Completada;Normal;2025-12-15;2025-12-15;2025-12-15;0.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0070;TECL-072;Preventivo;A;Completada;Normal;2025-12-15;2025-12-15;2025-12-15;0.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0069;TECL-071;Preventivo;A;Completada;Normal;2026-07-12;2026-07-12;2026-07-12;60.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0068;TECL-070;Preventivo;A;Completada;Normal;2025-12-12;2025-12-12;2025-12-12;0.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0067;TECL-069;Preventivo;A;Completada;Normal;2025-12-12;2025-12-12;2025-12-12;0.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0066;TECL-068;Preventivo;A;Completada;Normal;2025-12-12;2025-12-12;2025-12-12;0.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0065;TECL-067;Preventivo;A;Completada;Normal;2025-12-12;2025-12-12;2025-12-12;0.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0064;TECL-066;Preventivo;A;Completada;Normal;2026-06-20;2026-06-20;2026-06-20;40.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0063;TECL-065;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;350.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0062;TECL-064;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;100.0;Técnico B;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0061;TECL-063;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;147.3;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0060;TECL-062;Preventivo;A;Completada;Normal;2026-08-08;2026-08-08;2026-08-08;160.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0059;TECL-061;Preventivo;A;Completada;Normal;2026-07-19;2026-07-19;2026-07-19;180.0;Técnico B;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0058;TECL-060;Preventivo;A;Completada;Normal;2026-04-25;2026-04-25;2026-04-25;1221.9;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0057;TECL-059;Preventivo;A;Completada;Normal;2025-12-26;2025-12-26;2025-12-26;1003.9;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0056;TECL-058;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;1100.3;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0055;TECL-057;Preventivo;A;Completada;Normal;2026-05-05;2026-05-05;2026-05-05;98.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0054;TECL-056;Preventivo;A;Completada;Normal;2025-07-22;2025-07-22;2025-07-22;495.3;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0053;TECL-055;Preventivo;A;Completada;Normal;2026-07-20;2026-07-20;2026-07-20;1088.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0052;TECL-053;Preventivo;A;Completada;Normal;2026-06-20;2026-06-20;2026-06-20;670.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0051;TECL-051;Preventivo;A;Completada;Normal;2026-07-04;2026-07-04;2026-07-04;1005.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0050;TECL-050;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;890.4;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0049;TECL-049;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;1040.7;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0048;TECL-047;Preventivo;A;Completada;Normal;2026-07-22;2026-07-22;2026-07-22;1830.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0047;TECL-045;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;342.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0046;TECL-043;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;499.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0045;TECL-042;Preventivo;A;Completada;Normal;2026-06-20;2026-06-20;2026-06-20;300.2;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0044;TECL-041;Preventivo;A;Completada;Normal;2026-07-20;2026-07-20;2026-07-20;673.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0043;TECL-040;Preventivo;A;Completada;Normal;2026-06-15;2026-06-15;2026-06-15;1510.5;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0042;TECL-039;Preventivo;A;Completada;Normal;2026-06-15;2026-06-15;2026-06-15;1123.3;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0041;TECL-038;Preventivo;A;Completada;Normal;2026-04-05;2026-04-05;2026-04-05;840.9;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0040;TECL-037;Preventivo;A;Completada;Normal;2025-06-20;2025-06-20;2025-06-20;215.5;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0039;TECL-035;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;360.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0038;TECL-034;Preventivo;A;Completada;Normal;2026-06-22;2026-06-22;2026-06-22;993.1;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0037;TECL-033;Preventivo;A;Completada;Normal;2026-05-05;2026-05-05;2026-05-05;504.3;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0036;TECL-031;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;550.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0035;TECL-030;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;322.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0034;TECL-029;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;535.1;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0033;TECL-028;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;809.0;Técnico B;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0032;TECL-025;Preventivo;A;Completada;Normal;2026-06-20;2026-06-20;2026-06-20;1373.3;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0031;TECL-024;Preventivo;A;Completada;Normal;2026-06-20;2026-06-20;2026-06-20;550.7;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0030;TECL-023;Preventivo;A;Completada;Normal;2026-03-15;2026-03-15;2026-03-15;1063.2;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0029;TECL-022;Preventivo;A;Completada;Normal;2026-04-05;2026-04-05;2026-04-05;327.1;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0028;TECL-021;Preventivo;A;Completada;Normal;2026-06-20;2026-06-20;2026-06-20;474.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0027;TECL-020;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;1147.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0026;TECL-019;Preventivo;A;Completada;Normal;2025-12-20;2025-12-20;2025-12-20;596.1;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0025;TECL-018;Preventivo;A;Completada;Normal;2025-11-24;2025-11-24;2025-11-24;1759.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0024;TECL-017;Preventivo;A;Completada;Normal;2026-01-09;2026-01-09;2026-01-09;1256.5;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0023;TECL-016;Preventivo;A;Completada;Normal;2026-06-20;2026-06-20;2026-06-20;1505.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0022;TECL-015;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;1330.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0021;TECL-014;Preventivo;A;Completada;Normal;2026-06-27;2026-06-27;2026-06-27;1315.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0020;TECL-013;Preventivo;A;Completada;Normal;2026-07-25;2026-07-25;2026-07-25;1780.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0019;TECL-012;Preventivo;A;Completada;Normal;2026-07-20;2026-07-20;2026-07-20;1194.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0018;TECL-011;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;12464.8;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0017;TECL-010;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;893.6;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0016;TECL-008;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;960.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0015;TECL-007;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;476.5;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0014;TECL-006;Preventivo;A;Completada;Normal;2025-11-25;2025-11-25;2025-11-25;1129.8;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0013;TECL-005;Preventivo;A;Completada;Normal;2026-05-05;2026-05-05;2026-05-05;635.4;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0012;TECL-004;Preventivo;A;Completada;Normal;2026-08-17;2026-08-17;2026-08-17;1450.0;Técnico B;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0011;TECL-003;Preventivo;A;Completada;Normal;2025-07-30;2025-07-30;2025-07-30;1461.5;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0010;TECL-001;Preventivo;A;Completada;Normal;2026-06-20;2026-06-20;2026-06-20;1560.6;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0009;BECL-006;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;436.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0008;BECL-005;Preventivo;A;Completada;Normal;2026-05-20;2026-05-20;2026-05-20;905.6;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0007;BECL-004;Preventivo;A;Completada;Normal;2026-07-20;2026-07-20;2026-07-20;950.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0006;BECL-003;Preventivo;A;Completada;Normal;2026-04-20;2026-04-20;2026-04-20;12905.1;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0005;BECL-002;Preventivo;A;Completada;Normal;2026-07-10;2026-07-10;2026-07-10;3700.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0004;BECL-001;Preventivo;A;Completada;Normal;2026-05-05;2026-05-05;2026-05-05;3378.0;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0003;BCCL-004;Preventivo;A;Completada;Normal;2026-07-20;2026-07-20;2026-07-20;10900.1;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0002;BCCL-002;Preventivo;A;Completada;Normal;2026-05-10;2026-05-10;2026-05-10;6840.5;Técnico A;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017
+OT-0001;BCCL-001;Preventivo;A;Completada;Normal;2026-07-07;2026-07-07;2026-07-07;2200.0;Técnico C;;;Histórico (expediente);Servicio A documentado en el formato Mntto-PPMTE-2017

@@ -1,0 +1,4615 @@
+{
+ "leido": "2026-11-17",
+ "carpeta": "Expedientes",
+ "equipos": {
+  "BCCL-001": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-07",
+    "fecha_tabla": "2026-07-07",
+    "horometro": 2200.0,
+    "frecuencia": 250,
+    "proximo_h": 2450.0,
+    "plan": {
+     "fecha": "2026-07-07",
+     "horometro": 2200.0,
+     "proximo_h": 2450.0,
+     "frecuencia": null,
+     "ejecutor": "TÉCNICO C",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "BCCL-001",
+     "serie": "AD-110725"
+    },
+    "fecha": "2026-07-07",
+    "codigo_doc": "BCCL-001",
+    "fecha_archivo": null,
+    "hash": "07e4b716720c148a9b5c4d0c76c2b7d8",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO BCCL-001.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-12",
+    "horometro": 2215.9,
+    "codigo_doc": "BCCL-001",
+    "fecha_archivo": null,
+    "hash": "204a6368294844b662f9cab1b808058f",
+    "rutas": [
+     "Certificado de Operatividad BCCL-001.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-07",
+    "horometro": 2200.0,
+    "proximo_h": 2450.0,
+    "frecuencia": null,
+    "ejecutor": "TÉCNICO C",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "BCCL-001",
+    "serie": "AD-110725",
+    "fecha_archivo": "2026-07-07",
+    "hash": "f929bd65476242b7a2615f64a3a127b8",
+    "rutas": [
+     "BCCL001 07.07.26.pdf"
+    ]
+   }
+  ],
+  "BCCL-002": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-10",
+    "fecha_tabla": "2026-05-10",
+    "horometro": 6840.5,
+    "frecuencia": 250,
+    "proximo_h": 7090.5,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 6840.5,
+     "proximo_h": 7090.5,
+     "frecuencia": null,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "BCCL-002",
+     "serie": "0300126253"
+    },
+    "fecha": "2026-05-10",
+    "codigo_doc": "BCCL-002",
+    "fecha_archivo": null,
+    "hash": "f722cd3daa17707e0caf7b4fb97fffe0",
+    "rutas": [
+     "BCCL002\\CERTIFICADO DE MANTENIMIENTO BCCL-002.pdf",
+     "BCCL002.zip: BCCL002/CERTIFICADO DE MANTENIMIENTO BCCL-002.pdf",
+     "CERTIFICADO DE MANTENIMIENTO BCCL-002.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-14",
+    "horometro": 6875.0,
+    "codigo_doc": "BCCL-002",
+    "fecha_archivo": null,
+    "hash": "acbb56f2a50755b2cd286fe8f4c8aa09",
+    "rutas": [
+     "BCCL002\\Certificado de Operatividad BCCL-002.pdf",
+     "BCCL002.zip: BCCL002/Certificado de Operatividad BCCL-002.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-17",
+    "horometro": 6875.0,
+    "codigo_doc": "BCCL-002",
+    "fecha_archivo": null,
+    "hash": "a5bf2cf402bc25e82015e980b0605343",
+    "rutas": [
+     "Certificado de Operatividad BCCL-002.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-10",
+    "horometro": 6840.5,
+    "proximo_h": 7090.5,
+    "frecuencia": null,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "BCCL-002",
+    "serie": "0300126253",
+    "fecha_archivo": "2026-05-10",
+    "hash": "21e8b30d4ebeaad3eb49f0633316f321",
+    "rutas": [
+     "BCCL002\\BCCL002 10.05.26.pdf",
+     "BCCL002 10.05.26.pdf",
+     "BCCL002.zip: BCCL002/BCCL002 10.05.26.pdf"
+    ]
+   }
+  ],
+  "BCCL-004": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-20",
+    "fecha_tabla": "2026-07-20",
+    "horometro": 10900.1,
+    "frecuencia": 250,
+    "proximo_h": 11150.1,
+    "plan": {
+     "fecha": "2026-07-20",
+     "horometro": 10900.1,
+     "proximo_h": 11150.1,
+     "frecuencia": null,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "BCCL-004",
+     "serie": "AD-111377"
+    },
+    "fecha": "2026-07-20",
+    "codigo_doc": "BCCL-004",
+    "fecha_archivo": null,
+    "hash": "9fa8cf8851a191e743e7e8dac5a1cef6",
+    "rutas": [
+     "BCCL004\\CERTIFICADO DE MANTENIMIENTO BCCL-004.pdf",
+     "BCCL004.zip: BCCL004/CERTIFICADO DE MANTENIMIENTO BCCL-004.pdf",
+     "CERTIFICADO DE MANTENIMIENTO BCCL-004.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-14",
+    "horometro": 10925.5,
+    "codigo_doc": "BCCL-004",
+    "fecha_archivo": null,
+    "hash": "889aab23d13902a1f3961a3f154ac5d9",
+    "rutas": [
+     "BCCL004\\Certificado de Operatividad BCCL-004.pdf",
+     "BCCL004.zip: BCCL004/Certificado de Operatividad BCCL-004.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-10",
+    "horometro": 10925.5,
+    "codigo_doc": "BCCL-004",
+    "fecha_archivo": null,
+    "hash": "4202e1c58102baf41e954190131bc8a7",
+    "rutas": [
+     "Certificado de Operatividad BCCL-004.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-20",
+    "horometro": 10900.1,
+    "proximo_h": 11150.1,
+    "frecuencia": null,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "BCCL-004",
+    "serie": "AD-111377",
+    "fecha_archivo": "2026-07-20",
+    "hash": "dfe800ad3f1dd1300089975e4971e65a",
+    "rutas": [
+     "BCCL004\\BCCL004 20.07.2026.pdf",
+     "BCCL004 20.07.2026.pdf",
+     "BCCL004.zip: BCCL004/BCCL004 20.07.2026.pdf"
+    ]
+   }
+  ],
+  "BECL-001": [
+   {
+    "tipo": "CM",
+    "fecha_texto": null,
+    "fecha_tabla": "2026-09-05",
+    "horometro": 3378.0,
+    "frecuencia": 250,
+    "proximo_h": 3628.0,
+    "plan": {
+     "fecha": "2026-09-05",
+     "horometro": 3378.0,
+     "proximo_h": 3628.0,
+     "frecuencia": null,
+     "ejecutor": "Técnico A",
+     "supervisor": null,
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-05",
+    "codigo_doc": "BECL-001",
+    "fecha_archivo": null,
+    "hash": "80c03306004b84e1f965510d01f52819",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO BECL-001.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-13",
+    "horometro": 3494.7,
+    "codigo_doc": "BECL-001",
+    "fecha_archivo": null,
+    "hash": "128d0e28909221f1296ff768be907f8f",
+    "rutas": [
+     "Certificado de Operatividad BECL-001.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-05",
+    "horometro": 3378.0,
+    "proximo_h": 3628.0,
+    "frecuencia": null,
+    "ejecutor": "Técnico A",
+    "supervisor": null,
+    "codigo_doc": "BECL-001",
+    "serie": null,
+    "fecha_archivo": "2026-09-05",
+    "hash": "1960d21c67fb97b778843ebe32846ce4",
+    "rutas": [
+     "BECL001 05-09-2026.pdf"
+    ]
+   }
+  ],
+  "BECL-002": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-10",
+    "fecha_tabla": "2026-07-10",
+    "horometro": 3601.0,
+    "frecuencia": 250,
+    "proximo_h": 3851.0,
+    "plan": {
+     "fecha": "2026-07-10",
+     "horometro": 3700.0,
+     "proximo_h": 3950.0,
+     "frecuencia": null,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-10",
+    "codigo_doc": "BECL-002",
+    "fecha_archivo": null,
+    "hash": "736910b2ec7ccca2cf1b9f6f7e4ca6c8",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO BECL-002.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-22",
+    "horometro": 3841.0,
+    "codigo_doc": "BECL-002",
+    "fecha_archivo": null,
+    "hash": "546372b8dadb6982e5d83b9f9b6bebf2",
+    "rutas": [
+     "Certificado de Operatividad BECL-002.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-10",
+    "horometro": 3700.0,
+    "proximo_h": 3950.0,
+    "frecuencia": null,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "BECL-002",
+    "serie": null,
+    "fecha_archivo": "2026-07-10",
+    "hash": "141eced40cdec79a390fa11734f04d2f",
+    "rutas": [
+     "BECL002 10.07.26.pdf.pdf"
+    ]
+   }
+  ],
+  "BECL-003": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-20",
+    "fecha_tabla": "2026-09-20",
+    "horometro": 1032.9,
+    "frecuencia": 250,
+    "proximo_h": 1282.9,
+    "plan": {
+     "fecha": "2026-09-20",
+     "horometro": 1032.9,
+     "proximo_h": 1282.9,
+     "frecuencia": null,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-20",
+    "codigo_doc": "BECL-003",
+    "fecha_archivo": null,
+    "hash": "d8d64f699a8e1f22f551ad14801833fb",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO BECL-003.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-22",
+    "horometro": 1035.9,
+    "codigo_doc": "BECL-003",
+    "fecha_archivo": null,
+    "hash": "68b1930a5d2c437e32db8537692e5c5a",
+    "rutas": [
+     "Certificado de Operatividad BECL-003 - ING^.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-20",
+    "horometro": 1032.9,
+    "proximo_h": 1282.9,
+    "frecuencia": null,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "BECL-003",
+    "serie": null,
+    "fecha_archivo": "2026-09-20",
+    "hash": "808fac2d837eaef258fed7a8a4a364f2",
+    "rutas": [
+     "BECL003 20-09-2026.pdf"
+    ]
+   }
+  ],
+  "BECL-004": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-20",
+    "fecha_tabla": "2026-07-20",
+    "horometro": 950.0,
+    "frecuencia": 250,
+    "proximo_h": 1200.0,
+    "plan": {
+     "fecha": "2026-07-20",
+     "horometro": 950.0,
+     "proximo_h": 1200.0,
+     "frecuencia": null,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-20",
+    "codigo_doc": "BECL-004",
+    "fecha_archivo": null,
+    "hash": "2cf1d6bdc1df2a9591d8a209f589ccf7",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO BECL-004.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-11",
+    "horometro": 964.2,
+    "codigo_doc": "BECL-004",
+    "fecha_archivo": null,
+    "hash": "923606598d8dcfbe7b97a376c298bef1",
+    "rutas": [
+     "Certificado de Operatividad BECL-004.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-20",
+    "horometro": 950.0,
+    "proximo_h": 1200.0,
+    "frecuencia": null,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "BECL-004",
+    "serie": null,
+    "fecha_archivo": "2026-07-20",
+    "hash": "53f68d5f289c989c2f1ef622455d073f",
+    "rutas": [
+     "PM BECL-004 20.07.2026.pdf"
+    ]
+   }
+  ],
+  "BECL-005": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-20",
+    "fecha_tabla": "2026-05-20",
+    "horometro": 905.6,
+    "frecuencia": 250,
+    "proximo_h": 1155.6,
+    "plan": {
+     "fecha": "2026-05-20",
+     "horometro": 905.6,
+     "proximo_h": 1155.6,
+     "frecuencia": null,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-20",
+    "codigo_doc": "BECL-005",
+    "fecha_archivo": null,
+    "hash": "520ad07ae783a3905c55480d181fcc2d",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO BECL-005.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-15",
+    "horometro": 930.6,
+    "codigo_doc": "BECL-005",
+    "fecha_archivo": null,
+    "hash": "8bf3b5e604ecfe0cbcb121582231e2ec",
+    "rutas": [
+     "Certificado de Operatividad BECL-005.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-20",
+    "horometro": 905.6,
+    "proximo_h": 1155.6,
+    "frecuencia": null,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "BECL-005",
+    "serie": null,
+    "fecha_archivo": "2026-05-20",
+    "hash": "f5f4d353a9c1cdc80fc1dd140686f108",
+    "rutas": [
+     "BECL005 05.20.2026.pdf.pdf"
+    ]
+   }
+  ],
+  "BECL-006": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-11-01",
+    "fecha_tabla": "2026-11-01",
+    "horometro": 470.0,
+    "frecuencia": 250,
+    "proximo_h": 720.0,
+    "plan": {
+     "fecha": "2026-11-01",
+     "horometro": 470.0,
+     "proximo_h": 720.0,
+     "frecuencia": null,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-11-01",
+    "codigo_doc": "BECL-006",
+    "fecha_archivo": null,
+    "hash": "6ed6aad5052decc9ea1078dc414cd94e",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO BECL-006.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-17",
+    "horometro": 638.0,
+    "codigo_doc": "BECL-006",
+    "fecha_archivo": null,
+    "hash": "4efbf6b48856d8abd732f4598ca50e88",
+    "rutas": [
+     "Certificado de Operatividad BECL-006.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-11-01",
+    "horometro": 470.0,
+    "proximo_h": 720.0,
+    "frecuencia": null,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "BECL-006",
+    "serie": null,
+    "fecha_archivo": "2026-11-01",
+    "hash": "b80172938e46f57641aee8224c6d3e85",
+    "rutas": [
+     "BECL006 01.11.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-001": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-20",
+    "fecha_tabla": "2026-06-20",
+    "horometro": 1560.6,
+    "frecuencia": 100,
+    "proximo_h": 1660.6,
+    "plan": {
+     "fecha": "2026-06-20",
+     "horometro": 1560.6,
+     "proximo_h": 1660.6,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-06-20",
+    "codigo_doc": "TECL-001",
+    "fecha_archivo": null,
+    "hash": "dc685e29a3221485cb1ef4a0ecadbf2b",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-001.pdf",
+     "TECL001\\CERTIFICADO DE MANTENIMIENTO TECL-001.pdf",
+     "TECL001.zip: TECL001/CERTIFICADO DE MANTENIMIENTO TECL-001.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-13",
+    "horometro": 1570.5,
+    "codigo_doc": "TECL-001",
+    "fecha_archivo": null,
+    "hash": "07efc240e21a1e186b9093bd7f394b73",
+    "rutas": [
+     "TECL001\\Certificado de Operatividad TECL-001.pdf",
+     "TECL001.zip: TECL001/Certificado de Operatividad TECL-001.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-09",
+    "horometro": 1578.4,
+    "codigo_doc": "TECL-001",
+    "fecha_archivo": null,
+    "hash": "c24241c6e71acf92024144eeaeee0e84",
+    "rutas": [
+     "Certificado de Operatividad TECL-001.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-20",
+    "horometro": 1560.6,
+    "proximo_h": 1660.6,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-06-20",
+    "hash": "6778b70aebb022e4af8bd8839ce2ea7b",
+    "rutas": [
+     "TECL001\\TECL001 20.06-2026.pdf",
+     "TECL001 20.06-2026.pdf",
+     "TECL001.zip: TECL001/TECL001 20.06-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-002": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-30",
+    "fecha_tabla": "2026-09-30",
+    "horometro": 1497.0,
+    "frecuencia": 100,
+    "proximo_h": 1597.0,
+    "plan": {
+     "fecha": "2026-09-30",
+     "horometro": 1497.0,
+     "proximo_h": 1597.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-30",
+    "codigo_doc": "TECL-002",
+    "fecha_archivo": null,
+    "hash": "a51acd054878654140b081d5b8d4f737",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-002.pdf",
+     "TECL002\\CERTIFICADO DE MANTENIMIENTO TECL-002.pdf",
+     "TECL002.zip: TECL002/CERTIFICADO DE MANTENIMIENTO TECL-002.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-12",
+    "horometro": 1511.1,
+    "codigo_doc": "TECL-002",
+    "fecha_archivo": null,
+    "hash": "3e99233c9ce094673531506565abbac4",
+    "rutas": [
+     "Certificado de Operatividad TECL-002.pdf",
+     "TECL002\\Certificado de Operatividad TECL-002.pdf",
+     "TECL002.zip: TECL002/Certificado de Operatividad TECL-002.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-30",
+    "horometro": 1497.0,
+    "proximo_h": 1597.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-09-30",
+    "hash": "c137dc3f2ab49c17f202fb6ae0b5f970",
+    "rutas": [
+     "TECL002\\TECL002 30-09-2026.pdf",
+     "TECL002 30-09-2026.pdf",
+     "TECL002.zip: TECL002/TECL002 30-09-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-003": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2025-08-15",
+    "fecha_tabla": "2025-07-30",
+    "horometro": 1461.5,
+    "frecuencia": 100,
+    "proximo_h": 1561.5,
+    "fecha": "2025-07-30",
+    "codigo_doc": "TECL-003",
+    "fecha_archivo": null,
+    "hash": "b46e17c54e15f9ed6e865f95c9197011",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-003.pdf.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-06-24",
+    "horometro": 1487.5,
+    "codigo_doc": "TECL-003",
+    "fecha_archivo": null,
+    "hash": "743ebd9164506d370dcdeb34552ec6a7",
+    "rutas": [
+     "Certificado de Operatividad TECL-003 - ING.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2025-07-30",
+    "horometro": 1461.5,
+    "proximo_h": 1561.5,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2025-07-30",
+    "hash": "8147d721bf85886f363a6d25df0c3fa5",
+    "rutas": [
+     "TECL003 30.07.25.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-004": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-08-17",
+    "fecha_tabla": "2026-08-17",
+    "horometro": 1450.0,
+    "frecuencia": 100,
+    "proximo_h": 1550.0,
+    "plan": {
+     "fecha": "2026-08-17",
+     "horometro": 1450.0,
+     "proximo_h": 1550.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico B",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-08-17",
+    "codigo_doc": "TECL-004",
+    "fecha_archivo": null,
+    "hash": "ba270860a9c656ae405e9ab55c597085",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-004 (2).pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-12",
+    "horometro": 1470.9,
+    "codigo_doc": "TECL-004",
+    "fecha_archivo": null,
+    "hash": "f0b156b4a083e8344a1629ab439dbf01",
+    "rutas": [
+     "Certificado de Operatividad TECL-004.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-08-17",
+    "horometro": 1450.0,
+    "proximo_h": 1550.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico B",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-08-17",
+    "hash": "6105354496426fa2a246df34ddbccba2",
+    "rutas": [
+     "TECL004 17.08.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-005": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-05",
+    "fecha_tabla": "2026-05-05",
+    "horometro": 635.4,
+    "frecuencia": 100,
+    "proximo_h": 735.4,
+    "plan": {
+     "fecha": "2026-05-05",
+     "horometro": 635.4,
+     "proximo_h": 735.4,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-05",
+    "codigo_doc": "TECL-005",
+    "fecha_archivo": null,
+    "hash": "5edca3dbbf7ae3390e07f7ec4ab4d982",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-005.pdf (3).pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-09",
+    "horometro": 645.4,
+    "codigo_doc": "TECL-005",
+    "fecha_archivo": null,
+    "hash": "2ddf35f4e3ba636f2bfdaba8a73c2b89",
+    "rutas": [
+     "Certificado de Operatividad TECL-005.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-05",
+    "horometro": 635.4,
+    "proximo_h": 735.4,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-05",
+    "hash": "8ba846cb8e6862abbffa8a1f3398a3e7",
+    "rutas": [
+     "TECL005 05-05-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-006": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-25",
+    "fecha_tabla": "2026-07-25",
+    "horometro": 1190.0,
+    "frecuencia": 100,
+    "proximo_h": 1290.0,
+    "plan": {
+     "fecha": "2026-07-25",
+     "horometro": 1190.0,
+     "proximo_h": 1290.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-25",
+    "codigo_doc": "TECL-006",
+    "fecha_archivo": null,
+    "hash": "d929fb31d5aeda46650292b85ba01c28",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-006.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-23",
+    "horometro": 1190.4,
+    "codigo_doc": "TECL-006",
+    "fecha_archivo": null,
+    "hash": "1b614a06cc9d86fe3ab9c010d6a37010",
+    "rutas": [
+     "Certificado de Operatividad TECL-006.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-25",
+    "horometro": 1190.0,
+    "proximo_h": 1290.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-09-23",
+    "hash": "0b1274dc02c6f092a7add4859475d84e",
+    "rutas": [
+     "TECL006 23-09-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-007": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-20",
+    "fecha_tabla": "2026-05-20",
+    "horometro": 476.5,
+    "frecuencia": 100,
+    "proximo_h": 576.5,
+    "plan": {
+     "fecha": "2026-05-20",
+     "horometro": 476.5,
+     "proximo_h": 576.5,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-20",
+    "codigo_doc": "TECL-007",
+    "fecha_archivo": null,
+    "hash": "c569eb822d9c2ee0d53b734004ae45ff",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-007.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-17",
+    "horometro": 484.8,
+    "codigo_doc": "TECL-007",
+    "fecha_archivo": null,
+    "hash": "c3a32253d76a1c7df9d0e89422b80a22",
+    "rutas": [
+     "Certificado de Operatividad TECL-007.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-20",
+    "horometro": 476.5,
+    "proximo_h": 576.5,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-20",
+    "hash": "4ca84067160b79ae7cfaaef0e038d008",
+    "rutas": [
+     "TECL007 20.05.26.pdf"
+    ]
+   }
+  ],
+  "TECL-008": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-20",
+    "fecha_tabla": "2026-05-20",
+    "horometro": 960.0,
+    "frecuencia": 100,
+    "proximo_h": 1060.0,
+    "plan": {
+     "fecha": "2026-05-20",
+     "horometro": 960.0,
+     "proximo_h": 1060.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-20",
+    "codigo_doc": "TECL-008",
+    "fecha_archivo": null,
+    "hash": "8daa700c4903b73673137710c247eaad",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-008.pdf",
+     "TECL008\\CERTIFICADO DE MANTENIMIENTO TECL-008.pdf",
+     "TECL008.zip: TECL008/CERTIFICADO DE MANTENIMIENTO TECL-008.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-14",
+    "horometro": 975.4,
+    "codigo_doc": "TECL-008",
+    "fecha_archivo": null,
+    "hash": "61193b12f92109c95c2f09e568dd230a",
+    "rutas": [
+     "Certificado de Operatividad TECL-008.pdf",
+     "TECL008\\Certificado de Operatividad TECL-008.pdf",
+     "TECL008.zip: TECL008/Certificado de Operatividad TECL-008.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-20",
+    "horometro": 960.0,
+    "proximo_h": 1060.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-20",
+    "hash": "75fe8aed28fe410e4fd729ad82a3d1e8",
+    "rutas": [
+     "TECL008\\TECL008 05.20.26.pdf",
+     "TECL008 05.20.26.pdf",
+     "TECL008.zip: TECL008/TECL008 05.20.26.pdf"
+    ]
+   }
+  ],
+  "TECL-009": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-16",
+    "fecha_tabla": "2026-09-16",
+    "horometro": 602.0,
+    "frecuencia": 100,
+    "proximo_h": 702.0,
+    "plan": {
+     "fecha": "2026-09-16",
+     "horometro": 602.0,
+     "proximo_h": 702.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-16",
+    "codigo_doc": "TECL-009",
+    "fecha_archivo": null,
+    "hash": "e513014b22eadd8c9bd162bfe05538f3",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-009.pdf",
+     "TECL009\\CERTIFICADO DE MANTENIMIENTO TECL-009.pdf",
+     "TECL009.zip: TECL009/CERTIFICADO DE MANTENIMIENTO TECL-009.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-11",
+    "horometro": 615.1,
+    "codigo_doc": "TECL-009",
+    "fecha_archivo": null,
+    "hash": "99aef99000c0fdbafd847c8b8f076a4d",
+    "rutas": [
+     "Certificado de Operatividad TECL-009.pdf",
+     "TECL009\\Certificado de Operatividad TECL-009.pdf",
+     "TECL009.zip: TECL009/Certificado de Operatividad TECL-009.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-16",
+    "horometro": 602.0,
+    "proximo_h": 702.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-09-16",
+    "hash": "a22470d685efb8a3c1ca892952cfab89",
+    "rutas": [
+     "TECL009\\TECL009 16-09-2026.pdf",
+     "TECL009 16-09-2026.pdf",
+     "TECL009.zip: TECL009/TECL009 16-09-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-010": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-10",
+    "fecha_tabla": "2026-05-10",
+    "horometro": 893.6,
+    "frecuencia": 100,
+    "proximo_h": 993.6,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 893.6,
+     "proximo_h": 993.6,
+     "frecuencia": 250,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-10",
+    "codigo_doc": "TECL-010",
+    "fecha_archivo": null,
+    "hash": "088053dc0a690e698a55d8dff61b27d2",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-010.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-20",
+    "horometro": 965.8,
+    "codigo_doc": "TECL-010",
+    "fecha_archivo": null,
+    "hash": "2f142f3bd7761ec51e01c834b7451c9d",
+    "rutas": [
+     "Certificado de Operatividad TECL-010.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-10",
+    "horometro": 893.6,
+    "proximo_h": 993.6,
+    "frecuencia": 250,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-10",
+    "hash": "40a51ff445506bfe0a7d3a4c6f8d227d",
+    "rutas": [
+     "TECL010 10.05.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-011": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-10",
+    "fecha_tabla": "2026-09-10",
+    "horometro": 13269.2,
+    "frecuencia": 250,
+    "proximo_h": 13519.2,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 12464.8,
+     "proximo_h": 12714.8,
+     "frecuencia": 250,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-10",
+    "codigo_doc": "TECL-011",
+    "fecha_archivo": null,
+    "hash": "f0ded34a67aa6c32b4c8ea7c9b0b6952",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-011.pdf",
+     "TECL011\\CERTIFICADO DE MANTENIMIENTO TECL-011.pdf",
+     "TECL011.zip: TECL011/CERTIFICADO DE MANTENIMIENTO TECL-011.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-12",
+    "horometro": 13272.2,
+    "codigo_doc": "TECL-011",
+    "fecha_archivo": null,
+    "hash": "04d3b067b6e006368adaae9c2c51b431",
+    "rutas": [
+     "Certificado de Operatividad TECL-011 - ing. mecan..pdf",
+     "TECL011\\Certificado de Operatividad TECL-011 - ing. mecan..pdf",
+     "TECL011.zip: TECL011/Certificado de Operatividad TECL-011 - ing. mecan..pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-10",
+    "horometro": 13269.2,
+    "proximo_h": 13519.2,
+    "frecuencia": 250,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-09-10",
+    "hash": "f7c89affda9aea48a302bed1049567df",
+    "rutas": [
+     "TECL011\\TECL011 10-09-2026.pdf",
+     "TECL011 10-09-2026.pdf",
+     "TECL011.zip: TECL011/TECL011 10-09-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-012": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-20",
+    "fecha_tabla": "2026-07-20",
+    "horometro": 1194.0,
+    "frecuencia": 100,
+    "proximo_h": 1294.0,
+    "plan": {
+     "fecha": "2026-07-20",
+     "horometro": 1194.0,
+     "proximo_h": 1294.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-20",
+    "codigo_doc": "TECL-012",
+    "fecha_archivo": null,
+    "hash": "c9136a690f9e8d96112cb71eff283a7c",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-012.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-31",
+    "horometro": 1198.0,
+    "codigo_doc": "TECL-012",
+    "fecha_archivo": null,
+    "hash": "6030b6c0f698c3b4c88739e73afb4afa",
+    "rutas": [
+     "Certificado de Operatividad TECL-012 - ING. MECANICO.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-20",
+    "horometro": 1194.0,
+    "proximo_h": 1294.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-07-20",
+    "hash": "9abfda5f515f3d1ce6dc64ab2e357ea5",
+    "rutas": [
+     "PM TECL-012 20-07-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-013": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-25",
+    "fecha_tabla": "2026-07-25",
+    "horometro": 1780.0,
+    "frecuencia": 100,
+    "proximo_h": 1880.0,
+    "plan": {
+     "fecha": "2026-07-25",
+     "horometro": 1780.0,
+     "proximo_h": 1880.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-25",
+    "codigo_doc": "TECL-013",
+    "fecha_archivo": null,
+    "hash": "60fe7b16880fb82412e95630916f0be4",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-013.pdf.pdf",
+     "TECL013\\CERTIFICADO DE MANTENIMIENTO TECL-013.pdf.pdf",
+     "TECL013.zip: TECL013/CERTIFICADO DE MANTENIMIENTO TECL-013.pdf.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-15",
+    "horometro": 1790.0,
+    "codigo_doc": "TECL-013",
+    "fecha_archivo": null,
+    "hash": "568866ea09548eece8aab686246c6701",
+    "rutas": [
+     "TECL013\\Certificado de Operatividad TECL-013.pdf",
+     "TECL013.zip: TECL013/Certificado de Operatividad TECL-013.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-19",
+    "horometro": 1791.0,
+    "codigo_doc": "TECL-013",
+    "fecha_archivo": null,
+    "hash": "601a9b52f484f3467da3551ebc1bfcae",
+    "rutas": [
+     "Certificado de Operatividad TECL-013.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-25",
+    "horometro": 1780.0,
+    "proximo_h": 1880.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-07-28",
+    "hash": "a1e5fb6fc7e2eadd10464e022defd372",
+    "rutas": [
+     "TECL013\\TECL013 28-07-2026.pdf",
+     "TECL013 28-07-2026.pdf",
+     "TECL013.zip: TECL013/TECL013 28-07-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-014": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-27",
+    "fecha_tabla": "2026-06-27",
+    "horometro": 1315.0,
+    "frecuencia": 100,
+    "proximo_h": 1415.0,
+    "plan": {
+     "fecha": "2026-06-27",
+     "horometro": 1315.0,
+     "proximo_h": 1415.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-06-27",
+    "codigo_doc": "TECL-014",
+    "fecha_archivo": null,
+    "hash": "5de37768780b569f7361d0d97faa385d",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-014.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-27",
+    "horometro": 1347.8,
+    "codigo_doc": "TECL-014",
+    "fecha_archivo": null,
+    "hash": "ad135ddcbf428a723302cd41ce2f1578",
+    "rutas": [
+     "Certificado de Operatividad TECL-014.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-27",
+    "horometro": 1315.0,
+    "proximo_h": 1415.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-06-27",
+    "hash": "c537c214212b0b112d51e8c8a2150e63",
+    "rutas": [
+     "TECL014 27.06.26.pdf"
+    ]
+   }
+  ],
+  "TECL-015": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-10",
+    "fecha_tabla": "2026-05-10",
+    "horometro": 1330.0,
+    "frecuencia": 100,
+    "proximo_h": 1430.0,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 1330.0,
+     "proximo_h": 1430.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-10",
+    "codigo_doc": "TECL-015",
+    "fecha_archivo": null,
+    "hash": "d6333c9fd942b8f54e6c6dcc92502203",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-015.pdf.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-29",
+    "horometro": 1361.0,
+    "codigo_doc": "TECL-015",
+    "fecha_archivo": null,
+    "hash": "7f5c25806acf236c8f2ef3755f383753",
+    "rutas": [
+     "Certificado de Operatividad TECL-015.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-10",
+    "horometro": 1330.0,
+    "proximo_h": 1430.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-10",
+    "hash": "d303f423bd557eb7ffce14600018f3f9",
+    "rutas": [
+     "TECL015 10.05.26.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-016": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-20",
+    "plan": {
+     "fecha": "2026-06-20",
+     "horometro": 1505.0,
+     "proximo_h": 1605.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-016",
+     "serie": "0200143646"
+    },
+    "fecha": "2026-06-20",
+    "codigo_doc": "TECL-016",
+    "fecha_archivo": null,
+    "hash": "8f372ff13b11078ca44bc122e1eba18f",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-016.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-12",
+    "horometro": 1515.8,
+    "codigo_doc": "TECL-016",
+    "fecha_archivo": null,
+    "hash": "03d4ca7da1c458272882eb76f141151a",
+    "rutas": [
+     "Certificado de Operatividad TECL-016.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-20",
+    "horometro": 1505.0,
+    "proximo_h": 1605.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-016",
+    "serie": "0200143646",
+    "fecha_archivo": "2026-06-20",
+    "hash": "092cef2d0b7d1e0314cdef053a0caa29",
+    "rutas": [
+     "TECL016 20.06.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-017": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-01-09",
+    "fecha": "2026-01-09",
+    "codigo_doc": "TECL-017",
+    "fecha_archivo": null,
+    "hash": "43d18aa3fc20dddc46cbefe6eb0343e7",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-017.pdf.pdf",
+     "TECL017\\CERTIFICADO DE MANTENIMIENTO TECL-017.pdf.pdf",
+     "TECL017.zip: TECL017/CERTIFICADO DE MANTENIMIENTO TECL-017.pdf.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-15",
+    "horometro": 1294.1,
+    "codigo_doc": "TECL-017",
+    "fecha_archivo": null,
+    "hash": "124b1fc5d941d6d9968e3d55688c9436",
+    "rutas": [
+     "TECL017\\Certificado de Operatividad TECL-017.pdf",
+     "TECL017.zip: TECL017/Certificado de Operatividad TECL-017.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-12",
+    "horometro": 1294.1,
+    "codigo_doc": "TECL-017",
+    "fecha_archivo": null,
+    "hash": "c01cbfbfe51de1d1fbe35f4825749c2d",
+    "rutas": [
+     "Certificado de Operatividad TECL-017.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-01-09",
+    "horometro": 1256.5,
+    "proximo_h": 1356.5,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": null,
+    "codigo_doc": "TECL-017",
+    "serie": "0200145463",
+    "fecha_archivo": "2026-01-09",
+    "hash": "59a2f67fb6bfdb4467013d5b5300cb28",
+    "rutas": [
+     "TECL017\\TECL017 09.01.2026.pdf",
+     "TECL017 09.01.2026.pdf",
+     "TECL017.zip: TECL017/TECL017 09.01.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-018": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-24",
+    "fecha_tabla": "2026-09-24",
+    "horometro": 1777.0,
+    "frecuencia": 100,
+    "proximo_h": 1877.0,
+    "plan": {
+     "fecha": "2026-09-24",
+     "horometro": 1777.0,
+     "proximo_h": 1877.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-24",
+    "codigo_doc": "TECL-018",
+    "fecha_archivo": null,
+    "hash": "b8a776336f0334fcdd5ee3aaa5dbeac1",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-018.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-13",
+    "horometro": 1777.0,
+    "codigo_doc": "TECL-018",
+    "fecha_archivo": null,
+    "hash": "82eb18a356326da4956a617794b7ec65",
+    "rutas": [
+     "Certificado de Operatividad TECL-018.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-24",
+    "horometro": 1777.0,
+    "proximo_h": 1877.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-09-24",
+    "hash": "dcf86451779e31ece083466e19703b86",
+    "rutas": [
+     "TECL018 24.09.26.pdf"
+    ]
+   }
+  ],
+  "TECL-019": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-10-01",
+    "fecha_tabla": "2026-10-01",
+    "horometro": 737.0,
+    "frecuencia": 100,
+    "proximo_h": 837.0,
+    "plan": {
+     "fecha": "2026-10-01",
+     "horometro": 737.0,
+     "proximo_h": 837.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-10-01",
+    "codigo_doc": "TECL-019",
+    "fecha_archivo": null,
+    "hash": "d8e500d1460f74c612ebab69b9090e27",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-019.pdf",
+     "TECL019\\CERTIFICADO DE MANTENIMIENTO TECL-019.pdf",
+     "TECL019.zip: TECL019/CERTIFICADO DE MANTENIMIENTO TECL-019.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-12",
+    "horometro": 740.6,
+    "codigo_doc": "TECL-019",
+    "fecha_archivo": null,
+    "hash": "f0ba7c300abe1b31ba5f67f6140ec032",
+    "rutas": [
+     "Certificado de Operatividad TECL-019.pdf",
+     "TECL019\\Certificado de Operatividad TECL-019.pdf",
+     "TECL019.zip: TECL019/Certificado de Operatividad TECL-019.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-10-01",
+    "horometro": 737.0,
+    "proximo_h": 837.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-10-01",
+    "hash": "28502f087319b3cb3c9df59d94cdd8bc",
+    "rutas": [
+     "TECL019\\TECL019 01.10.2026.pdf",
+     "TECL019 01.10.2026.pdf",
+     "TECL019.zip: TECL019/TECL019 01.10.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-020": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-20",
+    "fecha_tabla": "2026-05-20",
+    "horometro": 1147.0,
+    "frecuencia": 100,
+    "proximo_h": 1247.0,
+    "plan": {
+     "fecha": "2026-05-20",
+     "horometro": 1147.0,
+     "proximo_h": 1247.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-020",
+     "serie": "CE-118810"
+    },
+    "fecha": "2026-05-20",
+    "codigo_doc": "TECL-020",
+    "fecha_archivo": null,
+    "hash": "dc6b76aa802e7fd05944a9766d9d495e",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-020.pdf",
+     "TECL020\\CERTIFICADO DE MANTENIMIENTO TECL-020.pdf",
+     "TECL020.zip: TECL020/CERTIFICADO DE MANTENIMIENTO TECL-020.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-05",
+    "horometro": 1155.0,
+    "codigo_doc": "TECL-020",
+    "fecha_archivo": null,
+    "hash": "31f3926a89058a73b8d3d216f1023761",
+    "rutas": [
+     "TECL020\\Certificado de Operatividad TECL-020 - ING. MECANICO.pdf",
+     "TECL020.zip: TECL020/Certificado de Operatividad TECL-020 - ING. MECANICO.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-13",
+    "horometro": 1157.0,
+    "codigo_doc": "TECL-020",
+    "fecha_archivo": null,
+    "hash": "b544dfd32c8c37c722fd7f7efa1b78c8",
+    "rutas": [
+     "Certificado de Operatividad TECL-020 - ING. MECANICO.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-20",
+    "horometro": 1147.0,
+    "proximo_h": 1247.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-020",
+    "serie": "CE-118810",
+    "fecha_archivo": "2026-05-08",
+    "hash": "a3c613b6822c9b1ea49b3f5188b11323",
+    "rutas": [
+     "TECL020\\TECL020 08-05-2026.pdf",
+     "TECL020 08-05-2026.pdf",
+     "TECL020.zip: TECL020/TECL020 08-05-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-021": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-20",
+    "fecha_tabla": "2026-06-20",
+    "horometro": 474.0,
+    "frecuencia": 100,
+    "proximo_h": 574.0,
+    "plan": {
+     "fecha": "2026-06-20",
+     "horometro": 474.0,
+     "proximo_h": 574.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-021",
+     "serie": "GS3007B-88374"
+    },
+    "fecha": "2026-06-20",
+    "codigo_doc": "TECL-021",
+    "fecha_archivo": null,
+    "hash": "9acf4a3f175aae3ca8cfc4cde1e5b0fc",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-021.pdf.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-05",
+    "horometro": 474.7,
+    "codigo_doc": "TECL-021",
+    "fecha_archivo": null,
+    "hash": "ced8531ca42f7a0a0ca8f58fb30a0073",
+    "rutas": [
+     "Certificado de Operatividad TECL-021 - CAD.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-20",
+    "horometro": 474.0,
+    "proximo_h": 574.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-021",
+    "serie": "GS3007B-88374",
+    "fecha_archivo": "2026-06-20",
+    "hash": "c5494192298a85718fbfe8f00d17feac",
+    "rutas": [
+     "TECL021 20.06.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-022": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-04-05",
+    "fecha_tabla": "2026-04-05",
+    "horometro": 327.1,
+    "frecuencia": 100,
+    "proximo_h": 427.1,
+    "plan": {
+     "fecha": "2026-04-05",
+     "horometro": 327.1,
+     "proximo_h": 427.1,
+     "frecuencia": 250,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-022",
+     "serie": "GS3099-21304"
+    },
+    "fecha": "2026-04-05",
+    "codigo_doc": "TECL-022",
+    "fecha_archivo": null,
+    "hash": "626f3ff15ed85bae71564bee94a72fae",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-022.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-06-24",
+    "horometro": 338.1,
+    "codigo_doc": "TECL-022",
+    "fecha_archivo": null,
+    "hash": "a44750c202665ba0658f37cb8f834c63",
+    "rutas": [
+     "Certificado de Operatividad TECL-022.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-04-05",
+    "horometro": 327.1,
+    "proximo_h": 427.1,
+    "frecuencia": 250,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-022",
+    "serie": "GS3099-21304",
+    "fecha_archivo": "2026-04-05",
+    "hash": "5ab4e97000b634069871ca2ce4f88684",
+    "rutas": [
+     "TECL022 05.04.26.pdf"
+    ]
+   }
+  ],
+  "TECL-023": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-03-15",
+    "fecha_tabla": "2026-03-15",
+    "horometro": 1063.2,
+    "frecuencia": 100,
+    "proximo_h": 1163.2,
+    "plan": {
+     "fecha": "2026-03-15",
+     "horometro": 1063.2,
+     "proximo_h": 1163.2,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-023",
+     "serie": "0200200543"
+    },
+    "fecha": "2026-03-15",
+    "codigo_doc": "TECL-023",
+    "fecha_archivo": null,
+    "hash": "850c6c851424e459f34674fd3c0c39e4",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-023.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-05-04",
+    "horometro": 1080.1,
+    "codigo_doc": "TECL-023",
+    "fecha_archivo": null,
+    "hash": "ec7f2fb88efcc51a61427a996b9cff41",
+    "rutas": [
+     "Certificado de Operatividad TECL-023 - ING. MECANICO.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-03-15",
+    "horometro": 1063.2,
+    "proximo_h": 1163.2,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": null,
+    "codigo_doc": "TECL-023",
+    "serie": "0200200543",
+    "fecha_archivo": "2026-03-15",
+    "hash": "25daa6fac95cf3103f1b25c9df491975",
+    "rutas": [
+     "TECL023 15-03-2026.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-024": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-20",
+    "plan": {
+     "fecha": "2026-06-20",
+     "horometro": 550.7,
+     "proximo_h": 650.7,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-024",
+     "serie": "0200200546"
+    },
+    "fecha": "2026-06-20",
+    "codigo_doc": "TECL-024",
+    "fecha_archivo": null,
+    "hash": "5e817aebfac41a4c2b6f2947eb22cbda",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-024.pdf",
+     "DOCUMENTACION TECL024\\CERTIFICADO DE MANTENIMIENTO TECL-024.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-07-21",
+    "horometro": 555.0,
+    "codigo_doc": "TECL-024",
+    "fecha_archivo": null,
+    "hash": "4f5cc79ff9f797020cae9c25659c8e83",
+    "rutas": [
+     "DOCUMENTACION TECL024\\Certificado de Operatividad TECL-024.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-11",
+    "horometro": 570.1,
+    "codigo_doc": "TECL-024",
+    "fecha_archivo": null,
+    "hash": "74ac924dac06e92c55c7771a98fbf0e9",
+    "rutas": [
+     "Certificado de Operatividad TECL-024.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-20",
+    "horometro": 550.7,
+    "proximo_h": 650.7,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-024",
+    "serie": "0200200546",
+    "fecha_archivo": "2026-06-20",
+    "hash": "8743c250bc1c185d414693f3ce34665d",
+    "rutas": [
+     "DOCUMENTACION TECL024\\TECL024 20.06.2026.pdf.pdf",
+     "TECL024 20.06.2026.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-025": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-20",
+    "fecha_tabla": "2026-06-20",
+    "horometro": 1373.3,
+    "frecuencia": 100,
+    "proximo_h": 1473.3,
+    "plan": {
+     "fecha": "2026-06-20",
+     "horometro": 1373.3,
+     "proximo_h": 1473.3,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-025",
+     "serie": "1200020280"
+    },
+    "fecha": "2026-06-20",
+    "codigo_doc": "TECL-025",
+    "fecha_archivo": null,
+    "hash": "32bbc26558c5a712f732d1f25f69239c",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-025.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-11",
+    "horometro": 1401.0,
+    "codigo_doc": "TECL-025",
+    "fecha_archivo": null,
+    "hash": "3e7415ae770de96d6cc2065c805f5b9f",
+    "rutas": [
+     "Certificado de Operatividad TECL-025.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-20",
+    "horometro": 1373.3,
+    "proximo_h": 1473.3,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-025",
+    "serie": "1200020280",
+    "fecha_archivo": "2026-06-20",
+    "hash": "16d012f329f5bd64ddcd751ca0edaadf",
+    "rutas": [
+     "TECL025 20.06.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-027": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-10-09",
+    "fecha_tabla": "2026-10-09",
+    "horometro": 789.7,
+    "frecuencia": 100,
+    "proximo_h": 889.7,
+    "plan": {
+     "fecha": "2026-10-09",
+     "horometro": 789.7,
+     "proximo_h": 889.7,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-10-09",
+    "codigo_doc": "TECL-027",
+    "fecha_archivo": null,
+    "hash": "c2997723a8ef7a3a47986694b252ea13",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-027.pdf",
+     "TECL027\\CERTIFICADO DE MANTENIMIENTO TECL-027.pdf",
+     "TECL027.zip: TECL027/CERTIFICADO DE MANTENIMIENTO TECL-027.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-11",
+    "horometro": 789.7,
+    "codigo_doc": "TECL-027",
+    "fecha_archivo": null,
+    "hash": "a411317b3d6f1f2f4d47201f77b7f8a0",
+    "rutas": [
+     "Certificado de Operatividad TECL-027.pdf",
+     "TECL027\\Certificado de Operatividad TECL-027.pdf",
+     "TECL027.zip: TECL027/Certificado de Operatividad TECL-027.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-10-09",
+    "horometro": 789.7,
+    "proximo_h": 889.7,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-10-09",
+    "hash": "1381660d28bb4bf060fb204c5c6af770",
+    "rutas": [
+     "TECL027\\TECL027 09.10.26.pdf.pdf",
+     "TECL027 09.11.26.pdf.pdf",
+     "TECL027.zip: TECL027/TECL027 09.10.26.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-028": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-20",
+    "plan": {
+     "fecha": "2026-09-20",
+     "horometro": 820.0,
+     "proximo_h": 920.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico B",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-20",
+    "codigo_doc": "TECL-028",
+    "fecha_archivo": null,
+    "hash": "dabaecbecaa2493d834cb15d8a81cdfe",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-028.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-20",
+    "horometro": 820.0,
+    "codigo_doc": "TECL-028",
+    "fecha_archivo": null,
+    "hash": "1ca0961d2f54d4d90e93c989ac5ff03c",
+    "rutas": [
+     "Certificado de Operatividad TECL-028 - ING. MECANICO.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-20",
+    "horometro": 820.0,
+    "proximo_h": 920.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico B",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-09-20",
+    "hash": "f28ffd3bb4f3ec79c60bcaff438d64e6",
+    "rutas": [
+     "TECL028 20.09.26.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-029": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-20",
+    "fecha_tabla": "2026-05-20",
+    "horometro": 535.1,
+    "frecuencia": 100,
+    "proximo_h": 635.1,
+    "plan": {
+     "fecha": "2026-05-20",
+     "horometro": 535.1,
+     "proximo_h": 635.1,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-029",
+     "serie": "22034229"
+    },
+    "fecha": "2026-05-20",
+    "codigo_doc": "TECL-029",
+    "fecha_archivo": null,
+    "hash": "eadde8f5ff5203f657caa480c90d04fa",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-029.pdf",
+     "TECL029\\CERTIFICADO DE MANTENIMIENTO TECL-029.pdf",
+     "TECL029.zip: TECL029/CERTIFICADO DE MANTENIMIENTO TECL-029.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-18",
+    "horometro": 545.1,
+    "codigo_doc": "TECL-029",
+    "fecha_archivo": null,
+    "hash": "fb610710386994f1167feb639041ffca",
+    "rutas": [
+     "Certificado de Operatividad TECL-029.pdf",
+     "TECL029\\Certificado de Operatividad TECL-029.pdf",
+     "TECL029.zip: TECL029/Certificado de Operatividad TECL-029.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-20",
+    "horometro": 535.1,
+    "proximo_h": 635.1,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-029",
+    "serie": "22034229",
+    "fecha_archivo": "2026-05-20",
+    "hash": "cb9c54b98f33514e9fbd626a13ea6ca8",
+    "rutas": [
+     "TECL029\\TECL029 20.05.26.pdf",
+     "TECL029 20.05.26.pdf",
+     "TECL029.zip: TECL029/TECL029 20.05.26.pdf"
+    ]
+   }
+  ],
+  "TECL-030": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-10",
+    "fecha_tabla": "2026-05-10",
+    "horometro": 322.0,
+    "frecuencia": 100,
+    "proximo_h": 422.0,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 322.0,
+     "proximo_h": 422.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-10",
+    "codigo_doc": "TECL-030",
+    "fecha_archivo": null,
+    "hash": "a9cf967cd5683c65de8cb2d3b8b97f52",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-030.pdf",
+     "TECL030\\CERTIFICADO DE MANTENIMIENTO TECL-030.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-05",
+    "horometro": 337.0,
+    "codigo_doc": "TECL-030",
+    "fecha_archivo": null,
+    "hash": "64948160f29ac0562d03c3c45c02b865",
+    "rutas": [
+     "TECL030\\Certificado de Operatividad TECL-030.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-16",
+    "horometro": 340.0,
+    "codigo_doc": "TECL-030",
+    "fecha_archivo": null,
+    "hash": "e2f97dd91fb0afa683cda30b0598c434",
+    "rutas": [
+     "Certificado de Operatividad TECL-030.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-10",
+    "horometro": 322.0,
+    "proximo_h": 422.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-10",
+    "hash": "bffdc5cfce8ef7730836743a7ab00818",
+    "rutas": [
+     "TECL030\\TECL030 10.05.26.pdf.pdf",
+     "TECL030 10.05.26.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-031": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-20",
+    "fecha_tabla": "2026-05-20",
+    "horometro": 550.0,
+    "frecuencia": 100,
+    "proximo_h": 650.0,
+    "plan": {
+     "fecha": "2026-05-20",
+     "horometro": 550.0,
+     "proximo_h": 650.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-031",
+     "serie": "22013850"
+    },
+    "fecha": "2026-05-20",
+    "codigo_doc": "TECL-031",
+    "fecha_archivo": null,
+    "hash": "738fd356c58b98e59ce11de1efc504fa",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-031.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-02",
+    "horometro": 555.0,
+    "codigo_doc": "TECL-031",
+    "fecha_archivo": null,
+    "hash": "a8a38219a13e23f8b81a991ebf5c858e",
+    "rutas": [
+     "Certificado de Operatividad TECL-031.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-20",
+    "horometro": 550.0,
+    "proximo_h": 650.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-031",
+    "serie": "22013850",
+    "fecha_archivo": "2026-05-20",
+    "hash": "f05ab254a939857c5af165d746f59b19",
+    "rutas": [
+     "TECL031 20.05.26.pdf"
+    ]
+   }
+  ],
+  "TECL-032": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-08-25",
+    "fecha_tabla": "2026-08-25",
+    "horometro": 338.0,
+    "frecuencia": 100,
+    "proximo_h": 438.0,
+    "plan": {
+     "fecha": "2026-08-25",
+     "horometro": 338.0,
+     "proximo_h": 438.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-08-25",
+    "codigo_doc": "TECL-032",
+    "fecha_archivo": null,
+    "hash": "a1249d9a77d33afb24a564a37e911c21",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-032.pdf.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-16",
+    "horometro": 348.9,
+    "codigo_doc": "TECL-032",
+    "fecha_archivo": null,
+    "hash": "d74b4a0ff4aebf0881245b4ed5a5e06a",
+    "rutas": [
+     "Certificado de Operatividad TECL-032 - ING^.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-08-25",
+    "horometro": 338.0,
+    "proximo_h": 438.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-08-25",
+    "hash": "8ca30b8adc29c8545d472d9b5aec387e",
+    "rutas": [
+     "TECL032 25-08-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-033": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-05",
+    "fecha_tabla": "2026-05-05",
+    "horometro": 504.3,
+    "frecuencia": 100,
+    "proximo_h": 604.3,
+    "plan": {
+     "fecha": "2026-05-05",
+     "horometro": 504.3,
+     "proximo_h": 604.3,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-05",
+    "codigo_doc": "TECL-033",
+    "fecha_archivo": null,
+    "hash": "01147bfb6c53fec70ba5c7a1d9e03077",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-033.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-05",
+    "horometro": 544.8,
+    "codigo_doc": "TECL-033",
+    "fecha_archivo": null,
+    "hash": "42d4f3d6807fec2ffa9902b6fd00ca29",
+    "rutas": [
+     "Certificado de Operatividad TECL-033.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-05",
+    "horometro": 504.3,
+    "proximo_h": 604.3,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": null,
+    "hash": "ea0d3ac4aa8314d0abd6abc3d320b052",
+    "rutas": [
+     "TECL033.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-034": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-22",
+    "plan": {
+     "fecha": "2026-06-22",
+     "horometro": 993.1,
+     "proximo_h": 1093.1,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-06-22",
+    "codigo_doc": "TECL-034",
+    "fecha_archivo": null,
+    "hash": "0b478194748b77bcd6ed718c620a3c9b",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-034.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-07-11",
+    "horometro": 993.1,
+    "codigo_doc": "TECL-034",
+    "fecha_archivo": null,
+    "hash": "dfcb5a61fce723c93c64264e28de58fb",
+    "rutas": [
+     "Certificado de Operatividad TECL-034.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-22",
+    "horometro": 993.1,
+    "proximo_h": 1093.1,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-06-22",
+    "hash": "edf9ccc8d36fc3b4b2c01ec57870b55b",
+    "rutas": [
+     "TECL034 22.06.26.pdf"
+    ]
+   }
+  ],
+  "TECL-035": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-10",
+    "fecha_tabla": "2026-05-10",
+    "horometro": 360.0,
+    "frecuencia": 100,
+    "proximo_h": 460.0,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 360.0,
+     "proximo_h": 460.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL035",
+     "serie": "22052293"
+    },
+    "fecha": "2026-05-10",
+    "codigo_doc": "TECL-035",
+    "fecha_archivo": null,
+    "hash": "ee7c6c63f272b1577b1a9bdce363acea",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-035.pdf",
+     "TECL035.zip: TECL035/CERTIFICADO DE MANTENIMIENTO TECL-035.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-05",
+    "horometro": 370.2,
+    "codigo_doc": "TECL-035",
+    "fecha_archivo": null,
+    "hash": "f6ab87e6436f9953092484652edcec37",
+    "rutas": [
+     "TECL035.zip: TECL035/Certificado de Operatividad TECL-035.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-16",
+    "horometro": 375.2,
+    "codigo_doc": "TECL-035",
+    "fecha_archivo": null,
+    "hash": "26d5f4549206362905957907ebdb7feb",
+    "rutas": [
+     "Certificado de Operatividad TECL-035.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-10",
+    "horometro": 360.0,
+    "proximo_h": 460.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL035",
+    "serie": "22052293",
+    "fecha_archivo": "2026-05-10",
+    "hash": "a098cad4b42784e4778451a6b93fc7b1",
+    "rutas": [
+     "TECL035 10.05.2026.pdf",
+     "TECL035.zip: TECL035/TECL035 10.05.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-037": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-20",
+    "fecha_tabla": "2026-07-20",
+    "horometro": 345.0,
+    "frecuencia": 100,
+    "proximo_h": 445.0,
+    "plan": {
+     "fecha": "2026-07-20",
+     "horometro": 345.0,
+     "proximo_h": 445.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-20",
+    "codigo_doc": "TECL-037",
+    "fecha_archivo": null,
+    "hash": "9dbb508cbe7aff897b9c6e16d7227a1a",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-037.pdf",
+     "TECL037\\CERTIFICADO DE MANTENIMIENTO TECL-037.pdf",
+     "TECL037.zip: TECL037/CERTIFICADO DE MANTENIMIENTO TECL-037.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-11",
+    "horometro": 296.8,
+    "codigo_doc": "TECL-037",
+    "fecha_archivo": null,
+    "hash": "fb94ee26533176c425378c325adf6d3d",
+    "rutas": [
+     "Certificado de Operatividad TECL-037.pdf",
+     "TECL037\\Certificado de Operatividad TECL-037.pdf",
+     "TECL037.zip: TECL037/Certificado de Operatividad TECL-037.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-20",
+    "horometro": 345.0,
+    "proximo_h": 445.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-07-20",
+    "hash": "c76af833b84d923e5324d738e5f06d82",
+    "rutas": [
+     "TECL037\\TECL037 20.07.26.pdf",
+     "TECL037 20.07.26.pdf",
+     "TECL037.zip: TECL037/TECL037 20.07.26.pdf"
+    ]
+   }
+  ],
+  "TECL-038": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-04-05",
+    "fecha_tabla": "2026-04-05",
+    "horometro": 840.9,
+    "frecuencia": 100,
+    "proximo_h": 940.9,
+    "plan": {
+     "fecha": "2026-04-05",
+     "horometro": 840.9,
+     "proximo_h": 940.9,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-04-05",
+    "codigo_doc": "TECL-038",
+    "fecha_archivo": null,
+    "hash": "dc2a13eae3ffd895b961db3826b9d06b",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-038.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-09",
+    "horometro": 855.8,
+    "codigo_doc": "TECL-038",
+    "fecha_archivo": null,
+    "hash": "dee38e51765f7ddcf4569cb3d808cfa0",
+    "rutas": [
+     "Certificado de Operatividad TECL-038.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-04-05",
+    "horometro": 840.9,
+    "proximo_h": 940.9,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-04-05",
+    "hash": "930fbeb7c03fe31410f1a585aee9c0b3",
+    "rutas": [
+     "TECL038 05-04-2026.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-039": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-15",
+    "fecha_tabla": "2026-06-15",
+    "horometro": 1123.3,
+    "frecuencia": 100,
+    "proximo_h": 1223.3,
+    "plan": {
+     "fecha": "2026-06-15",
+     "horometro": 1123.3,
+     "proximo_h": 1223.3,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-06-15",
+    "codigo_doc": "TECL-039",
+    "fecha_archivo": null,
+    "hash": "be31b8bbd5b0b937df871b03bac1ac2f",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-039.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-06-24",
+    "horometro": 1123.3,
+    "codigo_doc": "TECL-039",
+    "fecha_archivo": null,
+    "hash": "c65ab7a572a113020ec378c5c2957835",
+    "rutas": [
+     "Certificado de Operatividad TECL-039 - ING..pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-15",
+    "horometro": 1123.3,
+    "proximo_h": 1223.3,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-06-15",
+    "hash": "64927839145e828d5222dec106f5f05a",
+    "rutas": [
+     "TECL039 15-06-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-040": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-15",
+    "plan": {
+     "fecha": "2026-06-15",
+     "horometro": 1510.5,
+     "proximo_h": 1610.5,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-06-15",
+    "codigo_doc": "TECL-040",
+    "fecha_archivo": null,
+    "hash": "da7d607698872a9cdfe1e0ef857a53ca",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-040.pdf (1).pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-06-24",
+    "horometro": 1510.5,
+    "codigo_doc": "TECL-040",
+    "fecha_archivo": null,
+    "hash": "1a2fc0efd0905dac50d05cfc7a5c9189",
+    "rutas": [
+     "Certificado de Operatividad TECL-040.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-15",
+    "horometro": 1510.5,
+    "proximo_h": 1610.5,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-06-15",
+    "hash": "9fe31a2901b02a6b94991ad6877ab4b4",
+    "rutas": [
+     "TECL040 15-06-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-041": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-20",
+    "plan": {
+     "fecha": "2026-07-20",
+     "horometro": 673.0,
+     "proximo_h": 773.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-20",
+    "codigo_doc": "TECL-041",
+    "fecha_archivo": null,
+    "hash": "15a5edc529f256b6e4e12b6e9015795d",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-041.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-16",
+    "horometro": 681.4,
+    "codigo_doc": "TECL-041",
+    "fecha_archivo": null,
+    "hash": "4c6b8d9766f3f9b4f7f8eeeafb43bd02",
+    "rutas": [
+     "Certificado de Operatividad TECL-041.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-20",
+    "horometro": 673.0,
+    "proximo_h": 773.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-07-20",
+    "hash": "f3ef1de1fbe3a3468e45b71669cabd46",
+    "rutas": [
+     "TECL041 20.07.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-042": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-20",
+    "fecha_tabla": "2026-06-20",
+    "horometro": 300.3,
+    "frecuencia": 100,
+    "proximo_h": 400.2,
+    "plan": {
+     "fecha": "2026-06-20",
+     "horometro": 300.2,
+     "proximo_h": 400.2,
+     "frecuencia": 100,
+     "ejecutor": "TÉCNICO A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-06-20",
+    "codigo_doc": "TECL-042",
+    "fecha_archivo": null,
+    "hash": "a35027b3ed26553396f411beb1e5d9ef",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-042.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-24",
+    "horometro": 311.3,
+    "codigo_doc": "TECL-042",
+    "fecha_archivo": null,
+    "hash": "2c6f011aeecebc9380edc8c2ca0945fa",
+    "rutas": [
+     "Certificado de Operatividad TECL-042.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-20",
+    "horometro": 300.2,
+    "proximo_h": 400.2,
+    "frecuencia": 100,
+    "ejecutor": "TÉCNICO A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-06-20",
+    "hash": "e5e2fdb0cde28b7a986693aa8b398dd2",
+    "rutas": [
+     "TECL042 20.06.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-043": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-20",
+    "fecha_tabla": "2026-07-20",
+    "horometro": 510.0,
+    "frecuencia": 100,
+    "proximo_h": 610.0,
+    "plan": {
+     "fecha": "2026-07-20",
+     "horometro": 510.0,
+     "proximo_h": 610.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-20",
+    "codigo_doc": "TECL-043",
+    "fecha_archivo": null,
+    "hash": "fd872612cd80419a90813894ccd3a5b1",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-043.pdf (1).pdf",
+     "TECL043\\CERTIFICADO DE MANTENIMIENTO TECL-043.pdf (1).pdf",
+     "TECL043.zip: TECL043/CERTIFICADO DE MANTENIMIENTO TECL-043.pdf (1).pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-14",
+    "horometro": 520.1,
+    "codigo_doc": "TECL-043",
+    "fecha_archivo": null,
+    "hash": "13cb2ad5867a6c71f1a45b35a32a9c81",
+    "rutas": [
+     "TECL043\\Certificado de Operatividad TECL-043.pdf",
+     "TECL043.zip: TECL043/Certificado de Operatividad TECL-043.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-10",
+    "horometro": 520.1,
+    "codigo_doc": "TECL-043",
+    "fecha_archivo": null,
+    "hash": "6ba07ac8a71a55ac8ee87a15031d554a",
+    "rutas": [
+     "Certificado de Operatividad TECL-043.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-20",
+    "horometro": 510.0,
+    "proximo_h": 610.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-07-20",
+    "hash": "33b63b0be531734d99ff884482fedf69",
+    "rutas": [
+     "TECL043\\TECL043 20.07.2026.pdf",
+     "TECL043 20.07.2026.pdf",
+     "TECL043.zip: TECL043/TECL043 20.07.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-044": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-30",
+    "fecha_tabla": "2026-09-30",
+    "horometro": 1381.6,
+    "frecuencia": 100,
+    "proximo_h": 1481.6,
+    "plan": {
+     "fecha": "2026-09-30",
+     "horometro": 1381.6,
+     "proximo_h": 1481.6,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-30",
+    "codigo_doc": "TECL-044",
+    "fecha_archivo": null,
+    "hash": "f82cbee53991003e07614a9c59e2966c",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-044.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-10",
+    "horometro": 1392.0,
+    "codigo_doc": "TECL-044",
+    "fecha_archivo": null,
+    "hash": "161246cc182d62b33cbf64b876a48e87",
+    "rutas": [
+     "Certificado de Operatividad TECL-044.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-30",
+    "horometro": 1381.6,
+    "proximo_h": 1481.6,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-09-30",
+    "hash": "3afb233b365d79b33eeeb65583b9c5e2",
+    "rutas": [
+     "TECL044 30-09-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-045": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-20",
+    "fecha_tabla": "2026-05-20",
+    "horometro": 342.0,
+    "frecuencia": 100,
+    "proximo_h": 442.0,
+    "plan": {
+     "fecha": "2026-05-20",
+     "horometro": 342.0,
+     "proximo_h": 442.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-20",
+    "codigo_doc": "TECL-045",
+    "fecha_archivo": null,
+    "hash": "e2b225123f97f74970665060eb6b869e",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-045.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-13",
+    "horometro": 342.0,
+    "codigo_doc": "TECL-045",
+    "fecha_archivo": null,
+    "hash": "959c488b3bbfe6e63f251b2797822acd",
+    "rutas": [
+     "Certificado de Operatividad TECL-045.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-20",
+    "horometro": 342.0,
+    "proximo_h": 442.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-20",
+    "hash": "6d2587ce42dde7e9385f1cd3b60de5b8",
+    "rutas": [
+     "TECL045 20.05.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-047": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-22",
+    "fecha_tabla": "2025-07-22",
+    "horometro": 1830.0,
+    "frecuencia": 100,
+    "proximo_h": 1930.0,
+    "plan": {
+     "fecha": "2026-07-22",
+     "horometro": 1830.0,
+     "proximo_h": 1930.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2025-07-22",
+    "codigo_doc": "TECL-047",
+    "fecha_archivo": null,
+    "hash": "2eb413c4b2090b4a957573d76a397529",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-047.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-04",
+    "horometro": 1890.8,
+    "codigo_doc": "TECL-047",
+    "fecha_archivo": null,
+    "hash": "36ea638a372c0ea5f082e5ab0d3e3f48",
+    "rutas": [
+     "Certificado de Operatividad TECL-047 - ING.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-22",
+    "horometro": 1830.0,
+    "proximo_h": 1930.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-07-22",
+    "hash": "5487e8941cf12adab620dc566aa60ac2",
+    "rutas": [
+     "TECL047 22.07.26.pdf"
+    ]
+   }
+  ],
+  "TECL-048": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-11-13",
+    "fecha_tabla": "2026-11-13",
+    "horometro": 19050.0,
+    "frecuencia": 250,
+    "proximo_h": 19300.0,
+    "fecha": "2026-11-13",
+    "codigo_doc": "TECL-048",
+    "fecha_archivo": null,
+    "hash": "e3b27bd580bbf053ee45be966d01f8c9",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-048.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-15",
+    "horometro": 19050.0,
+    "codigo_doc": "TECL-048",
+    "fecha_archivo": null,
+    "hash": "bb5ea71f24e37a95f9217cb982711840",
+    "rutas": [
+     "Certificado de Operatividad TECL-048.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-11-13",
+    "horometro": 19050.0,
+    "proximo_h": 19300.0,
+    "frecuencia": 250,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-048",
+    "serie": "0200132130",
+    "fecha_archivo": "2026-11-13",
+    "hash": "0ede3de7705cd32d30ae9d06497ec605",
+    "rutas": [
+     "TECL048 13.11.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-049": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-20",
+    "fecha_tabla": "2026-05-20",
+    "horometro": 1040.7,
+    "frecuencia": 100,
+    "proximo_h": 1140.7,
+    "plan": {
+     "fecha": "2026-05-20",
+     "horometro": 1040.7,
+     "proximo_h": 1140.7,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-049",
+     "serie": "GS4603-14596"
+    },
+    "fecha": "2026-05-20",
+    "codigo_doc": "TECL-049",
+    "fecha_archivo": null,
+    "hash": "d74a161c14fbb1d507ce8f722671a207",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-049.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-15",
+    "horometro": 1065.4,
+    "codigo_doc": "TECL-049",
+    "fecha_archivo": null,
+    "hash": "3808d49c95631cf08d26cf88ca1cf5a7",
+    "rutas": [
+     "Certificado de Operatividad TECL-049.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-20",
+    "horometro": 1040.7,
+    "proximo_h": 1140.7,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-049",
+    "serie": "GS4603-14596",
+    "fecha_archivo": "2026-05-20",
+    "hash": "81d8470c723999849054609d02c0e6bf",
+    "rutas": [
+     "TECL049 20.05.26.pdf"
+    ]
+   }
+  ],
+  "TECL-050": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-10",
+    "fecha_tabla": "2026-05-10",
+    "horometro": 890.4,
+    "frecuencia": 100,
+    "proximo_h": 990.4,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 890.4,
+     "proximo_h": 990.4,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-10",
+    "codigo_doc": "TECL-050",
+    "fecha_archivo": null,
+    "hash": "95fb93b1a04c8dd45947b7ac030381ba",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-050.pdf.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-05-18",
+    "horometro": 890.4,
+    "codigo_doc": "TECL-050",
+    "fecha_archivo": null,
+    "hash": "6da3cf1b3457267c6768f856776db16a",
+    "rutas": [
+     "Certificado de Operatividad TECL-050 (2).pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-10",
+    "horometro": 890.4,
+    "proximo_h": 990.4,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-10",
+    "hash": "9c8502e2184752bc9c6f8745389b8619",
+    "rutas": [
+     "TECL050 10.05.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-051": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-04",
+    "fecha_tabla": "2026-07-04",
+    "horometro": 1005.0,
+    "frecuencia": 100,
+    "proximo_h": 1105.0,
+    "plan": {
+     "fecha": "2026-07-04",
+     "horometro": 1005.0,
+     "proximo_h": 1105.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "TECL-051",
+     "serie": "0200201432"
+    },
+    "fecha": "2026-07-04",
+    "codigo_doc": "TECL-051",
+    "fecha_archivo": null,
+    "hash": "6867318c34c37e92d4b4aa19dd73838e",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-051.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-09",
+    "horometro": 1023.4,
+    "codigo_doc": "TECL-051",
+    "fecha_archivo": null,
+    "hash": "1aa6e7e277ee1e5fbf7f10cc6fd5d8ab",
+    "rutas": [
+     "Certificado de Operatividad TECL-051 (2).pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-04",
+    "horometro": 1005.0,
+    "proximo_h": 1105.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "TECL-051",
+    "serie": "0200201432",
+    "fecha_archivo": "2026-07-04",
+    "hash": "8a1ceb897765d9875e786e350fb3f218",
+    "rutas": [
+     "TECL051 04.07.26.pdf"
+    ]
+   },
+   {
+    "tipo": "otro",
+    "codigo_doc": null,
+    "fecha_archivo": null,
+    "hash": "acdf3830757b2d4ab39291b1c003d947",
+    "rutas": [
+     "3246ES_ES pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-053": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-20",
+    "fecha_tabla": "2026-06-20",
+    "horometro": 670.0,
+    "frecuencia": 100,
+    "proximo_h": 770.0,
+    "plan": {
+     "fecha": "2026-06-20",
+     "horometro": 670.0,
+     "proximo_h": 770.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-06-20",
+    "codigo_doc": "TECL-053",
+    "fecha_archivo": null,
+    "hash": "c4abd55f1865c0033e1a6ac73378183c",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-053.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-05",
+    "horometro": 675.0,
+    "codigo_doc": "TECL-053",
+    "fecha_archivo": null,
+    "hash": "9af53ac6b37d59012a40aa7b80144712",
+    "rutas": [
+     "Certificado de Operatividad TECL-053.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-20",
+    "horometro": 670.0,
+    "proximo_h": 770.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-06-20",
+    "hash": "b3c1192111eafcea002ecc1b456015a1",
+    "rutas": [
+     "TECL053 20.06.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-054": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-30",
+    "fecha_tabla": "2026-09-30",
+    "horometro": 363.0,
+    "frecuencia": 100,
+    "proximo_h": 463.0,
+    "plan": {
+     "fecha": "2026-09-30",
+     "horometro": 363.0,
+     "proximo_h": 463.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-30",
+    "codigo_doc": "TECL-054",
+    "fecha_archivo": null,
+    "hash": "2b86dc134886d955d83e1e7a46e6ba1e",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-054.pdf",
+     "TECL054\\CERTIFICADO DE MANTENIMIENTO TECL-054.pdf",
+     "TECL054.zip: TECL054/CERTIFICADO DE MANTENIMIENTO TECL-054.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-11",
+    "horometro": 370.7,
+    "codigo_doc": "TECL-054",
+    "fecha_archivo": null,
+    "hash": "f230f25c58ec389bfe307be5761b3931",
+    "rutas": [
+     "Certificado de Operatividad TECL-054.pdf",
+     "TECL054\\Certificado de Operatividad TECL-054.pdf",
+     "TECL054.zip: TECL054/Certificado de Operatividad TECL-054.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-30",
+    "horometro": 363.0,
+    "proximo_h": 463.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-09-30",
+    "hash": "816f01890f2365729636047ca7b5e466",
+    "rutas": [
+     "TECL054\\TECL054 30-09-2026.pdf",
+     "TECL054 30-09-2026.pdf",
+     "TECL054.zip: TECL054/TECL054 30-09-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-055": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-20",
+    "fecha_tabla": "2026-07-20",
+    "horometro": 1088.0,
+    "frecuencia": 100,
+    "proximo_h": 1188.0,
+    "plan": {
+     "fecha": "2026-07-20",
+     "horometro": 1088.0,
+     "proximo_h": 1188.0,
+     "frecuencia": 100,
+     "ejecutor": "TÉCNICO A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-20",
+    "codigo_doc": "TECL-055",
+    "fecha_archivo": null,
+    "hash": "f467fb294bb335e2c766c26ac10f377a",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-055.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-27",
+    "horometro": 1111.0,
+    "codigo_doc": "TECL-055",
+    "fecha_archivo": null,
+    "hash": "b52d05ec20a2b28cf5e219d4769ac336",
+    "rutas": [
+     "Certificado de Operatividad TECL-055.pdf (2).pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-20",
+    "horometro": 1088.0,
+    "proximo_h": 1188.0,
+    "frecuencia": 100,
+    "ejecutor": "TÉCNICO A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-07-22",
+    "hash": "1edf8313e4f1f85f1484503759d4d656",
+    "rutas": [
+     "TECL055 22.07.26.pdf"
+    ]
+   }
+  ],
+  "TECL-056": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2025-07-22",
+    "fecha_tabla": "2025-07-22",
+    "horometro": 495.3,
+    "frecuencia": 100,
+    "proximo_h": 595.3,
+    "fecha": "2025-07-22",
+    "codigo_doc": "TECL-056",
+    "fecha_archivo": null,
+    "hash": "80b62c5092373aa9319ef5b7dda52e26",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-056.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-09",
+    "horometro": 625.7,
+    "codigo_doc": "TECL-056",
+    "fecha_archivo": null,
+    "hash": "5d7de93963876fddaafa303c16dab5be",
+    "rutas": [
+     "Certificado de Operatividad TECL-056.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2025-07-22",
+    "horometro": 495.3,
+    "proximo_h": 595.3,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2025-07-22",
+    "hash": "8f89aa3cb122332735f30a78021bd9bf",
+    "rutas": [
+     "TECL056 22.07.25.pdf"
+    ]
+   }
+  ],
+  "TECL-057": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-05",
+    "fecha_tabla": "2025-05-05",
+    "horometro": 98.0,
+    "frecuencia": 100,
+    "proximo_h": 198.0,
+    "plan": {
+     "fecha": "2026-05-05",
+     "horometro": 98.0,
+     "proximo_h": 198.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2025-05-05",
+    "codigo_doc": "TECL-057",
+    "fecha_archivo": null,
+    "hash": "05da3c9e25e7cc2e22a0c72d3255c92d",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-057.pdf",
+     "TECL057\\CERTIFICADO DE MANTENIMIENTO TECL-057.pdf",
+     "TECL057.zip: TECL057/CERTIFICADO DE MANTENIMIENTO TECL-057.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-13",
+    "horometro": 138.5,
+    "codigo_doc": "TECL-057",
+    "fecha_archivo": null,
+    "hash": "7b059078cecf1a2c50f8545e61c0f8c8",
+    "rutas": [
+     "Certificado de Operatividad TECL-057.pdf",
+     "TECL057\\Certificado de Operatividad TECL-057.pdf",
+     "TECL057.zip: TECL057/Certificado de Operatividad TECL-057.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-05",
+    "horometro": 98.0,
+    "proximo_h": 198.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-05",
+    "hash": "a619bf9ff3dea47e916285d358905614",
+    "rutas": [
+     "TECL057\\TECL057 05-05-2026.pdf.pdf",
+     "TECL057 05-05-2026.pdf.pdf",
+     "TECL057.zip: TECL057/TECL057 05-05-2026.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-058": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-10",
+    "fecha_tabla": "2026-05-10",
+    "horometro": 1100.3,
+    "frecuencia": 100,
+    "proximo_h": 1200.3,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 1100.3,
+     "proximo_h": 1200.3,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-10",
+    "codigo_doc": "TECL-058",
+    "fecha_archivo": null,
+    "hash": "4ffb51b49f3fc9a3395f58d42b269395",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-058.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-09",
+    "horometro": 1113.9,
+    "codigo_doc": "TECL-058",
+    "fecha_archivo": null,
+    "hash": "7b2d1f4d5bc3de33d6db51c0c7c68294",
+    "rutas": [
+     "Certificado de Operatividad TECL-058.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-10",
+    "horometro": 1100.3,
+    "proximo_h": 1200.3,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-10",
+    "hash": "dddf6b1704d7301440fa5329a7f6e312",
+    "rutas": [
+     "TECL058 10.05.26.pdf"
+    ]
+   },
+   {
+    "tipo": "otro",
+    "codigo_doc": null,
+    "fecha_archivo": null,
+    "hash": "695f0e69277a7b32e06779f19ce1c451",
+    "rutas": [
+     "SNORKEL_S2646-EN.pdf"
+    ]
+   }
+  ],
+  "TECL-059": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2025-12-26",
+    "fecha_tabla": "2025-12-26",
+    "horometro": 1003.9,
+    "frecuencia": 100,
+    "proximo_h": 1103.9,
+    "fecha": "2025-12-26",
+    "codigo_doc": "TECL-059",
+    "fecha_archivo": null,
+    "hash": "5f3affc362782ab6d522a7f69a3b2c78",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-059.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-29",
+    "horometro": 1085.0,
+    "codigo_doc": "TECL-059",
+    "fecha_archivo": null,
+    "hash": "b7319ec43ed5266d5fc7ec398c41d5f5",
+    "rutas": [
+     "Certificado de Operatividad TECL-059.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2025-12-26",
+    "horometro": 1003.9,
+    "proximo_h": 1103.9,
+    "frecuencia": 250,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-06-20",
+    "hash": "0d12c11233bce7a51361aea85cdcff1a",
+    "rutas": [
+     "TECL059 20.06.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-060": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-04-25",
+    "fecha_tabla": "2026-04-25",
+    "horometro": 1221.9,
+    "frecuencia": 250,
+    "proximo_h": 1471.9,
+    "plan": {
+     "fecha": "2026-04-25",
+     "horometro": 1221.9,
+     "proximo_h": 1471.9,
+     "frecuencia": 250,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-04-25",
+    "codigo_doc": "TECL-060",
+    "fecha_archivo": null,
+    "hash": "dd7f5b7144f23a47ecb438bdf1bf88c6",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-060.pdf.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-04",
+    "horometro": 1245.4,
+    "codigo_doc": "TECL-060",
+    "fecha_archivo": null,
+    "hash": "62dddf58feaa66d45a1dc407946ededc",
+    "rutas": [
+     "Certificado de Operatividad TECL-060 (1).pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-04-25",
+    "horometro": 1221.9,
+    "proximo_h": 1471.9,
+    "frecuencia": 250,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-04-25",
+    "hash": "d2b0f21c4c81c122f0e7c2e9d590a7ee",
+    "rutas": [
+     "TECL060 25-04-2026.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-061": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-10-19",
+    "fecha_tabla": "2026-10-19",
+    "horometro": 260.0,
+    "frecuencia": 100,
+    "proximo_h": 360.0,
+    "plan": {
+     "fecha": "2026-10-19",
+     "horometro": 260.0,
+     "proximo_h": null,
+     "frecuencia": 100,
+     "ejecutor": "Técnico B",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-10-19",
+    "codigo_doc": "TECL-061",
+    "fecha_archivo": null,
+    "hash": "1d5a7debcb63bcdd5c1782f5150b0d96",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-061.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-27",
+    "horometro": 260.0,
+    "codigo_doc": "TECL-061",
+    "fecha_archivo": null,
+    "hash": "710b349fd1f524fb2e8c5f5c5ee4f2f4",
+    "rutas": [
+     "Certificado de Operatividad TECL-061.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-10-19",
+    "horometro": 260.0,
+    "proximo_h": null,
+    "frecuencia": 100,
+    "ejecutor": "Técnico B",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-10-19",
+    "hash": "6991f5d4eda12120bf17c8696f0e9cf1",
+    "rutas": [
+     "TECL061 19.10.2026.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-062": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-08-08",
+    "fecha_tabla": "2026-08-08",
+    "horometro": 160.0,
+    "frecuencia": 100,
+    "proximo_h": 260.0,
+    "plan": {
+     "fecha": "2026-08-08",
+     "horometro": 160.0,
+     "proximo_h": null,
+     "frecuencia": 100,
+     "ejecutor": "TÉCNICO A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-08-08",
+    "codigo_doc": "TECL-062",
+    "fecha_archivo": null,
+    "hash": "7a65ee403d9356ccdb914e51122d0b34",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-062.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-17",
+    "horometro": 165.6,
+    "codigo_doc": "TECL-062",
+    "fecha_archivo": null,
+    "hash": "b2f0483735e987570927915efeafb823",
+    "rutas": [
+     "Certificado de Operatividad TECL-062 (2).pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-08-08",
+    "horometro": 160.0,
+    "proximo_h": null,
+    "frecuencia": 100,
+    "ejecutor": "TÉCNICO A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2025-08-08",
+    "hash": "d7edc18ec5d53c64e7e7cc5c2c9792b7",
+    "rutas": [
+     "TECL062 08.08.25.pdf.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-063": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-20",
+    "fecha_tabla": "2026-05-20",
+    "horometro": 147.3,
+    "frecuencia": 100,
+    "proximo_h": 247.3,
+    "plan": {
+     "fecha": "2026-05-20",
+     "horometro": 147.3,
+     "proximo_h": null,
+     "frecuencia": 100,
+     "ejecutor": "TÉCNICO A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-20",
+    "codigo_doc": "TECL-063",
+    "fecha_archivo": null,
+    "hash": "1d670b697b58542ba168772e9aa322b8",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-063.pdf (2).pdf",
+     "TECL063.zip: TECL063/CERTIFICADO DE MANTENIMIENTO TECL-063.pdf (2).pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-06-10",
+    "horometro": 147.3,
+    "codigo_doc": "TECL-063",
+    "fecha_archivo": null,
+    "hash": "f5dda899c5be611dd6c0590124c50361",
+    "rutas": [
+     "TECL063.zip: TECL063/Certificado de Operatividad TECL-063.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-17",
+    "horometro": 172.14,
+    "codigo_doc": "TECL-063",
+    "fecha_archivo": null,
+    "hash": "f302d166375b72ec7561378fdcdfe85c",
+    "rutas": [
+     "Certificado de Operatividad TECL-063.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-20",
+    "horometro": 147.3,
+    "proximo_h": null,
+    "frecuencia": 100,
+    "ejecutor": "TÉCNICO A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-20",
+    "hash": "92e7627dd60902c56b609d8d9ac09ebd",
+    "rutas": [
+     "TECL063 20.05.2026.pdf",
+     "TECL063.zip: TECL063/TECL063 20.05.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-064": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-10",
+    "fecha_tabla": "2026-05-10",
+    "horometro": 100.5,
+    "frecuencia": 100,
+    "proximo_h": 200.5,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 100.0,
+     "proximo_h": null,
+     "frecuencia": 100,
+     "ejecutor": "Técnico B",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-10",
+    "codigo_doc": "TECL-064",
+    "fecha_archivo": null,
+    "hash": "610e41f97a328de0bbd068b25f014259",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-064.pdf.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-08-10",
+    "horometro": 190.2,
+    "codigo_doc": "TECL-064",
+    "fecha_archivo": null,
+    "hash": "de4d6769c92730e92fa1d66346f5c9a7",
+    "rutas": [
+     "Certificado de Operatividad TECL-064.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-10",
+    "horometro": 100.0,
+    "proximo_h": null,
+    "frecuencia": 100,
+    "ejecutor": "Técnico B",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-10",
+    "hash": "89b7af19c2fd6f3b6e4dcf74ffec940e",
+    "rutas": [
+     "TECL064 10-05-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-065": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-05-10",
+    "fecha_tabla": "2026-05-10",
+    "horometro": 350.0,
+    "frecuencia": 100,
+    "proximo_h": 450.0,
+    "plan": {
+     "fecha": "2026-05-10",
+     "horometro": 350.0,
+     "proximo_h": 450.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-05-10",
+    "codigo_doc": "TECL-065",
+    "fecha_archivo": null,
+    "hash": "0cb145187e2e82adbd224cd0971f5bff",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-065.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-09",
+    "horometro": 380.0,
+    "codigo_doc": "TECL-065",
+    "fecha_archivo": null,
+    "hash": "314eb42ea4cbff27ccd240f0e4ec599c",
+    "rutas": [
+     "Certificado de Operatividad TECL-065.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-05-10",
+    "horometro": 350.0,
+    "proximo_h": 450.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-05-10",
+    "hash": "85f4666b2f5511a61c717ee3a45a6c60",
+    "rutas": [
+     "TECL065 10.05.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-066": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-06-20",
+    "fecha_tabla": "2026-06-20",
+    "horometro": 40.0,
+    "frecuencia": 100,
+    "proximo_h": 140.0,
+    "plan": {
+     "fecha": "2026-06-20",
+     "horometro": 40.0,
+     "proximo_h": 140.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-06-20",
+    "codigo_doc": "TECL-066",
+    "fecha_archivo": null,
+    "hash": "cd60dfbf82078f1b469d87c94cc5affa",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-066.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-09",
+    "horometro": 50.3,
+    "codigo_doc": "TECL-066",
+    "fecha_archivo": null,
+    "hash": "30e62e6b4a1df2fb4f48dc0c7903c95f",
+    "rutas": [
+     "Certificado de Operatividad TECL-066.pdf (6).pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-06-20",
+    "horometro": 40.0,
+    "proximo_h": 140.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": null,
+    "hash": "ed43577309fe1e4e3644f2f0662bbdd1",
+    "rutas": [
+     "LR - Plan de Procesos de Mntto Tijeras TECL066.pdf"
+    ]
+   }
+  ],
+  "TECL-067": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2025-12-12",
+    "fecha_tabla": "2025-12-12",
+    "horometro": 0.0,
+    "frecuencia": 100,
+    "proximo_h": 100.0,
+    "plan": {
+     "fecha": "2025-12-12",
+     "horometro": 0.0,
+     "proximo_h": 100.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2025-12-12",
+    "codigo_doc": "TECL-067",
+    "fecha_archivo": null,
+    "hash": "a2b99c5bb2a3bb3b2222662944db4aca",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-067.pdf",
+     "TECL067\\CERTIFICADO DE MANTENIMIENTO TECL-067.pdf",
+     "TECL067.zip: TECL067/CERTIFICADO DE MANTENIMIENTO TECL-067.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-13",
+    "horometro": 51.4,
+    "codigo_doc": "TECL-067",
+    "fecha_archivo": null,
+    "hash": "9b715e03f75d95f4a13e7626eb32a320",
+    "rutas": [
+     "Certificado de Operatividad TECL-067 (2).pdf",
+     "TECL067\\Certificado de Operatividad TECL-067 (2).pdf",
+     "TECL067.zip: TECL067/Certificado de Operatividad TECL-067 (2).pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2025-12-12",
+    "horometro": 0.0,
+    "proximo_h": 100.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-08-05",
+    "hash": "a1560188bade11beed390c823a13c1fe",
+    "rutas": [
+     "TECL067\\TECL067 05.08.2026.pdf",
+     "TECL067 05.08.2026.pdf",
+     "TECL067.zip: TECL067/TECL067 05.08.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-068": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2025-12-12",
+    "fecha_tabla": "2025-12-12",
+    "horometro": 0.0,
+    "frecuencia": 100,
+    "proximo_h": 100.0,
+    "fecha": "2025-12-12",
+    "codigo_doc": "TECL-068",
+    "fecha_archivo": null,
+    "hash": "07647e3eb18e30037fc23340379dd24e",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-068.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-04-23",
+    "horometro": 18.0,
+    "codigo_doc": "TECL-068",
+    "fecha_archivo": null,
+    "hash": "2828b2fec4f504839cc76282e6d76542",
+    "rutas": [
+     "Certificado de Operatividad TECL-068.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2025-12-12",
+    "horometro": 0.0,
+    "proximo_h": 100.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": null,
+    "hash": "31a3270ca09ddfdca2dd3e56b2de161a",
+    "rutas": [
+     "TECL068.pdf"
+    ]
+   }
+  ],
+  "TECL-069": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-11-06",
+    "fecha_tabla": "2026-11-07",
+    "horometro": 42.2,
+    "frecuencia": 250,
+    "proximo_h": 292.2,
+    "plan": {
+     "fecha": "2026-11-06",
+     "horometro": 42.2,
+     "proximo_h": 292.2,
+     "frecuencia": 250,
+     "ejecutor": "Técnico A",
+     "supervisor": null,
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-11-07",
+    "codigo_doc": "TECL-069",
+    "fecha_archivo": null,
+    "hash": "184c38eba6637225e992446829df1592",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-069.pdf.pdf (1).pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-06",
+    "horometro": 42.2,
+    "codigo_doc": "TECL-069",
+    "fecha_archivo": null,
+    "hash": "0b5012291281b9e63109c8aefc705583",
+    "rutas": [
+     "Certificado de Operatividad TECL-069.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-11-06",
+    "horometro": 42.2,
+    "proximo_h": 292.2,
+    "frecuencia": 250,
+    "ejecutor": "Técnico A",
+    "supervisor": null,
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-11-06",
+    "hash": "58f501cf2c66f8aa64b40b5414fed55e",
+    "rutas": [
+     "TECL069 06-11-2026.pdf"
+    ]
+   }
+  ],
+  "TECL-070": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-08-12",
+    "fecha_tabla": "2026-08-12",
+    "horometro": 70.0,
+    "frecuencia": 100,
+    "proximo_h": 170.0,
+    "plan": {
+     "fecha": "2026-08-12",
+     "horometro": 70.0,
+     "proximo_h": 170.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-08-12",
+    "codigo_doc": "TECL-070",
+    "fecha_archivo": null,
+    "hash": "9af988feb22540fae1969f7cd5caae05",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-070.pdf",
+     "TECL070\\CERTIFICADO DE MANTENIMIENTO TECL-070.pdf",
+     "TECL070.zip: TECL070/CERTIFICADO DE MANTENIMIENTO TECL-070.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-11",
+    "horometro": 75.0,
+    "codigo_doc": "TECL-070",
+    "fecha_archivo": null,
+    "hash": "1ef0cfead66cfdb683221f26727bc3d9",
+    "rutas": [
+     "Certificado de Operatividad TECL-070.pdf",
+     "TECL070\\Certificado de Operatividad TECL-070.pdf",
+     "TECL070.zip: TECL070/Certificado de Operatividad TECL-070.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-08-12",
+    "horometro": 70.0,
+    "proximo_h": 170.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": "2026-08-12",
+    "hash": "6e83bd8773f0f3e8d13a6f6151d2465c",
+    "rutas": [
+     "TECL070\\TECL070 12.08.2026.pdf",
+     "TECL070 12.08.2026.pdf",
+     "TECL070.zip: TECL070/TECL070 12.08.2026.pdf"
+    ]
+   }
+  ],
+  "TECL-071": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-12",
+    "fecha_tabla": "2026-07-12",
+    "horometro": 60.0,
+    "frecuencia": 100,
+    "proximo_h": 160.0,
+    "plan": {
+     "fecha": "2026-07-12",
+     "horometro": 60.0,
+     "proximo_h": 160.0,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-12",
+    "codigo_doc": "TECL-071",
+    "fecha_archivo": null,
+    "hash": "c73c80a03beb66d3dfc2b7639f183c62",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-071.pdf",
+     "TECL071\\CERTIFICADO DE MANTENIMIENTO TECL-071.pdf",
+     "TECL071.zip: TECL071/CERTIFICADO DE MANTENIMIENTO TECL-071.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-13",
+    "horometro": 80.2,
+    "codigo_doc": "TECL-071",
+    "fecha_archivo": null,
+    "hash": "dbcf8e47d7205147ae983ff80bcc4ba8",
+    "rutas": [
+     "Certificado de Operatividad TECL-071.pdf",
+     "TECL071\\Certificado de Operatividad TECL-071.pdf",
+     "TECL071.zip: TECL071/Certificado de Operatividad TECL-071.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-12",
+    "horometro": 60.0,
+    "proximo_h": 160.0,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": null,
+    "hash": "afb05323d342022e26ea687c4d9d5165",
+    "rutas": [
+     "TECL071\\TECL071.pdf",
+     "TECL071.pdf",
+     "TECL071.zip: TECL071/TECL071.pdf"
+    ]
+   }
+  ],
+  "TECL-072": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-15",
+    "fecha_tabla": "2026-09-15",
+    "horometro": 63.0,
+    "frecuencia": 100,
+    "proximo_h": 163.0,
+    "plan": {
+     "fecha": "2026-09-15",
+     "horometro": 63.0,
+     "proximo_h": null,
+     "frecuencia": 100,
+     "ejecutor": "TÉCNICO A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-15",
+    "codigo_doc": "TECL-072",
+    "fecha_archivo": null,
+    "hash": "5b635c69646fd1dead18a3d019d6d2b7",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-072.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-25",
+    "horometro": 63.2,
+    "codigo_doc": "TECL-072",
+    "fecha_archivo": null,
+    "hash": "97463c134d19698cbd9ca1cc696c8566",
+    "rutas": [
+     "Certificado de Operatividad TECL-072.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-15",
+    "horometro": 63.0,
+    "proximo_h": null,
+    "frecuencia": 100,
+    "ejecutor": "TÉCNICO A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": null,
+    "hash": "07a2d86b3efb2496fe0f790cd24f18e2",
+    "rutas": [
+     "TECL072.pdf"
+    ]
+   }
+  ],
+  "TECL-073": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-15",
+    "fecha_tabla": "2026-09-15",
+    "horometro": 30.0,
+    "frecuencia": 100,
+    "proximo_h": 130.0,
+    "plan": {
+     "fecha": "2026-09-15",
+     "horometro": 30.0,
+     "proximo_h": null,
+     "frecuencia": 100,
+     "ejecutor": "TÉCNICO A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-15",
+    "codigo_doc": "TECL-073",
+    "fecha_archivo": null,
+    "hash": "5f5dc344fd9f8b4600c22ee4bc34fc17",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-073.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-21",
+    "horometro": 30.0,
+    "codigo_doc": "TECL-073",
+    "fecha_archivo": null,
+    "hash": "22511d7bcafc66cccdac33ecfcd68de4",
+    "rutas": [
+     "Certificado de Operatividad TECL-073.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-15",
+    "horometro": 30.0,
+    "proximo_h": null,
+    "frecuencia": 100,
+    "ejecutor": "TÉCNICO A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": null,
+    "hash": "1b498ac1e43b2ae7be7ab22b4f35dd59",
+    "rutas": [
+     "TECL073.pdf"
+    ]
+   }
+  ],
+  "TECL-074": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-15",
+    "fecha_tabla": "2026-09-15",
+    "horometro": 46.0,
+    "frecuencia": 100,
+    "proximo_h": 146.0,
+    "plan": {
+     "fecha": "2026-09-15",
+     "horometro": 46.0,
+     "proximo_h": null,
+     "frecuencia": 100,
+     "ejecutor": "TÉCNICO A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-15",
+    "codigo_doc": "TECL-074",
+    "fecha_archivo": null,
+    "hash": "7e15f86ce2e14ee63b774fcf655b5f20",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-074.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-10-14",
+    "horometro": 47.0,
+    "codigo_doc": "TECL-074",
+    "fecha_archivo": null,
+    "hash": "ff78f0cad71061ee9da927b26e5118f5",
+    "rutas": [
+     "Certificado de Operatividad TECL-074.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-15",
+    "horometro": 46.0,
+    "proximo_h": null,
+    "frecuencia": 100,
+    "ejecutor": "TÉCNICO A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": null,
+    "hash": "ad03b5857eed571c9c2425e231709d9a",
+    "rutas": [
+     "TECL074.pdf.pdf"
+    ]
+   }
+  ],
+  "TECL-075": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-09-15",
+    "fecha_tabla": "2026-09-15",
+    "horometro": 58.0,
+    "frecuencia": 100,
+    "proximo_h": 158.0,
+    "plan": {
+     "fecha": "2026-09-15",
+     "horometro": 58.0,
+     "proximo_h": null,
+     "frecuencia": 100,
+     "ejecutor": "TÉCNICO A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-09-15",
+    "codigo_doc": "TECL-075",
+    "fecha_archivo": null,
+    "hash": "1bd07925b6c4947c89bdd8cbd38b3d49",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-075.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-13",
+    "horometro": 60.0,
+    "codigo_doc": "TECL-075",
+    "fecha_archivo": null,
+    "hash": "0f3c80a9623e333a9bbdcfaddcd8513b",
+    "rutas": [
+     "Certificado de Operatividad TECL-075.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-09-15",
+    "horometro": 58.0,
+    "proximo_h": null,
+    "frecuencia": 100,
+    "ejecutor": "TÉCNICO A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": null,
+    "hash": "5749673ca649a60085c9f76de2428d8a",
+    "rutas": [
+     "TECL075.pdf"
+    ]
+   }
+  ],
+  "TECL-076": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-15",
+    "fecha_tabla": "2026-07-15",
+    "horometro": 40.0,
+    "frecuencia": 100,
+    "proximo_h": 140.0,
+    "plan": {
+     "fecha": "2026-07-15",
+     "horometro": 40.0,
+     "proximo_h": null,
+     "frecuencia": 100,
+     "ejecutor": "TÉCNICO A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": null,
+     "serie": null
+    },
+    "fecha": "2026-07-15",
+    "codigo_doc": "TECL-076",
+    "fecha_archivo": null,
+    "hash": "2861dde959ce91dd63cb771d07b3b461",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO TECL-076.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-11-10",
+    "horometro": 40.0,
+    "codigo_doc": "TECL-076",
+    "fecha_archivo": null,
+    "hash": "b8f21195e1ca58f358b73efa85b6c47e",
+    "rutas": [
+     "Certificado de Operatividad TECL-076.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-15",
+    "horometro": 40.0,
+    "proximo_h": null,
+    "frecuencia": 100,
+    "ejecutor": "TÉCNICO A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": null,
+    "serie": null,
+    "fecha_archivo": null,
+    "hash": "23509af3c5f89472745031e6b73aba77",
+    "rutas": [
+     "TECL076.pdf"
+    ]
+   }
+  ],
+  "UPCL-001": [
+   {
+    "tipo": "CM",
+    "fecha_texto": "2026-07-04",
+    "fecha_tabla": "2026-07-04",
+    "horometro": 285.9,
+    "frecuencia": 100,
+    "proximo_h": 385.9,
+    "plan": {
+     "fecha": "2026-07-04",
+     "horometro": 285.9,
+     "proximo_h": 385.9,
+     "frecuencia": 100,
+     "ejecutor": "Técnico A",
+     "supervisor": "Supervisor S.",
+     "codigo_doc": "UPCL-001",
+     "serie": "0130013179"
+    },
+    "fecha": "2026-07-04",
+    "codigo_doc": "UPCL-001",
+    "fecha_archivo": null,
+    "hash": "1ee83e61e07944b17f1f413c91b59244",
+    "rutas": [
+     "CERTIFICADO DE MANTENIMIENTO UPCL-001.pdf"
+    ]
+   },
+   {
+    "tipo": "CO",
+    "fecha": "2026-09-01",
+    "horometro": 284.7,
+    "codigo_doc": "UPCL-001",
+    "fecha_archivo": null,
+    "hash": "70ce1eabcce60e2d9da6115af0beb032",
+    "rutas": [
+     "Certificado de Operatividad UPCL-001.pdf"
+    ]
+   },
+   {
+    "tipo": "PM",
+    "fecha": "2026-07-04",
+    "horometro": 285.9,
+    "proximo_h": 385.9,
+    "frecuencia": 100,
+    "ejecutor": "Técnico A",
+    "supervisor": "Supervisor S.",
+    "codigo_doc": "UPCL-001",
+    "serie": "0130013179",
+    "fecha_archivo": "2026-07-04",
+    "hash": "0293ea36bfb04a66e3203f38c9e239ba",
+    "rutas": [
+     "UPCL001 04.07.26.pdf"
+    ]
+   },
+   {
+    "tipo": "otro",
+    "codigo_doc": null,
+    "fecha_archivo": null,
+    "hash": "1354794e2c77b9073771f3dea34065d2",
+    "rutas": [
+     "20MSP UNIPERSONAL.pdf"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,85 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, eq_link, icono %}
+{% block titulo %}Programa del taller{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Programa del taller</h1>
+    <p>Agenda por técnico y carga diaria frente a la capacidad de {{ cap|num(0) }} técnico-días por día hábil. Los domingos el taller no opera.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('taller', desde=desde|sumar_dias(-7), dias=dias) }}">← Semana</a>
+    <a class="btn" href="{{ url_for('taller') }}">Hoy</a>
+    <a class="btn" href="{{ url_for('taller', desde=desde|sumar_dias(7), dias=dias) }}">Semana →</a>
+    <form method="post" action="{{ url_for('programar') }}"><button class="btn osc">{{ icono('taller') }} Programar automáticamente</button></form>
+  </div>
+</div>
+
+<div class="grid g4" style="margin-bottom:16px">
+  <div class="card kpi"><span class="l">Utilización del periodo</span><span class="v">{{ (utilizacion * 100)|num(0) }} %</span><span class="s">{{ usada|num(1) }} de {{ disponible|num(0) }} técnico-días</span></div>
+  <div class="card kpi"><span class="l">Técnicos activos</span><span class="v">{{ tecnicos|length }}</span><span class="s">capacidad configurada: {{ cap|num(0) }}</span></div>
+  <div class="card kpi {{ 'alerta' if pendientes }}"><span class="l">Órdenes pendientes sin fecha</span><span class="v">{{ pendientes|length }}</span></div>
+  <div class="card kpi {{ 'alerta' if sin_tecnico }}"><span class="l">Programadas sin técnico</span><span class="v">{{ sin_tecnico|length }}</span></div>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <div class="hd"><h2>{{ rango[0]|fecha }} — {{ rango[-1]|fecha }}</h2>
+    <span class="leyenda" style="margin:0"><span><i style="background:#2f6fd6"></i>Preventivo</span><span><i style="background:#c2410c"></i>Correctivo</span><span><i style="background:#6d28d9"></i>Inspección</span><span><i style="background:#fff;outline:2px solid var(--accent)"></i>En ejecución</span></span></div>
+  <div class="tabla-wrap">
+    <table class="gantt" style="min-width: {{ 170 + rango|length * 58 }}px">
+      <thead>
+        <tr><th class="tec">Técnico</th>
+          {% for d in rango %}<th class="{{ 'dom' if d.weekday() == 6 }} {{ 'hoy' if d == REF }}">{{ d|dia }}<span class="dn">{{ d.day }}</span></th>{% endfor %}</tr>
+      </thead>
+      <tbody>
+        {% for t in tecnicos %}
+        <tr><td class="tec"><a href="{{ url_for('tecnico', tid=t.id) }}">{{ t.nombre }}</a></td>
+          {% for d in rango %}
+            <td class="{{ 'dom' if d.weekday() == 6 }} {{ 'hoy' if d == REF }}">
+              {% for o in agenda.get(t.id, {}).get(d, []) %}
+                <a class="blk {{ o.tipo }} {{ 'ejec' if o.estado == 'En ejecución' }}" href="{{ url_for('orden', oid=o.id) }}" title="{{ o.id|ot }} · {{ o.codigo }} · {{ o.tipo }} {{ o.nivel or '' }}">{{ o.codigo }}</a>
+              {% endfor %}
+            </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+        <tr><td class="tec">Carga del taller<br><small class="muted">técnico-días</small></td>
+          {% for d in rango %}
+            {% set v = carga[d].carga %}
+            <td class="{{ 'dom' if d.weekday() == 6 }}">
+              {% if d.weekday() != 6 %}
+              <div class="carga" title="{{ v|num(1) }} de {{ cap|num(0) }}">
+                <em>{{ v|num(1) if v else '' }}</em>
+                <span class="{{ 'sobre' if v > cap + 0.001 else ('lleno' if v >= cap - 0.001 and v > 0 else '') }}" style="height: {{ [v / cap, 1.15]|min * 80 }}%"></span>
+              </div>
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="grid g2">
+  <div class="card">
+    <div class="hd"><h2>Pendientes sin fecha</h2></div>
+    <ul class="lista">
+      {% for o in pendientes %}
+        <li><span><a class="mono" href="{{ url_for('orden', oid=o.id) }}">{{ o.id|ot }}</a> {{ eq_link(o.codigo) }} <small>{{ o.tipo }} {{ o.nivel or '' }} · {{ o.origen or '' }}</small></span>{{ chip(o.prioridad or 'Normal') }}</li>
+      {% endfor %}
+      {% if not pendientes %}<li class="muted">No hay órdenes pendientes.</li>{% endif %}
+    </ul>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Programadas sin técnico</h2></div>
+    <ul class="lista">
+      {% for o in sin_tecnico %}
+        <li><span><a class="mono" href="{{ url_for('orden', oid=o.id) }}">{{ o.id|ot }}</a> {{ eq_link(o.codigo) }} <small>{{ o.fecha_programada|fecha }}</small></span><a class="btn sm" href="{{ url_for('orden_editar', oid=o.id) }}">Asignar</a></li>
+      {% endfor %}
+      {% if not sin_tecnico %}<li class="muted">Todas las órdenes programadas tienen técnico.</li>{% endif %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

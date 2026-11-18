@@ -1,0 +1,780 @@
+{
+ "formatos": [
+  {
+   "formato": "Para todos los Modelos Z",
+   "aplica_a": [
+    "Brazo articulado combustión"
+   ],
+   "leyenda": [
+    {
+     "nivel": "A",
+     "criterio": "cada 250 hrs. o trimestral"
+    },
+    {
+     "nivel": "A+B",
+     "criterio": "cada 500 hrs. o semestral"
+    },
+    {
+     "nivel": "A+B+C",
+     "criterio": "cada 1,000 hrs. o anual"
+    },
+    {
+     "nivel": "A+B+C+D",
+     "criterio": "cada 2,000 hrs. o bianual"
+    }
+   ],
+   "notas": [
+    "Comparación de lecturas: las dos coinciden exactamente en el formato, aplica_a, la leyenda y las listas A (40), B (7), C (8) y D (9). Solo cambian la redacción de las notas y la forma de citar las fuentes (rutas o nombres de PDF). Se unificó citando las rutas absolutas de los .txt.",
+    "Verificado en la fuente: en BCCL002.txt, líneas 36 a 46, cada código D va alineado con su tarea: D-1 Cambio de aceite hidráulico (análisis), D-2 Mangueras de combustible, D-3 Faja de distribución mas tensador … D-8 Revisión de los Inyectores, D-9 Medición de la Presión de Aceite. En BCCL001 la columna D sale corrida una línea; se reasignó según BCCL002, como hicieron las dos lecturas.",
+    "D-7 en BCCL002 sale como «dEinregcracisoenalde los ejes» + «modelos tracción 2 ruedas»: son 'Engrase de' y 'direccional' intercaladas letra a letra. Comparando con BCCL001 queda «Engrase de los ejes direccional modelos tracción 2 ruedas».",
+    "Lo usan BCCL-001 (Haulotte HA-18PX NT) y BCCL-002 (JLG 450 AJ), que en el programa de los certificados figuran como 'Plataforma Brazo Articulado - combustión'. Versión del pie: «Mntto - PPMTE - 2017» en BCCL001 y «Mntto - PPMTE - 2026» en BCCL002; las tareas son las mismas.",
+    "La palabra «inspección» que va debajo de la leyenda es la cabecera de una columna, no un nivel. Por eso no entra en la leyenda.",
+    "El intervalo de 250 h coincide con los registros: BCCL001 2200.0 → 2450.0 y BCCL002 6840.5 → 7090.5."
+   ],
+   "listas": {
+    "A": [
+     {
+      "codigo": "A-1",
+      "tarea": "Revisión de batería"
+     },
+     {
+      "codigo": "A-2",
+      "tarea": "Revisión del cableado eléctrico"
+     },
+     {
+      "codigo": "A-3",
+      "tarea": "Comprobación del radiador"
+     },
+     {
+      "codigo": "A-4",
+      "tarea": "Revisión del refrigerante"
+     },
+     {
+      "codigo": "A-5",
+      "tarea": "Indicador de filtro hidráulico"
+     },
+     {
+      "codigo": "A-6",
+      "tarea": "Revisión de amortiguadores de capots"
+     },
+     {
+      "codigo": "A-7",
+      "tarea": "Revisión del refrigerador de aceite"
+     },
+     {
+      "codigo": "A-8",
+      "tarea": "Neumáticos y ruedas"
+     },
+     {
+      "codigo": "A-9",
+      "tarea": "Revisión de frenos"
+     },
+     {
+      "codigo": "A-10",
+      "tarea": "Nivel de aceite de cubo tracción"
+     },
+     {
+      "codigo": "A-11",
+      "tarea": "Revisión de la válvula direccional"
+     },
+     {
+      "codigo": "A-12",
+      "tarea": "Revisión de funciones en general"
+     },
+     {
+      "codigo": "A-13",
+      "tarea": "Revisión de interruptores"
+     },
+     {
+      "codigo": "A-14",
+      "tarea": "Revisión de joysticks"
+     },
+     {
+      "codigo": "A-15",
+      "tarea": "Cerradura de contactos"
+     },
+     {
+      "codigo": "A-16",
+      "tarea": "Parada de emergencia (tableros)"
+     },
+     {
+      "codigo": "A-17",
+      "tarea": "Conmutador de pedal"
+     },
+     {
+      "codigo": "A-18",
+      "tarea": "Revisión del sistema rueda libre"
+     },
+     {
+      "codigo": "A-19",
+      "tarea": "Cambio de pre-filtro de combustible"
+     },
+     {
+      "codigo": "A-20",
+      "tarea": "Filtro colador - limpieza Deutz"
+     },
+     {
+      "codigo": "A-21",
+      "tarea": "Cambio de aceite de motor"
+     },
+     {
+      "codigo": "A-22",
+      "tarea": "Cambio de filtro de aceite"
+     },
+     {
+      "codigo": "A-23",
+      "tarea": "Cambio de filtro de aire"
+     },
+     {
+      "codigo": "A-24",
+      "tarea": "Cambio de filtro de combustible"
+     },
+     {
+      "codigo": "A-25",
+      "tarea": "Pistón de Extensión"
+     },
+     {
+      "codigo": "A-26",
+      "tarea": "Pistón Brazo Primario"
+     },
+     {
+      "codigo": "A-27",
+      "tarea": "Pistones de dirección"
+     },
+     {
+      "codigo": "A-28",
+      "tarea": "Pistones de brazo de secundario"
+     },
+     {
+      "codigo": "A-29",
+      "tarea": "Pistón máster"
+     },
+     {
+      "codigo": "A-30",
+      "tarea": "Pistón del nivelador canastilla"
+     },
+     {
+      "codigo": "A-31",
+      "tarea": "Revisión de seguros de capots (si existe)"
+     },
+     {
+      "codigo": "A-32",
+      "tarea": "Cilindro de Tornamesa"
+     },
+     {
+      "codigo": "A-33",
+      "tarea": "Cilindro de giro canastilla"
+     },
+     {
+      "codigo": "A-34",
+      "tarea": "Pistón del brazo pescante (Jib)"
+     },
+     {
+      "codigo": "A-35",
+      "tarea": "Fugas hidráulicas"
+     },
+     {
+      "codigo": "A-36",
+      "tarea": "Mangueras hidráulicas"
+     },
+     {
+      "codigo": "A-37",
+      "tarea": "Unidad motriz auxiliar"
+     },
+     {
+      "codigo": "A-38",
+      "tarea": "Limitadores"
+     },
+     {
+      "codigo": "A-39",
+      "tarea": "Ejes Oscilantes Delanteros"
+     },
+     {
+      "codigo": "A-40",
+      "tarea": "Sensor de inclinación"
+     }
+    ],
+    "B": [
+     {
+      "codigo": "B-1",
+      "tarea": "Kit de alarmas y balizas (si existe)"
+     },
+     {
+      "codigo": "B-2",
+      "tarea": "Lubricación y engrase general"
+     },
+     {
+      "codigo": "B-3",
+      "tarea": "Revisión de la Tornamesa"
+     },
+     {
+      "codigo": "B-4",
+      "tarea": "Revisión de las fajas de motor"
+     },
+     {
+      "codigo": "B-5",
+      "tarea": "Cambio de filtro hidráulico"
+     },
+     {
+      "codigo": "B-6",
+      "tarea": "Revisión de ajustes de pernos en general"
+     },
+     {
+      "codigo": "B-7",
+      "tarea": "Arrancador"
+     }
+    ],
+    "C": [
+     {
+      "codigo": "C-1",
+      "tarea": "Pastillas de fricción"
+     },
+     {
+      "codigo": "C-2",
+      "tarea": "Engrase de rotación de Tornamesa"
+     },
+     {
+      "codigo": "C-3",
+      "tarea": "Cambio de aceite de cubos"
+     },
+     {
+      "codigo": "C-4",
+      "tarea": "Limpieza del Tanque de combustible"
+     },
+     {
+      "codigo": "C-5",
+      "tarea": "Alternador"
+     },
+     {
+      "codigo": "C-6",
+      "tarea": "Regulación de balancines"
+     },
+     {
+      "codigo": "C-7",
+      "tarea": "Cambio de faja de ventilador"
+     },
+     {
+      "codigo": "C-8",
+      "tarea": "Ajustes de pernos de la Tornamesa"
+     }
+    ],
+    "D": [
+     {
+      "codigo": "D-1",
+      "tarea": "Cambio de aceite hidráulico (análisis)"
+     },
+     {
+      "codigo": "D-2",
+      "tarea": "Mangueras de combustible"
+     },
+     {
+      "codigo": "D-3",
+      "tarea": "Faja de distribución mas tensador"
+     },
+     {
+      "codigo": "D-4",
+      "tarea": "Compresión de los cilindros"
+     },
+     {
+      "codigo": "D-5",
+      "tarea": "Revisión de bombas de inyección"
+     },
+     {
+      "codigo": "D-6",
+      "tarea": "Revisión de la bomba hidráulica"
+     },
+     {
+      "codigo": "D-7",
+      "tarea": "Engrase de los ejes direccional modelos tracción 2 ruedas"
+     },
+     {
+      "codigo": "D-8",
+      "tarea": "Revisión de los Inyectores"
+     },
+     {
+      "codigo": "D-9",
+      "tarea": "Medición de la Presión de Aceite"
+     }
+    ]
+   }
+  },
+  {
+   "formato": "Para todos los Modelos Z Eléctricos",
+   "aplica_a": [
+    "Brazo articulado eléctrico"
+   ],
+   "leyenda": [
+    {
+     "nivel": "A",
+     "criterio": "cada 250 hrs. o trimestral"
+    },
+    {
+     "nivel": "A+B",
+     "criterio": "cada 500 hrs. o semestral"
+    },
+    {
+     "nivel": "A+B+C",
+     "criterio": "cada 1,000 hrs. o anual"
+    },
+    {
+     "nivel": "A+B+C+D",
+     "criterio": "cada 2,000 hrs. o bianual"
+    }
+   ],
+   "notas": [
+    "Comparación de lecturas: las dos coinciden exactamente en la leyenda y las listas A (37), B (4), C (8) y D (3). Solo cambia la redacción de las notas. Las dos consultaron BECL003.txt, que no estaba en el encargo, para confirmar la numeración; se incluye en archivos_fuente solo como referencia de alineación.",
+    "Verificado en la fuente: en BECL003.txt, líneas 15 a 18, la lista B sale limpia: B-1 Lubricación y engrase general, B-2 Revisión de la Tornamesa, B-3 Cambio de filtro hidráulico, B-4 Revisión de ajustes de pernos en general. En las líneas 41 a 52, la lista A va de A-26 Revisión de seguros de capots a A-37 Descenso manual de funciones, con A-28 = Cilindro de giro canastilla. Esto resuelve el desfase de BECL002 y BECL006: allí A-28 sale vacío por la tarea A-19, que ocupa dos líneas, y «Descenso manual de funciones» queda sin código. También resuelve el de las copias de certificado, con A-30 y A-34 vacíos.",
+    "En BECL001 (PM y certificado) la extracción no trae ninguna tarea de la lista A, solo B, C y D. La lista A sale de BECL002, BECL006 y BECL003: las 37 tareas aparecen en todas esas copias.",
+    "A-19 está partida en dos líneas («Revisión de pines de sujeción» / «y articulación c/pasadores») y se unió.",
+    "Es un formato propio, distinto del de combustión. Lo usan BECL-001 (Genie Z-45/25 J DC), BECL-002 (JLG E-450 AJ) y BECL-006 (JLG E-40), además de BECL003 (HA15 IP). Versión: «Mntto - PPMTE - 2017». Diferencias con el formato de combustión: A-1 va en plural («baterías»), A-15 dice «Chapa de contacto», el kit de alarmas y balizas es A-35 (en combustión es B-1), C-3 dice «...de tracción» y no hay tareas de motor de combustión, combustible ni radiador.",
+    "El intervalo de 250 h coincide con los registros: BECL001 03378.0 → 03628.0, BECL002 3700.0 → 3950.0 y BECL006 436.0 → 686.0."
+   ],
+   "listas": {
+    "A": [
+     {
+      "codigo": "A-1",
+      "tarea": "Revisión de baterías"
+     },
+     {
+      "codigo": "A-2",
+      "tarea": "Revisión del cableado eléctrico"
+     },
+     {
+      "codigo": "A-3",
+      "tarea": "Revisión de cargador de batería"
+     },
+     {
+      "codigo": "A-4",
+      "tarea": "Revisión del Indicador de batería"
+     },
+     {
+      "codigo": "A-5",
+      "tarea": "Revisión de enchufes eléctricos"
+     },
+     {
+      "codigo": "A-6",
+      "tarea": "Revisión de amortiguadores de capots"
+     },
+     {
+      "codigo": "A-7",
+      "tarea": "Indicador de filtro hidráulico"
+     },
+     {
+      "codigo": "A-8",
+      "tarea": "Neumáticos y ruedas"
+     },
+     {
+      "codigo": "A-9",
+      "tarea": "Revisión de frenos"
+     },
+     {
+      "codigo": "A-10",
+      "tarea": "Nivel de aceite de cubo tracción"
+     },
+     {
+      "codigo": "A-11",
+      "tarea": "Revisión de la válvula direccional"
+     },
+     {
+      "codigo": "A-12",
+      "tarea": "Revisión de funciones en general"
+     },
+     {
+      "codigo": "A-13",
+      "tarea": "Revisión de interruptores"
+     },
+     {
+      "codigo": "A-14",
+      "tarea": "Revisión de joysticks"
+     },
+     {
+      "codigo": "A-15",
+      "tarea": "Chapa de contacto"
+     },
+     {
+      "codigo": "A-16",
+      "tarea": "Parada de emergencia (tableros)"
+     },
+     {
+      "codigo": "A-17",
+      "tarea": "Conmutador de pedal"
+     },
+     {
+      "codigo": "A-18",
+      "tarea": "Revisión del sistema rueda libre"
+     },
+     {
+      "codigo": "A-19",
+      "tarea": "Revisión de pines de sujeción y articulación c/pasadores"
+     },
+     {
+      "codigo": "A-20",
+      "tarea": "Pistón de Extensión"
+     },
+     {
+      "codigo": "A-21",
+      "tarea": "Pistón Brazo Primario"
+     },
+     {
+      "codigo": "A-22",
+      "tarea": "Pistones de dirección"
+     },
+     {
+      "codigo": "A-23",
+      "tarea": "Pistones de brazo de secundario"
+     },
+     {
+      "codigo": "A-24",
+      "tarea": "Pistón máster"
+     },
+     {
+      "codigo": "A-25",
+      "tarea": "Pistón del nivelador canastilla"
+     },
+     {
+      "codigo": "A-26",
+      "tarea": "Revisión de seguros de capots (si existe)"
+     },
+     {
+      "codigo": "A-27",
+      "tarea": "Cilindro de Tornamesa"
+     },
+     {
+      "codigo": "A-28",
+      "tarea": "Cilindro de giro canastilla"
+     },
+     {
+      "codigo": "A-29",
+      "tarea": "Pistón del brazo pescante (Jib)"
+     },
+     {
+      "codigo": "A-30",
+      "tarea": "Fugas hidráulicas"
+     },
+     {
+      "codigo": "A-31",
+      "tarea": "Mangueras hidráulicas"
+     },
+     {
+      "codigo": "A-32",
+      "tarea": "Unidad motriz auxiliar"
+     },
+     {
+      "codigo": "A-33",
+      "tarea": "Limitadores"
+     },
+     {
+      "codigo": "A-34",
+      "tarea": "Sensor de inclinación"
+     },
+     {
+      "codigo": "A-35",
+      "tarea": "Kit de alarmas y balizas (si existe)"
+     },
+     {
+      "codigo": "A-36",
+      "tarea": "Giro de canastilla manual (si existe)"
+     },
+     {
+      "codigo": "A-37",
+      "tarea": "Descenso manual de funciones"
+     }
+    ],
+    "B": [
+     {
+      "codigo": "B-1",
+      "tarea": "Lubricación y engrase general"
+     },
+     {
+      "codigo": "B-2",
+      "tarea": "Revisión de la Tornamesa"
+     },
+     {
+      "codigo": "B-3",
+      "tarea": "Cambio de filtro hidráulico"
+     },
+     {
+      "codigo": "B-4",
+      "tarea": "Revisión de ajustes de pernos en general"
+     }
+    ],
+    "C": [
+     {
+      "codigo": "C-1",
+      "tarea": "Pastillas de fricción"
+     },
+     {
+      "codigo": "C-2",
+      "tarea": "Engrase de rotación de Tornamesa"
+     },
+     {
+      "codigo": "C-3",
+      "tarea": "Cambio de aceite de cubos de tracción"
+     },
+     {
+      "codigo": "C-4",
+      "tarea": "Engrase a las ruedas de simple tracción"
+     },
+     {
+      "codigo": "C-5",
+      "tarea": "Motor eléctrico Principal (mantención)"
+     },
+     {
+      "codigo": "C-6",
+      "tarea": "Motor eléctrico auxiliar (mantención)"
+     },
+     {
+      "codigo": "C-7",
+      "tarea": "Motores Eléctricos de Tracción"
+     },
+     {
+      "codigo": "C-8",
+      "tarea": "Ajustes de pernos de la Tornamesa"
+     }
+    ],
+    "D": [
+     {
+      "codigo": "D-1",
+      "tarea": "Cambio de aceite hidráulico (análisis)"
+     },
+     {
+      "codigo": "D-2",
+      "tarea": "Revisión de la bomba hidráulica"
+     },
+     {
+      "codigo": "D-3",
+      "tarea": "Análisis de estado de Baterías"
+     }
+    ]
+   }
+  },
+  {
+   "formato": "Para Modelos de Tijeras Eléctricas",
+   "aplica_a": [
+    "Tijera eléctrica",
+    "Mástil vertical"
+   ],
+   "leyenda": [
+    {
+     "nivel": "A",
+     "criterio": "cada 100 hrs."
+    },
+    {
+     "nivel": "A+B",
+     "criterio": "cada 300 hrs."
+    },
+    {
+     "nivel": "A+B+C",
+     "criterio": "cada 500 hrs."
+    },
+    {
+     "nivel": "A+B+C+D",
+     "criterio": "cada 1000 hrs."
+    }
+   ],
+   "notas": [
+    "Comparación de lecturas: las dos coinciden exactamente en aplica_a, la leyenda y las listas A (28), B (6), C (11) y D (1). Solo cambia la redacción de las notas.",
+    "Lista D verificada con grep sobre todos los TECL*.txt y UPCL001.txt: solo aparece «D-2 Aceite hidráulico», en la misma línea que A-15 o A-14. No hay ninguna D-1 en ninguna copia, así que se deja sin inventarla. Puede que el original se salte el número o que la celda esté vacía o sea una imagen.",
+    "Leyenda verificada: TECL001 trae «cada100 hrs. A / cada 300 hrs. A+B / cada 500 hrs. A+B+C / cada 1000 hrs. A+B+C+D» (líneas 103 a 106; el espacio que falta se normalizó). TECL073 y UPCL001 traen lo mismo. TECL060 (líneas 110 a 113 y 573 a 576) trae otra leyenda con el mismo pie y las mismas tareas: 250 / 500 / 1000 / 2000 hrs. Por eso se toma como leyenda del formato la mayoritaria, 100/300/500/1000, y el intervalo hay que asignarlo por máquina según la leyenda de su propio PM. Ejemplos: TECL001 01560.6 → 01660.6, TECL073 0 → 100.0, UPCL001 00285.9 → 00385.9 y TECL060 01221.9 → 01471.9. En la carpeta hay más variantes de leyenda, en archivos fuera del encargo como TECL010, TECL011 y TECL059.",
+    "El mástil unipersonal UPCL-001 (JLG 20 MSP, 'MODELO: Elevador Unipersonal') no tiene formato propio: lleva el mismo pie «Para Modelos de Tijeras Eléctricas» y las mismas listas, y en su certificado figura como 'Tipo Tijera'. Por eso aplica_a incluye «Mástil vertical». Las tijeras son TECL-001 (Genie GS-2646), TECL-060 (GTJZ14) y TECL-073 (GTJZ12).",
+    "En TECL001 (PM y certificado) A-20 sale vacío porque ahí cae «HR: 01660.6», y «Cubos traseros de freno» queda sin código después de A-28. Se reasignó según TECL060, TECL073 y UPCL001: A-20 = Chasis y sobre chasis … A-28 = Cubos traseros de freno.",
+    "Se normalizó el espaciado de la extracción: «C argador» → Cargador, «A m ort i guadores» → Amortiguadores, «A jus t es» → Ajustes. Se mantiene la ortografía original: «Engrase de de ejes direccionales», «Revision», «direccion», «Modulo», «Sustitucion del filtro hidraulico».",
+    "Versión del pie: «Mntto - PPMTE - 2017» en TECL001, TECL060 y UPCL001, y «Mntto - PPMTE - 2025» en TECL073. Las tareas son las mismas en ambas."
+   ],
+   "listas": {
+    "A": [
+     {
+      "codigo": "A-1",
+      "tarea": "Revisión de las baterías"
+     },
+     {
+      "codigo": "A-2",
+      "tarea": "Revisión del cableado eléctrico"
+     },
+     {
+      "codigo": "A-3",
+      "tarea": "Nivel del aceite hidráulico"
+     },
+     {
+      "codigo": "A-4",
+      "tarea": "Estado de todas las piezas"
+     },
+     {
+      "codigo": "A-5",
+      "tarea": "Neumáticos y llantas"
+     },
+     {
+      "codigo": "A-6",
+      "tarea": "Parada de emergencia ambos tableros"
+     },
+     {
+      "codigo": "A-7",
+      "tarea": "Chapa de contacto"
+     },
+     {
+      "codigo": "A-8",
+      "tarea": "Revisión de funciones"
+     },
+     {
+      "codigo": "A-9",
+      "tarea": "Bocina"
+     },
+     {
+      "codigo": "A-10",
+      "tarea": "Revisión de frenos"
+     },
+     {
+      "codigo": "A-11",
+      "tarea": "Sensor de alarma y inclinación"
+     },
+     {
+      "codigo": "A-12",
+      "tarea": "Kit de alarmas"
+     },
+     {
+      "codigo": "A-13",
+      "tarea": "Válvula manual de freno"
+     },
+     {
+      "codigo": "A-14",
+      "tarea": "Limitadores"
+     },
+     {
+      "codigo": "A-15",
+      "tarea": "Dispositivos antibaches"
+     },
+     {
+      "codigo": "A-16",
+      "tarea": "Válvula manual de descenso"
+     },
+     {
+      "codigo": "A-17",
+      "tarea": "Lubricación general"
+     },
+     {
+      "codigo": "A-18",
+      "tarea": "Ajustes"
+     },
+     {
+      "codigo": "A-19",
+      "tarea": "Alimentación a la plataforma"
+     },
+     {
+      "codigo": "A-20",
+      "tarea": "Chasis y sobre chasis"
+     },
+     {
+      "codigo": "A-21",
+      "tarea": "Pistones"
+     },
+     {
+      "codigo": "A-22",
+      "tarea": "Bombas de tracción delanteras"
+     },
+     {
+      "codigo": "A-23",
+      "tarea": "Motores Delanteros"
+     },
+     {
+      "codigo": "A-24",
+      "tarea": "Cubos Delanteros"
+     },
+     {
+      "codigo": "A-25",
+      "tarea": "Conos Graseros Traseros"
+     },
+     {
+      "codigo": "A-26",
+      "tarea": "Revision del Comando Plataforma"
+     },
+     {
+      "codigo": "A-27",
+      "tarea": "Revision del Modulo Tierra"
+     },
+     {
+      "codigo": "A-28",
+      "tarea": "Cubos traseros de freno"
+     }
+    ],
+    "B": [
+     {
+      "codigo": "B-1",
+      "tarea": "Revision del filtro hidráulico"
+     },
+     {
+      "codigo": "B-2",
+      "tarea": "Revisión de ejes de direccion"
+     },
+     {
+      "codigo": "B-3",
+      "tarea": "Relé térmico"
+     },
+     {
+      "codigo": "B-4",
+      "tarea": "Paneles de controles"
+     },
+     {
+      "codigo": "B-5",
+      "tarea": "Revisión de transmisión de ruedas"
+     },
+     {
+      "codigo": "B-6",
+      "tarea": "Revision del Controlador de Motor"
+     }
+    ],
+    "C": [
+     {
+      "codigo": "C-1",
+      "tarea": "Pastillas de fricción"
+     },
+     {
+      "codigo": "C-2",
+      "tarea": "Engrase de de ejes direccionales"
+     },
+     {
+      "codigo": "C-3",
+      "tarea": "Motor eléctrico"
+     },
+     {
+      "codigo": "C-4",
+      "tarea": "Bomba hidráulica"
+     },
+     {
+      "codigo": "C-5",
+      "tarea": "Cargador"
+     },
+     {
+      "codigo": "C-6",
+      "tarea": "Transformador"
+     },
+     {
+      "codigo": "C-7",
+      "tarea": "Amortiguadores"
+     },
+     {
+      "codigo": "C-8",
+      "tarea": "Limitadores de Velocidades"
+     },
+     {
+      "codigo": "C-9",
+      "tarea": "Cubos Delanteros"
+     },
+     {
+      "codigo": "C-10",
+      "tarea": "Conos Graseros Traseros"
+     },
+     {
+      "codigo": "C-11",
+      "tarea": "Sustitucion del filtro hidraulico"
+     }
+    ],
+    "D": [
+     {
+      "codigo": "D-2",
+      "tarea": "Aceite hidráulico"
+     }
+    ]
+   }
+  }
+ ]
+}

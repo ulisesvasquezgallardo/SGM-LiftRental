@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+compartir/
+datos/respaldos/
+datos/estatus/*.xlsx
+.claude/

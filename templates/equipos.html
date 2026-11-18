@@ -1,0 +1,68 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, restante, icono %}
+{% block titulo %}Almacén de equipos{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Almacén virtual de equipos</h1>
+    <p>{{ flota|length }} equipos. Cada ficha reúne datos técnicos, uso, horómetro, mantenimiento y expediente documental.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('exportar', tabla='equipos') }}">{{ icono('csv') }} CSV</a>
+    <a class="btn pri" href="{{ url_for('equipo_nuevo') }}">{{ icono('mas') }} Nuevo equipo</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="filtros" id="filtros">
+    <input type="search" id="f-q" placeholder="Buscar código, marca, modelo, serie, cliente u obra…">
+    <select id="f-categoria"><option value="">Todas las categorías</option>{% for c in CATEGORIAS %}<option>{{ c }}</option>{% endfor %}</select>
+    <select id="f-situacion"><option value="">Toda situación</option>{% for s in SITUACIONES %}<option>{{ s }}</option>{% endfor %}</select>
+    <select id="f-marca"><option value="">Todas las marcas</option>{% for m in marcas %}<option>{{ m }}</option>{% endfor %}</select>
+    <div class="seg" id="f-estado">
+      <button type="button" data-v="" class="on">Todos</button>
+      <button type="button" data-v="Vigente">Vigentes</button>
+      <button type="button" data-v="Por vencer">Por vencer</button>
+      <button type="button" data-v="Vencido">Vencidos</button>
+      <button type="button" data-v="Sin datos">Sin datos</button>
+    </div>
+    <span class="muted" id="f-cuenta" style="margin-left:auto"></span>
+  </div>
+  <div class="tabla-wrap">
+    <table id="tabla-equipos">
+      <thead>
+        <tr>
+          <th data-orden="codigo">Código</th><th>Equipo</th><th class="n" data-orden="altura">Alt. trabajo</th>
+          <th class="n">Año</th><th>Situación</th><th>Mantenimiento</th><th data-orden="rest">Restante</th>
+          <th>Último servicio</th><th class="n">Horómetro est.</th><th>Ubicación</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for e in flota %}
+        <tr class="fila-link" data-href="{{ url_for('equipo', codigo=e.codigo) }}"
+            data-categoria="{{ e.categoria }}" data-situacion="{{ e.situacion }}" data-marca="{{ e.marca or '' }}"
+            data-estado="{{ e.mant.estado }}" data-codigo="{{ e.codigo }}" data-altura="{{ e.altura_trabajo or 0 }}"
+            data-rest="{{ e.mant.dias_rest if e.mant.dias_rest is not none else -9999 }}"
+            data-texto="{{ [e.codigo, e.marca, e.modelo, e.serie, e.alquiler.cliente if e.alquiler, e.alquiler.obra if e.alquiler]|select|join(' ')|lower }}">
+          <td><a class="cod" href="{{ url_for('equipo', codigo=e.codigo) }}">{{ e.codigo }}</a>{% if not e.con_expediente %}<br><span class="tag">sin expediente</span>{% endif %}</td>
+          <td style="min-width:200px">{{ e.marca or "" }} {{ e.modelo or "" }}<br><small>{{ e.categoria }}</small></td>
+          <td class="n">{{ e.altura_trabajo|num(1) if e.altura_trabajo else '—' }}{% if e.altura_trabajo %} m{% endif %}</td>
+          <td class="n">{{ e.anio or '—' }}</td>
+          <td>{{ chip(e.situacion) }}</td>
+          <td>{{ chip(e.mant.estado) }}</td>
+          <td>{{ restante(e.mant) }}</td>
+          <td>{{ e.mant.fecha_pm|fecha }}</td>
+          <td class="n">{{ e.mant.horometro_est|num(1) if e.mant.horometro_est is not none else '—' }}</td>
+          <td>{% if e.alquiler %}{{ e.alquiler.obra or e.alquiler.cliente }}{% if e.alquiler.contrato_vencido %} <span class="chip bad plain" title="Contrato vencido el {{ e.alquiler.fecha_vencimiento|fecha }}">+{{ e.alquiler.dias_atraso }} d</span>{% endif %}
+              {% elif e.orden %}<a href="{{ url_for('orden', oid=e.orden.id) }}">{{ e.orden.id|ot }}</a> <small>{{ e.orden.estado|lower }}</small>
+              {% else %}<span class="muted">{{ e.ubicacion_detalle or 'Patio Comas' }}</span>{% endif %}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <div class="vacio" id="sin-resultados" hidden>Ningún equipo coincide con los filtros.</div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script>filtrarTabla('tabla-equipos');</script>{% endblock %}

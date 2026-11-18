@@ -1,0 +1,354 @@
+﻿Corrida 2;Inicio 2026-11-17;Horizonte 60 días
+Indicador;E0 Práctica actual;E1 Asignación óptima sin control de mantenimiento;E2 Modelo propuesto;E3 Modelo con valor terminal
+Pedidos atendidos;45;42;39;42
+Pedidos no atendidos;4;7;10;7
+Ingreso por alquiler (S/);119725.0;117342.5;112905.0;116805.0
+Días-máquina con mantenimiento vencido;141;622;0;0
+Pedidos atendidos con equipo vencido;8;29;0;0
+Costo esperado de falla en obra (S/);3034.62;4953.19;1243.01;1349.34
+Servicios ejecutados;50;0;12;53
+Costo de mantenimiento (S/);38750.0;0;5770.0;40330.0
+Equipos vencidos al cierre;9;59;47;6
+Deuda de mantenimiento al cierre (S/);4000.0;42750.0;36980.0;2420.0
+Costo de traslado (S/);16004.93;12896.93;11221.93;12896.93
+Margen neto (S/);61935.45;99492.38;94670.06;62228.73
+Margen neto descontada la deuda (S/);57935.45;56742.38;57690.06;59808.73
+Técnico-días utilizados;101.0;0.0;17.0;106.0
+
+Componente;Transición;Margen neto;Margen descontada la deuda
+Efecto de optimizar la asignación;E0 -> E1;37556.93;-1193.07
+Efecto del control del mantenimiento;E1 -> E2;-4822.32;947.68
+Beneficio del modelo propuesto;E0 -> E2;32734.61;-245.39
+Beneficio del modelo con valor terminal;E0 -> E3;293.28;1873.28
+
+Solver;Estado;Segundos;Variables;Restricciones;Pares compatibles
+E1;Optimal;0.66;8940;8380;749
+E2;Optimal;3.89;8940;12188;749
+E3;Optimal;4.25;8940;12188;749
+
+Plan E0: servicios;Equipo;Nivel;Inicio;Fin;Técnico-días;Costo
+;BCCL-003;A;2026-11-18;2026-11-19;2.0;900.0
+;BECL-006;A+B;2026-11-18;2026-11-20;3.0;1300.0
+;TECL-065;A;2026-11-18;2026-11-18;1.0;280.0
+;TECL-049;A;2026-11-19;2026-11-19;1.0;280.0
+;TECL-011;A+B;2026-11-20;2026-11-21;2.0;650.0
+;TECL-066;A;2026-11-20;2026-11-20;1.0;280.0
+;TECL-022;A;2026-11-21;2026-11-21;1.0;280.0
+;TECL-041;A;2026-11-21;2026-11-21;1.0;280.0
+;TECL-003;A+B+C;2026-11-23;2026-11-25;3.0;1200.0
+;TECL-060;A;2026-11-23;2026-11-23;1.0;280.0
+;TECL-073;A;2026-11-23;2026-11-23;1.0;280.0
+;TECL-042;A;2026-11-24;2026-11-24;1.0;280.0
+;TECL-050;A+B;2026-11-24;2026-11-25;2.0;650.0
+;BECL-007;A;2026-11-25;2026-11-26;2.0;650.0
+;TECL-004;A+B+C;2026-11-26;2026-11-28;3.0;1200.0
+;TECL-054;A;2026-11-26;2026-11-26;1.0;280.0
+;BECL-004;A+B+C;2026-11-30;2026-12-03;5.0;2600.0
+;TECL-012;A+B;2026-11-30;2026-12-01;2.0;650.0
+;BECL-008;A;2026-12-02;2026-12-03;2.0;650.0
+;TECL-057;A;2026-12-11;2026-12-11;1.0;280.0
+;BECL-001;A+B;2026-12-14;2026-12-16;3.0;1300.0
+;TECL-020;A+B;2026-12-14;2026-12-15;2.0;650.0
+;TECL-070;A;2026-12-14;2026-12-14;1.0;280.0
+;TECL-031;A+B;2026-12-15;2026-12-16;2.0;650.0
+;TECL-021;A+B+C;2026-12-16;2026-12-18;3.0;1200.0
+;BECL-002;A;2026-12-17;2026-12-18;2.0;650.0
+;BECL-003;A+B+C;2026-12-21;2026-12-24;5.0;2600.0
+;TECL-056;A+B+C;2026-12-21;2026-12-23;3.0;1200.0
+;TECL-058;A+B;2026-12-24;2026-12-25;2.0;650.0
+;TECL-017;A;2026-12-25;2026-12-25;1.0;280.0
+;TECL-007;A+B+C;2026-12-28;2026-12-30;3.0;1200.0
+;TECL-028;A+B;2026-12-28;2026-12-29;2.0;650.0
+;TECL-043;A+B+C;2026-12-28;2026-12-30;3.0;1200.0
+;TECL-013;A+B;2026-12-30;2026-12-31;2.0;650.0
+;TECL-068;A;2026-12-31;2026-12-31;1.0;280.0
+;BCCL-002;A+B+C;2027-01-04;2027-01-07;5.0;3000.0
+;TECL-034;A+B+C+D;2027-01-04;2027-01-07;5.0;2400.0
+;BCCL-001;A;2027-01-08;2027-01-09;2.0;900.0
+;TECL-027;A;2027-01-08;2027-01-08;1.0;280.0
+;TECL-063;A;2027-01-08;2027-01-08;1.0;280.0
+;TECL-002;A;2027-01-09;2027-01-09;1.0;280.0
+;TECL-069;A;2027-01-09;2027-01-09;1.0;280.0
+;TECL-023;A+B;2027-01-11;2027-01-12;2.0;650.0
+;TECL-025;A+B+C;2027-01-11;2027-01-13;3.0;1200.0
+;TECL-037;A+B;2027-01-11;2027-01-12;2.0;650.0
+;TECL-024;A+B;2027-01-13;2027-01-14;2.0;650.0
+;TECL-036;A;2027-01-13;2027-01-13;1.0;280.0
+;TECL-018;A+B;2027-01-14;2027-01-15;2.0;650.0
+;TECL-062;A;2027-01-14;2027-01-14;1.0;280.0
+;TECL-014;A;2027-01-15;2027-01-15;1.0;280.0
+Plan E0: asignaciones;Pedido;Cliente;Obra;Equipo;Inicio;Fin;Días con mantenimiento vencido
+;35;Cliente 22;Obra 50;TECL-047;2026-11-17;2026-12-15;0
+;25;Cliente 22;Obra 50;TECL-024;2026-11-18;2026-12-21;0
+;10;Cliente 04;Obra 37;TECL-030;2026-11-19;2026-12-22;0
+;47;Cliente 28;Obra 50;TECL-049;2026-11-20;2026-12-20;0
+;13;Cliente 49;Obra 58;TECL-058;2026-11-22;2026-12-22;31
+;32;Cliente 22;Obra 50;TECL-065;2026-11-23;2027-01-15;0
+;46;Cliente 23;Obra 56;TECL-060;2026-11-24;2027-01-15;0
+;2;Cliente 48;Obra 39;TECL-073;2026-11-26;2026-12-24;0
+;6;Cliente 08;Obra 02;BECL-001;2026-11-26;2026-12-10;15
+;49;Cliente 48;Obra 39;TECL-011;2026-11-26;2026-12-26;0
+;5;Cliente 09;Obra 15;TECL-050;2026-11-28;2027-01-15;0
+;21;Cliente 39;Obra 28;TECL-015;2026-11-29;2027-01-15;0
+;31;Cliente 08;Obra 02;TECL-001;2026-12-02;2027-01-15;25
+;37;Cliente 28;Obra 47;TECL-006;2026-12-05;2027-01-15;0
+;42;Cliente 47;Obra 40;TECL-004;2026-12-05;2027-01-02;0
+;3;Cliente 49;Obra 58;TECL-003;2026-12-06;2027-01-15;0
+;19;Cliente 52;Obra 33;TECL-066;2026-12-06;2027-01-05;0
+;18;Cliente 52;Obra 34;TECL-075;2026-12-07;2027-01-15;0
+;26;Cliente 28;Obra 50;BECL-004;2026-12-08;2027-01-15;0
+;28;Cliente 28;Obra 50;TECL-041;2026-12-08;2026-12-20;0
+;7;Cliente 08;Obra 02;BECL-006;2026-12-09;2026-12-23;0
+;36;Cliente 01;Obra 48;TECL-010;2026-12-14;2027-01-15;0
+;15;Cliente 16;Obra 19;TECL-061;2026-12-15;2027-01-15;0
+;23;Cliente 02;Obra 07;TECL-028;2026-12-15;2026-12-27;13
+;20;Cliente 04;Obra 37;TECL-062;2026-12-16;2027-01-13;29
+;4;Cliente 52;Obra 35;TECL-012;2026-12-18;2027-01-15;0
+;41;Cliente 48;Obra 39;BCCL-002;2026-12-19;2026-12-21;0
+;22;Cliente 40;Obra 11;UPCL-001;2026-12-20;2027-01-15;15
+;39;Cliente 51;Obra 53;TECL-049;2026-12-21;2027-01-15;0
+;1;Cliente 04;Obra 37;TECL-041;2026-12-22;2027-01-15;0
+;24;Cliente 03;Obra 42;TECL-063;2026-12-22;2027-01-03;8
+;44;Cliente 52;Obra 32;TECL-038;2026-12-24;2027-01-15;5
+;9;Cliente 49;Obra 58;TECL-016;2026-12-25;2027-01-15;0
+;12;Cliente 52;Obra 32;TECL-011;2026-12-30;2027-01-15;0
+;45;Cliente 23;Obra 55;TECL-058;2026-12-30;2027-01-15;0
+;48;Cliente 52;Obra 32;TECL-007;2026-12-31;2027-01-15;0
+;11;Cliente 40;Obra 11;TECL-004;2027-01-03;2027-01-15;0
+;33;Cliente 47;Obra 40;TECL-072;2027-01-05;2027-01-15;0
+;34;Cliente 47;Obra 40;BCCL-004;2027-01-07;2027-01-15;0
+;8;Cliente 12;Obra 17;TECL-020;2027-01-08;2027-01-15;0
+;30;Cliente 52;Obra 32;BECL-002;2027-01-08;2027-01-15;0
+;14;Cliente 43;Obra 29;TECL-063;2027-01-09;2027-01-15;0
+;29;Cliente 49;Obra 58;TECL-021;2027-01-10;2027-01-15;0
+;16;Cliente 01;Obra 48;TECL-073;2027-01-14;2027-01-15;0
+;27;Cliente 48;Obra 39;TECL-008;2027-01-14;2027-01-15;0
+Plan E0: no atendidos;Pedido;Cliente;Obra;Motivo
+;38;Cliente 52;Obra 33;Ningún equipo compatible está libre en la fecha de inicio
+;40;Cliente 41;Obra 25;Ningún equipo compatible está libre en la fecha de inicio
+;43;Cliente 22;Obra 50;Los 1 equipos compatibles están ocupados o deben pasar por taller
+;17;Cliente 33;Obra 38;Los 1 equipos compatibles están ocupados o deben pasar por taller
+
+Plan E1: servicios;Equipo;Nivel;Inicio;Fin;Técnico-días;Costo
+Plan E1: asignaciones;Pedido;Cliente;Obra;Equipo;Inicio;Fin;Días con mantenimiento vencido
+;35;Cliente 22;Obra 50;TECL-055;2026-11-17;2026-12-15;0
+;25;Cliente 22;Obra 50;TECL-045;2026-11-18;2026-12-21;0
+;10;Cliente 04;Obra 37;TECL-040;2026-11-19;2026-12-22;0
+;47;Cliente 28;Obra 50;TECL-066;2026-11-20;2026-12-20;31
+;13;Cliente 49;Obra 58;TECL-058;2026-11-22;2026-12-22;31
+;32;Cliente 22;Obra 50;TECL-065;2026-11-23;2027-01-15;54
+;46;Cliente 23;Obra 56;TECL-069;2026-11-24;2027-01-15;10
+;2;Cliente 48;Obra 39;TECL-073;2026-11-26;2026-12-24;29
+;6;Cliente 08;Obra 02;BECL-001;2026-11-26;2026-12-10;15
+;49;Cliente 48;Obra 39;TECL-015;2026-11-26;2026-12-26;0
+;5;Cliente 09;Obra 15;TECL-049;2026-11-28;2027-01-15;49
+;21;Cliente 39;Obra 28;TECL-012;2026-11-29;2027-01-15;48
+;31;Cliente 08;Obra 02;TECL-010;2026-12-02;2027-01-15;0
+;37;Cliente 28;Obra 47;TECL-006;2026-12-05;2027-01-15;0
+;42;Cliente 47;Obra 40;TECL-001;2026-12-05;2027-01-02;12
+;3;Cliente 49;Obra 58;TECL-050;2026-12-06;2027-01-15;41
+;19;Cliente 52;Obra 33;TECL-060;2026-12-06;2027-01-05;31
+;18;Cliente 52;Obra 34;TECL-075;2026-12-07;2027-01-15;0
+;26;Cliente 28;Obra 50;BECL-004;2026-12-08;2027-01-15;39
+;7;Cliente 08;Obra 02;BECL-006;2026-12-09;2026-12-23;15
+;36;Cliente 01;Obra 48;TECL-018;2026-12-14;2027-01-15;3
+;15;Cliente 16;Obra 19;TECL-061;2026-12-15;2027-01-15;0
+;20;Cliente 04;Obra 37;TECL-070;2026-12-16;2027-01-13;29
+;4;Cliente 52;Obra 35;TECL-007;2026-12-18;2027-01-15;29
+;22;Cliente 40;Obra 11;UPCL-001;2026-12-20;2027-01-15;15
+;39;Cliente 51;Obra 53;TECL-051;2026-12-21;2027-01-15;0
+;1;Cliente 04;Obra 37;TECL-057;2026-12-22;2027-01-15;25
+;24;Cliente 03;Obra 42;TECL-066;2026-12-22;2027-01-03;13
+;44;Cliente 52;Obra 32;TECL-063;2026-12-24;2027-01-15;20
+;9;Cliente 49;Obra 58;TECL-056;2026-12-25;2027-01-15;22
+;12;Cliente 52;Obra 32;TECL-016;2026-12-30;2027-01-15;0
+;45;Cliente 23;Obra 55;TECL-043;2026-12-30;2027-01-15;17
+;48;Cliente 52;Obra 32;TECL-008;2026-12-31;2027-01-15;0
+;11;Cliente 40;Obra 11;TECL-072;2027-01-03;2027-01-15;0
+;33;Cliente 47;Obra 40;TECL-073;2027-01-05;2027-01-15;11
+;34;Cliente 47;Obra 40;BCCL-004;2027-01-07;2027-01-15;0
+;8;Cliente 12;Obra 17;TECL-062;2027-01-08;2027-01-15;8
+;30;Cliente 52;Obra 32;BECL-001;2027-01-08;2027-01-15;8
+;14;Cliente 43;Obra 29;TECL-068;2027-01-09;2027-01-15;7
+;29;Cliente 49;Obra 58;TECL-041;2027-01-10;2027-01-15;6
+;16;Cliente 01;Obra 48;TECL-070;2027-01-14;2027-01-15;2
+;27;Cliente 48;Obra 39;TECL-066;2027-01-14;2027-01-15;2
+Plan E1: no atendidos;Pedido;Cliente;Obra;Motivo
+;38;Cliente 52;Obra 33;Ningún equipo compatible está libre en la fecha de inicio
+;40;Cliente 41;Obra 25;Ningún equipo compatible está libre en la fecha de inicio
+;43;Cliente 22;Obra 50;Los 1 equipos compatibles están ocupados o deben pasar por taller
+;28;Cliente 28;Obra 50;El ingreso del pedido no cubre el traslado y el riesgo de falla
+;23;Cliente 02;Obra 07;El ingreso del pedido no cubre el traslado y el riesgo de falla
+;41;Cliente 48;Obra 39;El ingreso del pedido no cubre el traslado y el riesgo de falla
+;17;Cliente 33;Obra 38;Los 1 equipos compatibles están ocupados o deben pasar por taller
+
+Plan E2: servicios;Equipo;Nivel;Inicio;Fin;Técnico-días;Costo
+;BECL-006;A+B;2026-11-18;2026-11-20;3.0;1300.0
+;TECL-049;A;2026-11-18;2026-11-18;1.0;280.0
+;TECL-065;A;2026-11-18;2026-11-18;1.0;280.0
+;TECL-066;A;2026-11-19;2026-11-19;1.0;280.0
+;TECL-041;A;2026-11-20;2026-11-20;1.0;280.0
+;TECL-042;A;2026-11-23;2026-11-23;1.0;280.0
+;TECL-073;A;2026-11-23;2026-11-23;1.0;280.0
+;BECL-001;A+B;2026-11-26;2026-11-28;3.0;1300.0
+;TECL-063;A;2026-12-07;2026-12-07;1.0;280.0
+;TECL-062;A;2026-12-14;2026-12-14;1.0;280.0
+;TECL-070;A;2026-12-14;2026-12-14;1.0;280.0
+;BECL-002;A;2026-12-15;2026-12-16;2.0;650.0
+Plan E2: asignaciones;Pedido;Cliente;Obra;Equipo;Inicio;Fin;Días con mantenimiento vencido
+;35;Cliente 22;Obra 50;TECL-055;2026-11-17;2026-12-15;0
+;25;Cliente 22;Obra 50;TECL-039;2026-11-18;2026-12-21;0
+;10;Cliente 04;Obra 37;TECL-040;2026-11-19;2026-12-22;0
+;47;Cliente 28;Obra 50;TECL-049;2026-11-20;2026-12-20;0
+;13;Cliente 49;Obra 58;TECL-065;2026-11-22;2026-12-22;0
+;32;Cliente 22;Obra 50;TECL-075;2026-11-23;2027-01-15;0
+;46;Cliente 23;Obra 56;TECL-066;2026-11-24;2027-01-15;0
+;2;Cliente 48;Obra 39;TECL-073;2026-11-26;2026-12-24;0
+;49;Cliente 48;Obra 39;TECL-047;2026-11-26;2026-12-26;0
+;5;Cliente 09;Obra 15;TECL-010;2026-11-28;2027-01-15;0
+;21;Cliente 39;Obra 28;TECL-015;2026-11-29;2027-01-15;0
+;31;Cliente 08;Obra 02;TECL-041;2026-12-02;2027-01-15;0
+;37;Cliente 28;Obra 47;TECL-006;2026-12-05;2027-01-15;0
+;42;Cliente 47;Obra 40;TECL-018;2026-12-05;2027-01-02;0
+;3;Cliente 49;Obra 58;TECL-045;2026-12-06;2027-01-15;0
+;19;Cliente 52;Obra 33;TECL-069;2026-12-06;2027-01-05;0
+;18;Cliente 52;Obra 34;TECL-042;2026-12-07;2027-01-15;0
+;26;Cliente 28;Obra 50;BECL-001;2026-12-08;2027-01-15;0
+;7;Cliente 08;Obra 02;BECL-006;2026-12-09;2026-12-23;0
+;36;Cliente 01;Obra 48;TECL-061;2026-12-14;2027-01-15;0
+;15;Cliente 16;Obra 19;TECL-008;2026-12-15;2027-01-15;0
+;20;Cliente 04;Obra 37;TECL-062;2026-12-16;2027-01-13;0
+;4;Cliente 52;Obra 35;TECL-070;2026-12-18;2027-01-15;0
+;39;Cliente 51;Obra 53;TECL-051;2026-12-21;2027-01-15;0
+;1;Cliente 04;Obra 37;TECL-055;2026-12-22;2027-01-15;0
+;24;Cliente 03;Obra 42;TECL-063;2026-12-22;2027-01-03;0
+;44;Cliente 52;Obra 32;TECL-016;2026-12-24;2027-01-15;0
+;9;Cliente 49;Obra 58;TECL-049;2026-12-25;2027-01-15;0
+;12;Cliente 52;Obra 32;TECL-047;2026-12-30;2027-01-15;0
+;45;Cliente 23;Obra 55;TECL-073;2026-12-30;2027-01-15;0
+;48;Cliente 52;Obra 32;TECL-065;2026-12-31;2027-01-15;0
+;11;Cliente 40;Obra 11;TECL-019;2027-01-03;2027-01-15;0
+;33;Cliente 47;Obra 40;TECL-072;2027-01-05;2027-01-15;0
+;34;Cliente 47;Obra 40;BCCL-004;2027-01-07;2027-01-15;0
+;8;Cliente 12;Obra 17;TECL-053;2027-01-08;2027-01-15;0
+;30;Cliente 52;Obra 32;BECL-002;2027-01-08;2027-01-15;0
+;14;Cliente 43;Obra 29;TECL-063;2027-01-09;2027-01-15;0
+;29;Cliente 49;Obra 58;TECL-039;2027-01-10;2027-01-15;0
+;16;Cliente 01;Obra 48;TECL-062;2027-01-14;2027-01-15;0
+Plan E2: no atendidos;Pedido;Cliente;Obra;Motivo
+;38;Cliente 52;Obra 33;Ningún equipo compatible está libre en la fecha de inicio
+;6;Cliente 08;Obra 02;Los 1 equipos compatibles están ocupados o deben pasar por taller
+;40;Cliente 41;Obra 25;Ningún equipo compatible está libre en la fecha de inicio
+;43;Cliente 22;Obra 50;Los 1 equipos compatibles están ocupados o deben pasar por taller
+;28;Cliente 28;Obra 50;El ingreso del pedido no cubre el traslado y el riesgo de falla
+;23;Cliente 02;Obra 07;El ingreso del pedido no cubre el traslado y el riesgo de falla
+;41;Cliente 48;Obra 39;El ingreso del pedido no cubre el traslado y el riesgo de falla
+;22;Cliente 40;Obra 11;Los 1 equipos compatibles están ocupados o deben pasar por taller
+;17;Cliente 33;Obra 38;Los 1 equipos compatibles están ocupados o deben pasar por taller
+;27;Cliente 48;Obra 39;Los 17 equipos compatibles están ocupados o deben pasar por taller
+
+Plan E3: servicios;Equipo;Nivel;Inicio;Fin;Técnico-días;Costo
+;TECL-024;A+B;2026-11-18;2026-11-19;2.0;650.0
+;TECL-065;A;2026-11-18;2026-11-18;1.0;280.0
+;TECL-066;A;2026-11-18;2026-11-18;1.0;280.0
+;BCCL-003;A;2026-11-19;2026-11-20;2.0;900.0
+;TECL-002;A;2026-11-19;2026-11-19;1.0;280.0
+;TECL-011;A+B;2026-11-20;2026-11-21;2.0;650.0
+;TECL-041;A;2026-11-20;2026-11-20;1.0;280.0
+;TECL-027;A;2026-11-21;2026-11-21;1.0;280.0
+;TECL-004;A+B+C;2026-11-23;2026-11-25;3.0;1200.0
+;TECL-058;A+B;2026-11-23;2026-11-24;2.0;650.0
+;TECL-069;A;2026-11-23;2026-11-23;1.0;280.0
+;TECL-001;A;2026-11-24;2026-11-24;1.0;280.0
+;TECL-042;A;2026-11-25;2026-11-25;1.0;280.0
+;TECL-073;A;2026-11-25;2026-11-25;1.0;280.0
+;BECL-001;A+B;2026-11-26;2026-11-28;3.0;1300.0
+;BECL-006;A+B;2026-11-26;2026-11-28;3.0;1300.0
+;TECL-025;A+B+C;2026-11-26;2026-11-28;3.0;1200.0
+;TECL-012;A+B;2026-11-30;2026-12-01;2.0;650.0
+;TECL-043;A+B+C;2026-11-30;2026-12-02;3.0;1200.0
+;TECL-050;A+B;2026-11-30;2026-12-01;2.0;650.0
+;BECL-004;A+B+C;2026-12-02;2026-12-05;5.0;2600.0
+;TECL-060;A;2026-12-03;2026-12-03;1.0;280.0
+;TECL-022;A;2026-12-05;2026-12-05;1.0;280.0
+;TECL-063;A;2026-12-07;2026-12-07;1.0;280.0
+;UPCL-001;A+B;2026-12-07;2026-12-08;2.0;650.0
+;BCCL-001;A;2026-12-08;2026-12-09;2.0;900.0
+;TECL-068;A;2026-12-08;2026-12-08;1.0;280.0
+;TECL-003;A+B+C;2026-12-09;2026-12-11;3.0;1200.0
+;TECL-038;A+B;2026-12-09;2026-12-10;2.0;650.0
+;TECL-037;A+B;2026-12-10;2026-12-11;2.0;650.0
+;TECL-057;A;2026-12-11;2026-12-11;1.0;280.0
+;BECL-002;A;2026-12-14;2026-12-15;2.0;650.0
+;TECL-062;A;2026-12-14;2026-12-14;1.0;280.0
+;TECL-070;A;2026-12-14;2026-12-14;1.0;280.0
+;TECL-021;A+B+C;2026-12-15;2026-12-17;3.0;1200.0
+;BECL-008;A;2026-12-16;2026-12-17;2.0;650.0
+;TECL-036;A;2026-12-16;2026-12-16;1.0;280.0
+;TECL-028;A+B;2026-12-17;2026-12-18;2.0;650.0
+;BECL-007;A;2026-12-18;2026-12-19;2.0;650.0
+;TECL-017;A;2026-12-18;2026-12-18;1.0;280.0
+;TECL-049;A;2026-12-19;2026-12-19;1.0;280.0
+;TECL-007;A+B+C;2026-12-21;2026-12-23;3.0;1200.0
+;TECL-031;A+B;2026-12-21;2026-12-22;2.0;650.0
+;TECL-056;A+B+C;2026-12-21;2026-12-23;3.0;1200.0
+;TECL-014;A;2026-12-28;2026-12-28;1.0;280.0
+;TECL-034;A+B+C+D;2026-12-28;2026-12-31;5.0;2400.0
+;TECL-013;A+B;2026-12-31;2027-01-01;2.0;650.0
+;TECL-020;A+B;2027-01-01;2027-01-02;2.0;650.0
+;TECL-023;A+B;2027-01-04;2027-01-05;2.0;650.0
+;BCCL-002;A+B+C;2027-01-05;2027-01-08;5.0;3000.0
+;TECL-018;A+B;2027-01-08;2027-01-09;2.0;650.0
+;BECL-003;A+B+C;2027-01-12;2027-01-15;5.0;2600.0
+;TECL-054;A;2027-01-13;2027-01-13;1.0;280.0
+Plan E3: asignaciones;Pedido;Cliente;Obra;Equipo;Inicio;Fin;Días con mantenimiento vencido
+;35;Cliente 22;Obra 50;TECL-047;2026-11-17;2026-12-15;0
+;25;Cliente 22;Obra 50;TECL-039;2026-11-18;2026-12-21;0
+;10;Cliente 04;Obra 37;TECL-040;2026-11-19;2026-12-22;0
+;47;Cliente 28;Obra 50;TECL-010;2026-11-20;2026-12-20;0
+;13;Cliente 49;Obra 58;TECL-065;2026-11-22;2026-12-22;0
+;32;Cliente 22;Obra 50;TECL-075;2026-11-23;2027-01-15;0
+;46;Cliente 23;Obra 56;TECL-069;2026-11-24;2027-01-15;0
+;2;Cliente 48;Obra 39;TECL-042;2026-11-26;2026-12-24;0
+;49;Cliente 48;Obra 39;TECL-058;2026-11-26;2026-12-26;0
+;5;Cliente 09;Obra 15;TECL-041;2026-11-28;2027-01-15;0
+;21;Cliente 39;Obra 28;TECL-055;2026-11-29;2027-01-15;0
+;31;Cliente 08;Obra 02;TECL-001;2026-12-02;2027-01-15;0
+;37;Cliente 28;Obra 47;TECL-006;2026-12-05;2027-01-15;0
+;42;Cliente 47;Obra 40;TECL-050;2026-12-05;2027-01-02;0
+;3;Cliente 49;Obra 58;TECL-035;2026-12-06;2027-01-15;0
+;19;Cliente 52;Obra 33;TECL-066;2026-12-06;2027-01-05;0
+;18;Cliente 52;Obra 34;TECL-060;2026-12-07;2027-01-15;0
+;43;Cliente 22;Obra 50;BECL-001;2026-12-07;2026-12-20;0
+;26;Cliente 28;Obra 50;BECL-004;2026-12-08;2027-01-15;0
+;7;Cliente 08;Obra 02;BECL-006;2026-12-09;2026-12-23;0
+;36;Cliente 01;Obra 48;TECL-068;2026-12-14;2027-01-15;0
+;15;Cliente 16;Obra 19;TECL-073;2026-12-15;2027-01-15;0
+;20;Cliente 04;Obra 37;TECL-070;2026-12-16;2027-01-13;0
+;4;Cliente 52;Obra 35;TECL-062;2026-12-18;2027-01-15;0
+;22;Cliente 40;Obra 11;UPCL-001;2026-12-20;2027-01-15;0
+;39;Cliente 51;Obra 53;TECL-057;2026-12-21;2027-01-15;0
+;1;Cliente 04;Obra 37;TECL-017;2026-12-22;2027-01-15;0
+;24;Cliente 03;Obra 42;TECL-063;2026-12-22;2027-01-03;0
+;44;Cliente 52;Obra 32;TECL-049;2026-12-24;2027-01-15;0
+;9;Cliente 49;Obra 58;TECL-047;2026-12-25;2027-01-15;0
+;12;Cliente 52;Obra 32;TECL-016;2026-12-30;2027-01-15;0
+;45;Cliente 23;Obra 55;TECL-042;2026-12-30;2027-01-15;0
+;48;Cliente 52;Obra 32;TECL-065;2026-12-31;2027-01-15;0
+;11;Cliente 40;Obra 11;TECL-014;2027-01-03;2027-01-15;0
+;33;Cliente 47;Obra 40;TECL-072;2027-01-05;2027-01-15;0
+;34;Cliente 47;Obra 40;BCCL-001;2027-01-07;2027-01-15;0
+;8;Cliente 12;Obra 17;TECL-053;2027-01-08;2027-01-15;0
+;30;Cliente 52;Obra 32;BECL-001;2027-01-08;2027-01-15;0
+;14;Cliente 43;Obra 29;TECL-063;2027-01-09;2027-01-15;0
+;29;Cliente 49;Obra 58;TECL-051;2027-01-10;2027-01-15;0
+;16;Cliente 01;Obra 48;TECL-066;2027-01-14;2027-01-15;0
+;27;Cliente 48;Obra 39;TECL-070;2027-01-14;2027-01-15;0
+Plan E3: no atendidos;Pedido;Cliente;Obra;Motivo
+;38;Cliente 52;Obra 33;Ningún equipo compatible está libre en la fecha de inicio
+;6;Cliente 08;Obra 02;Los 1 equipos compatibles están ocupados o deben pasar por taller
+;40;Cliente 41;Obra 25;Ningún equipo compatible está libre en la fecha de inicio
+;28;Cliente 28;Obra 50;El ingreso del pedido no cubre el traslado y el riesgo de falla
+;23;Cliente 02;Obra 07;El ingreso del pedido no cubre el traslado y el riesgo de falla
+;41;Cliente 48;Obra 39;El ingreso del pedido no cubre el traslado y el riesgo de falla
+;17;Cliente 33;Obra 38;Los 1 equipos compatibles están ocupados o deben pasar por taller

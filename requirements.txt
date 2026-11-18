@@ -1,0 +1,5 @@
+flask>=3.0
+pulp==2.9.0            # modelo de optimización (incluye el solver CBC)
+# Sólo para regenerar datos/semilla.json desde los libros Excel:
+openpyxl>=3.1
+gunicorn>=22.0         # servidor web para publicarlo en línea (Render, Linux)

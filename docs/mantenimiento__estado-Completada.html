@@ -1,0 +1,1520 @@
+
+
+<!doctype html>
+<html lang="es">
+<head>
+<script>/* copia estática */(function(){var r=history.replaceState;
+history.replaceState=function(){try{return r.apply(history,arguments)}catch(e){}};
+var M='Esta es una copia de consulta del SGM Lift Rental: aquí no se pueden registrar ni modificar datos. Esa acción está disponible en el sistema original.';
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-sin-copia]');
+if(a){e.preventDefault();e.stopImmediatePropagation();alert(M);}},true);
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();alert(M);},true);
+})();</script>
+<style>.aviso-copia{position:sticky;top:0;z-index:50;background:#fff4cc;color:#5a4300;border-bottom:1px solid #f2b200;
+padding:6px 16px;font:12.5px/1.4 "Segoe UI",system-ui,sans-serif;text-align:center}
+@media print{.aviso-copia{display:none}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Órdenes de trabajo · Lift Rental</title>
+<link rel="stylesheet" href="static/estilos.css">
+<link rel="icon" type="image/jpeg" href="static/logo_liftrental.jpg">
+</head>
+<body>
+<div class="aviso-copia">Copia de consulta del SGM Lift Rental generada el 17/11/2026 23:04 · sólo lectura: los formularios y documentos PDF están disponibles en el sistema original.</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="marca">
+      <img class="logo" src="static/logo_liftrental.jpg" alt="Lift Rental Solutions" width="64" height="64">
+      <div><b>SGM Lift Rental</b><span>Gestión de mantenimiento</span></div>
+    </div>
+    <a class="nav " href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Almacén en vivo</a>
+    <a class="nav " href="panel.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+</svg> Panel de control</a>
+    <a class="nav " href="estatus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Estatus diario </a>
+    <div class="nav-sec">Almacén virtual</div>
+    <a class="nav " href="equipos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Equipos y expedientes</a>
+    <a class="nav " href="alquileres.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20l12-7M6 13l12 7M5 10h14M9 10V6h6v4"/>
+</svg> Uso y alquileres</a>
+    <a class="nav " href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+    <div class="nav-sec">Mantenimiento</div>
+    <a class="nav on" href="mantenimiento.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> Órdenes de trabajo <span class="badge">10</span></a>
+    <a class="nav " href="documentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Documentos de mantto.</a>
+    <a class="nav " href="taller.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programa del taller</a>
+    <a class="nav " href="incidentes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.2v.3"/>
+</svg> Incidentes en obra</a>
+    <div class="nav-sec">Planificación</div>
+    <a class="nav " href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Cartera de pedidos</a>
+    <a class="nav " href="optimizacion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+</svg> Optimización (PLEM)</a>
+    <div class="nav-sec">Personal</div>
+    <a class="nav " href="personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+</svg> Técnicos</a>
+    <a class="nav " href="configuracion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z"/>
+</svg> Configuración</a>
+    <div class="side-pie">
+      Fecha de evaluación<br><b>17/11/2026</b><br>
+      Taller Comas · 3 técnicos
+      <br><span>Estatus real al 17/11/2026</span>
+      
+    </div>
+  </aside>
+  <main>
+    
+    
+      
+    
+    
+<div class="cab">
+  <div>
+    <h1>Órdenes de trabajo</h1>
+    <p>Servicios preventivos (niveles A a A+B+C+D), correctivos e inspecciones del taller de Comas.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="exportar--ordenes.csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>
+</svg> CSV</a>
+    <form method="post" action="#" data-sin-copia="1"><button class="btn osc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programar automáticamente</button></form>
+    <a class="btn pri" href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/>
+</svg> Nueva orden</a>
+  </div>
+</div>
+<div class="tabs">
+  
+  <a href="mantenimiento.html" class="">Abiertas<span class="cnt">10</span></a>
+  
+    <a href="mantenimiento__estado-Completada.html" class="on">Completadas<span class="cnt">100</span></a>
+  
+    <a href="mantenimiento__estado-Cancelada.html" class="">Canceladas<span class="cnt">7</span></a>
+  
+</div>
+
+
+
+<div class="card">
+  <div class="tabla-wrap">
+  
+  <table>
+    <thead><tr><th>OT</th><th>Equipo</th><th>Tipo · nivel</th><th>Estado</th><th>Prioridad</th><th>Ejecutada</th><th class="n">Días · téc-días</th><th>Técnicos</th><th class="n">Costo</th><th>Origen</th></tr></thead>
+    <tbody>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--105.html">
+        <td><a class="mono" href="mantenimiento--105.html">OT-0105</a></td>
+        <td><a class="cod" href="equipos--TECL-048.html">TECL-048</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B+C+D</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>13/11/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--108.html">
+        <td><a class="mono" href="mantenimiento--108.html">OT-0108</a></td>
+        <td><a class="cod" href="equipos--TECL-069.html">TECL-069</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B+C+D</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>06/11/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--92.html">
+        <td><a class="mono" href="mantenimiento--92.html">OT-0092</a></td>
+        <td><a class="cod" href="equipos--BECL-006.html">BECL-006</a><br><small>Brazo articulado eléctrico</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>01/11/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--107.html">
+        <td><a class="mono" href="mantenimiento--107.html">OT-0107</a></td>
+        <td><a class="cod" href="equipos--TECL-061.html">TECL-061</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>19/10/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico B</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--99.html">
+        <td><a class="mono" href="mantenimiento--99.html">OT-0099</a></td>
+        <td><a class="cod" href="equipos--TECL-027.html">TECL-027</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>09/10/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--98.html">
+        <td><a class="mono" href="mantenimiento--98.html">OT-0098</a></td>
+        <td><a class="cod" href="equipos--TECL-019.html">TECL-019</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>01/10/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--93.html">
+        <td><a class="mono" href="mantenimiento--93.html">OT-0093</a></td>
+        <td><a class="cod" href="equipos--TECL-002.html">TECL-002</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>30/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--104.html">
+        <td><a class="mono" href="mantenimiento--104.html">OT-0104</a></td>
+        <td><a class="cod" href="equipos--TECL-044.html">TECL-044</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>30/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--106.html">
+        <td><a class="mono" href="mantenimiento--106.html">OT-0106</a></td>
+        <td><a class="cod" href="equipos--TECL-054.html">TECL-054</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>30/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--97.html">
+        <td><a class="mono" href="mantenimiento--97.html">OT-0097</a></td>
+        <td><a class="cod" href="equipos--TECL-018.html">TECL-018</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>24/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--91.html">
+        <td><a class="mono" href="mantenimiento--91.html">OT-0091</a></td>
+        <td><a class="cod" href="equipos--BECL-003.html">BECL-003</a><br><small>Brazo articulado eléctrico</small></td>
+        <td>Preventivo · <b>A+B+C</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--100.html">
+        <td><a class="mono" href="mantenimiento--100.html">OT-0100</a></td>
+        <td><a class="cod" href="equipos--TECL-028.html">TECL-028</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico B</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--95.html">
+        <td><a class="mono" href="mantenimiento--95.html">OT-0095</a></td>
+        <td><a class="cod" href="equipos--TECL-009.html">TECL-009</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>16/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--110.html">
+        <td><a class="mono" href="mantenimiento--110.html">OT-0110</a></td>
+        <td><a class="cod" href="equipos--TECL-072.html">TECL-072</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B+C+D</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--111.html">
+        <td><a class="mono" href="mantenimiento--111.html">OT-0111</a></td>
+        <td><a class="cod" href="equipos--TECL-073.html">TECL-073</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B+C+D</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--112.html">
+        <td><a class="mono" href="mantenimiento--112.html">OT-0112</a></td>
+        <td><a class="cod" href="equipos--TECL-074.html">TECL-074</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B+C+D</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--113.html">
+        <td><a class="mono" href="mantenimiento--113.html">OT-0113</a></td>
+        <td><a class="cod" href="equipos--TECL-075.html">TECL-075</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B+C+D</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--96.html">
+        <td><a class="mono" href="mantenimiento--96.html">OT-0096</a></td>
+        <td><a class="cod" href="equipos--TECL-011.html">TECL-011</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--90.html">
+        <td><a class="mono" href="mantenimiento--90.html">OT-0090</a></td>
+        <td><a class="cod" href="equipos--BECL-001.html">BECL-001</a><br><small>Brazo articulado eléctrico</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>05/09/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--101.html">
+        <td><a class="mono" href="mantenimiento--101.html">OT-0101</a></td>
+        <td><a class="cod" href="equipos--TECL-032.html">TECL-032</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>25/08/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--12.html">
+        <td><a class="mono" href="mantenimiento--12.html">OT-0012</a></td>
+        <td><a class="cod" href="equipos--TECL-004.html">TECL-004</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>17/08/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico B</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--109.html">
+        <td><a class="mono" href="mantenimiento--109.html">OT-0109</a></td>
+        <td><a class="cod" href="equipos--TECL-070.html">TECL-070</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B+C+D</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>12/08/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--60.html">
+        <td><a class="mono" href="mantenimiento--60.html">OT-0060</a></td>
+        <td><a class="cod" href="equipos--TECL-062.html">TECL-062</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>08/08/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--20.html">
+        <td><a class="mono" href="mantenimiento--20.html">OT-0020</a></td>
+        <td><a class="cod" href="equipos--TECL-013.html">TECL-013</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>25/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--94.html">
+        <td><a class="mono" href="mantenimiento--94.html">OT-0094</a></td>
+        <td><a class="cod" href="equipos--TECL-006.html">TECL-006</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>25/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--48.html">
+        <td><a class="mono" href="mantenimiento--48.html">OT-0048</a></td>
+        <td><a class="cod" href="equipos--TECL-047.html">TECL-047</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>22/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--3.html">
+        <td><a class="mono" href="mantenimiento--3.html">OT-0003</a></td>
+        <td><a class="cod" href="equipos--BCCL-004.html">BCCL-004</a><br><small>Brazo articulado combustión</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--7.html">
+        <td><a class="mono" href="mantenimiento--7.html">OT-0007</a></td>
+        <td><a class="cod" href="equipos--BECL-004.html">BECL-004</a><br><small>Brazo articulado eléctrico</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--19.html">
+        <td><a class="mono" href="mantenimiento--19.html">OT-0019</a></td>
+        <td><a class="cod" href="equipos--TECL-012.html">TECL-012</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--44.html">
+        <td><a class="mono" href="mantenimiento--44.html">OT-0044</a></td>
+        <td><a class="cod" href="equipos--TECL-041.html">TECL-041</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--53.html">
+        <td><a class="mono" href="mantenimiento--53.html">OT-0053</a></td>
+        <td><a class="cod" href="equipos--TECL-055.html">TECL-055</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--102.html">
+        <td><a class="mono" href="mantenimiento--102.html">OT-0102</a></td>
+        <td><a class="cod" href="equipos--TECL-037.html">TECL-037</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--103.html">
+        <td><a class="mono" href="mantenimiento--103.html">OT-0103</a></td>
+        <td><a class="cod" href="equipos--TECL-043.html">TECL-043</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B+C</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--59.html">
+        <td><a class="mono" href="mantenimiento--59.html">OT-0059</a></td>
+        <td><a class="cod" href="equipos--TECL-061.html">TECL-061</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>19/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico B</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--114.html">
+        <td><a class="mono" href="mantenimiento--114.html">OT-0114</a></td>
+        <td><a class="cod" href="equipos--TECL-076.html">TECL-076</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A+B+C+D</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Documento de carpeta</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--69.html">
+        <td><a class="mono" href="mantenimiento--69.html">OT-0069</a></td>
+        <td><a class="cod" href="equipos--TECL-071.html">TECL-071</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>12/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--5.html">
+        <td><a class="mono" href="mantenimiento--5.html">OT-0005</a></td>
+        <td><a class="cod" href="equipos--BECL-002.html">BECL-002</a><br><small>Brazo articulado eléctrico</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--1.html">
+        <td><a class="mono" href="mantenimiento--1.html">OT-0001</a></td>
+        <td><a class="cod" href="equipos--BCCL-001.html">BCCL-001</a><br><small>Brazo articulado combustión</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>07/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico C</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--51.html">
+        <td><a class="mono" href="mantenimiento--51.html">OT-0051</a></td>
+        <td><a class="cod" href="equipos--TECL-051.html">TECL-051</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>04/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--75.html">
+        <td><a class="mono" href="mantenimiento--75.html">OT-0075</a></td>
+        <td><a class="cod" href="equipos--UPCL-001.html">UPCL-001</a><br><small>Mástil vertical</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>04/07/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--21.html">
+        <td><a class="mono" href="mantenimiento--21.html">OT-0021</a></td>
+        <td><a class="cod" href="equipos--TECL-014.html">TECL-014</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>27/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--38.html">
+        <td><a class="mono" href="mantenimiento--38.html">OT-0038</a></td>
+        <td><a class="cod" href="equipos--TECL-034.html">TECL-034</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>22/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--10.html">
+        <td><a class="mono" href="mantenimiento--10.html">OT-0010</a></td>
+        <td><a class="cod" href="equipos--TECL-001.html">TECL-001</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--23.html">
+        <td><a class="mono" href="mantenimiento--23.html">OT-0023</a></td>
+        <td><a class="cod" href="equipos--TECL-016.html">TECL-016</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--28.html">
+        <td><a class="mono" href="mantenimiento--28.html">OT-0028</a></td>
+        <td><a class="cod" href="equipos--TECL-021.html">TECL-021</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--31.html">
+        <td><a class="mono" href="mantenimiento--31.html">OT-0031</a></td>
+        <td><a class="cod" href="equipos--TECL-024.html">TECL-024</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--32.html">
+        <td><a class="mono" href="mantenimiento--32.html">OT-0032</a></td>
+        <td><a class="cod" href="equipos--TECL-025.html">TECL-025</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--45.html">
+        <td><a class="mono" href="mantenimiento--45.html">OT-0045</a></td>
+        <td><a class="cod" href="equipos--TECL-042.html">TECL-042</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--52.html">
+        <td><a class="mono" href="mantenimiento--52.html">OT-0052</a></td>
+        <td><a class="cod" href="equipos--TECL-053.html">TECL-053</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--64.html">
+        <td><a class="mono" href="mantenimiento--64.html">OT-0064</a></td>
+        <td><a class="cod" href="equipos--TECL-066.html">TECL-066</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--42.html">
+        <td><a class="mono" href="mantenimiento--42.html">OT-0042</a></td>
+        <td><a class="cod" href="equipos--TECL-039.html">TECL-039</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--43.html">
+        <td><a class="mono" href="mantenimiento--43.html">OT-0043</a></td>
+        <td><a class="cod" href="equipos--TECL-040.html">TECL-040</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/06/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--8.html">
+        <td><a class="mono" href="mantenimiento--8.html">OT-0008</a></td>
+        <td><a class="cod" href="equipos--BECL-005.html">BECL-005</a><br><small>Brazo articulado eléctrico</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--9.html">
+        <td><a class="mono" href="mantenimiento--9.html">OT-0009</a></td>
+        <td><a class="cod" href="equipos--BECL-006.html">BECL-006</a><br><small>Brazo articulado eléctrico</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--15.html">
+        <td><a class="mono" href="mantenimiento--15.html">OT-0015</a></td>
+        <td><a class="cod" href="equipos--TECL-007.html">TECL-007</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--16.html">
+        <td><a class="mono" href="mantenimiento--16.html">OT-0016</a></td>
+        <td><a class="cod" href="equipos--TECL-008.html">TECL-008</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--27.html">
+        <td><a class="mono" href="mantenimiento--27.html">OT-0027</a></td>
+        <td><a class="cod" href="equipos--TECL-020.html">TECL-020</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--33.html">
+        <td><a class="mono" href="mantenimiento--33.html">OT-0033</a></td>
+        <td><a class="cod" href="equipos--TECL-028.html">TECL-028</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico B</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--34.html">
+        <td><a class="mono" href="mantenimiento--34.html">OT-0034</a></td>
+        <td><a class="cod" href="equipos--TECL-029.html">TECL-029</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--36.html">
+        <td><a class="mono" href="mantenimiento--36.html">OT-0036</a></td>
+        <td><a class="cod" href="equipos--TECL-031.html">TECL-031</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--46.html">
+        <td><a class="mono" href="mantenimiento--46.html">OT-0046</a></td>
+        <td><a class="cod" href="equipos--TECL-043.html">TECL-043</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--47.html">
+        <td><a class="mono" href="mantenimiento--47.html">OT-0047</a></td>
+        <td><a class="cod" href="equipos--TECL-045.html">TECL-045</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--49.html">
+        <td><a class="mono" href="mantenimiento--49.html">OT-0049</a></td>
+        <td><a class="cod" href="equipos--TECL-049.html">TECL-049</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--61.html">
+        <td><a class="mono" href="mantenimiento--61.html">OT-0061</a></td>
+        <td><a class="cod" href="equipos--TECL-063.html">TECL-063</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--2.html">
+        <td><a class="mono" href="mantenimiento--2.html">OT-0002</a></td>
+        <td><a class="cod" href="equipos--BCCL-002.html">BCCL-002</a><br><small>Brazo articulado combustión</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--17.html">
+        <td><a class="mono" href="mantenimiento--17.html">OT-0017</a></td>
+        <td><a class="cod" href="equipos--TECL-010.html">TECL-010</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--18.html">
+        <td><a class="mono" href="mantenimiento--18.html">OT-0018</a></td>
+        <td><a class="cod" href="equipos--TECL-011.html">TECL-011</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--22.html">
+        <td><a class="mono" href="mantenimiento--22.html">OT-0022</a></td>
+        <td><a class="cod" href="equipos--TECL-015.html">TECL-015</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--35.html">
+        <td><a class="mono" href="mantenimiento--35.html">OT-0035</a></td>
+        <td><a class="cod" href="equipos--TECL-030.html">TECL-030</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--39.html">
+        <td><a class="mono" href="mantenimiento--39.html">OT-0039</a></td>
+        <td><a class="cod" href="equipos--TECL-035.html">TECL-035</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--50.html">
+        <td><a class="mono" href="mantenimiento--50.html">OT-0050</a></td>
+        <td><a class="cod" href="equipos--TECL-050.html">TECL-050</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--56.html">
+        <td><a class="mono" href="mantenimiento--56.html">OT-0056</a></td>
+        <td><a class="cod" href="equipos--TECL-058.html">TECL-058</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--62.html">
+        <td><a class="mono" href="mantenimiento--62.html">OT-0062</a></td>
+        <td><a class="cod" href="equipos--TECL-064.html">TECL-064</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico B</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--63.html">
+        <td><a class="mono" href="mantenimiento--63.html">OT-0063</a></td>
+        <td><a class="cod" href="equipos--TECL-065.html">TECL-065</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>10/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--4.html">
+        <td><a class="mono" href="mantenimiento--4.html">OT-0004</a></td>
+        <td><a class="cod" href="equipos--BECL-001.html">BECL-001</a><br><small>Brazo articulado eléctrico</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>05/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--13.html">
+        <td><a class="mono" href="mantenimiento--13.html">OT-0013</a></td>
+        <td><a class="cod" href="equipos--TECL-005.html">TECL-005</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>05/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--37.html">
+        <td><a class="mono" href="mantenimiento--37.html">OT-0037</a></td>
+        <td><a class="cod" href="equipos--TECL-033.html">TECL-033</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>05/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--55.html">
+        <td><a class="mono" href="mantenimiento--55.html">OT-0055</a></td>
+        <td><a class="cod" href="equipos--TECL-057.html">TECL-057</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>05/05/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--58.html">
+        <td><a class="mono" href="mantenimiento--58.html">OT-0058</a></td>
+        <td><a class="cod" href="equipos--TECL-060.html">TECL-060</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>25/04/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--6.html">
+        <td><a class="mono" href="mantenimiento--6.html">OT-0006</a></td>
+        <td><a class="cod" href="equipos--BECL-003.html">BECL-003</a><br><small>Brazo articulado eléctrico</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/04/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--29.html">
+        <td><a class="mono" href="mantenimiento--29.html">OT-0029</a></td>
+        <td><a class="cod" href="equipos--TECL-022.html">TECL-022</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>05/04/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--41.html">
+        <td><a class="mono" href="mantenimiento--41.html">OT-0041</a></td>
+        <td><a class="cod" href="equipos--TECL-038.html">TECL-038</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>05/04/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--30.html">
+        <td><a class="mono" href="mantenimiento--30.html">OT-0030</a></td>
+        <td><a class="cod" href="equipos--TECL-023.html">TECL-023</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/03/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--24.html">
+        <td><a class="mono" href="mantenimiento--24.html">OT-0024</a></td>
+        <td><a class="cod" href="equipos--TECL-017.html">TECL-017</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>09/01/2026</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--57.html">
+        <td><a class="mono" href="mantenimiento--57.html">OT-0057</a></td>
+        <td><a class="cod" href="equipos--TECL-059.html">TECL-059</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>26/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--26.html">
+        <td><a class="mono" href="mantenimiento--26.html">OT-0026</a></td>
+        <td><a class="cod" href="equipos--TECL-019.html">TECL-019</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--70.html">
+        <td><a class="mono" href="mantenimiento--70.html">OT-0070</a></td>
+        <td><a class="cod" href="equipos--TECL-072.html">TECL-072</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--71.html">
+        <td><a class="mono" href="mantenimiento--71.html">OT-0071</a></td>
+        <td><a class="cod" href="equipos--TECL-073.html">TECL-073</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--72.html">
+        <td><a class="mono" href="mantenimiento--72.html">OT-0072</a></td>
+        <td><a class="cod" href="equipos--TECL-074.html">TECL-074</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--73.html">
+        <td><a class="mono" href="mantenimiento--73.html">OT-0073</a></td>
+        <td><a class="cod" href="equipos--TECL-075.html">TECL-075</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--74.html">
+        <td><a class="mono" href="mantenimiento--74.html">OT-0074</a></td>
+        <td><a class="cod" href="equipos--TECL-076.html">TECL-076</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>15/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--65.html">
+        <td><a class="mono" href="mantenimiento--65.html">OT-0065</a></td>
+        <td><a class="cod" href="equipos--TECL-067.html">TECL-067</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>12/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--66.html">
+        <td><a class="mono" href="mantenimiento--66.html">OT-0066</a></td>
+        <td><a class="cod" href="equipos--TECL-068.html">TECL-068</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>12/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--67.html">
+        <td><a class="mono" href="mantenimiento--67.html">OT-0067</a></td>
+        <td><a class="cod" href="equipos--TECL-069.html">TECL-069</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>12/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--68.html">
+        <td><a class="mono" href="mantenimiento--68.html">OT-0068</a></td>
+        <td><a class="cod" href="equipos--TECL-070.html">TECL-070</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>12/12/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--14.html">
+        <td><a class="mono" href="mantenimiento--14.html">OT-0014</a></td>
+        <td><a class="cod" href="equipos--TECL-006.html">TECL-006</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>25/11/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--25.html">
+        <td><a class="mono" href="mantenimiento--25.html">OT-0025</a></td>
+        <td><a class="cod" href="equipos--TECL-018.html">TECL-018</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>24/11/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--11.html">
+        <td><a class="mono" href="mantenimiento--11.html">OT-0011</a></td>
+        <td><a class="cod" href="equipos--TECL-003.html">TECL-003</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>30/07/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--54.html">
+        <td><a class="mono" href="mantenimiento--54.html">OT-0054</a></td>
+        <td><a class="cod" href="equipos--TECL-056.html">TECL-056</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>22/07/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+      
+      <tr class="fila-link" data-href="mantenimiento--40.html">
+        <td><a class="mono" href="mantenimiento--40.html">OT-0040</a></td>
+        <td><a class="cod" href="equipos--TECL-037.html">TECL-037</a><br><small>Tijera eléctrica</small></td>
+        <td>Preventivo · <b>A</b></td>
+        <td><span class="chip ok">Completada</span></td>
+        <td><span class="chip info">Normal</span></td>
+        <td>20/06/2025</td>
+        <td class="n">1 · 1</td>
+        <td>Técnico A</td>
+        <td class="n">—</td>
+        <td><small>Histórico (expediente)</small></td>
+      </tr>
+    
+    </tbody>
+  </table>
+  
+  </div>
+</div>
+
+  </main>
+</div>
+<script src="static/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% block titulo %}Configuración{% endblock %}
+{% block contenido %}
+<div class="cab"><div>
+  <h1>Configuración</h1>
+  <p>Criterios del plan de mantenimiento, capacidad del taller y parámetros por nivel de servicio.</p>
+</div></div>
+<form method="post" class="stack">
+  <div class="grid g2">
+    <div class="card">
+      <div class="hd"><h2>Criterio de vencimiento</h2></div>
+      <div class="bd">
+        <div class="campos">
+          <div><label>Intervalo de calendario — brazos (días)</label><input type="number" name="intervalo_brazos" value="{{ CFG.intervalo_brazos }}" min="1"></div>
+          <div><label>Intervalo de calendario — tijeras y mástil (días)</label><input type="number" name="intervalo_tijeras" value="{{ CFG.intervalo_tijeras }}" min="1">
+            <div class="ayuda">90 = criterio trimestral (caso base); 180 = semestral; un valor muy alto equivale a aplicar sólo el criterio por horas.</div></div>
+          <div><label>Umbral «por vencer» (días)</label><input type="number" name="umbral_dias" value="{{ CFG.umbral_dias }}" min="0"></div>
+          <div><label>Umbral «por vencer» (fracción de horas)</label><input type="number" step="0.05" name="umbral_fraccion" value="{{ CFG.umbral_fraccion }}" min="0" max="1"></div>
+          <label class="check ancho"><input type="checkbox" name="inspeccion_reinicia" value="1" {{ 'checked' if CFG.inspeccion_reinicia != '0' }}> El certificado de operatividad (inspección al despachar) reinicia el plazo de calendario. Las horas se siguen contando desde el último preventivo.</label>
+          <label class="check ancho"><input type="checkbox" name="bloquear_vencidos" value="1" {{ 'checked' if CFG.bloquear_vencidos == '1' }}> Bloquear el despacho de equipos con mantenimiento vencido (sólo salen como excepción documentada)</label>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Taller y evaluación</h2></div>
+      <div class="bd">
+        <div class="campos">
+          <div><label>Capacidad del taller (técnico-días por día hábil)</label><input type="number" step="0.5" name="capacidad_tecnicos" value="{{ CFG.capacidad_tecnicos }}" min="0"></div>
+          <div><label>Fecha de evaluación fija</label><input type="date" name="fecha_referencia" value="{{ CFG.fecha_referencia }}">
+            <div class="ayuda">Vacía = fecha de hoy. Use 01/10/2026 para reproducir el diagnóstico del informe.</div></div>
+          <div class="ancho"><label>Empresa</label><input name="empresa" value="{{ CFG.empresa }}"></div>
+          <div class="ancho"><label>Dirección del taller</label><input name="taller" value="{{ CFG.taller }}"></div>
+          <div class="ancho"><label>Jefe de mantenimiento (firma del certificado)</label><input name="jefe_mantenimiento" value="{{ CFG.jefe_mantenimiento }}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Parámetros por nivel de servicio</h2><small>Supuestos del libro de datos, a reemplazar con órdenes de trabajo reales</small></div>
+    <div class="bd flush tabla-wrap">
+      <table>
+        <thead><tr><th>Categoría</th><th>Nivel</th><th>Duración (días)</th><th>Costo (S/)</th><th>Técnico-días</th></tr></thead>
+        <tbody>
+        {% for p in params %}
+          {% set pref = 'p_' ~ p.categoria ~ '_' ~ p.nivel ~ '_' %}
+          <tr><td>{{ p.categoria }}</td><td><b>{{ p.nivel }}</b></td>
+            <td><input type="number" min="1" name="{{ pref }}dur" value="{{ p.duracion_dias }}" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="{{ pref }}costo" value="{{ p.costo|int }}" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="{{ pref }}td" value="{{ p.tecnico_dias }}" style="max-width:110px"></td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="acciones"><button class="btn pri">Guardar configuración</button></div>
+  <div class="nota">Base de datos: <span class="mono">{{ db_path }}</span><br>Carpeta del expediente de equipos: <span class="mono">{{ docs_dir }}</span></div>
+</form>
+
+<form class="card" method="post" action="{{ url_for('resimular') }}" style="margin-top:16px"
+      data-confirmar="Se reconstruirá toda la base desde el registro de estatus del 22/09/2026. Los datos ingresados a mano (despachos, órdenes, lecturas) se perderán. ¿Continuar?">
+  <div class="hd"><h2>Simulación de la operación</h2>{% if SIM.hasta %}<span class="tag">actual: {{ SIM.desde|fecha }} → {{ SIM.hasta|fecha }} · semilla {{ SIM.semilla }}</span>{% endif %}</div>
+  <div class="bd stack" style="gap:12px">
+    {% if EST.fecha %}<div class="flash warn" style="margin:0">La base trabaja hoy con el <b>estatus real al {{ EST.fecha|fecha }}</b> (<a href="{{ url_for('estatus') }}">Estatus diario</a>). Simular descarta esos datos y vuelve a la operación simulada.</div>{% endif %}
+    <p style="margin:0">El almacén parte de la situación <b>real</b> de cada equipo en el registro de estatus del 22/09/2026 y de su último servicio documentado en el expediente, y recorre la operación día a día con la práctica actual: los contratos vuelven en su fecha (los vencidos se prorrogan por 30 días), los pedidos llegan con la tasa observada en el registro y se atienden con la primera máquina compatible del patio, el taller recibe lo que vuelve vencido y atiende las fallas en obra (25 % por pedido con mantenimiento vencido, 5 % vigente).</p>
+    {% if SIM.resumen %}<div class="nota"><b>Última corrida:</b> {{ SIM.resumen }}</div>{% endif %}
+    <div class="campos">
+      <div><label>Simular hasta</label><input type="date" name="hasta" value="{{ HOY.isoformat() }}" min="2026-09-23" required></div>
+      <div><label>Semilla</label><input type="number" name="semilla" value="{{ SIM.semilla or 20260922 }}">
+        <div class="ayuda">La misma semilla reproduce la misma historia; otra semilla genera otra cartera de pedidos y otras fallas.</div></div>
+    </div>
+    <div class="acciones"><button class="btn osc">Reconstruir y simular</button></div>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,585 @@
+
+
+<!doctype html>
+<html lang="es">
+<head>
+<script>/* copia estática */(function(){var r=history.replaceState;
+history.replaceState=function(){try{return r.apply(history,arguments)}catch(e){}};
+var M='Esta es una copia de consulta del SGM Lift Rental: aquí no se pueden registrar ni modificar datos. Esa acción está disponible en el sistema original.';
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-sin-copia]');
+if(a){e.preventDefault();e.stopImmediatePropagation();alert(M);}},true);
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();alert(M);},true);
+})();</script>
+<style>.aviso-copia{position:sticky;top:0;z-index:50;background:#fff4cc;color:#5a4300;border-bottom:1px solid #f2b200;
+padding:6px 16px;font:12.5px/1.4 "Segoe UI",system-ui,sans-serif;text-align:center}
+@media print{.aviso-copia{display:none}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de control · Lift Rental</title>
+<link rel="stylesheet" href="static/estilos.css">
+<link rel="icon" type="image/jpeg" href="static/logo_liftrental.jpg">
+</head>
+<body>
+<div class="aviso-copia">Copia de consulta del SGM Lift Rental generada el 17/11/2026 23:04 · sólo lectura: los formularios y documentos PDF están disponibles en el sistema original.</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="marca">
+      <img class="logo" src="static/logo_liftrental.jpg" alt="Lift Rental Solutions" width="64" height="64">
+      <div><b>SGM Lift Rental</b><span>Gestión de mantenimiento</span></div>
+    </div>
+    <a class="nav " href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Almacén en vivo</a>
+    <a class="nav on" href="panel.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+</svg> Panel de control</a>
+    <a class="nav " href="estatus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Estatus diario </a>
+    <div class="nav-sec">Almacén virtual</div>
+    <a class="nav " href="equipos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Equipos y expedientes</a>
+    <a class="nav " href="alquileres.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20l12-7M6 13l12 7M5 10h14M9 10V6h6v4"/>
+</svg> Uso y alquileres</a>
+    <a class="nav " href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+    <div class="nav-sec">Mantenimiento</div>
+    <a class="nav " href="mantenimiento.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> Órdenes de trabajo <span class="badge">10</span></a>
+    <a class="nav " href="documentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Documentos de mantto.</a>
+    <a class="nav " href="taller.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programa del taller</a>
+    <a class="nav " href="incidentes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.2v.3"/>
+</svg> Incidentes en obra</a>
+    <div class="nav-sec">Planificación</div>
+    <a class="nav " href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Cartera de pedidos</a>
+    <a class="nav " href="optimizacion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+</svg> Optimización (PLEM)</a>
+    <div class="nav-sec">Personal</div>
+    <a class="nav " href="personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+</svg> Técnicos</a>
+    <a class="nav " href="configuracion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z"/>
+</svg> Configuración</a>
+    <div class="side-pie">
+      Fecha de evaluación<br><b>17/11/2026</b><br>
+      Taller Comas · 3 técnicos
+      <br><span>Estatus real al 17/11/2026</span>
+      
+    </div>
+  </aside>
+  <main>
+    
+    
+      
+    
+    
+<div class="cab">
+  <div>
+    <h1>Panel de control</h1>
+    <p>Estado de la flota y del mantenimiento al 17/11/2026 — criterio del plan Mntto-PPMTE-2017: vence al cumplir las horas o el intervalo de calendario, lo que ocurra primero.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="exportar--equipos.csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>
+</svg> Exportar tablero</a>
+    <a class="btn pri" href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+  </div>
+</div>
+
+<div class="grid g4" style="margin-bottom:16px">
+  <a class="card kpi" href="equipos.html">
+    <span class="l">Equipos en el almacén</span><span class="v">85</span>
+    <span class="s">53 en obra · ocupación 62 %</span>
+  </a>
+  <a class="card kpi alerta" href="equipos__estado-no-apto_situacion-En_obra.html">
+    <span class="l">En obra con mantenimiento vencido</span><span class="v">16</span>
+    <span class="s">operando fuera del plan de mantenimiento</span>
+  </a>
+  <a class="card kpi alerta" href="equipos__estado-no-apto_situacion-Disponible.html">
+    <span class="l">En patio, no despachables</span><span class="v">4</span>
+    <span class="s">de 31 en patio · 27 aptos para salir</span>
+  </a>
+  <a class="card kpi alerta" href="alquileres.html">
+    <span class="l">Contratos vencidos sin retorno</span><span class="v">28</span>
+    <span class="s">equipo que no regresa no entra a mantenimiento</span>
+  </a>
+</div>
+
+<div class="grid g-21">
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Estado de mantenimiento de la flota</h2><a href="equipos.html">Ver almacén →</a></div>
+      <div class="bd">
+        <div class="barra">
+          
+            <span class="ok" style="width: 69.41176470588235%" title="Vigente: 59"></span>
+          
+            <span class="warn" style="width: 7.0588235294117645%" title="Por vencer: 6"></span>
+          
+            <span class="bad" style="width: 17.647058823529413%" title="Vencido: 15"></span>
+          
+            <span class="none" style="width: 5.88235294117647%" title="Sin datos: 5"></span>
+          
+        </div>
+        <div class="leyenda">
+          
+            <a href="equipos__estado-Vigente.html" style="color:inherit"><i class="ok" style="background:var(--ok)"></i>Vigente <b>59</b></a>
+          
+            <a href="equipos__estado-Por_vencer.html" style="color:inherit"><i class="warn" style="background:var(--warn)"></i>Por vencer <b>6</b></a>
+          
+            <a href="equipos__estado-Vencido.html" style="color:inherit"><i class="bad" style="background:var(--bad)"></i>Vencido <b>15</b></a>
+          
+            <a href="equipos__estado-Sin_datos.html" style="color:inherit"><i class="none" style="background:var(--none)"></i>Sin datos <b>5</b></a>
+          
+        </div>
+        <div class="tabla-wrap" style="margin-top:14px">
+          <table>
+            <thead><tr><th>Categoría</th><th class="n">Equipos</th><th class="n">En obra</th><th class="n">Vencidos o sin datos</th><th style="width:30%"></th></tr></thead>
+            <tbody>
+            
+              <tr><td>Brazo articulado combustión</td><td class="n">4</td><td class="n">2</td><td class="n">1</td>
+                <td><div class="prog"><span class="bad" style="width: 25.0%"></span></div></td></tr>
+            
+              <tr><td>Brazo articulado eléctrico</td><td class="n">8</td><td class="n">4</td><td class="n">2</td>
+                <td><div class="prog"><span class="bad" style="width: 25.0%"></span></div></td></tr>
+            
+              <tr><td>Tijera eléctrica</td><td class="n">72</td><td class="n">46</td><td class="n">17</td>
+                <td><div class="prog"><span class="bad" style="width: 23.61111111111111%"></span></div></td></tr>
+            
+              <tr><td>Mástil vertical</td><td class="n">1</td><td class="n">1</td><td class="n">0</td>
+                <td><div class="prog"><span class="bad" style="width: 0.0%"></span></div></td></tr>
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Equipos en obra con el mantenimiento vencido</h2><span class="muted">16</span></div>
+      <div class="bd flush tabla-wrap" style="max-height:340px; overflow:auto">
+        
+        <table>
+          <thead><tr><th>Equipo</th><th>Cliente · obra</th><th>Atraso del servicio</th><th>Contrato</th><th></th></tr></thead>
+          <tbody>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-068.html">TECL-068</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 08<br><small>Obra 02</small></td>
+              <td><b style="color:var(--bad)">118 d vencido</b></td>
+              <td><span class="chip bad">Venció 08/10/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-023.html">TECL-023</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 08<br><small>Obra 02</small></td>
+              <td><b style="color:var(--bad)">107 d vencido</b></td>
+              <td><span class="chip bad">Venció 08/10/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-003.html">TECL-003</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 28<br><small>Obra 50</small></td>
+              <td><b style="color:var(--bad)">56 d vencido</b></td>
+              <td><span class="chip bad">Venció 17/10/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-022.html">TECL-022</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 28<br><small>Obra 50</small></td>
+              <td><b style="color:var(--bad)">56 d vencido</b></td>
+              <td><span class="chip bad">Venció 17/10/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-039.html">TECL-039</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 28<br><small>Obra 50</small></td>
+              <td><b style="color:var(--bad)">56 d vencido</b></td>
+              <td><span class="chip bad">Venció 17/10/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-040.html">TECL-040</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 28<br><small>Obra 50</small></td>
+              <td><b style="color:var(--bad)">56 d vencido</b></td>
+              <td><span class="chip bad">Venció 17/10/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-034.html">TECL-034</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 22<br><small>Obra 50</small></td>
+              <td><b style="color:var(--bad)">39 d vencido</b></td>
+              <td><span class="chip bad">Venció 11/08/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-021.html">TECL-021</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 51<br><small>Obra 53</small></td>
+              <td><b style="color:var(--bad)">14 d vencido</b></td>
+              <td><span class="chip bad">Venció 14/10/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-053.html">TECL-053</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 51<br><small>Obra 53</small></td>
+              <td><b style="color:var(--bad)">14 d vencido</b></td>
+              <td><span class="chip bad">Venció 14/10/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-064.html">TECL-064</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 23<br><small>Obra 56</small></td>
+              <td><b style="color:var(--bad)">9 d vencido</b></td>
+              <td><span class="chip bad">Venció 09/10/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-029.html">TECL-029</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 49<br><small>Obra 58</small></td>
+              <td><b style="color:var(--bad)">1 d vencido</b></td>
+              <td><span class="chip bad">Venció 20/09/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-056.html">TECL-056</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 44<br><small>Obra 20</small></td>
+              <td><b style="color:var(--bad)">33 h excedido</b></td>
+              <td>hasta 13/12/2026</td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--BCCL-003.html">BCCL-003</a><br><small>Brazo articulado combustión</small></td>
+              <td>Cliente 08<br><small>Obra 02</small></td>
+              <td><span class="muted">Sin servicio documentado</span></td>
+              <td><span class="chip bad">Venció 16/09/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--BECL-008.html">BECL-008</a><br><small>Brazo articulado eléctrico</small></td>
+              <td>Cliente 40<br><small>Obra 11</small></td>
+              <td><span class="muted">Sin servicio documentado</span></td>
+              <td><span class="chip bad">Venció 05/03/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-036.html">TECL-036</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 22<br><small>Obra 50</small></td>
+              <td><span class="muted">Sin servicio documentado</span></td>
+              <td><span class="chip bad">Venció 11/08/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-046.html">TECL-046</a><br><small>Tijera eléctrica</small></td>
+              <td>Cliente 40<br><small>Obra 11</small></td>
+              <td><span class="muted">Sin servicio documentado</span></td>
+              <td><span class="chip bad">Venció 05/03/2026</span></td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Retorno</a></td>
+            </tr>
+          
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Vencimientos de los próximos 30 días</h2><span class="muted">equipos hoy vigentes o por vencer</span></div>
+      <div class="bd flush tabla-wrap">
+        
+        <table>
+          <thead><tr><th>Equipo</th><th>Situación</th><th>Vence</th><th>Restante</th><th>Próximo servicio</th><th></th></tr></thead>
+          <tbody>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-042.html">TECL-042</a></td>
+              <td><span class="chip info">En obra</span></td>
+              <td>22/11/2026 <small>(calendario)</small></td>
+              <td>5 d · 74 h</td>
+              <td>A · 400 h</td>
+              <td class="n"><a href="mantenimiento--88.html">OT-0088</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-012.html">TECL-012</a></td>
+              <td><span class="chip ok">Disponible</span></td>
+              <td>29/11/2026 <small>(calendario)</small></td>
+              <td>12 d · 91 h</td>
+              <td>A+B · 1,294 h</td>
+              <td class="n"><a href="mantenimiento--82.html">OT-0082</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--UPCL-001.html">UPCL-001</a></td>
+              <td><span class="chip info">En obra</span></td>
+              <td>30/11/2026 <small>(calendario)</small></td>
+              <td>13 d · 92 h</td>
+              <td>A+B · 386 h</td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Programar</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-031.html">TECL-031</a></td>
+              <td><span class="chip info">En obra</span></td>
+              <td>01/12/2026 <small>(calendario)</small></td>
+              <td>14 d · 91 h</td>
+              <td>A+B · 650 h</td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Programar</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-010.html">TECL-010</a></td>
+              <td><span class="chip ok">Disponible</span></td>
+              <td>02/12/2026 <small>(horas)</small></td>
+              <td>62 d · 10 h</td>
+              <td>A+B · 994 h</td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Programar</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-038.html">TECL-038</a></td>
+              <td><span class="chip info">En obra</span></td>
+              <td>08/12/2026 <small>(calendario)</small></td>
+              <td>21 d · 79 h</td>
+              <td>A+B · 941 h</td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Programar</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-065.html">TECL-065</a></td>
+              <td><span class="chip ok">Disponible</span></td>
+              <td>08/12/2026 <small>(calendario)</small></td>
+              <td>21 d · 53 h</td>
+              <td>A · 450 h</td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Programar</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-066.html">TECL-066</a></td>
+              <td><span class="chip info">En obra</span></td>
+              <td>08/12/2026 <small>(calendario)</small></td>
+              <td>21 d · 81 h</td>
+              <td>A · 140 h</td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Programar</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-024.html">TECL-024</a></td>
+              <td><span class="chip ok">Disponible</span></td>
+              <td>10/12/2026 <small>(calendario)</small></td>
+              <td>23 d · 65 h</td>
+              <td>A+B · 651 h</td>
+              <td class="n"><a class="btn sm" href="#" data-sin-copia="1">Programar</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-025.html">TECL-025</a></td>
+              <td><span class="chip ok">Disponible</span></td>
+              <td>10/12/2026 <small>(calendario)</small></td>
+              <td>23 d · 50 h</td>
+              <td>A · 1,473 h</td>
+              <td class="n"><a href="mantenimiento--84.html">OT-0084</a></td>
+            </tr>
+          
+            <tr>
+              <td><a class="cod" href="equipos--TECL-062.html">TECL-062</a></td>
+              <td><span class="chip ok">Disponible</span></td>
+              <td>16/12/2026 <small>(calendario)</small></td>
+              <td>29 d · 86 h</td>
+              <td>A · 260 h</td>
+              <td class="n"><a href="mantenimiento--115.html">OT-0115</a></td>
+            </tr>
+          
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Situación de los equipos</h2></div>
+      <div class="bd">
+        <div class="barra">
+          
+            <span class="ok" style="width: 36.470588235294116%"></span>
+          
+            <span class="info" style="width: 62.35294117647059%"></span>
+          
+            
+          
+            <span class="bad" style="width: 1.1764705882352942%"></span>
+          
+        </div>
+        <ul class="lista" style="margin:10px -16px -14px">
+          
+            <li><a href="equipos__situacion-Disponible.html" style="color:inherit"><span class="chip ok">Disponible</span></a><b>31</b></li>
+          
+            <li><a href="equipos__situacion-En_obra.html" style="color:inherit"><span class="chip info">En obra</span></a><b>53</b></li>
+          
+            <li><a href="equipos__situacion-En_taller.html" style="color:inherit"><span class="chip warn">En taller</span></a><b>0</b></li>
+          
+            <li><a href="equipos__situacion-Fuera_de_servicio.html" style="color:inherit"><span class="chip bad">Fuera de servicio</span></a><b>1</b></li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Carga del taller · 14 días</h2><a href="taller.html">Programa →</a></div>
+      <div class="bd">
+        <div class="minibar">
+          
+            
+            <div class="" title="17/11/2026 — 2.0 técnico-días">
+              <span class="" style="height: 66.66666666666666%"></span>
+              <small>17</small>
+            </div>
+          
+            
+            <div class="" title="18/11/2026 — 2.0 técnico-días">
+              <span class="" style="height: 66.66666666666666%"></span>
+              <small>18</small>
+            </div>
+          
+            
+            <div class="" title="19/11/2026 — 2.0 técnico-días">
+              <span class="" style="height: 66.66666666666666%"></span>
+              <small>19</small>
+            </div>
+          
+            
+            <div class="" title="20/11/2026 — 2.0 técnico-días">
+              <span class="" style="height: 66.66666666666666%"></span>
+              <small>20</small>
+            </div>
+          
+            
+            <div class="" title="21/11/2026 — 3.0 técnico-días">
+              <span class="lleno" style="height: 100.0%"></span>
+              <small>21</small>
+            </div>
+          
+            
+            <div class="dom" title="22/11/2026 — 0.0 técnico-días">
+              <span class="" style="height: 100%"></span>
+              <small>22</small>
+            </div>
+          
+            
+            <div class="" title="23/11/2026 — 1.0 técnico-días">
+              <span class="" style="height: 33.33333333333333%"></span>
+              <small>23</small>
+            </div>
+          
+            
+            <div class="" title="24/11/2026 — 0.0 técnico-días">
+              <span class="" style="height: 0.0%"></span>
+              <small>24</small>
+            </div>
+          
+            
+            <div class="" title="25/11/2026 — 0.0 técnico-días">
+              <span class="" style="height: 0.0%"></span>
+              <small>25</small>
+            </div>
+          
+            
+            <div class="" title="26/11/2026 — 0.0 técnico-días">
+              <span class="" style="height: 0.0%"></span>
+              <small>26</small>
+            </div>
+          
+            
+            <div class="" title="27/11/2026 — 0.0 técnico-días">
+              <span class="" style="height: 0.0%"></span>
+              <small>27</small>
+            </div>
+          
+            
+            <div class="" title="28/11/2026 — 0.0 técnico-días">
+              <span class="" style="height: 0.0%"></span>
+              <small>28</small>
+            </div>
+          
+            
+            <div class="dom" title="29/11/2026 — 0.0 técnico-días">
+              <span class="" style="height: 100%"></span>
+              <small>29</small>
+            </div>
+          
+            
+            <div class="" title="30/11/2026 — 0.0 técnico-días">
+              <span class="" style="height: 0.0%"></span>
+              <small>30</small>
+            </div>
+          
+        </div>
+        <div class="leyenda"><span>Capacidad: 3 técnico-días por día hábil (lunes a sábado)</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Órdenes de trabajo</h2><a href="mantenimiento.html">Todas →</a></div>
+      <ul class="lista">
+        <li><span><span class="chip accent">En ejecución</span></span><b>0</b></li>
+        <li><span><span class="chip warn">Pendientes sin fecha</span></span><b>2</b></li>
+        <li><span><span class="chip bad">Programadas atrasadas</span></span><b>0</b></li>
+      </ul>
+      
+      <div class="bd" style="border-top:1px solid var(--line-2)">
+        
+          <div style="display:flex;justify-content:space-between;gap:8px;padding:3px 0">
+            <span><a href="mantenimiento--81.html" class="mono">OT-0081</a> <a class="cod" href="equipos--TECL-074.html">TECL-074</a></span>
+            <small>24/11/2026</small>
+          </div>
+        
+          <div style="display:flex;justify-content:space-between;gap:8px;padding:3px 0">
+            <span><a href="mantenimiento--84.html" class="mono">OT-0084</a> <a class="cod" href="equipos--TECL-025.html">TECL-025</a></span>
+            <small>26/11/2026</small>
+          </div>
+        
+      </div>
+      
+      <div class="bd" style="border-top:1px solid var(--line-2)">
+        <form method="post" action="#" data-sin-copia="1">
+          <button class="btn osc" style="width:100%;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programar automáticamente</button>
+        </form>
+        <div class="ayuda" style="margin-top:6px">Asigna fecha y técnico a los equipos en patio o taller vencidos o por vencer, respetando la capacidad diaria.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Incidentes · últimos 90 días</h2><a href="incidentes.html">Registro →</a></div>
+      <div class="bd">
+        
+          <p class="muted" style="margin:0">Sin incidentes registrados. El registro permite estimar la probabilidad real de falla en obra, hoy supuesta en el modelo.</p>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  </main>
+</div>
+<script src="static/app.js"></script>
+
+</body>
+</html>

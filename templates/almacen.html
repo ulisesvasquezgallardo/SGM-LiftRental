@@ -1,0 +1,267 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, eq_link, icono %}
+{% block titulo %}Almacén virtual{% endblock %}
+
+{# Ficha de un equipo en el almacén: borde de color = estado del mantenimiento #}
+{% macro ficha(e, linea=None, extra=None, atendido=None) -%}
+  {% set m = e.mant %}
+  <a class="ficha {{ m.estado|clase }}{{ ' atendido' if atendido }}" href="{{ url_for('equipo', codigo=e.codigo) }}"
+     data-cat="{{ e.categoria }}" data-texto="{{ (e.codigo ~ ' ' ~ (e.marca or '') ~ ' ' ~ (e.modelo or '') ~ ' ' ~ ((e.alquiler or {}).cliente or ''))|lower }}"
+     title="{{ e.codigo }} · {{ e.marca or '' }} {{ e.modelo or '' }} · {{ e.categoria }} {{ e.altura_trabajo|num(1) }} m&#10;Mantenimiento: {{ m.estado }}{% if m.fecha_vence %} ({{ 'venció' if m.estado == 'Vencido' else 'vence' }} el {{ m.fecha_vence|fecha }} por {{ (m.vence_por or '')|lower }}){% endif %}{% if e.alquiler %}&#10;{{ e.alquiler.cliente or '' }} — {{ e.alquiler.obra or '' }}{% endif %}">
+    <span class="f-cod">{{ e.codigo }}{% if atendido %}<i class="f-tec" title="Técnico atendiendo">{{ icono('mant') }}</i>{% endif %}</span>
+    <span class="f-tipo">{{ CORTO.get(e.categoria, e.categoria) }}{% if e.altura_trabajo %} · {{ e.altura_trabajo|num(1) }} m{% endif %}</span>
+    {% if linea %}<span class="f-lin{{ ' alerta' if e.situacion != 'En obra' }}">{{ linea }}</span>{% endif %}
+    {% if extra %}<span class="f-ext">{{ extra }}</span>{% endif %}
+  </a>
+{%- endmacro %}
+
+{% macro mant_corto(m) -%}
+  {%- if m.estado == 'Sin datos' -%}sin registro de servicio
+  {%- elif m.estado == 'Vencido' -%}{% if m.dias_rest is not none and m.dias_rest <= 0 %}vencido hace {{ -m.dias_rest }} d{% else %}horas excedidas{% endif %}
+  {%- else -%}vence {{ m.fecha_vence|fecha('%d/%m') }}{%- endif -%}
+{%- endmacro %}
+
+{% block contenido %}
+{% set total = a.flota|length %}
+{% set obra_venc = a.obra|selectattr('mant.estado', 'in', ['Vencido', 'Sin datos'])|list %}
+{% set prox14 = a.proximos|selectattr('fecha', 'le', limite)|list %}
+{% set libres_hoy = a.personal|selectattr('estado', 'equalto', 'Libre')|list %}
+{% set en_mant = a.taller|length + a.atendidos_obra|length %}
+
+<div class="cab">
+  <div>
+    <h1>Almacén virtual</h1>
+    <p>Dónde está cada uno de los {{ total }} equipos y qué le toca al taller — {{ REF|dia }} {{ REF|fecha }}.
+      {% if EST.fecha %}<a class="tag" href="{{ url_for('estatus') }}">Estatus real al {{ EST.fecha|fecha }}{% if EST.atrasado %} · cargar el de hoy{% endif %}</a>{% endif %}
+      {% if SIM.hasta %}<span class="tag" title="{{ SIM.resumen }}">Registro real al {{ SIM.desde|fecha }} + operación simulada hasta el {{ SIM.hasta|fecha }}</span>{% endif %}</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('panel') }}">{{ icono('panel') }} Panel de control</a>
+    <a class="btn pri" href="{{ url_for('despacho') }}">{{ icono('despacho') }} Despachar equipo</a>
+  </div>
+</div>
+
+{% if SIM.atrasada %}
+<form class="flash warn acciones" method="post" action="{{ url_for('resimular') }}" style="justify-content:space-between"
+      data-confirmar="Se reconstruirá la operación desde el registro del 22/09/2026 hasta hoy. Los cambios hechos a mano en el sistema se perderán. ¿Continuar?">
+  <span>La simulación llegó hasta el {{ SIM.hasta|fecha }}; hoy es {{ HOY|fecha }}. El almacén muestra la situación de ese día.</span>
+  <input type="hidden" name="hasta" value="{{ HOY.isoformat() }}"><input type="hidden" name="semilla" value="{{ SIM.semilla }}">
+  <button class="btn sm">Avanzar la simulación hasta hoy</button>
+</form>
+{% endif %}
+
+<div class="grid g5 kpis-alm" style="margin-bottom:16px">
+  <a class="card kpi" href="#patio"><span class="l">Libres en el patio</span><span class="v">{{ a.patio_ok|length + a.patio_no|length }}</span>
+    <span class="s">{{ a.patio_ok|length }} listos para despachar{% if a.patio_no %} · <b style="color:var(--bad)">{{ a.patio_no|length }} no aptos</b>{% endif %}</span></a>
+  <a class="card kpi" href="#obra"><span class="l">En obra</span><span class="v">{{ a.obra|length }}</span>
+    <span class="s">ocupación {{ (a.obra|length / total * 100)|num(0) }} % · <b style="color:var(--bad)">{{ obra_venc|length }}</b> con mantenimiento vencido</span></a>
+  <a class="card kpi" href="#taller"><span class="l">En mantenimiento hoy</span><span class="v">{{ en_mant }}</span>
+    <span class="s">{{ a.taller|length }} en taller · {{ a.atendidos_obra|length }} atendidos en obra</span></a>
+  <a class="card kpi" href="#proximos"><span class="l">Entran a taller en 14 días</span><span class="v">{{ prox14|length }}</span>
+    <span class="s">{% if a.proximos %}el próximo: {{ a.proximos[0].codigo }}, {{ a.proximos[0].fecha|dia }} {{ a.proximos[0].fecha|fecha('%d/%m') }}{% else %}ninguno previsto{% endif %}</span></a>
+  <a class="card kpi" href="#personal"><span class="l">Técnicos libres hoy</span><span class="v">{{ libres_hoy|length }}<small style="font-size:16px;color:var(--ink-3)"> / {{ a.personal|length }}</small></span>
+    <span class="s">{% if a.personal and a.personal[0].estado == 'Descanso' %}domingo: sin turno{% else %}{{ a.personal|length - libres_hoy|length }} trabajando{% endif %}</span></a>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <div class="filtros alm-filtros">
+    <input type="search" id="a-q" placeholder="Buscar código, marca o cliente…">
+    <div class="seg" id="a-cat">
+      <button type="button" data-v="" class="on">Todos</button>
+      {% for c in CATEGORIAS %}<button type="button" data-v="{{ c }}">{{ CORTO.get(c, c) }}</button>{% endfor %}
+    </div>
+    <div class="leyenda" style="margin:0 0 0 auto">
+      <span><i style="background:var(--ok)"></i>Vigente</span><span><i style="background:#e59a1b"></i>Por vencer</span>
+      <span><i style="background:var(--bad)"></i>Vencido</span><span><i style="background:#b9bfca"></i>Sin datos</span>
+      <span>{{ icono('mant') }} técnico atendiendo</span>
+    </div>
+  </div>
+</div>
+
+<section class="card" id="vista" style="margin-bottom:16px">
+  <div class="hd"><h2>Vista del almacén</h2>
+    <div class="acciones"><span class="muted">Pase el cursor sobre una máquina o un técnico · clic para abrir su ficha</span>
+      <div class="seg" id="esc-zoom"><button type="button" data-z="-1">−</button><button type="button" data-z="0">Ajustar</button><button type="button" data-z="1">+</button></div></div></div>
+  <div class="escena-wrap"><div id="escena"></div><div id="escena-tip" hidden></div></div>
+  <div class="bd leyenda" style="border-top:1px solid var(--line-2);margin:0">
+    <span><b>Máquina:</b></span>
+    <span><i style="background:#f2b200"></i>Tijera</span><span><i style="background:#3b82d6"></i>Brazo eléctrico</span>
+    <span><i style="background:#e8772e"></i>Brazo diésel</span><span><i style="background:#8b5fd0"></i>Mástil</span>
+    <span style="margin-left:10px"><b>Piso (mantenimiento):</b></span>
+    <span><i style="background:var(--ok)"></i>Vigente</span><span><i style="background:#e59a1b"></i>Por vencer</span>
+    <span><i style="background:var(--bad)"></i>Vencido</span><span><i style="background:#9aa1ad"></i>Sin datos</span>
+    <span style="margin-left:10px"><span class="esc-pill">09/11</span> entra a taller en 7 días o menos</span>
+  </div>
+</section>
+<script type="application/json" id="escena-datos">{{ escena|tojson }}</script>
+
+<div class="grid g-alm">
+  {# ------------------------------------------------ patio #}
+  <section class="card zona-alm" id="patio">
+    <div class="hd"><h2>{{ icono('almacen') }} Patio — taller Comas</h2><span class="muted">{{ a.patio_ok|length + a.patio_no|length }} libres</span></div>
+    <div class="bd stack" style="gap:14px">
+      <div>
+        <h3 class="sub">Listos para despachar <span class="cnt">{{ a.patio_ok|length }}</span></h3>
+        <div class="fichas">
+          {% for e in a.patio_ok %}{{ ficha(e, mant_corto(e.mant)) }}{% endfor %}
+          {% if not a.patio_ok %}<p class="muted">No hay equipos aptos en el patio: todo pedido nuevo tendría que esperar un retorno.</p>{% endif %}
+        </div>
+      </div>
+      {% if a.patio_no %}
+      <div>
+        <h3 class="sub" style="color:var(--bad)">No despachables — mantenimiento vencido o sin registro <span class="cnt">{{ a.patio_no|length }}</span></h3>
+        <div class="fichas">{% for e in a.patio_no %}{{ ficha(e, mant_corto(e.mant), 'Debe pasar por taller') }}{% endfor %}</div>
+      </div>
+      {% endif %}
+      {% if a.fuera %}
+      <div>
+        <h3 class="sub">Fuera de servicio <span class="cnt">{{ a.fuera|length }}</span></h3>
+        <div class="fichas">{% for e in a.fuera %}{{ ficha(e, e.ubicacion_detalle or 'Reparación externa') }}{% endfor %}</div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  {# ------------------------------------------------ taller #}
+  <section class="card zona-alm" id="taller">
+    <div class="hd"><h2>{{ icono('mant') }} En mantenimiento</h2><a href="{{ url_for('taller') }}">Programa →</a></div>
+    {% if a.en_ejec %}
+    <ul class="lista">
+      {% for o in a.en_ejec %}
+      <li class="ot-viva">
+        <span class="stack" style="gap:3px">
+          <span>{{ eq_link(o.codigo) }} <a class="mono" href="{{ url_for('orden', oid=o.id) }}">{{ o.id|ot }}</a>
+            <span class="chip {{ 'bad' if o.tipo == 'Correctivo' else 'info' }} plain">{{ o.tipo }}{% if o.nivel %} {{ o.nivel }}{% endif %}</span></span>
+          <small>{% if o.en_obra %}{{ icono('despacho') }} En obra: {{ (o.alquiler or {}).cliente or '' }} — {{ (o.alquiler or {}).obra or '' }}{% else %}{{ icono('almacen') }} Taller Comas{% endif %}</small>
+          {% if o.tipo == 'Correctivo' and o.descripcion %}<small>{{ o.descripcion.split(': ', 1)[-1] }}</small>{% endif %}
+        </span>
+        <span style="text-align:right"><b>{{ o.tecnicos or 'Sin técnico' }}</b><br><small>hasta {{ o.fin_previsto|dia }} {{ o.fin_previsto|fecha('%d/%m') }}</small></span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <div class="vacio" style="padding:22px 16px">
+      <b style="color:var(--ink-2)">Ningún equipo en el taller {{ 'hoy' if not REF_FIJA else 'en la fecha' }}.</b><br>
+      {% if a.proximos %}El próximo ingreso es <b>{{ a.proximos[0].codigo }}</b> el {{ a.proximos[0].fecha|dia }} {{ a.proximos[0].fecha|fecha }}
+        {% if a.proximos[0].retorno %}, al retornar de obra{% endif %}.{% endif %}
+      <div class="ayuda" style="margin-top:8px">Con la práctica actual el taller sólo recibe lo que vuelve al patio vencido; con {{ (a.obra|length / total * 100)|num(0) }} % de la flota en obra, hay días sin trabajo preventivo.</div>
+    </div>
+    {% endif %}
+    {% if a.taller %}
+      <div class="bd" style="border-top:1px solid var(--line-2)"><div class="fichas">{% for e in a.taller %}{{ ficha(e, 'En taller') }}{% endfor %}</div></div>
+    {% endif %}
+  </section>
+
+  {# ------------------------------------------------ personal #}
+  <section class="card zona-alm" id="personal">
+    <div class="hd"><h2>{{ icono('personal') }} Personal de mantenimiento</h2><a href="{{ url_for('personal') }}">Ver personal →</a></div>
+    <ul class="lista">
+      {% for p in a.personal %}
+      <li class="pers">
+        <div class="persona" style="align-items:flex-start">
+          <span class="avatar">{{ p.t.nombre[:1] }}{{ p.t.nombre.split(' ')[-1][:1] }}</span>
+          <div class="stack" style="gap:3px">
+            <span><a href="{{ url_for('tecnico', tid=p.t.id) }}"><b>{{ p.t.nombre }}</b></a>
+              <span class="chip {{ 'accent' if p.estado == 'Trabajando' else ('ok' if p.estado == 'Libre' else 'none') }}">{{ p.estado }}</span></span>
+            {% for o in p.hoy %}
+              <small><a class="mono" href="{{ url_for('orden', oid=o.id) }}">{{ o.id|ot }}</a> {{ o.codigo }} · {{ o.tipo }}{% if o.nivel %} {{ o.nivel }}{% endif %} ·
+                {{ ('en obra (' ~ ((o.alquiler or {}).cliente or '') ~ ')') if o.en_obra else 'taller' }} · hasta {{ o.fin_previsto|fecha('%d/%m') }}</small>
+            {% else %}
+              <small>{% if p.proxima %}Próxima asignación: {{ p.proxima.d|dia }} {{ p.proxima.d|fecha('%d/%m') }} — {{ p.proxima.t }}{% else %}Sin asignaciones en los próximos 7 días{% endif %}</small>
+            {% endfor %}
+            <div class="semana" aria-label="Próximos 8 días">
+              {% for s in p.semana %}<span class="{{ s.c }}{{ ' hoy' if loop.first }}" title="{{ s.d|dia }} {{ s.d|fecha('%d/%m') }}: {{ s.t }}">{{ (s.d|dia)[:1]|upper }}<b>{{ s.d.day }}</b></span>{% endfor %}
+            </div>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+      {% for s in supervisor %}
+      <li class="pers sup"><div class="persona"><span class="avatar" style="background:#e9ebef;color:var(--ink-2)">{{ s.nombre[:1] }}{{ s.nombre.split(' ')[-1][:1] }}</span>
+        <div><a href="{{ url_for('tecnico', tid=s.id) }}"><b>{{ s.nombre }}</b></a><br><small>{{ s.cargo }} · firma la conformidad de cada servicio</small></div></div></li>
+      {% endfor %}
+    </ul>
+    <div class="bd leyenda" style="border-top:1px solid var(--line-2);margin:0">
+      <span><i style="background:var(--accent)"></i>OT asignada</span><span><i class="rayado"></i>Pronóstico de ingreso</span>
+      <span><i style="background:#cfe9d7"></i>Libre</span><span><i style="background:#e5e7eb"></i>Domingo</span>
+    </div>
+  </section>
+</div>
+
+{# ------------------------------------------------ obras #}
+<section class="card" id="obra" style="margin-top:16px">
+  <div class="hd"><h2>{{ icono('despacho') }} En obra — {{ a.obra|length }} equipos en {{ a.zonas|length }} zonas</h2>
+    <span class="muted">retorno según contrato · <span style="color:var(--bad)">{{ obra_venc|length }} operando con el mantenimiento vencido</span></span></div>
+  <div class="bd zonas">
+    {% for z, eqs in a.zonas.items() %}
+    <div class="zona">
+      <h3 class="sub">{{ z }} <span class="cnt">{{ eqs|length }}</span></h3>
+      <div class="fichas">
+        {% for e in eqs %}
+          {% set al = e.alquiler or {} %}
+          {{ ficha(e, (al.cliente or 'Cliente')[:26], ('↩ ' ~ (e.retorno|fecha('%d/%m')) ~ (' (prórroga supuesta)' if e.retorno_supuesto else '')) if e.retorno else 'Sin fecha de retorno', atendido=e.id in a.atendidos_obra) }}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# ------------------------------------------------ próximos ingresos #}
+<section class="card" id="proximos" style="margin-top:16px">
+  <div class="hd"><h2>{{ icono('reloj') }} Qué equipos entran a mantenimiento y cuándo</h2>
+    <span class="muted">{{ a.proximos|length }} en los próximos 45 días · ubicados en la capacidad libre de {{ a.personal|length }} técnicos</span></div>
+  <div class="bd flush tabla-wrap">
+    {% if a.proximos %}
+    <table class="tabla-prox">
+      <thead><tr><th>Ingreso a taller</th><th>Equipo</th><th>Dónde está hoy</th><th>Por qué entra</th><th>Servicio</th><th>Técnico</th><th>Sale</th><th>Fuente</th></tr></thead>
+      <tbody>
+      {% for p in a.proximos %}
+        <tr class="{{ 'lejano' if p.fecha and p.fecha > limite }}" {% if p.fecha and p.fecha > limite %}hidden{% endif %}>
+          <td><b>{{ p.fecha|dia }} {{ p.fecha|fecha }}</b><br><small>{% set d = REF|dias_hasta(p.fecha) %}{{ 'hoy' if d == 0 else ('mañana' if d == 1 else 'en ' ~ d ~ ' días') }}{% if p.espera %} · espera {{ p.espera }} d por capacidad{% endif %}</small></td>
+          <td>{{ eq_link(p.codigo) }}<br><small>{{ CORTO.get(p.categoria, p.categoria) }}</small></td>
+          <td>{% if p.situacion == 'En obra' %}{{ chip('En obra') }}<br><small>retorna {{ p.retorno|fecha('%d/%m') if p.retorno else '—' }}{{ ' (prórroga supuesta)' if p.retorno_supuesto }}</small>
+              {% else %}{{ chip(p.situacion or '—') }}{% endif %}</td>
+          <td>{{ chip(p.mant) if p.mant }} <small>{{ p.motivo }}</small></td>
+          <td>{{ p.tipo }} <b>{{ p.nivel or '' }}</b></td>
+          <td>{{ p.tecnicos or '—' }}</td>
+          <td>{{ p.fin|fecha('%d/%m') if p.fin else '—' }}</td>
+          <td>{% if p.oid %}<a class="mono" href="{{ url_for('orden', oid=p.oid) }}">{{ p.oid|ot }}</a>{% else %}<span class="tag">Pronóstico</span>{% endif %}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% set lejanos = a.proximos|length - prox14|length %}
+    {% if lejanos > 0 %}<div class="bd"><button type="button" class="btn sm" id="ver-lejanos">Ver los {{ lejanos }} ingresos posteriores al {{ limite|fecha('%d/%m') }}</button></div>{% endif %}
+    {% else %}<div class="vacio">No hay ingresos a taller previstos.</div>{% endif %}
+  </div>
+  <div class="bd ayuda" style="border-top:1px solid var(--line-2);margin:0">
+    El pronóstico supone que cada equipo vuelve en la fecha de su contrato (los contratos ya vencidos se suponen prorrogados por 30 días) y que entra a taller si en ese momento tiene el mantenimiento vencido; los que están en el patio entran en su fecha de vencimiento. No crea órdenes: para reservar el taller use <a href="{{ url_for('taller') }}">Programar</a>.
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='almacen3d.js') }}"></script>
+<script>
+(function () {
+  const q = document.getElementById('a-q'), seg = document.getElementById('a-cat');
+  let cat = '';
+  function aplicar() {
+    const t = q.value.trim().toLowerCase();
+    document.querySelectorAll('.ficha, .maq, .esc-aviso').forEach((f) => {
+      const ok = (!cat || f.dataset.cat === cat) && (!t || (f.dataset.texto || '').includes(t));
+      f.classList.toggle('apagada', !ok);
+    });
+  }
+  q.addEventListener('input', aplicar);
+  seg.addEventListener('click', (ev) => {
+    const b = ev.target.closest('button'); if (!b) return;
+    cat = b.dataset.v; seg.querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b)); aplicar();
+  });
+  const ver = document.getElementById('ver-lejanos');
+  if (ver) ver.addEventListener('click', () => { document.querySelectorAll('tr.lejano').forEach((r) => r.hidden = false); ver.remove(); });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,44 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, restante %}
+{% block titulo %}Retorno {{ a.codigo }}{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <div class="migas"><a href="{{ url_for('alquileres') }}">Alquileres</a> / <a href="{{ url_for('equipo', codigo=a.codigo) }}">{{ a.codigo }}</a></div>
+    <h1>Retorno de obra · <span class="mono" style="font-size:22px">{{ a.codigo }}</span></h1>
+    <p>{{ a.cliente or '—' }} — {{ a.obra or '—' }} · salió el {{ a.fecha_salida|fecha }}, contrato hasta el {{ a.fecha_vencimiento|fecha }}</p>
+  </div>
+</div>
+<div class="grid g-21">
+  <form method="post" class="card">
+    <div class="bd stack">
+      <div class="campos">
+        <div><label>Fecha de retorno</label><input type="date" name="fecha_retorno" value="{{ REF.isoformat() }}" required></div>
+        <div><label>Horómetro de retorno (h)</label><input type="number" step="0.1" name="horometro_retorno" {% if ult %}min="{{ ult.horometro }}" placeholder="≥ {{ ult.horometro|num(1) }}"{% endif %}>
+          <div class="ayuda">Última lectura: {{ ult.horometro|num(1) if ult else '—' }} h ({{ ult.fecha|fecha if ult else '' }})</div></div>
+        <div class="ancho"><label>Observaciones del retorno</label><textarea name="notas" placeholder="Estado del equipo, faltantes, limpieza…"></textarea></div>
+        <label class="check ancho"><input type="checkbox" name="falla" value="1" onchange="document.getElementById('falla-det').hidden = !this.checked"> El equipo retorna con una falla o daño (genera una orden correctiva)</label>
+        <div class="ancho" id="falla-det" hidden><label>Descripción de la falla</label><textarea name="falla_detalle"></textarea></div>
+      </div>
+    </div>
+    <div class="bd acciones" style="border-top:1px solid var(--line-2)">
+      <button class="btn pri">Registrar retorno</button>
+      <a class="btn" href="{{ url_for('alquileres') }}">Cancelar</a>
+    </div>
+  </form>
+  <div class="card">
+    <div class="hd"><h2>Mantenimiento al retornar</h2>{{ chip(m.estado) }}</div>
+    <div class="bd stack" style="gap:10px">
+      <div>{{ restante(m) }}{% if m.fecha_vence %} <small>· {{ 'venció' if m.estado == 'Vencido' else 'vence' }} el {{ m.fecha_vence|fecha }}</small>{% endif %}</div>
+      {% if m.estado in ('Vencido', 'Sin datos') %}
+        <div class="nota bad">Al registrar el retorno se generará una orden de trabajo y el equipo quedará <b>en taller</b>: no podrá despacharse hasta completar el servicio {{ m.nivel or 'A' }}.</div>
+      {% elif m.estado == 'Por vencer' %}
+        <div class="nota warn">Se generará una orden pendiente para aprovechar el retorno y adelantar el servicio.</div>
+      {% else %}
+        <div class="nota ok">El equipo queda disponible en patio.</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

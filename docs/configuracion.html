@@ -1,0 +1,242 @@
+
+
+<!doctype html>
+<html lang="es">
+<head>
+<script>/* copia estática */(function(){var r=history.replaceState;
+history.replaceState=function(){try{return r.apply(history,arguments)}catch(e){}};
+var M='Esta es una copia de consulta del SGM Lift Rental: aquí no se pueden registrar ni modificar datos. Esa acción está disponible en el sistema original.';
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-sin-copia]');
+if(a){e.preventDefault();e.stopImmediatePropagation();alert(M);}},true);
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();alert(M);},true);
+})();</script>
+<style>.aviso-copia{position:sticky;top:0;z-index:50;background:#fff4cc;color:#5a4300;border-bottom:1px solid #f2b200;
+padding:6px 16px;font:12.5px/1.4 "Segoe UI",system-ui,sans-serif;text-align:center}
+@media print{.aviso-copia{display:none}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configuración · Lift Rental</title>
+<link rel="stylesheet" href="static/estilos.css">
+<link rel="icon" type="image/jpeg" href="static/logo_liftrental.jpg">
+</head>
+<body>
+<div class="aviso-copia">Copia de consulta del SGM Lift Rental generada el 17/11/2026 23:04 · sólo lectura: los formularios y documentos PDF están disponibles en el sistema original.</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="marca">
+      <img class="logo" src="static/logo_liftrental.jpg" alt="Lift Rental Solutions" width="64" height="64">
+      <div><b>SGM Lift Rental</b><span>Gestión de mantenimiento</span></div>
+    </div>
+    <a class="nav " href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Almacén en vivo</a>
+    <a class="nav " href="panel.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+</svg> Panel de control</a>
+    <a class="nav " href="estatus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Estatus diario </a>
+    <div class="nav-sec">Almacén virtual</div>
+    <a class="nav " href="equipos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Equipos y expedientes</a>
+    <a class="nav " href="alquileres.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20l12-7M6 13l12 7M5 10h14M9 10V6h6v4"/>
+</svg> Uso y alquileres</a>
+    <a class="nav " href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+    <div class="nav-sec">Mantenimiento</div>
+    <a class="nav " href="mantenimiento.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> Órdenes de trabajo <span class="badge">10</span></a>
+    <a class="nav " href="documentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Documentos de mantto.</a>
+    <a class="nav " href="taller.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programa del taller</a>
+    <a class="nav " href="incidentes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.2v.3"/>
+</svg> Incidentes en obra</a>
+    <div class="nav-sec">Planificación</div>
+    <a class="nav " href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Cartera de pedidos</a>
+    <a class="nav " href="optimizacion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+</svg> Optimización (PLEM)</a>
+    <div class="nav-sec">Personal</div>
+    <a class="nav " href="personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+</svg> Técnicos</a>
+    <a class="nav on" href="configuracion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z"/>
+</svg> Configuración</a>
+    <div class="side-pie">
+      Fecha de evaluación<br><b>17/11/2026</b><br>
+      Taller Comas · 3 técnicos
+      <br><span>Estatus real al 17/11/2026</span>
+      
+    </div>
+  </aside>
+  <main>
+    
+    
+      
+    
+    
+<div class="cab"><div>
+  <h1>Configuración</h1>
+  <p>Criterios del plan de mantenimiento, capacidad del taller y parámetros por nivel de servicio.</p>
+</div></div>
+<form method="post" class="stack">
+  <div class="grid g2">
+    <div class="card">
+      <div class="hd"><h2>Criterio de vencimiento</h2></div>
+      <div class="bd">
+        <div class="campos">
+          <div><label>Intervalo de calendario — brazos (días)</label><input type="number" name="intervalo_brazos" value="90" min="1"></div>
+          <div><label>Intervalo de calendario — tijeras y mástil (días)</label><input type="number" name="intervalo_tijeras" value="90" min="1">
+            <div class="ayuda">90 = criterio trimestral (caso base); 180 = semestral; un valor muy alto equivale a aplicar sólo el criterio por horas.</div></div>
+          <div><label>Umbral «por vencer» (días)</label><input type="number" name="umbral_dias" value="15" min="0"></div>
+          <div><label>Umbral «por vencer» (fracción de horas)</label><input type="number" step="0.05" name="umbral_fraccion" value="0.2" min="0" max="1"></div>
+          <label class="check ancho"><input type="checkbox" name="inspeccion_reinicia" value="1" checked> El certificado de operatividad (inspección al despachar) reinicia el plazo de calendario. Las horas se siguen contando desde el último preventivo.</label>
+          <label class="check ancho"><input type="checkbox" name="bloquear_vencidos" value="1" checked> Bloquear el despacho de equipos con mantenimiento vencido (sólo salen como excepción documentada)</label>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Taller y evaluación</h2></div>
+      <div class="bd">
+        <div class="campos">
+          <div><label>Capacidad del taller (técnico-días por día hábil)</label><input type="number" step="0.5" name="capacidad_tecnicos" value="3" min="0"></div>
+          <div><label>Fecha de evaluación fija</label><input type="date" name="fecha_referencia" value="">
+            <div class="ayuda">Vacía = fecha de hoy. Use 01/10/2026 para reproducir el diagnóstico del informe.</div></div>
+          <div class="ancho"><label>Empresa</label><input name="empresa" value="Corporación Lift Rental Solutions Perú S.A.C."></div>
+          <div class="ancho"><label>Dirección del taller</label><input name="taller" value="Av. Universitaria 9695, Urb. La Alborada, Comas — Lima"></div>
+          <div class="ancho"><label>Jefe de mantenimiento (firma del certificado)</label><input name="jefe_mantenimiento" value="Supervisor S."></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Parámetros por nivel de servicio</h2><small>Supuestos del libro de datos, a reemplazar con órdenes de trabajo reales</small></div>
+    <div class="bd flush tabla-wrap">
+      <table>
+        <thead><tr><th>Categoría</th><th>Nivel</th><th>Duración (días)</th><th>Costo (S/)</th><th>Técnico-días</th></tr></thead>
+        <tbody>
+        
+          
+          <tr><td>Brazo articulado combustión</td><td><b>A</b></td>
+            <td><input type="number" min="1" name="p_Brazo articulado combustión_A_dur" value="2" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Brazo articulado combustión_A_costo" value="900" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Brazo articulado combustión_A_td" value="2.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Brazo articulado combustión</td><td><b>A+B</b></td>
+            <td><input type="number" min="1" name="p_Brazo articulado combustión_A+B_dur" value="3" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Brazo articulado combustión_A+B_costo" value="1600" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Brazo articulado combustión_A+B_td" value="4.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Brazo articulado combustión</td><td><b>A+B+C</b></td>
+            <td><input type="number" min="1" name="p_Brazo articulado combustión_A+B+C_dur" value="4" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Brazo articulado combustión_A+B+C_costo" value="3000" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Brazo articulado combustión_A+B+C_td" value="5.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Brazo articulado combustión</td><td><b>A+B+C+D</b></td>
+            <td><input type="number" min="1" name="p_Brazo articulado combustión_A+B+C+D_dur" value="5" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Brazo articulado combustión_A+B+C+D_costo" value="5200" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Brazo articulado combustión_A+B+C+D_td" value="7.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Brazo articulado eléctrico</td><td><b>A</b></td>
+            <td><input type="number" min="1" name="p_Brazo articulado eléctrico_A_dur" value="2" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Brazo articulado eléctrico_A_costo" value="650" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Brazo articulado eléctrico_A_td" value="2.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Brazo articulado eléctrico</td><td><b>A+B</b></td>
+            <td><input type="number" min="1" name="p_Brazo articulado eléctrico_A+B_dur" value="3" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Brazo articulado eléctrico_A+B_costo" value="1300" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Brazo articulado eléctrico_A+B_td" value="3.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Brazo articulado eléctrico</td><td><b>A+B+C</b></td>
+            <td><input type="number" min="1" name="p_Brazo articulado eléctrico_A+B+C_dur" value="4" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Brazo articulado eléctrico_A+B+C_costo" value="2600" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Brazo articulado eléctrico_A+B+C_td" value="5.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Brazo articulado eléctrico</td><td><b>A+B+C+D</b></td>
+            <td><input type="number" min="1" name="p_Brazo articulado eléctrico_A+B+C+D_dur" value="5" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Brazo articulado eléctrico_A+B+C+D_costo" value="4200" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Brazo articulado eléctrico_A+B+C+D_td" value="7.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Mástil vertical</td><td><b>A</b></td>
+            <td><input type="number" min="1" name="p_Mástil vertical_A_dur" value="1" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Mástil vertical_A_costo" value="280" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Mástil vertical_A_td" value="1.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Mástil vertical</td><td><b>A+B</b></td>
+            <td><input type="number" min="1" name="p_Mástil vertical_A+B_dur" value="2" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Mástil vertical_A+B_costo" value="650" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Mástil vertical_A+B_td" value="2.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Mástil vertical</td><td><b>A+B+C</b></td>
+            <td><input type="number" min="1" name="p_Mástil vertical_A+B+C_dur" value="3" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Mástil vertical_A+B+C_costo" value="1200" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Mástil vertical_A+B+C_td" value="3.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Mástil vertical</td><td><b>A+B+C+D</b></td>
+            <td><input type="number" min="1" name="p_Mástil vertical_A+B+C+D_dur" value="4" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Mástil vertical_A+B+C+D_costo" value="2400" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Mástil vertical_A+B+C+D_td" value="5.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Tijera eléctrica</td><td><b>A</b></td>
+            <td><input type="number" min="1" name="p_Tijera eléctrica_A_dur" value="1" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Tijera eléctrica_A_costo" value="280" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Tijera eléctrica_A_td" value="1.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Tijera eléctrica</td><td><b>A+B</b></td>
+            <td><input type="number" min="1" name="p_Tijera eléctrica_A+B_dur" value="2" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Tijera eléctrica_A+B_costo" value="650" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Tijera eléctrica_A+B_td" value="2.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Tijera eléctrica</td><td><b>A+B+C</b></td>
+            <td><input type="number" min="1" name="p_Tijera eléctrica_A+B+C_dur" value="3" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Tijera eléctrica_A+B+C_costo" value="1200" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Tijera eléctrica_A+B+C_td" value="3.0" style="max-width:110px"></td></tr>
+        
+          
+          <tr><td>Tijera eléctrica</td><td><b>A+B+C+D</b></td>
+            <td><input type="number" min="1" name="p_Tijera eléctrica_A+B+C+D_dur" value="4" style="max-width:110px"></td>
+            <td><input type="number" step="any" name="p_Tijera eléctrica_A+B+C+D_costo" value="2400" style="max-width:130px"></td>
+            <td><input type="number" step="0.5" name="p_Tijera eléctrica_A+B+C+D_td" value="5.0" style="max-width:110px"></td></tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="acciones"><button class="btn pri">Guardar configuración</button></div>
+  <div class="nota">Base de datos: <span class="mono">SGM_LiftRental\datos\sgm_liftrental.db</span><br>Carpeta del expediente de equipos: <span class="mono">Expedientes</span></div>
+</form>
+
+<form class="card" method="post" action="#" data-sin-copia="1" style="margin-top:16px"
+      data-confirmar="Se reconstruirá toda la base desde el registro de estatus del 22/09/2026. Los datos ingresados a mano (despachos, órdenes, lecturas) se perderán. ¿Continuar?">
+  <div class="hd"><h2>Simulación de la operación</h2></div>
+  <div class="bd stack" style="gap:12px">
+    <div class="flash warn" style="margin:0">La base trabaja hoy con el <b>estatus real al 17/11/2026</b> (<a href="estatus.html">Estatus diario</a>). Simular descarta esos datos y vuelve a la operación simulada.</div>
+    <p style="margin:0">El almacén parte de la situación <b>real</b> de cada equipo en el registro de estatus del 22/09/2026 y de su último servicio documentado en el expediente, y recorre la operación día a día con la práctica actual: los contratos vuelven en su fecha (los vencidos se prorrogan por 30 días), los pedidos llegan con la tasa observada en el registro y se atienden con la primera máquina compatible del patio, el taller recibe lo que vuelve vencido y atiende las fallas en obra (25 % por pedido con mantenimiento vencido, 5 % vigente).</p>
+    
+    <div class="campos">
+      <div><label>Simular hasta</label><input type="date" name="hasta" value="2026-11-17" min="2026-09-23" required></div>
+      <div><label>Semilla</label><input type="number" name="semilla" value="20260922">
+        <div class="ayuda">La misma semilla reproduce la misma historia; otra semilla genera otra cartera de pedidos y otras fallas.</div></div>
+    </div>
+    <div class="acciones"><button class="btn osc">Reconstruir y simular</button></div>
+  </div>
+</form>
+
+  </main>
+</div>
+<script src="static/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, restante, eq_link, icono %}
+{% block titulo %}Panel de control{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Panel de control</h1>
+    <p>Estado de la flota y del mantenimiento al {{ REF|fecha }} — criterio del plan Mntto-PPMTE-2017: vence al cumplir las horas o el intervalo de calendario, lo que ocurra primero.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('exportar', tabla='equipos') }}">{{ icono('csv') }} Exportar tablero</a>
+    <a class="btn pri" href="{{ url_for('despacho') }}">{{ icono('despacho') }} Despachar equipo</a>
+  </div>
+</div>
+
+<div class="grid g4" style="margin-bottom:16px">
+  <a class="card kpi" href="{{ url_for('equipos') }}">
+    <span class="l">Equipos en el almacén</span><span class="v">{{ total }}</span>
+    <span class="s">{{ sit['En obra'] }} en obra · ocupación {{ (sit['En obra'] / total * 100)|num(0) if total else 0 }} %</span>
+  </a>
+  <a class="card kpi {{ 'alerta' if en_obra_venc }}" href="{{ url_for('equipos', situacion='En obra', estado='no-apto') }}">
+    <span class="l">En obra con mantenimiento vencido</span><span class="v">{{ en_obra_venc|length }}</span>
+    <span class="s">operando fuera del plan de mantenimiento</span>
+  </a>
+  <a class="card kpi {{ 'alerta' if disp_venc }}" href="{{ url_for('equipos', situacion='Disponible', estado='no-apto') }}">
+    <span class="l">En patio, no despachables</span><span class="v">{{ disp_venc|length }}</span>
+    <span class="s">de {{ sit['Disponible'] }} en patio · {{ disponibles_aptos|length }} aptos para salir</span>
+  </a>
+  <a class="card kpi {{ 'alerta' if contratos_venc }}" href="{{ url_for('alquileres') }}">
+    <span class="l">Contratos vencidos sin retorno</span><span class="v">{{ contratos_venc|length }}</span>
+    <span class="s">equipo que no regresa no entra a mantenimiento</span>
+  </a>
+</div>
+
+<div class="grid g-21">
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Estado de mantenimiento de la flota</h2><a href="{{ url_for('equipos') }}">Ver almacén →</a></div>
+      <div class="bd">
+        <div class="barra">
+          {% for e, c in [('Vigente','ok'),('Por vencer','warn'),('Vencido','bad'),('Sin datos','none')] %}
+            {% if mant[e] %}<span class="{{ c }}" style="width: {{ mant[e] / total * 100 }}%" title="{{ e }}: {{ mant[e] }}"></span>{% endif %}
+          {% endfor %}
+        </div>
+        <div class="leyenda">
+          {% for e, c in [('Vigente','ok'),('Por vencer','warn'),('Vencido','bad'),('Sin datos','none')] %}
+            <a href="{{ url_for('equipos', estado=e) }}" style="color:inherit"><i class="{{ c }}" style="background:var(--{{ c if c != 'warn' else 'warn' }})"></i>{{ e }} <b>{{ mant[e] }}</b></a>
+          {% endfor %}
+        </div>
+        <div class="tabla-wrap" style="margin-top:14px">
+          <table>
+            <thead><tr><th>Categoría</th><th class="n">Equipos</th><th class="n">En obra</th><th class="n">Vencidos o sin datos</th><th style="width:30%"></th></tr></thead>
+            <tbody>
+            {% for cat, d in por_categoria.items() %}
+              <tr><td>{{ cat }}</td><td class="n">{{ d.total }}</td><td class="n">{{ d.obra }}</td><td class="n">{{ d.venc }}</td>
+                <td><div class="prog"><span class="bad" style="width: {{ d.venc / d.total * 100 }}%"></span></div></td></tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Equipos en obra con el mantenimiento vencido</h2><span class="muted">{{ en_obra_venc|length }}</span></div>
+      <div class="bd flush tabla-wrap" style="max-height:340px; overflow:auto">
+        {% if en_obra_venc %}
+        <table>
+          <thead><tr><th>Equipo</th><th>Cliente · obra</th><th>Atraso del servicio</th><th>Contrato</th><th></th></tr></thead>
+          <tbody>
+          {% for e in en_obra_venc %}
+            <tr>
+              <td>{{ eq_link(e.codigo) }}<br><small>{{ e.categoria }}</small></td>
+              <td>{{ e.alquiler.cliente or '—' }}<br><small>{{ e.alquiler.obra or '' }}</small></td>
+              <td>{{ restante(e.mant) }}</td>
+              <td>{% if e.alquiler.contrato_vencido %}{{ chip('Vencido', 'Venció ' ~ (e.alquiler.fecha_vencimiento|fecha)) }}{% else %}hasta {{ e.alquiler.fecha_vencimiento|fecha }}{% endif %}</td>
+              <td class="n"><a class="btn sm" href="{{ url_for('retorno', aid=e.alquiler.id) }}">Retorno</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+        {% else %}<div class="vacio">Ningún equipo en obra opera con el mantenimiento vencido.</div>{% endif %}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Vencimientos de los próximos 30 días</h2><span class="muted">equipos hoy vigentes o por vencer</span></div>
+      <div class="bd flush tabla-wrap">
+        {% if proximos %}
+        <table>
+          <thead><tr><th>Equipo</th><th>Situación</th><th>Vence</th><th>Restante</th><th>Próximo servicio</th><th></th></tr></thead>
+          <tbody>
+          {% for e in proximos %}
+            <tr>
+              <td>{{ eq_link(e.codigo) }}</td>
+              <td>{{ chip(e.situacion) }}</td>
+              <td>{{ e.mant.fecha_vence|fecha }} <small>({{ e.mant.vence_por|lower }})</small></td>
+              <td>{{ restante(e.mant) }}</td>
+              <td>{{ e.mant.nivel }} · {{ e.mant.proximo_h|num(0) }} h</td>
+              <td class="n">{% if e.orden %}<a href="{{ url_for('orden', oid=e.orden.id) }}">{{ e.orden.id|ot }}</a>{% else %}<a class="btn sm" href="{{ url_for('orden_nueva', equipo=e.codigo) }}">Programar</a>{% endif %}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+        {% else %}<div class="vacio">No hay equipos vigentes que venzan en los próximos 30 días.</div>{% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Situación de los equipos</h2></div>
+      <div class="bd">
+        <div class="barra">
+          {% for s, c in [('Disponible','ok'),('En obra','info'),('En taller','warn'),('Fuera de servicio','bad')] %}
+            {% if sit[s] %}<span class="{{ c }}" style="width: {{ sit[s] / total * 100 }}%"></span>{% endif %}
+          {% endfor %}
+        </div>
+        <ul class="lista" style="margin:10px -16px -14px">
+          {% for s in SITUACIONES %}
+            <li><a href="{{ url_for('equipos', situacion=s) }}" style="color:inherit">{{ chip(s) }}</a><b>{{ sit[s] }}</b></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Carga del taller · 14 días</h2><a href="{{ url_for('taller') }}">Programa →</a></div>
+      <div class="bd">
+        <div class="minibar">
+          {% for d, v in carga.items() %}
+            {% set dom = d.weekday() == 6 %}
+            <div class="{{ 'dom' if dom }}" title="{{ d|fecha }} — {{ v.carga|num(1) }} técnico-días">
+              <span class="{{ 'sobre' if v.carga > cap + 0.001 else ('lleno' if v.carga >= cap - 0.001 and v.carga > 0 else '') }}" style="height: {{ ([v.carga / cap, 1]|min * 100) if not dom else 100 }}%"></span>
+              <small>{{ d.day }}</small>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="leyenda"><span>Capacidad: {{ cap|num(0) }} técnico-días por día hábil (lunes a sábado)</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Órdenes de trabajo</h2><a href="{{ url_for('mantenimiento') }}">Todas →</a></div>
+      <ul class="lista">
+        <li><span>{{ chip('En ejecución') }}</span><b>{{ en_ejec|length }}</b></li>
+        <li><span>{{ chip('Pendiente', 'Pendientes sin fecha') }}</span><b>{{ pendientes|length }}</b></li>
+        <li><span>{{ chip('Vencido', 'Programadas atrasadas') }}</span><b>{{ atrasadas|length }}</b></li>
+      </ul>
+      {% if atrasadas or pendientes %}
+      <div class="bd" style="border-top:1px solid var(--line-2)">
+        {% for o in (atrasadas|list + pendientes|list)[:6] %}
+          <div style="display:flex;justify-content:space-between;gap:8px;padding:3px 0">
+            <span><a href="{{ url_for('orden', oid=o.id) }}" class="mono">{{ o.id|ot }}</a> {{ eq_link(o.codigo) }}</span>
+            <small>{{ o.fecha_programada|fecha if o.fecha_programada else o.origen }}</small>
+          </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="bd" style="border-top:1px solid var(--line-2)">
+        <form method="post" action="{{ url_for('programar') }}">
+          <button class="btn osc" style="width:100%;justify-content:center">{{ icono('taller') }} Programar automáticamente</button>
+        </form>
+        <div class="ayuda" style="margin-top:6px">Asigna fecha y técnico a los equipos en patio o taller vencidos o por vencer, respetando la capacidad diaria.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hd"><h2>Incidentes · últimos 90 días</h2><a href="{{ url_for('incidentes') }}">Registro →</a></div>
+      <div class="bd">
+        {% if inc.n %}
+          <div style="display:flex;gap:24px">
+            <div><div class="kpi" style="padding:0"><span class="v">{{ inc.n }}</span><span class="s">fallas en obra</span></div></div>
+            <div><div class="kpi" style="padding:0"><span class="v" style="color:var(--bad)">{{ ((inc.v or 0) / inc.n * 100)|num(0) }} %</span><span class="s">con mantenimiento vencido</span></div></div>
+          </div>
+          <div class="ayuda" style="margin-top:8px">Costo de atención: {{ inc.c|soles }}</div>
+        {% else %}
+          <p class="muted" style="margin:0">Sin incidentes registrados. El registro permite estimar la probabilidad real de falla en obra, hoy supuesta en el modelo.</p>
+        {% endif %}
+        {% if excepciones %}<p style="margin:10px 0 0"><span class="chip warn">{{ excepciones }} despacho(s) con excepción en 60 días</span></p>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

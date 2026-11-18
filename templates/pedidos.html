@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% from '_m.html' import chip, eq_link, icono %}
+{% block titulo %}Cartera de pedidos{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Cartera de pedidos</h1>
+    <p>Pedidos por atender: es el conjunto J del modelo de optimización. Cada corrida decide qué equipo atiende cada pedido, o si se deja sin atender con flota propia.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn pri" href="{{ url_for('optimizacion') }}">{{ icono('optim') }} Optimizar con esta cartera</a>
+  </div>
+</div>
+
+<div class="grid g2" style="margin-bottom:16px">
+  <form class="card" method="post" action="{{ url_for('pedido_nuevo') }}">
+    <div class="hd"><h2>Registrar pedido</h2><span class="muted">solicitud del área comercial</span></div>
+    <div class="bd">
+      <div class="campos">
+        <div><label>Cliente</label><input name="cliente" list="clientes"><datalist id="clientes">{% for c in clientes %}<option>{{ c }}</option>{% endfor %}</datalist></div>
+        <div><label>Obra</label><input name="obra"></div>
+        <div><label>Zona</label><select name="zona">{% for z in ZONAS %}<option>{{ z }}</option>{% endfor %}</select></div>
+        <div><label>Tipo de equipo</label><select name="categoria">{% for c in CATEGORIAS %}<option>{{ c }}</option>{% endfor %}</select></div>
+        <div><label>Altura de trabajo mínima (m)</label><input type="number" step="0.1" name="altura_req"></div>
+        <div><label>Capacidad mínima (kg)</label><input type="number" name="capacidad_req" placeholder="227"></div>
+        <div><label>Inicio</label><input type="date" name="fecha_inicio" value="{{ ref|sumar_dias(1) }}" required></div>
+        <div><label>Fin del contrato</label><input type="date" name="fecha_fin" value="{{ ref|sumar_dias(30) }}" required></div>
+        <div><label>Tarifa (S/ por día)</label><input type="number" step="0.5" name="tarifa_dia" placeholder="según tipo y altura"></div>
+        <div><label>Traslado ida y vuelta (S/)</label><input type="number" step="10" name="costo_traslado" placeholder="según zona"></div>
+      </div>
+      <div style="margin-top:12px;display:flex;justify-content:flex-end"><button class="btn osc">{{ icono('mas') }} Agregar a la cartera</button></div>
+    </div>
+  </form>
+
+  <form class="card" method="post" action="{{ url_for('pedidos_generar') }}">
+    <div class="hd"><h2>Generar cartera calibrada</h2><span class="muted">cuando aún no hay pedidos reales</span></div>
+    <div class="bd">
+      <p class="nota" style="margin:0 0 12px">Igual que en el informe (4.2.4): la tasa de llegada sale de la ley de Little con los contratos del sistema (equipos en obra ÷ duración media). La mezcla de tipos y zonas, las duraciones y las alturas siguen los contratos y la flota reales. La misma semilla genera la misma cartera.</p>
+      <div class="campos">
+        <div><label>Desde</label><input type="date" name="desde" value="{{ ref|sumar_dias(0) }}"></div>
+        <div><label>Horizonte (días)</label><input type="number" name="horizonte" value="60" min="7" max="90"></div>
+        <div><label>Semilla</label><input type="number" name="semilla" value="20260922"></div>
+        <div><label>Volumen de demanda</label><select name="factor"><option value="0.75">25 % menor</option><option value="1" selected>Calibrado (base)</option><option value="1.25">25 % mayor</option></select></div>
+        <label class="check ancho"><input type="checkbox" name="reemplazar" value="1" checked> Reemplazar la cartera calibrada anterior (no toca los pedidos registrados ni los despachados)</label>
+      </div>
+      <div style="margin-top:12px;display:flex;justify-content:flex-end"><button class="btn">Generar pedidos</button></div>
+    </div>
+  </form>
+</div>
+
+<div class="tabs">
+  {% for k, etq in [('abiertos','Por atender'),('Despachado','Despachados'),('No atendido','No atendidos'),('Cancelado','Cancelados'),('todos','Todos')] %}
+  <a class="{{ 'on' if estado == k }}" href="{{ url_for('pedidos', estado=k) }}">{{ etq }}<span class="cnt">{% if k == 'abiertos' %}{{ (cuenta.get('Pendiente', 0) + cuenta.get('Asignado', 0)) }}{% elif k == 'todos' %}{{ cuenta.values()|sum }}{% else %}{{ cuenta.get(k, 0) }}{% endif %}</span></a>
+  {% endfor %}
+</div>
+
+<div class="card"><div class="bd flush tabla-wrap">
+  {% if filas %}
+  <table>
+    <thead><tr><th>Pedido</th><th>Cliente · obra</th><th>Equipo requerido</th><th>Periodo</th><th class="n">Tarifa</th><th class="n">Traslado</th><th>Estado</th><th>Equipo</th><th></th></tr></thead>
+    <tbody>{% for p in filas %}
+      <tr class="{{ 'atenuada' if p.estado in ('Cancelado',) }}">
+        <td class="mono">P-{{ '%04d'|format(p.id) }}<br><span class="tag">{{ p.origen or '—' }}</span></td>
+        <td>{{ p.cliente or '—' }}<br><small>{{ p.obra or '' }}{% if p.zona %} · {{ p.zona }}{% endif %}</small></td>
+        <td>{{ CORTO.get(p.categoria, p.categoria) }}<br><small>{% if p.altura_req %}≥ {{ p.altura_req|num(1) }} m{% endif %}{% if p.capacidad_req %} · {{ p.capacidad_req|num(0) }} kg{% endif %}</small></td>
+        <td>{{ p.fecha_inicio|fecha('%d/%m') }} → {{ p.fecha_fin|fecha('%d/%m/%Y') }}<br><small>{{ (p.fecha_inicio|dias_hasta(p.fecha_fin)) + 1 }} días</small></td>
+        <td class="n">{{ p.tarifa_dia|soles }}</td>
+        <td class="n">{{ p.costo_traslado|soles }}</td>
+        <td>{{ chip(p.estado) }}{% if p.notas %}<br><small>{{ p.notas }}</small>{% endif %}</td>
+        <td>{% if p.codigo %}{{ eq_link(p.codigo) }}{% if p.corrida_id %}<br><small><a href="{{ url_for('optimizacion', cid=p.corrida_id) }}">corrida {{ p.corrida_id }}</a></small>{% endif %}{% else %}<span class="muted">—</span>{% endif %}</td>
+        <td style="white-space:nowrap">
+          {% if p.estado in ('Pendiente','Asignado','No atendido') %}
+            <a class="btn sm {{ 'pri' if p.estado == 'Asignado' }}" href="{{ url_for('despacho', buscar=1, pedido=p.id, categoria=p.categoria, altura=p.altura_req or '', capacidad=p.capacidad_req or '', fecha_salida=p.fecha_inicio, fecha_vencimiento=p.fecha_fin, cliente=p.cliente or '', obra=p.obra or '', zona=p.zona or '', tarifa_dia=p.tarifa_dia or '', equipo_id=p.equipo_id or '') }}">Despachar</a>
+            <form method="post" action="{{ url_for('pedido_accion', pid=p.id, accion='cancelar') }}" style="display:inline"><button class="btn sm">Cancelar</button></form>
+          {% elif p.estado == 'Cancelado' %}
+            <form method="post" action="{{ url_for('pedido_accion', pid=p.id, accion='reabrir') }}" style="display:inline"><button class="btn sm">Reabrir</button></form>
+          {% endif %}
+          {% if p.estado != 'Despachado' %}<form method="post" action="{{ url_for('pedido_accion', pid=p.id, accion='eliminar') }}" style="display:inline" data-confirmar="¿Eliminar el pedido P-{{ '%04d'|format(p.id) }}?"><button class="btn sm peligro" title="Eliminar">{{ icono('x') }}</button></form>{% endif %}
+        </td>
+      </tr>
+    {% endfor %}</tbody>
+  </table>
+  {% else %}<div class="vacio">No hay pedidos en esta vista. Registre los pedidos del área comercial o genere una cartera calibrada para correr el modelo.</div>{% endif %}
+</div></div>
+{% endblock %}

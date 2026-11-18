@@ -1,0 +1,74 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, restante %}
+{% block titulo %}{{ 'Editar ' ~ (o.id|ot) if o else 'Nueva orden' }}{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <div class="migas"><a href="{{ url_for('mantenimiento') }}">Órdenes</a>{% if o %} / <a href="{{ url_for('orden', oid=o.id) }}">{{ o.id|ot }}</a>{% endif %}</div>
+    <h1>{{ 'Editar ' ~ (o.id|ot) if o else 'Nueva orden de trabajo' }}</h1>
+  </div>
+</div>
+<form method="post" class="grid g-21">
+  <div class="card">
+    <div class="bd stack">
+      <div class="campos">
+        <div class="ancho"><label>Equipo</label>
+          {% if o or sel %}
+            <input type="hidden" name="equipo_id" value="{{ sel.id }}">
+            <input value="{{ sel.codigo }} — {{ sel.categoria }} {{ sel.marca or '' }} {{ sel.modelo or '' }}" readonly>
+          {% else %}
+            <select name="equipo_id" required onchange="if (this.value) location = '?equipo=' + this.selectedOptions[0].dataset.codigo">
+              <option value="">Seleccione…</option>
+              {% for e in equipos %}<option value="{{ e.id }}" data-codigo="{{ e.codigo }}">{{ e.codigo }} — {{ e.marca or '' }} {{ e.modelo or '' }}</option>{% endfor %}
+            </select>
+          {% endif %}
+        </div>
+        <div><label>Tipo</label><select name="tipo">{% for t in ('Preventivo','Correctivo','Inspección') %}<option {{ 'selected' if (o.tipo if o else tipo) == t }}>{{ t }}</option>{% endfor %}</select></div>
+        <div><label>Nivel de servicio</label><select name="nivel"><option value="">—</option>{% for n in NIVELES %}<option {{ 'selected' if (o.nivel if o else (sugerencia.nivel if sugerencia)) == n }}>{{ n }}</option>{% endfor %}</select></div>
+        <div><label>Prioridad</label><select name="prioridad">{% for p in ('Alta','Normal','Baja') %}<option {{ 'selected' if (o.prioridad if o else ('Alta' if sugerencia and sugerencia.m.estado == 'Vencido' else 'Normal')) == p }}>{{ p }}</option>{% endfor %}</select></div>
+        <div><label>Fecha programada</label><input type="date" name="fecha_programada" value="{{ o.fecha_programada if o and o.fecha_programada else '' }}">
+          <div class="ayuda">Vacía = pendiente sin fecha. Domingo no laborable.</div></div>
+        <div><label>Duración (días hábiles)</label><input type="number" min="1" name="duracion_dias" value="{{ o.duracion_dias if o else (sugerencia.duracion_dias if sugerencia else 1) }}"></div>
+        <div><label>Técnico-días</label><input type="number" step="0.5" min="0.5" name="tecnico_dias" value="{{ o.tecnico_dias if o else (sugerencia.tecnico_dias if sugerencia else 1) }}"></div>
+        <div><label>Costo estimado (S/)</label><input type="number" step="any" name="costo_estimado" value="{{ (o.costo_estimado if o else (sugerencia.costo if sugerencia)) or '' }}"></div>
+        <div class="ancho"><label>Descripción del trabajo</label><textarea name="descripcion">{{ o.descripcion if o and o.descripcion else (('Servicio ' ~ sugerencia.nivel ~ ' — mantenimiento ' ~ sugerencia.m.estado|lower) if sugerencia else '') }}</textarea></div>
+        <div class="ancho"><label>Observaciones</label><textarea name="observaciones" style="min-height:50px">{{ o.observaciones if o and o.observaciones else '' }}</textarea></div>
+      </div>
+    </div>
+    <div class="bd acciones" style="border-top:1px solid var(--line-2)">
+      <button class="btn pri">Guardar orden</button>
+      <a class="btn" href="{{ url_for('orden', oid=o.id) if o else url_for('mantenimiento') }}">Cancelar</a>
+    </div>
+  </div>
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Técnicos asignados</h2></div>
+      <div class="bd stack" style="gap:8px">
+        {% for t in tecnicos %}
+          <label class="check"><input type="checkbox" name="tecnicos" value="{{ t.id }}" {{ 'checked' if t.id in asignados }}> {{ t.nombre }} <small class="muted">{{ t.especialidad or '' }}</small></label>
+        {% endfor %}
+        {% if not tecnicos %}<span class="muted">No hay técnicos activos. <a href="{{ url_for('tecnico_form') }}">Registrar</a></span>{% endif %}
+        <div class="ayuda">Al guardar se verifica la capacidad diaria del taller y que el técnico no tenga otra orden el mismo día.</div>
+      </div>
+    </div>
+    {% if sugerencia %}
+    <div class="card">
+      <div class="hd"><h2>Estado del {{ sel.codigo }}</h2>{{ chip(sugerencia.m.estado) }}</div>
+      <div class="bd">
+        <dl class="dl">
+          <dt>Restante</dt><dd>{{ restante(sugerencia.m) }}</dd>
+          <dt>Último servicio</dt><dd>{{ sugerencia.m.fecha_pm|fecha }}</dd>
+          <dt>Próximo servicio</dt><dd>{{ sugerencia.nivel }} a las {{ sugerencia.m.proximo_h|num(0) }} h</dd>
+          <dt>Situación</dt><dd>{{ sel.situacion }}</dd>
+        </dl>
+        <div class="ayuda" style="margin-top:8px">Duración, técnico-días y costo se proponen según el nivel y la categoría (Configuración → parámetros por nivel).</div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</form>
+{% endblock %}
+{% block scripts %}
+{% if sel %}<script>autocompletarParametros({{ params|tojson }}, () => {{ sel.categoria|tojson }});</script>{% endif %}
+{% endblock %}

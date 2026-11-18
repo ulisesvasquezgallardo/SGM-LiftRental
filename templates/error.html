@@ -1,0 +1,10 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% block titulo %}No encontrado{% endblock %}
+{% block contenido %}
+<div class="card" style="max-width:560px"><div class="bd">
+  <h1 style="margin-bottom:8px">No encontrado</h1>
+  <p>{{ mensaje }}</p>
+  <a class="btn" href="{{ url_for('panel') }}">Volver al panel</a>
+</div></div>
+{% endblock %}

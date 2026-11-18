@@ -1,0 +1,1979 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<script>/* copia estática */(function(){var r=history.replaceState;
+history.replaceState=function(){try{return r.apply(history,arguments)}catch(e){}};
+var M='Esta es una copia de consulta del SGM Lift Rental: aquí no se pueden registrar ni modificar datos. Esa acción está disponible en el sistema original.';
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-sin-copia]');
+if(a){e.preventDefault();e.stopImmediatePropagation();alert(M);}},true);
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();alert(M);},true);
+})();</script>
+<style>.aviso-copia{position:sticky;top:0;z-index:50;background:#fff4cc;color:#5a4300;border-bottom:1px solid #f2b200;
+padding:6px 16px;font:12.5px/1.4 "Segoe UI",system-ui,sans-serif;text-align:center}
+@media print{.aviso-copia{display:none}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optimización PLEM · Lift Rental</title>
+<link rel="stylesheet" href="static/estilos.css">
+<link rel="icon" type="image/jpeg" href="static/logo_liftrental.jpg">
+</head>
+<body>
+<div class="aviso-copia">Copia de consulta del SGM Lift Rental generada el 17/11/2026 23:04 · sólo lectura: los formularios y documentos PDF están disponibles en el sistema original.</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="marca">
+      <img class="logo" src="static/logo_liftrental.jpg" alt="Lift Rental Solutions" width="64" height="64">
+      <div><b>SGM Lift Rental</b><span>Gestión de mantenimiento</span></div>
+    </div>
+    <a class="nav " href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Almacén en vivo</a>
+    <a class="nav " href="panel.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+</svg> Panel de control</a>
+    <a class="nav " href="estatus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Estatus diario </a>
+    <div class="nav-sec">Almacén virtual</div>
+    <a class="nav " href="equipos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Equipos y expedientes</a>
+    <a class="nav " href="alquileres.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20l12-7M6 13l12 7M5 10h14M9 10V6h6v4"/>
+</svg> Uso y alquileres</a>
+    <a class="nav " href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+    <div class="nav-sec">Mantenimiento</div>
+    <a class="nav " href="mantenimiento.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> Órdenes de trabajo <span class="badge">10</span></a>
+    <a class="nav " href="documentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Documentos de mantto.</a>
+    <a class="nav " href="taller.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programa del taller</a>
+    <a class="nav " href="incidentes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.2v.3"/>
+</svg> Incidentes en obra</a>
+    <div class="nav-sec">Planificación</div>
+    <a class="nav " href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Cartera de pedidos</a>
+    <a class="nav on" href="optimizacion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+</svg> Optimización (PLEM)</a>
+    <div class="nav-sec">Personal</div>
+    <a class="nav " href="personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+</svg> Técnicos</a>
+    <a class="nav " href="configuracion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z"/>
+</svg> Configuración</a>
+    <div class="side-pie">
+      Fecha de evaluación<br><b>17/11/2026</b><br>
+      Taller Comas · 3 técnicos
+      <br><span>Estatus real al 17/11/2026</span>
+      
+    </div>
+  </aside>
+  <main>
+    
+    
+      
+    
+    
+<div class="cab">
+  <div>
+    <h1>Optimización del mantenimiento y la asignación</h1>
+    <p>Modelo de programación lineal entera mixta del proyecto (informe, apartado 4.1). En una sola decisión elige qué equipo atiende cada pedido y qué día entra cada equipo a taller. Respeta el doble disparador de horas y calendario, la capacidad del taller por día hábil y la compatibilidad técnica. Se resuelve con PuLP y CBC.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Cartera de pedidos</a>
+    <a class="btn" href="optimizacion--4--exportar.csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>
+</svg> Exportar resultados</a>
+  </div>
+</div>
+
+
+
+<details class="card" style="margin-bottom:16px" >
+  <summary class="hd" style="cursor:pointer"><h2>Nueva corrida</h2><span class="muted">60 pedidos por atender en la cartera, del 18/11 al 14/01/2027</span></summary>
+  <form class="bd" method="post" action="#" data-sin-copia="1">
+    
+    <div class="campos">
+      <div><label>Inicio del horizonte</label><input type="date" name="desde" value="2026-11-17"></div>
+      <div><label>Horizonte (días)</label><input type="number" name="horizonte" value="60" min="14" max="90"></div>
+      <div><label>Brecha de optimalidad (%)</label><input type="number" name="gap" value="1" step="0.1" min="0"></div>
+      <div><label>Tiempo límite E1/E2 (s)</label><input type="number" name="tlim" value="120" min="10"></div>
+      <div><label>Tiempo límite E3 (s)</label><input type="number" name="tlim_e3" value="180" min="10"></div>
+      <div><label>P(falla | vencido) para valorar (%)</label><input type="number" name="pi_v" value="25" step="1" min="0" max="100"></div>
+      <label class="check ancho"><input type="checkbox" name="e3" value="1" checked> Resolver también E3 (valor terminal, ecuación 14): usa la capacidad ociosa del taller para poner al día la flota.</label>
+    </div>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:flex-end;align-items:center">
+      <span class="muted">E0 y E1 toman segundos; E2 y E3, entre 10 s y 3 min. La corrida sigue aunque cierre esta página.</span>
+      <button class="btn pri" ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+</svg> Resolver el modelo</button>
+    </div>
+  </form>
+</details>
+
+
+
+
+
+<div class="cab" style="margin:6px 0 12px">
+  <div><h2 style="font-size:17px">Corrida 4: del 17/11/2026 al 15/01/2027 (60 días)</h2>
+    <p class="muted" style="margin:2px 0 0">Ejecutada el 17/11/2026 19:01 · 33 s · 85 máquinas, 60 pedidos, 1289 pares compatibles
+     · <b>plan E3 aplicado el 17/11/2026</b></p></div>
+</div>
+
+
+<div class="card resumen-opt" style="margin-bottom:16px">
+  <div class="hd"><h2>En resumen</h2><span class="muted">lo que dice esta corrida, sin tecnicismos</span></div>
+  <div class="bd">
+    <ol class="pasos">
+      <li><b>Qué se analizó.</b> Los próximos 60 días (del 17/11/2026 al 15/01/2027): los 85 equipos de la flota —54 en obra y 31 en el patio o el taller— y 60 pedidos de alquiler de la cartera. Al empezar, 15 equipos tenían el mantenimiento vencido y 5 no tienen ningún servicio registrado.</li>
+      <li><b>Qué recomienda.</b> Seguir el plan <b>E3 · Modelo con valor terminal</b>: hacer <b>40 mantenimientos preventivos</b> en el taller (usa 72 de los 156 técnico-días disponibles) y atender <b>48 de los 60 pedidos</b> sin que ningún equipo trabaje en obra con el mantenimiento vencido.</li>
+      <li><b>Frente a cómo se trabaja hoy (E0).</b> Con la práctica actual se atenderían 56 pedidos, pero 9 de ellos con un equipo que debería estar en el taller (110 días-máquina en riesgo). El plan baja el costo esperado de fallas en obra de S/ 3,701 a S/ 1,853 y deja un resultado económico de S/ 87,232, <b class="ok-t">S/ 6,729 más</b> que E0 (ya descontado lo que queda por mantener al final).</li>
+      <li><b>Pedidos que no cubre.</b> 12 pedidos no se atienden con equipos propios. Se pueden subarrendar, negociar otra fecha o rechazar.</li>
+      <li><b>Cómo deja la flota.</b> Al terminar el periodo queda 1 equipo con el mantenimiento vencido (trabajo pendiente por S/ 650), frente a 6 con la práctica actual.</li>
+      <li><b>¿Es confiable?</b> El programa encontró la mejor solución posible (óptimo) en 26 s. La verificación día por día no encontró equipos trabajando vencidos, equipos en dos lugares a la vez, taller sobrecargado ni trabajo en domingo.</li>
+      <li><b>Qué se hizo con el plan.</b> El 17/11/2026 se aplicaron los primeros días del plan E3: 8 órdenes de mantenimiento programadas con técnico, 4 equipos reservados para pedidos, 2 órdenes en «Pendiente» con la fecha que propone el modelo y 7 órdenes canceladas porque el modelo no las necesita en el periodo. El detalle está en «Lo que se puso en operación», al final de la página.</li>
+      
+    </ol>
+  </div>
+</div>
+
+<details class="card guia" style="margin-bottom:16px">
+  <summary class="hd" style="cursor:pointer"><h2>Cómo leer esta página</h2><span class="muted">escenarios y términos usados · clic para abrir</span></summary>
+  <div class="bd grid g2" style="gap:18px">
+    <div>
+      <h3>Los cuatro escenarios</h3>
+      <p class="muted" style="margin-top:0">El sistema resuelve el mismo periodo, con los mismos equipos y pedidos, de cuatro maneras y las mide con la misma regla. Así la comparación es justa.</p>
+      <dl class="glosario">
+        <dt>E0 · Práctica actual</dt><dd>Cómo se trabaja hoy: a cada pedido se le da el primer equipo compatible libre, sin mirar su mantenimiento, y un equipo entra al taller recién cuando está vencido en el patio. Es la referencia.</dd>
+        <dt>E1 · Asignación óptima sin control de mantenimiento</dt><dd>Elige el mejor equipo para cada pedido, pero no programa mantenimiento. No se recomienda: sirve sólo para medir cuánto aporta optimizar la asignación por sí sola.</dd>
+        <dt>E2 · Modelo propuesto</dt><dd>Decide a la vez qué equipo va a cada pedido y qué día entra cada equipo al taller. Ningún equipo puede trabajar vencido y nunca se programa más trabajo del que el taller puede hacer.</dd>
+        <dt>E3 · Modelo con valor terminal</dt><dd>Igual que E2, pero además aprovecha los días libres del taller para dejar la flota al día al final del periodo. Evita que el ahorro de hoy sea trabajo acumulado para mañana. Es el plan recomendado.</dd>
+      </dl>
+    </div>
+    <div>
+      <h3>Términos</h3>
+      <dl class="glosario">
+        <dt>Día-máquina con mantenimiento vencido</dt><dd>Cada día que un equipo trabaja en obra después de pasar su límite de horas o de días sin servicio. 3 equipos vencidos durante 10 días = 30.</dd>
+        <dt>Pedido en riesgo</dt><dd>Pedido atendido, al menos un día, con un equipo vencido.</dd>
+        <dt>Costo esperado de falla</dt><dd>Lo que se espera gastar por fallas en obra (reparación, reemplazo, penalidad). Se calcula con la probabilidad de falla: 25 % por pedido si el equipo está vencido y 5 % si está al día.</dd>
+        <dt>Técnico-día</dt><dd>Un técnico trabajando un día. Con 3 técnicos, el taller tiene 3 técnico-días por día hábil (lunes a sábado).</dd>
+        <dt>Deuda de mantenimiento</dt><dd>Costo de los servicios que quedan pendientes al terminar el periodo. Es trabajo que no desaparece: sólo se pospone.</dd>
+        <dt>Margen neto</dt><dd>Ingreso por alquiler menos traslados, mantenimiento hecho y costo esperado de falla.</dd>
+        <dt>Margen descontada la deuda</dt><dd>El margen neto menos la deuda. Es la cifra para comparar escenarios, porque castiga al que «ahorra» dejando equipos sin mantener.</dd>
+        <dt>Horizonte rodante</dt><dd>Se planifican 60 días pero sólo se ejecuta la primera semana; luego se vuelve a correr con los datos al día.</dd>
+      </dl>
+    </div>
+  </div>
+</details>
+
+<div class="grid g4" style="margin-bottom:16px">
+  <div class="card kpi"><span class="l">Días-máquina con mantenimiento vencido</span><span class="v">0</span><span class="s">frente a 110 con la práctica actual (9 pedidos en riesgo)</span></div>
+  <div class="card kpi"><span class="l">Pedidos atendidos</span><span class="v">48 <small style="font-size:14px">de 60</small></span><span class="s">práctica actual: 56 · <span class="bad-t">−8</span></span></div>
+  <div class="card kpi"><span class="l">Costo esperado de falla</span><span class="v" style="font-size:24px">S/ 1,853</span><span class="s">50 % menos que la práctica actual</span></div>
+  <div class="card kpi "><span class="l">Margen descontada la deuda</span><span class="v" style="font-size:24px">S/ 87,232</span><span class="s">E3 frente a E0: <span class="ok-t">+S/ 6,729</span></span></div>
+</div>
+<p class="explica" style="margin:-6px 0 16px"><b>Las cuatro cifras clave del plan E3.</b> La primera mide el riesgo: cuántos días trabajarían equipos vencidos (lo ideal es 0). La segunda, cuánta demanda se cubre. La tercera, cuánto se espera perder por fallas en obra. La cuarta resume el resultado económico del periodo: lo que queda después de pagar traslados, mantenimiento y fallas, y de descontar el mantenimiento que queda pendiente. Debajo de cada cifra se compara con la práctica actual (E0): en verde si mejora, en rojo si empeora.</p>
+
+<div class="grid g-21" style="margin-bottom:16px">
+  <div class="card">
+    <div class="hd"><h2>Comparación de escenarios sobre la misma cartera</h2><span class="muted">evaluador único · informe, tabla 7</span></div>
+    <div class="bd flush tabla-wrap">
+      <table class="tabla-esc">
+        <thead><tr><th>Indicador</th><th class="n " title="Práctica actual">E0<br><small>Práctica actual</small></th><th class="n " title="Asignación óptima sin control de mantenimiento">E1<br><small>Asignación óptima sin control de mantenimiento</small></th><th class="n " title="Modelo propuesto">E2<br><small>Modelo propuesto</small></th><th class="n col-rec" title="Modelo con valor terminal">E3<br><small>Modelo con valor terminal</small><br><span class="tag">recomendado</span></th></tr></thead>
+        <tbody>
+        
+          <tr class="grupo"><td colspan="5">Atención de la demanda</td></tr>
+          
+          <tr class=""><td>Pedidos atendidos<br><small class="muted">Pedidos de la cartera que se cubren con un equipo propio.</small></td>
+            <td class="n  mejor ">56</td><td class="n   ">48</td><td class="n   ">47</td><td class="n   col-rec">48</td></tr>
+          
+          <tr class=""><td>Pedidos no atendidos<br><small class="muted">Pedidos que el plan no cubre con flota propia (se pueden subarrendar o reprogramar).</small></td>
+            <td class="n  mejor ">4</td><td class="n   ">12</td><td class="n   ">13</td><td class="n   col-rec">12</td></tr>
+          
+          <tr class=""><td>Ingreso por alquiler (S/)<br><small class="muted">Alquiler que se cobra por los días de los pedidos atendidos dentro del periodo.</small></td>
+            <td class="n  mejor ">135,798</td><td class="n   ">134,320</td><td class="n   ">133,670</td><td class="n   col-rec">134,320</td></tr>
+          
+        
+          <tr class="grupo"><td colspan="5">Exposición al riesgo</td></tr>
+          
+          <tr class="fuerte"><td>Días-máquina con mantenimiento vencido<br><small class="muted">Suma de los días en que algún equipo trabaja en obra con el mantenimiento vencido.</small></td>
+            <td class="n bad-t  ">110</td><td class="n bad-t  ">385</td><td class="n  mejor ">0</td><td class="n  mejor col-rec">0</td></tr>
+          
+          <tr class=""><td>Pedidos atendidos con equipo vencido<br><small class="muted">Pedidos atendidos en algún momento con un equipo que debería estar en taller.</small></td>
+            <td class="n bad-t  ">9</td><td class="n bad-t  ">19</td><td class="n  mejor ">0</td><td class="n  mejor col-rec">0</td></tr>
+          
+          <tr class=""><td>Costo esperado de falla en obra (S/)<br><small class="muted">Costo que se espera pagar por fallas en obra según la probabilidad de falla.</small></td>
+            <td class="n   ">3,701</td><td class="n   ">4,760</td><td class="n  mejor ">1,845</td><td class="n   col-rec">1,853</td></tr>
+          
+        
+          <tr class="grupo"><td colspan="5">Gestión del taller</td></tr>
+          
+          <tr class=""><td>Servicios ejecutados<br><small class="muted">Mantenimientos preventivos que se hacen en el taller durante el periodo.</small></td>
+            <td class="n   ">37</td><td class="n   ">0</td><td class="n   ">1</td><td class="n   col-rec">40</td></tr>
+          
+          <tr class=""><td>Costo de mantenimiento (S/)<br><small class="muted">Repuestos, insumos y mano de obra de esos servicios.</small></td>
+            <td class="n   ">21,840</td><td class="n   ">0</td><td class="n   ">280</td><td class="n   col-rec">25,720</td></tr>
+          
+          <tr class=""><td>Equipos vencidos al cierre<br><small class="muted">Equipos que terminan el periodo con el mantenimiento vencido.</small></td>
+            <td class="n   ">6</td><td class="n   ">41</td><td class="n   ">40</td><td class="n  mejor col-rec">1</td></tr>
+          
+          <tr class=""><td>Deuda de mantenimiento al cierre (S/)<br><small class="muted">Lo que costará poner al día esos equipos: trabajo que se deja para después.</small></td>
+            <td class="n   ">5,460</td><td class="n   ">26,370</td><td class="n   ">26,090</td><td class="n  mejor col-rec">650</td></tr>
+          
+          <tr class=""><td>Técnico-días utilizados<br><small class="muted">Días de trabajo de técnico que usan los servicios (1 técnico × 1 día = 1).</small></td>
+            <td class="n   ">63</td><td class="n   ">0</td><td class="n   ">1</td><td class="n   col-rec">72</td></tr>
+          
+        
+          <tr class="grupo"><td colspan="5">Resultado económico del horizonte</td></tr>
+          
+          <tr class=""><td>Costo de traslado (S/)<br><small class="muted">Fletes de entrega y recojo de los equipos asignados.</small></td>
+            <td class="n   ">24,293</td><td class="n   ">18,865</td><td class="n  mejor ">18,801</td><td class="n   col-rec">18,865</td></tr>
+          
+          <tr class=""><td>Margen neto (S/)<br><small class="muted">Ingreso − traslado − mantenimiento − falla esperada.</small></td>
+            <td class="n   ">85,963</td><td class="n   ">110,696</td><td class="n  mejor ">112,744</td><td class="n   col-rec">87,882</td></tr>
+          
+          <tr class="fuerte"><td>Margen neto descontada la deuda (S/)<br><small class="muted">Margen neto menos la deuda al cierre. Es la cifra para decidir entre escenarios.</small></td>
+            <td class="n   ">80,503</td><td class="n   ">84,326</td><td class="n   ">86,654</td><td class="n  mejor col-rec">87,232</td></tr>
+          
+        
+        </tbody>
+      </table>
+    </div>
+    <div class="bd"><p class="explica" style="margin:0 0 10px"><b>Cómo leerla.</b> Cada columna es una forma de planificar el mismo periodo; cada fila, una medida con su explicación debajo. La celda en verde es el mejor valor de la fila entre E0, E2 y E3 (E1 sólo es referencia). La columna con fondo azul es el plan recomendado. Para decidir, mire primero «Días-máquina con mantenimiento vencido» (riesgo) y «Margen neto descontada la deuda» (dinero). El plan atiende 8 pedidos menos que E0: son pedidos que con la práctica actual se cubrirían con equipos vencidos o que no cubren su costo.</p>
+    <p class="nota" style="margin:0">El margen neto es el ingreso menos los costos de traslado, de mantenimiento ejecutado y de falla esperada (P(falla) 25 % con mantenimiento vencido y 5 % vigente). El margen descontada la deuda resta además los servicios pendientes al cierre. Es la medida que permite comparar escenarios que ejecutan un número distinto de servicios.</p></div>
+  </div>
+
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Descomposición del beneficio</h2><span class="muted">tabla 8</span></div>
+      <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0"><b>¿De dónde sale la ganancia?</b> Separa el beneficio en partes: cuánto se gana sólo por elegir mejor qué equipo va a cada obra (E0 → E1), cuánto aporta además controlar el mantenimiento (E1 → E2) y el total de cada plan frente a hoy. Verde = gana; rojo = pierde. La columna de la derecha es la que cuenta.</p></div>
+      <div class="bd flush"><table>
+        <thead><tr><th>Componente</th><th class="n">Margen neto</th><th class="n">Descontada la deuda</th></tr></thead>
+        <tbody><tr><td>Efecto de optimizar la asignación<br><small>E0 → E1</small></td>
+          <td class="n ok-t">S/ 24,732</td><td class="n ok-t"><b>S/ 3,822</b></td></tr><tr><td>Efecto del control del mantenimiento<br><small>E1 → E2</small></td>
+          <td class="n ok-t">S/ 2,048</td><td class="n ok-t"><b>S/ 2,328</b></td></tr><tr><td>Beneficio del modelo propuesto<br><small>E0 → E2</small></td>
+          <td class="n ok-t">S/ 26,780</td><td class="n ok-t"><b>S/ 6,150</b></td></tr><tr><td>Beneficio del modelo con valor terminal<br><small>E0 → E3</small></td>
+          <td class="n ok-t">S/ 1,919</td><td class="n ok-t"><b>S/ 6,729</b></td></tr></tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Implementación computacional</h2><span class="muted">PuLP + CBC</span></div>
+      <div class="bd flush"><table>
+        <caption class="explica-cap">Tamaño del problema que resolvió el programa (CBC) y si llegó a la mejor solución. «Óptimo» significa que no existe un plan mejor con estos datos; «Factible» que se detuvo por tiempo con un plan bueno.</caption>
+        <thead><tr><th></th><th class="n">Variables</th><th class="n">Restricciones</th><th class="n">Tiempo</th><th>Estado</th></tr></thead>
+        <tbody><tr><td><b>E1</b></td><td class="n">9,449</td><td class="n">8,563</td><td class="n">1.8 s</td>
+          <td><span class="chip ok">Óptimo</span></td></tr><tr><td><b>E2</b></td><td class="n">9,449</td><td class="n">12,409</td><td class="n">12.6 s</td>
+          <td><span class="chip ok">Óptimo</span></td></tr><tr><td><b>E3</b></td><td class="n">9,449</td><td class="n">12,409</td><td class="n">12.1 s</td>
+          <td><span class="chip ok">Óptimo</span></td></tr></tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Verificación de la solución</h2><span class="muted">4.3.5</span></div>
+      <div class="bd flush"><table>
+        <caption class="explica-cap">Después de resolver, el sistema recorre el plan día por día y cuenta errores. Un ✓ 0 significa que el plan se puede cumplir tal cual.</caption>
+        <thead><tr><th>Comprobación</th><th class="n">E0</th><th class="n">E1</th><th class="n">E2</th><th class="n">E3</th></tr></thead>
+        <tbody>
+        
+          <tr><td>Días operados fuera del tope de horas o calendario</td><td class="n"><span class="muted">110</span></td><td class="n"><span class="muted">385</span></td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td></tr>
+        
+          <tr><td>Equipo en dos lugares el mismo día</td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td></tr>
+        
+          <tr><td>Días con el taller sobre su capacidad</td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td></tr>
+        
+          <tr><td>Días de servicio en domingo</td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td><td class="n"><span class="ok-t">✓ 0</span></td></tr>
+        
+        </tbody>
+      </table>
+      <p class="muted" style="margin:8px 16px 12px;font-size:12.5px">E0 y E1 no controlan el mantenimiento, así que en ellos sí se espera operación fuera del tope. E2 y E3 deben marcar cero en todo.</p></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card" style="margin-bottom:16px">
+  <div class="hd"><h2>Carga diaria del taller</h2><span class="muted">técnico-días por día frente a la capacidad · figura 8</span></div>
+  <div class="bd">
+    <p class="explica" style="margin:0 0 12px"><b>Qué muestra.</b> Cada barra es un día; su altura, cuántos técnicos trabajan en mantenimiento ese día. La línea punteada es el máximo que el taller puede hacer (3 técnicos); los domingos (gris) no se trabaja. Una barra roja sería un día con más trabajo del posible.
+    <br><b>En esta corrida.</b> El plan E3 ocupa al taller 40 días (7 con el taller lleno) y usa el 46 % de su capacidad del periodo. La práctica actual (E0) lo ocupa 30 días y usa el 40 %: trabaja menos porque deja equipos operando vencidos.</p>
+    
+    
+    <div class="carga-fila">
+      <div class="carga-etq"><b>E0</b><br><small>37 servicios · 63 técnico-días</small></div>
+      <svg viewBox="0 0 720 78" preserveAspectRatio="none" class="carga-svg">
+        
+          
+          
+          <rect x="1.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>17/11: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="13.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>18/11: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="25.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>19/11: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="37.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="var(--accent)"><title>20/11: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="49.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>21/11: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          <rect x="60" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="73.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>23/11: 1.00 de 3.0 técnico-días</title></rect>
+          <text x="73" y="76" class="carga-tx">23/11</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="144" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="157.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>30/11: 1.00 de 3.0 técnico-días</title></rect>
+          <text x="157" y="76" class="carga-tx">30/11</text>
+        
+          
+          
+          <rect x="169.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>01/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="181.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>02/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="193.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="var(--accent)"><title>03/12: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="228" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="241" y="76" class="carga-tx">07/12</text>
+        
+          
+          
+          <rect x="253.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>08/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="265.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>09/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="277.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="var(--accent)"><title>10/12: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="312" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="325.5" y="16.0" width="9" height="48.0" rx="1.5" fill="var(--accent)"><title>14/12: 2.25 de 3.0 técnico-días</title></rect>
+          <text x="325" y="76" class="carga-tx">14/12</text>
+        
+          
+          
+          <rect x="337.5" y="16.0" width="9" height="48.0" rx="1.5" fill="var(--accent)"><title>15/12: 2.25 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="349.5" y="16.0" width="9" height="48.0" rx="1.5" fill="var(--accent)"><title>16/12: 2.25 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="361.5" y="16.0" width="9" height="48.0" rx="1.5" fill="var(--accent)"><title>17/12: 2.25 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="373.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>18/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="385.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>19/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          <rect x="396" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="409.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>21/12: 3.00 de 3.0 técnico-días</title></rect>
+          <text x="409" y="76" class="carga-tx">21/12</text>
+        
+          
+          
+          <rect x="421.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>22/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="433.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>23/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="445.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>24/12: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="457.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>25/12: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          <rect x="480" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="493" y="76" class="carga-tx">28/12</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="564" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="577.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>04/01: 1.00 de 3.0 técnico-días</title></rect>
+          <text x="577" y="76" class="carga-tx">04/01</text>
+        
+          
+          
+          <rect x="589.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>05/01: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          <rect x="613.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="var(--accent)"><title>07/01: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="648" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="661.5" y="0.0" width="9" height="64.0" rx="1.5" fill="var(--accent)"><title>11/01: 3.00 de 3.0 técnico-días</title></rect>
+          <text x="661" y="76" class="carga-tx">11/01</text>
+        
+          
+          
+          <rect x="673.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>12/01: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          <rect x="697.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="var(--accent)"><title>14/01: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+        <polyline fill="none" stroke="var(--ink)" stroke-dasharray="4 3" stroke-width="1" points="0,0.0 12,0.0 12,0.0 24,0.0 24,0.0 36,0.0 36,0.0 48,0.0 48,0.0 60,0.0 60,64.0 72,64.0 72,0.0 84,0.0 84,0.0 96,0.0 96,0.0 108,0.0 108,0.0 120,0.0 120,0.0 132,0.0 132,0.0 144,0.0 144,64.0 156,64.0 156,0.0 168,0.0 168,0.0 180,0.0 180,0.0 192,0.0 192,0.0 204,0.0 204,0.0 216,0.0 216,0.0 228,0.0 228,64.0 240,64.0 240,0.0 252,0.0 252,0.0 264,0.0 264,0.0 276,0.0 276,0.0 288,0.0 288,0.0 300,0.0 300,0.0 312,0.0 312,64.0 324,64.0 324,0.0 336,0.0 336,0.0 348,0.0 348,0.0 360,0.0 360,0.0 372,0.0 372,0.0 384,0.0 384,0.0 396,0.0 396,64.0 408,64.0 408,0.0 420,0.0 420,0.0 432,0.0 432,0.0 444,0.0 444,0.0 456,0.0 456,0.0 468,0.0 468,0.0 480,0.0 480,64.0 492,64.0 492,0.0 504,0.0 504,0.0 516,0.0 516,0.0 528,0.0 528,0.0 540,0.0 540,0.0 552,0.0 552,0.0 564,0.0 564,64.0 576,64.0 576,0.0 588,0.0 588,0.0 600,0.0 600,0.0 612,0.0 612,0.0 624,0.0 624,0.0 636,0.0 636,0.0 648,0.0 648,64.0 660,64.0 660,0.0 672,0.0 672,0.0 684,0.0 684,0.0 696,0.0 696,0.0 708,0.0 708,0.0 720,0.0 "/>
+      </svg>
+    </div>
+    
+    <div class="carga-fila">
+      <div class="carga-etq"><b>E2</b><br><small>1 servicios · 1 técnico-días</small></div>
+      <svg viewBox="0 0 720 78" preserveAspectRatio="none" class="carga-svg">
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="60" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="73" y="76" class="carga-tx">23/11</text>
+        
+          
+          
+          <rect x="85.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>24/11: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="144" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="157" y="76" class="carga-tx">30/11</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="228" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="241" y="76" class="carga-tx">07/12</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="312" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="325" y="76" class="carga-tx">14/12</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="396" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="409" y="76" class="carga-tx">21/12</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="480" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="493" y="76" class="carga-tx">28/12</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="564" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="577" y="76" class="carga-tx">04/01</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="648" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="661" y="76" class="carga-tx">11/01</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+        <polyline fill="none" stroke="var(--ink)" stroke-dasharray="4 3" stroke-width="1" points="0,0.0 12,0.0 12,0.0 24,0.0 24,0.0 36,0.0 36,0.0 48,0.0 48,0.0 60,0.0 60,64.0 72,64.0 72,0.0 84,0.0 84,0.0 96,0.0 96,0.0 108,0.0 108,0.0 120,0.0 120,0.0 132,0.0 132,0.0 144,0.0 144,64.0 156,64.0 156,0.0 168,0.0 168,0.0 180,0.0 180,0.0 192,0.0 192,0.0 204,0.0 204,0.0 216,0.0 216,0.0 228,0.0 228,64.0 240,64.0 240,0.0 252,0.0 252,0.0 264,0.0 264,0.0 276,0.0 276,0.0 288,0.0 288,0.0 300,0.0 300,0.0 312,0.0 312,64.0 324,64.0 324,0.0 336,0.0 336,0.0 348,0.0 348,0.0 360,0.0 360,0.0 372,0.0 372,0.0 384,0.0 384,0.0 396,0.0 396,64.0 408,64.0 408,0.0 420,0.0 420,0.0 432,0.0 432,0.0 444,0.0 444,0.0 456,0.0 456,0.0 468,0.0 468,0.0 480,0.0 480,64.0 492,64.0 492,0.0 504,0.0 504,0.0 516,0.0 516,0.0 528,0.0 528,0.0 540,0.0 540,0.0 552,0.0 552,0.0 564,0.0 564,64.0 576,64.0 576,0.0 588,0.0 588,0.0 600,0.0 600,0.0 612,0.0 612,0.0 624,0.0 624,0.0 636,0.0 636,0.0 648,0.0 648,64.0 660,64.0 660,0.0 672,0.0 672,0.0 684,0.0 684,0.0 696,0.0 696,0.0 708,0.0 708,0.0 720,0.0 "/>
+      </svg>
+    </div>
+    
+    <div class="carga-fila">
+      <div class="carga-etq"><b>E3</b><br><small>40 servicios · 72 técnico-días</small></div>
+      <svg viewBox="0 0 720 78" preserveAspectRatio="none" class="carga-svg">
+        
+          
+          
+          <rect x="1.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>17/11: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="13.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>18/11: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="25.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>19/11: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="37.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>20/11: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="49.5" y="0.0" width="9" height="64.0" rx="1.5" fill="#2563eb"><title>21/11: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          <rect x="60" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="73.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>23/11: 1.00 de 3.0 técnico-días</title></rect>
+          <text x="73" y="76" class="carga-tx">23/11</text>
+        
+          
+          
+          <rect x="85.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>24/11: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="97.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>25/11: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="109.5" y="0.0" width="9" height="64.0" rx="1.5" fill="#2563eb"><title>26/11: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="121.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>27/11: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="133.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>28/11: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          <rect x="144" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="157.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>30/11: 1.00 de 3.0 técnico-días</title></rect>
+          <text x="157" y="76" class="carga-tx">30/11</text>
+        
+          
+          
+          <rect x="169.5" y="0.0" width="9" height="64.0" rx="1.5" fill="#2563eb"><title>01/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="181.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>02/12: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="193.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>03/12: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="205.5" y="0.0" width="9" height="64.0" rx="1.5" fill="#2563eb"><title>04/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="217.5" y="0.0" width="9" height="64.0" rx="1.5" fill="#2563eb"><title>05/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          <rect x="228" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="241" y="76" class="carga-tx">07/12</text>
+        
+          
+          
+          <rect x="253.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>08/12: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="265.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>09/12: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="312" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="325.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>14/12: 1.00 de 3.0 técnico-días</title></rect>
+          <text x="325" y="76" class="carga-tx">14/12</text>
+        
+          
+          
+          <rect x="337.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>15/12: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="349.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>16/12: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="396" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="409.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>21/12: 1.00 de 3.0 técnico-días</title></rect>
+          <text x="409" y="76" class="carga-tx">21/12</text>
+        
+          
+          
+          <rect x="421.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>22/12: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="433.5" y="16.0" width="9" height="48.0" rx="1.5" fill="#2563eb"><title>23/12: 2.25 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="445.5" y="37.33333333333333" width="9" height="26.666666666666668" rx="1.5" fill="#2563eb"><title>24/12: 1.25 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="457.5" y="37.33333333333333" width="9" height="26.666666666666668" rx="1.5" fill="#2563eb"><title>25/12: 1.25 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="469.5" y="16.0" width="9" height="48.0" rx="1.5" fill="#2563eb"><title>26/12: 2.25 de 3.0 técnico-días</title></rect>
+          
+        
+          <rect x="480" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="493" y="76" class="carga-tx">28/12</text>
+        
+          
+          
+          
+          
+        
+          
+          
+          <rect x="517.5" y="0.0" width="9" height="64.0" rx="1.5" fill="#2563eb"><title>30/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="529.5" y="0.0" width="9" height="64.0" rx="1.5" fill="#2563eb"><title>31/12: 3.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="541.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>01/01: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="553.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>02/01: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          <rect x="564" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          
+          <text x="577" y="76" class="carga-tx">04/01</text>
+        
+          
+          
+          <rect x="589.5" y="42.66666666666667" width="9" height="21.333333333333332" rx="1.5" fill="#2563eb"><title>05/01: 1.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="601.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>06/01: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="613.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>07/01: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          
+          
+        
+          
+          
+          
+          
+        
+          <rect x="648" y="0" width="12" height="64" fill="var(--line-2)"/>
+          
+          
+          
+        
+          
+          
+          <rect x="661.5" y="37.33333333333333" width="9" height="26.666666666666668" rx="1.5" fill="#2563eb"><title>11/01: 1.25 de 3.0 técnico-días</title></rect>
+          <text x="661" y="76" class="carga-tx">11/01</text>
+        
+          
+          
+          <rect x="673.5" y="37.33333333333333" width="9" height="26.666666666666668" rx="1.5" fill="#2563eb"><title>12/01: 1.25 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="685.5" y="37.33333333333333" width="9" height="26.666666666666668" rx="1.5" fill="#2563eb"><title>13/01: 1.25 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="697.5" y="37.33333333333333" width="9" height="26.666666666666668" rx="1.5" fill="#2563eb"><title>14/01: 1.25 de 3.0 técnico-días</title></rect>
+          
+        
+          
+          
+          <rect x="709.5" y="21.333333333333336" width="9" height="42.666666666666664" rx="1.5" fill="#2563eb"><title>15/01: 2.00 de 3.0 técnico-días</title></rect>
+          
+        
+        <polyline fill="none" stroke="var(--ink)" stroke-dasharray="4 3" stroke-width="1" points="0,0.0 12,0.0 12,0.0 24,0.0 24,0.0 36,0.0 36,0.0 48,0.0 48,0.0 60,0.0 60,64.0 72,64.0 72,0.0 84,0.0 84,0.0 96,0.0 96,0.0 108,0.0 108,0.0 120,0.0 120,0.0 132,0.0 132,0.0 144,0.0 144,64.0 156,64.0 156,0.0 168,0.0 168,0.0 180,0.0 180,0.0 192,0.0 192,0.0 204,0.0 204,0.0 216,0.0 216,0.0 228,0.0 228,64.0 240,64.0 240,0.0 252,0.0 252,0.0 264,0.0 264,0.0 276,0.0 276,0.0 288,0.0 288,0.0 300,0.0 300,0.0 312,0.0 312,64.0 324,64.0 324,0.0 336,0.0 336,0.0 348,0.0 348,0.0 360,0.0 360,0.0 372,0.0 372,0.0 384,0.0 384,0.0 396,0.0 396,64.0 408,64.0 408,0.0 420,0.0 420,0.0 432,0.0 432,0.0 444,0.0 444,0.0 456,0.0 456,0.0 468,0.0 468,0.0 480,0.0 480,64.0 492,64.0 492,0.0 504,0.0 504,0.0 516,0.0 516,0.0 528,0.0 528,0.0 540,0.0 540,0.0 552,0.0 552,0.0 564,0.0 564,64.0 576,64.0 576,0.0 588,0.0 588,0.0 600,0.0 600,0.0 612,0.0 612,0.0 624,0.0 624,0.0 636,0.0 636,0.0 648,0.0 648,64.0 660,64.0 660,0.0 672,0.0 672,0.0 684,0.0 684,0.0 696,0.0 696,0.0 708,0.0 708,0.0 720,0.0 "/>
+      </svg>
+    </div>
+    
+    <div class="leyenda" style="margin-top:6px"><span><i style="background:#2563eb"></i>Servicio programado por el modelo</span><span><i style="background:var(--accent)"></i>Taller reactivo (práctica actual)</span><span><i style="background:transparent;border-top:1px dashed var(--ink);height:0;border-radius:0"></i>Capacidad libre</span><span><i style="background:var(--line-2)"></i>Domingo (no se trabaja)</span></div>
+  </div>
+</div>
+
+
+<div class="grid g2" style="margin-bottom:16px">
+  <div class="card">
+    <div class="hd"><h2>Sensibilidad a la probabilidad de falla con mantenimiento vencido</h2><span class="muted">tabla 9</span></div>
+    <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0"><b>¿Y si las fallas fueran más o menos frecuentes?</b> No se sabe con exactitud con qué probabilidad falla en obra un equipo vencido (se usó 25 %, fila resaltada). Esta tabla repite la cuenta con otros valores. «Beneficio» es cuánto gana el plan frente a la práctica actual: si es verde en todas las filas, la recomendación no depende de ese supuesto. <b>En esta corrida el plan gana en todas.</b></p></div>
+    <div class="bd flush"><table>
+      <thead><tr><th>P(falla | vencido)</th><th class="n">Falla E0</th><th class="n">Falla E2</th><th class="n">Margen − deuda E0</th><th class="n">Beneficio E2</th><th class="n">Beneficio E3</th></tr></thead>
+      <tbody><tr class=""><td>10 %</td><td class="n">S/ 2,611</td><td class="n">S/ 1,845</td><td class="n">S/ 81,594</td>
+        <td class="n ok-t">S/ 5,060</td><td class="n ok-t">S/ 5,639</td></tr><tr class=""><td>20 %</td><td class="n">S/ 3,338</td><td class="n">S/ 1,845</td><td class="n">S/ 80,867</td>
+        <td class="n ok-t">S/ 5,787</td><td class="n ok-t">S/ 6,366</td></tr><tr class="fuerte"><td>25 %</td><td class="n">S/ 3,701</td><td class="n">S/ 1,845</td><td class="n">S/ 80,503</td>
+        <td class="n ok-t">S/ 6,150</td><td class="n ok-t">S/ 6,729</td></tr><tr class=""><td>30 %</td><td class="n">S/ 4,065</td><td class="n">S/ 1,845</td><td class="n">S/ 80,140</td>
+        <td class="n ok-t">S/ 6,514</td><td class="n ok-t">S/ 7,092</td></tr><tr class=""><td>40 %</td><td class="n">S/ 4,791</td><td class="n">S/ 1,845</td><td class="n">S/ 79,413</td>
+        <td class="n ok-t">S/ 7,241</td><td class="n ok-t">S/ 7,819</td></tr><tr class=""><td>60 %</td><td class="n">S/ 6,245</td><td class="n">S/ 1,845</td><td class="n">S/ 77,960</td>
+        <td class="n ok-t">S/ 8,694</td><td class="n ok-t">S/ 9,273</td></tr><tr class=""><td>80 %</td><td class="n">S/ 7,699</td><td class="n">S/ 1,845</td><td class="n">S/ 76,506</td>
+        <td class="n ok-t">S/ 10,148</td><td class="n ok-t">S/ 10,726</td></tr></tbody>
+    </table></div>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Lectura de los resultados</h2></div>
+    <div class="bd lectura">
+      <p><b>Riesgo.</b> E3 opera <b>0</b> días-máquina con el mantenimiento vencido, frente a <b>110</b> de la práctica actual. Con la práctica actual, <b>9</b> de los 56 pedidos atendidos se cubren en algún momento con un equipo que, según el plan, debería estar en taller.</p>
+      <p><b>Asignación.</b> Descontada la deuda, optimizar sólo la asignación (E0 → E1) cambia el margen en S/ 3,822. Su margen neto parece mayor (S/ 24,732), pero E1 no ejecuta ningún servicio y deja 41 equipos vencidos al cierre.</p>
+      <p><b>Economía.</b>
+      Con esta cartera el modelo propuesto supera a la práctica actual con cualquier probabilidad de falla examinada.
+      
+      La conclusión sobre el riesgo no depende de ese parámetro. Para medirlo hay que llevar el <a href="incidentes.html">registro de incidentes</a>.</p>
+      <p><b>Taller.</b> Poner al día los 41 equipos que vencen en el horizonte exige 74 técnico-días, el 47 % de los 156 disponibles. E3 utiliza 72.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="card" style="margin-bottom:16px">
+  <div class="hd" style="flex-wrap:wrap">
+    <h2>Plan del escenario</h2>
+    <div class="seg"><a class="" href="optimizacion--4__esc-E0.html#plan">E0</a><a class="" href="optimizacion--4__esc-E1.html#plan">E1</a><a class="on" href="optimizacion--4__esc-E2.html#plan">E2</a><a class="" href="optimizacion--4__esc-E3.html#plan">E3</a></div>
+  </div>
+  <div class="bd" id="plan">
+    <p class="muted" style="margin:0 0 6px">Modelo propuesto: 1 servicios, 47 pedidos asignados, 13 sin atender con flota propia.</p>
+    <p class="explica" style="margin:0 0 12px"><b>Cómo leerlo.</b> Cada fila es un equipo y cada columna un día del periodo. Gris: el equipo sigue en una obra con contrato vigente. Azul: el plan lo envía a un pedido nuevo. Naranja: entra al taller para su mantenimiento. Rojo: trabajaría con el mantenimiento vencido (no debería aparecer en E2 ni E3). El punto junto al código es su estado de mantenimiento al inicio. Pase el cursor sobre una barra para ver el cliente o el servicio. Use los botones E0 a E3 para ver el plan de cada escenario.</p>
+    <div class="gantt-opt">
+      <div class="go-cab"><div class="go-eq"></div><div class="go-dias"><span class="" style="left:0.0%;width:1.6666666666666667%">17/11</span><span class="" style="left:1.6666666666666667%;width:1.6666666666666667%"></span><span class="" style="left:3.3333333333333335%;width:1.6666666666666667%"></span><span class="" style="left:5.0%;width:1.6666666666666667%"></span><span class="" style="left:6.666666666666667%;width:1.6666666666666667%"></span><span class="dom" style="left:8.333333333333332%;width:1.6666666666666667%"></span><span class="" style="left:10.0%;width:1.6666666666666667%">23/11</span><span class="" style="left:11.666666666666666%;width:1.6666666666666667%"></span><span class="" style="left:13.333333333333334%;width:1.6666666666666667%"></span><span class="" style="left:15.0%;width:1.6666666666666667%"></span><span class="" style="left:16.666666666666664%;width:1.6666666666666667%"></span><span class="" style="left:18.333333333333332%;width:1.6666666666666667%"></span><span class="dom" style="left:20.0%;width:1.6666666666666667%"></span><span class="" style="left:21.666666666666668%;width:1.6666666666666667%">30/11</span><span class="" style="left:23.333333333333332%;width:1.6666666666666667%"></span><span class="" style="left:25.0%;width:1.6666666666666667%"></span><span class="" style="left:26.666666666666668%;width:1.6666666666666667%"></span><span class="" style="left:28.333333333333332%;width:1.6666666666666667%"></span><span class="" style="left:30.0%;width:1.6666666666666667%"></span><span class="dom" style="left:31.666666666666664%;width:1.6666666666666667%"></span><span class="" style="left:33.33333333333333%;width:1.6666666666666667%">07/12</span><span class="" style="left:35.0%;width:1.6666666666666667%"></span><span class="" style="left:36.666666666666664%;width:1.6666666666666667%"></span><span class="" style="left:38.333333333333336%;width:1.6666666666666667%"></span><span class="" style="left:40.0%;width:1.6666666666666667%"></span><span class="" style="left:41.66666666666667%;width:1.6666666666666667%"></span><span class="dom" style="left:43.333333333333336%;width:1.6666666666666667%"></span><span class="" style="left:45.0%;width:1.6666666666666667%">14/12</span><span class="" style="left:46.666666666666664%;width:1.6666666666666667%"></span><span class="" style="left:48.333333333333336%;width:1.6666666666666667%"></span><span class="" style="left:50.0%;width:1.6666666666666667%"></span><span class="" style="left:51.66666666666667%;width:1.6666666666666667%"></span><span class="" style="left:53.333333333333336%;width:1.6666666666666667%"></span><span class="dom" style="left:55.00000000000001%;width:1.6666666666666667%"></span><span class="" style="left:56.666666666666664%;width:1.6666666666666667%">21/12</span><span class="" style="left:58.333333333333336%;width:1.6666666666666667%"></span><span class="" style="left:60.0%;width:1.6666666666666667%"></span><span class="" style="left:61.66666666666667%;width:1.6666666666666667%"></span><span class="" style="left:63.33333333333333%;width:1.6666666666666667%"></span><span class="" style="left:65.0%;width:1.6666666666666667%"></span><span class="dom" style="left:66.66666666666666%;width:1.6666666666666667%"></span><span class="" style="left:68.33333333333333%;width:1.6666666666666667%">28/12</span><span class="" style="left:70.0%;width:1.6666666666666667%"></span><span class="" style="left:71.66666666666667%;width:1.6666666666666667%"></span><span class="" style="left:73.33333333333333%;width:1.6666666666666667%"></span><span class="" style="left:75.0%;width:1.6666666666666667%"></span><span class="" style="left:76.66666666666667%;width:1.6666666666666667%"></span><span class="dom" style="left:78.33333333333333%;width:1.6666666666666667%"></span><span class="" style="left:80.0%;width:1.6666666666666667%">04/01</span><span class="" style="left:81.66666666666667%;width:1.6666666666666667%"></span><span class="" style="left:83.33333333333334%;width:1.6666666666666667%"></span><span class="" style="left:85.0%;width:1.6666666666666667%"></span><span class="" style="left:86.66666666666667%;width:1.6666666666666667%"></span><span class="" style="left:88.33333333333333%;width:1.6666666666666667%"></span><span class="dom" style="left:90.0%;width:1.6666666666666667%"></span><span class="" style="left:91.66666666666666%;width:1.6666666666666667%">11/01</span><span class="" style="left:93.33333333333333%;width:1.6666666666666667%"></span><span class="" style="left:95.0%;width:1.6666666666666667%"></span><span class="" style="left:96.66666666666667%;width:1.6666666666666667%"></span><span class="" style="left:98.33333333333333%;width:1.6666666666666667%"></span></div></div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-001.html">TECL-001</a> <small>Tijera 9.9 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:41.66666666666667%" title="En obra hasta el 11/12 (prórroga supuesta)"></span><span class="go-b alq" style="left:55.00000000000001%;width:11.666666666666666%" title="Cliente 37 · Obra 52 (34–40)"></span><span class="go-b alq" style="left:66.66666666666666%;width:33.33333333333333%" title="Cliente 23 · Obra 55 (41–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-002.html">TECL-002</a> <small>Tijera</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:45.0%" title="En obra hasta el 13/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-003.html">TECL-003</a> <small>Tijera 7.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:50.0%" title="En obra hasta el 16/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-004.html">TECL-004</a> <small>Tijera 9.9 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:16.666666666666664%" title="En obra hasta el 26/11 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-005.html">TECL-005</a> <small>Tijera 9.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:40.0%" title="En obra hasta el 10/12"></span><span class="go-b alq" style="left:55.00000000000001%;width:45.0%" title="Cliente 33 · Obra 51 (34–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-006.html">TECL-006</a> <small>Tijera 13.7 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:5.0%;width:50.0%" title="Cliente 24 · Obra 04 (4–33)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-008.html">TECL-008</a> <small>Tijera 14.2 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:41.66666666666667%;width:48.333333333333336%" title="Cliente 45 · Obra 24 (26–54)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-009.html">TECL-009</a> <small>Tijera</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:43.333333333333336%" title="En obra hasta el 12/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-011.html">TECL-011</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:45.0%" title="En obra hasta el 13/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-013.html">TECL-013</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:50.0%" title="En obra hasta el 16/12 (prórroga supuesta)"></span><span class="go-b alq" style="left:50.0%;width:48.333333333333336%" title="Cliente 13 · Obra 21 (31–59)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-014.html">TECL-014</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:26.666666666666668%" title="En obra hasta el 02/12"></span><span class="go-b alq" style="left:26.666666666666668%;width:23.333333333333332%" title="Cliente 49 · Obra 58 (17–30)"></span><span class="go-b alq" style="left:71.66666666666667%;width:28.333333333333332%" title="Cliente 47 · Obra 40 (44–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-015.html">TECL-015</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:50.0%" title="En obra hasta el 16/12 (prórroga supuesta)"></span><span class="go-b alq" style="left:53.333333333333336%;width:46.666666666666664%" title="Cliente 26 · Obra 05 (33–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-016.html">TECL-016</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:45.0%" title="En obra hasta el 13/12"></span><span class="go-b alq" style="left:45.0%;width:50.0%" title="Cliente 29 · Obra 49 (28–57)"></span><span class="go-b alq" style="left:96.66666666666667%;width:3.3333333333333335%" title="Cliente 52 · Obra 33 (59–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-017.html">TECL-017</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:16.666666666666664%" title="En obra hasta el 26/11 (prórroga supuesta)"></span><span class="go-b alq" style="left:40.0%;width:50.0%" title="Cliente 52 · Obra 33 (25–54)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-018.html">TECL-018</a> <small>Tijera 12.0 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b fuera" style="left:0.0%;width:100.0%" title="Fuera de servicio"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-019.html">TECL-019</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:45.0%" title="En obra hasta el 13/12"></span><span class="go-b alq" style="left:96.66666666666667%;width:3.3333333333333335%" title="Cliente 06 · Obra 30 (59–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-021.html">TECL-021</a> <small>Tijera 7.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:45.0%" title="En obra hasta el 13/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-022.html">TECL-022</a> <small>Tijera 7.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:50.0%" title="En obra hasta el 16/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-023.html">TECL-023</a> <small>Tijera 7.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:35.0%" title="En obra hasta el 07/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-027.html">TECL-027</a> <small>Tijera</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:43.333333333333336%" title="En obra hasta el 12/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-028.html">TECL-028</a> <small>Tijera 10.0 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:15.0%;width:85.0%" title="Cliente 22 · Obra 50 (10–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-029.html">TECL-029</a> <small>Tijera 7.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:5.0%" title="En obra hasta el 19/11 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-030.html">TECL-030</a> <small>Tijera 7.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:21.666666666666668%;width:50.0%" title="Cliente 31 · Obra 13 (14–43)"></span><span class="go-b alq" style="left:71.66666666666667%;width:28.333333333333332%" title="Cliente 09 · Obra 15 (44–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-031.html">TECL-031</a> <small>Tijera 7.8 m</small> <i class="pto warn" title="Al inicio: Por vencer"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:23.333333333333332%" title="En obra hasta el 30/11 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-032.html">TECL-032</a> <small>Tijera</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:51.66666666666667%" title="En obra hasta el 17/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-033.html">TECL-033</a> <small>Tijera 9.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:33.33333333333333%" title="En obra hasta el 06/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-034.html">TECL-034</a> <small>Tijera 7.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:38.333333333333336%" title="En obra hasta el 09/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-035.html">TECL-035</a> <small>Tijera 7.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:38.333333333333336%;width:61.66666666666667%" title="Cliente 23 · Obra 56 (24–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-036.html">TECL-036</a> <small>Tijera</small> <i class="pto none" title="Al inicio: Sin datos"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:38.333333333333336%" title="En obra hasta el 09/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-037.html">TECL-037</a> <small>Tijera 7.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:45.0%" title="En obra hasta el 13/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-038.html">TECL-038</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:18.333333333333332%" title="En obra hasta el 27/11"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-039.html">TECL-039</a> <small>Tijera 7.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:50.0%" title="En obra hasta el 16/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-040.html">TECL-040</a> <small>Tijera 7.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:50.0%" title="En obra hasta el 16/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-041.html">TECL-041</a> <small>Tijera 9.9 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:11.666666666666666%;width:48.333333333333336%" title="Cliente 50 · Obra 27 (8–36)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-042.html">TECL-042</a> <small>Tijera 14.2 m</small> <i class="pto warn" title="Al inicio: Por vencer"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:10.0%" title="En obra hasta el 22/11 (prórroga supuesta)"></span><span class="go-b alq" style="left:46.666666666666664%;width:53.333333333333336%" title="Cliente 26 · Obra 05 (29–60)"></span><span class="go-b serv" style="left:11.666666666666666%;width:1.6666666666666667%" title="Servicio A · 1 técnico-días · S/ 280"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-043.html">TECL-043</a> <small>Tijera 14.2 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:1.6666666666666667%;width:23.333333333333332%" title="Cliente 02 · Obra 07 (2–15)"></span><span class="go-b alq" style="left:26.666666666666668%;width:51.66666666666667%" title="Cliente 11 · Obra 36 (17–47)"></span><span class="go-b alq" style="left:86.66666666666667%;width:10.0%" title="Cliente 08 · Obra 02 (53–58)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-044.html">TECL-044</a> <small>Tijera</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:43.333333333333336%" title="En obra hasta el 12/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-046.html">TECL-046</a> <small>Tijera</small> <i class="pto none" title="Al inicio: Sin datos"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:23.333333333333332%" title="En obra hasta el 30/11 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-047.html">TECL-047</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:43.333333333333336%" title="En obra hasta el 12/12 (prórroga supuesta)"></span><span class="go-b alq" style="left:53.333333333333336%;width:23.333333333333332%" title="Cliente 41 · Obra 25 (33–46)"></span><span class="go-b alq" style="left:83.33333333333334%;width:16.666666666666664%" title="Cliente 04 · Obra 37 (51–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-048.html">TECL-048</a> <small>Tijera</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:50.0%" title="En obra hasta el 16/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-049.html">TECL-049</a> <small>Tijera 9.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:50.0%" title="En obra hasta el 16/12"></span><span class="go-b alq" style="left:91.66666666666666%;width:8.333333333333332%" title="Cliente 44 · Obra 20 (56–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-051.html">TECL-051</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:6.666666666666667%;width:51.66666666666667%" title="Cliente 09 · Obra 15 (5–35)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-053.html">TECL-053</a> <small>Tijera 7.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:45.0%" title="En obra hasta el 13/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-054.html">TECL-054</a> <small>Tijera</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:43.333333333333336%" title="En obra hasta el 12/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-055.html">TECL-055</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:18.333333333333332%" title="En obra hasta el 27/11"></span><span class="go-b alq" style="left:21.666666666666668%;width:50.0%" title="Cliente 29 · Obra 49 (14–43)"></span><span class="go-b alq" style="left:78.33333333333333%;width:21.666666666666668%" title="Cliente 28 · Obra 50 (48–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-056.html">TECL-056</a> <small>Tijera 11.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:45.0%" title="En obra hasta el 13/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-057.html">TECL-057</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:11.666666666666666%;width:48.333333333333336%" title="Cliente 41 · Obra 25 (8–36)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-058.html">TECL-058</a> <small>Tijera 11.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:28.333333333333332%;width:48.333333333333336%" title="Cliente 10 · Obra 16 (18–46)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-059.html">TECL-059</a> <small>Tijera 15.8 m</small> <i class="pto warn" title="Al inicio: Por vencer"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:15.0%" title="En obra hasta el 25/11"></span><span class="go-b alq" style="left:56.666666666666664%;width:43.333333333333336%" title="Cliente 52 · Obra 33 (35–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-060.html">TECL-060</a> <small>Tijera 15.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:31.666666666666664%" title="En obra hasta el 05/12"></span><span class="go-b alq" style="left:36.666666666666664%;width:48.333333333333336%" title="Cliente 37 · Obra 52 (23–51)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-061.html">TECL-061</a> <small>Tijera 13.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:26.666666666666668%" title="En obra hasta el 02/12"></span><span class="go-b alq" style="left:33.33333333333333%;width:66.66666666666666%" title="Cliente 51 · Obra 53 (21–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-062.html">TECL-062</a> <small>Tijera 15.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:13.333333333333334%;width:10.0%" title="Cliente 12 · Obra 17 (9–14)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-063.html">TECL-063</a> <small>Tijera 15.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:11.666666666666666%;width:88.33333333333333%" title="Cliente 22 · Obra 50 (8–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-064.html">TECL-064</a> <small>Tijera 15.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:36.666666666666664%" title="En obra hasta el 08/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-066.html">TECL-066</a> <small>Tijera 15.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:36.666666666666664%" title="En obra hasta el 08/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-067.html">TECL-067</a> <small>Tijera 15.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:48.333333333333336%" title="En obra hasta el 15/12"></span><span class="go-b alq" style="left:58.333333333333336%;width:41.66666666666667%" title="Cliente 40 · Obra 11 (36–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-068.html">TECL-068</a> <small>Tijera 15.8 m</small> <i class="pto bad" title="Al inicio: Vencido"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:35.0%" title="En obra hasta el 07/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-070.html">TECL-070</a> <small>Tijera 15.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:48.333333333333336%" title="En obra hasta el 15/12"></span><span class="go-b alq" style="left:71.66666666666667%;width:28.333333333333332%" title="Cliente 28 · Obra 50 (44–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-071.html">TECL-071</a> <small>Tijera 15.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:48.333333333333336%" title="En obra hasta el 15/12"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-072.html">TECL-072</a> <small>Tijera 13.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:46.666666666666664%;width:53.333333333333336%" title="Cliente 05 · Obra 18 (29–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-073.html">TECL-073</a> <small>Tijera 13.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:38.333333333333336%;width:61.66666666666667%" title="Cliente 49 · Obra 58 (24–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-074.html">TECL-074</a> <small>Tijera 13.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:35.0%;width:50.0%" title="Cliente 04 · Obra 37 (22–51)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-075.html">TECL-075</a> <small>Tijera 13.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:10.0%;width:90.0%" title="Cliente 16 · Obra 19 (7–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--TECL-076.html">TECL-076</a> <small>Tijera 13.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:13.333333333333334%;width:86.66666666666667%" title="Cliente 28 · Obra 49 (9–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--BECL-001.html">BECL-001</a> <small>Brazo eléctrico 15.9 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:50.0%" title="En obra hasta el 16/12"></span><span class="go-b alq" style="left:56.666666666666664%;width:43.333333333333336%" title="Cliente 08 · Obra 02 (35–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--BECL-002.html">BECL-002</a> <small>Brazo eléctrico 15.8 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:18.333333333333332%" title="En obra hasta el 27/11 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--BECL-004.html">BECL-004</a> <small>Brazo eléctrico 14.9 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:13.333333333333334%" title="En obra hasta el 24/11 (prórroga supuesta)"></span><span class="go-b alq" style="left:23.333333333333332%;width:48.333333333333336%" title="Cliente 08 · Obra 02 (15–43)"></span><span class="go-b alq" style="left:81.66666666666667%;width:18.333333333333332%" title="Cliente 49 · Obra 58 (50–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--BECL-006.html">BECL-006</a> <small>Brazo eléctrico 14.2 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b alq" style="left:30.0%;width:50.0%" title="Cliente 51 · Obra 53 (19–48)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--BECL-008.html">BECL-008</a> <small>Brazo eléctrico</small> <i class="pto none" title="Al inicio: Sin datos"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:23.333333333333332%" title="En obra hasta el 30/11 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--BCCL-001.html">BCCL-001</a> <small>Brazo diésel 17.2 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:46.666666666666664%" title="En obra hasta el 14/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--BCCL-002.html">BCCL-002</a> <small>Brazo diésel 15.7 m</small> <i class="pto ok" title="Al inicio: Vigente"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:18.333333333333332%" title="En obra hasta el 27/11"></span><span class="go-b alq" style="left:45.0%;width:55.00000000000001%" title="Cliente 38 · Obra 52 (28–60)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--BCCL-003.html">BCCL-003</a> <small>Brazo diésel</small> <i class="pto none" title="Al inicio: Sin datos"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:48.333333333333336%" title="En obra hasta el 15/12 (prórroga supuesta)"></span></div>
+      </div>
+      
+      <div class="go-fila">
+        <div class="go-eq"><a class="cod" href="equipos--UPCL-001.html">UPCL-001</a> <small>Mástil 7.9 m</small> <i class="pto warn" title="Al inicio: Por vencer"></i></div>
+        <div class="go-pista"><span class="go-b obra" style="left:0.0%;width:23.333333333333332%" title="En obra hasta el 30/11 (prórroga supuesta)"></span></div>
+      </div>
+      
+    </div>
+    <div class="leyenda" style="margin-top:8px"><span><i style="background:#cbd5e1"></i>En obra al inicio (contrato vigente)</span><span><i style="background:#2563eb"></i>Pedido asignado</span><span><i style="background:var(--bad)"></i>Pedido con el mantenimiento vencido</span><span><i style="background:var(--accent)"></i>Servicio en taller</span><span><i class="pto bad" style="border-radius:50%"></i>Estado de mantenimiento al inicio</span></div>
+  </div>
+</div>
+
+<div class="grid g2" style="margin-bottom:16px">
+  <div class="card">
+    <div class="hd"><h2>Programa de mantenimiento (E2)</h2><span class="muted">1 servicios</span></div>
+    <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0">Qué equipo entra al taller, qué servicio recibe (A, A+B, …: más letras = servicio más completo según sus horas), cuándo y cuánto cuesta. «Técnico-días» es el trabajo que requiere.</p></div>
+    <div class="bd flush tabla-wrap" style="max-height:420px">
+      <table><thead><tr><th>Equipo</th><th>Nivel</th><th>Inicio</th><th>Fin</th><th class="n">Técnico-días</th><th class="n">Costo</th></tr></thead>
+      <tbody><tr><td><a class="cod" href="equipos--TECL-042.html">TECL-042</a></td><td>A</td><td>mar 24/11</td><td>24/11</td><td class="n">1</td><td class="n">S/ 280</td></tr></tbody></table>
+      
+    </div>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Pedidos sin atender con flota propia (E2)</h2><span class="muted">13</span></div>
+    <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0">Pedidos que el plan no cubre con equipos propios y por qué. «No cubre el traslado y el riesgo de falla» quiere decir que atenderlo costaría más de lo que paga. «Ningún equipo compatible está libre» quiere decir que todos los que sirven (tipo y altura) están en otras obras o en taller. Se pueden subarrendar, mover de fecha o rechazar.</p></div>
+    <div class="bd flush tabla-wrap" style="max-height:420px">
+      <table><thead><tr><th>Pedido</th><th>Requiere</th><th>Inicio</th><th>Motivo</th></tr></thead>
+      <tbody><tr><td class="mono">P-0057<br><small>Cliente 26</small></td><td>Tijera ≥ 15.8 m</td><td>07/12</td><td><small>Ningún equipo compatible está libre en la fecha de inicio</small><br><small class="muted">ingreso S/ 4,350 · traslado S/ 380</small></td></tr><tr><td class="mono">P-0026<br><small>Cliente 52</small></td><td>Brazo eléctrico ≥ 11.5 m</td><td>19/12</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 488 · traslado S/ 608</small></td></tr><tr><td class="mono">P-0016<br><small>Cliente 11</small></td><td>Tijera ≥ 7.8 m</td><td>21/12</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 130 · traslado S/ 900</small></td></tr><tr><td class="mono">P-0022<br><small>Cliente 36</small></td><td>Tijera ≥ 9.8 m</td><td>21/12</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 75 · traslado S/ 380</small></td></tr><tr><td class="mono">P-0052<br><small>Cliente 28</small></td><td>Brazo eléctrico ≥ 15.8 m</td><td>21/12</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 1,125 · traslado S/ 1,400</small></td></tr><tr><td class="mono">P-0008<br><small>Cliente 44</small></td><td>Tijera ≥ 9.8 m</td><td>23/12</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 225 · traslado S/ 280</small></td></tr><tr><td class="mono">P-0041<br><small>Cliente 30</small></td><td>Brazo eléctrico ≥ 15.4 m</td><td>23/12</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 188 · traslado S/ 448</small></td></tr><tr><td class="mono">P-0013<br><small>Cliente 06</small></td><td>Tijera ≥ 7.3 m</td><td>24/12</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 130 · traslado S/ 380</small></td></tr><tr><td class="mono">P-0048<br><small>Cliente 21</small></td><td>Tijera ≥ 7.8 m</td><td>29/12</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 260 · traslado S/ 380</small></td></tr><tr><td class="mono">P-0029<br><small>Cliente 41</small></td><td>Tijera ≥ 14.8 m</td><td>30/12</td><td><small>Ningún equipo compatible está libre en la fecha de inicio</small><br><small class="muted">ingreso S/ 1,950 · traslado S/ 380</small></td></tr><tr><td class="mono">P-0034<br><small>Cliente 06</small></td><td>Tijera ≥ 7.8 m</td><td>04/01</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 65 · traslado S/ 1,100</small></td></tr><tr><td class="mono">P-0043<br><small>Cliente 37</small></td><td>Tijera ≥ 11.8 m</td><td>08/01</td><td><small>El ingreso del pedido no cubre el traslado y el riesgo de falla</small><br><small class="muted">ingreso S/ 105 · traslado S/ 1,400</small></td></tr><tr><td class="mono">P-0060<br><small>Cliente 30</small></td><td>Brazo eléctrico ≥ 14.9 m</td><td>12/01</td><td><small>Los 2 equipos compatibles están ocupados o deben pasar por taller</small><br><small class="muted">ingreso S/ 650 · traslado S/ 64</small></td></tr></tbody></table>
+      
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <div class="hd"><h2>Asignación de equipos a pedidos (E2)</h2><span class="muted">47 pedidos</span></div>
+  <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0">Qué equipo se envía a cada pedido. «Requiere» es el tipo de equipo y la altura mínima que pide el cliente; «continúa» indica que el contrato sigue después del periodo analizado (sólo se cuenta la parte de adentro). La última columna confirma si el equipo estará al día durante todo el pedido.</p></div>
+  <div class="bd flush tabla-wrap" style="max-height:460px">
+    <table><thead><tr><th>Pedido</th><th>Cliente · obra</th><th>Requiere</th><th>Periodo en el horizonte</th><th>Equipo</th><th class="n">Ingreso</th><th class="n">Traslado</th><th>Mantenimiento</th></tr></thead>
+    <tbody><tr>
+      <td class="mono">P-0047</td><td>Cliente 02<br><small>Obra 07 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 13.2 m</td>
+      <td>18/11 → 01/12</td>
+      <td><a class="cod" href="equipos--TECL-043.html">TECL-043</a></td><td class="n">S/ 1,925</td><td class="n">S/ 380</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0014</td><td>Cliente 24<br><small>Obra 04 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 12.8 m</td>
+      <td>20/11 → 19/12</td>
+      <td><a class="cod" href="equipos--TECL-006.html">TECL-006</a></td><td class="n">S/ 4,125</td><td class="n">S/ 380</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0054</td><td>Cliente 09<br><small>Obra 15 · Lima Centro</small></td>
+      <td>Tijera ≥ 11.0 m</td>
+      <td>21/11 → 21/12</td>
+      <td><a class="cod" href="equipos--TECL-051.html">TECL-051</a></td><td class="n">S/ 3,255</td><td class="n">S/ 280</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0009</td><td>Cliente 16<br><small>Obra 19 · Lima Centro</small></td>
+      <td>Tijera ≥ 13.8 m</td>
+      <td>23/11 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-075.html">TECL-075</a></td><td class="n">S/ 7,425</td><td class="n">S/ 134</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0005</td><td>Cliente 41<br><small>Obra 25 · Callao</small></td>
+      <td>Tijera ≥ 11.3 m</td>
+      <td>24/11 → 22/12</td>
+      <td><a class="cod" href="equipos--TECL-057.html">TECL-057</a></td><td class="n">S/ 3,045</td><td class="n">S/ 300</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0018</td><td>Cliente 50<br><small>Obra 27 · Lima Centro</small></td>
+      <td>Tijera ≥ 8.8 m</td>
+      <td>24/11 → 22/12</td>
+      <td><a class="cod" href="equipos--TECL-041.html">TECL-041</a></td><td class="n">S/ 2,175</td><td class="n">S/ 280</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0056</td><td>Cliente 22<br><small>Obra 50 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 11.8 m</td>
+      <td>24/11 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-063.html">TECL-063</a></td><td class="n">S/ 5,565</td><td class="n">S/ 341</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0015</td><td>Cliente 28<br><small>Obra 49 · Provincia</small></td>
+      <td>Tijera ≥ 13.8 m</td>
+      <td>25/11 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-076.html">TECL-076</a></td><td class="n">S/ 7,150</td><td class="n">S/ 274</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0046</td><td>Cliente 12<br><small>Obra 17 · Lima Centro</small></td>
+      <td>Tijera ≥ 13.8 m</td>
+      <td>25/11 → 30/11</td>
+      <td><a class="cod" href="equipos--TECL-062.html">TECL-062</a></td><td class="n">S/ 825</td><td class="n">S/ 280</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0003</td><td>Cliente 22<br><small>Obra 50 · Provincia</small></td>
+      <td>Tijera ≥ 7.8 m</td>
+      <td>26/11 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-028.html">TECL-028</a></td><td class="n">S/ 3,315</td><td class="n">S/ 791</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0012</td><td>Cliente 29<br><small>Obra 49 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 9.8 m</td>
+      <td>30/11 → 29/12</td>
+      <td><a class="cod" href="equipos--TECL-055.html">TECL-055</a></td><td class="n">S/ 2,250</td><td class="n">S/ 380</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0059</td><td>Cliente 31<br><small>Obra 13 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 7.3 m</td>
+      <td>30/11 → 29/12</td>
+      <td><a class="cod" href="equipos--TECL-030.html">TECL-030</a></td><td class="n">S/ 1,950</td><td class="n">S/ 380</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0038</td><td>Cliente 08<br><small>Obra 02 · Lima Centro</small></td>
+      <td>Brazo eléctrico ≥ 14.2 m</td>
+      <td>01/12 → 29/12</td>
+      <td><a class="cod" href="equipos--BECL-004.html">BECL-004</a></td><td class="n">S/ 4,712</td><td class="n">S/ 448</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0004</td><td>Cliente 11<br><small>Obra 36 · Lima Centro</small></td>
+      <td>Tijera ≥ 11.8 m</td>
+      <td>03/12 → 02/01</td>
+      <td><a class="cod" href="equipos--TECL-043.html">TECL-043</a></td><td class="n">S/ 3,255</td><td class="n">S/ 280</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0050</td><td>Cliente 49<br><small>Obra 58 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 7.3 m</td>
+      <td>03/12 → 16/12</td>
+      <td><a class="cod" href="equipos--TECL-014.html">TECL-014</a></td><td class="n">S/ 910</td><td class="n">S/ 380</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0006</td><td>Cliente 10<br><small>Obra 16 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 11.8 m</td>
+      <td>04/12 → 01/01</td>
+      <td><a class="cod" href="equipos--TECL-058.html">TECL-058</a></td><td class="n">S/ 3,045</td><td class="n">S/ 380</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0037</td><td>Cliente 51<br><small>Obra 53 · Lima Centro</small></td>
+      <td>Brazo eléctrico ≥ 12.0 m</td>
+      <td>05/12 → 03/01</td>
+      <td><a class="cod" href="equipos--BECL-006.html">BECL-006</a></td><td class="n">S/ 4,875</td><td class="n">S/ 448</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0035</td><td>Cliente 51<br><small>Obra 53 · Provincia</small></td>
+      <td>Tijera ≥ 13.8 m</td>
+      <td>07/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-061.html">TECL-061</a></td><td class="n">S/ 5,500</td><td class="n">S/ 610</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0044</td><td>Cliente 04<br><small>Obra 37 · Callao</small></td>
+      <td>Tijera ≥ 11.8 m</td>
+      <td>08/12 → 06/01</td>
+      <td><a class="cod" href="equipos--TECL-074.html">TECL-074</a></td><td class="n">S/ 3,150</td><td class="n">S/ 300</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0051</td><td>Cliente 37<br><small>Obra 52 · Provincia</small></td>
+      <td>Tijera ≥ 15.3 m</td>
+      <td>09/12 → 06/01</td>
+      <td><a class="cod" href="equipos--TECL-060.html">TECL-060</a></td><td class="n">S/ 4,350</td><td class="n">S/ 1,400</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0030</td><td>Cliente 23<br><small>Obra 56 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 5.8 m</td>
+      <td>10/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-035.html">TECL-035</a></td><td class="n">S/ 2,405</td><td class="n">S/ 124</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0042</td><td>Cliente 49<br><small>Obra 58 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 12.0 m</td>
+      <td>10/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-073.html">TECL-073</a></td><td class="n">S/ 3,885</td><td class="n">S/ 238</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0061</td><td>Cliente 52<br><small>Obra 33 · Lima Centro</small></td>
+      <td>Tijera ≥ 11.3 m</td>
+      <td>11/12 → 09/01</td>
+      <td><a class="cod" href="equipos--TECL-017.html">TECL-017</a></td><td class="n">S/ 3,150</td><td class="n">S/ 280</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0024</td><td>Cliente 45<br><small>Obra 24 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 11.8 m</td>
+      <td>12/12 → 09/01</td>
+      <td><a class="cod" href="equipos--TECL-008.html">TECL-008</a></td><td class="n">S/ 3,045</td><td class="n">S/ 380</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0020</td><td>Cliente 38<br><small>Obra 52 · Provincia</small></td>
+      <td>Brazo diésel ≥ 14.7 m</td>
+      <td>14/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--BCCL-002.html">BCCL-002</a></td><td class="n">S/ 5,362</td><td class="n">S/ 783</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0027</td><td>Cliente 29<br><small>Obra 49 · Provincia</small></td>
+      <td>Tijera ≥ 9.8 m</td>
+      <td>14/12 → 12/01</td>
+      <td><a class="cod" href="equipos--TECL-016.html">TECL-016</a></td><td class="n">S/ 2,250</td><td class="n">S/ 1,100</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0017</td><td>Cliente 26<br><small>Obra 05 · Provincia</small></td>
+      <td>Tijera ≥ 13.8 m</td>
+      <td>15/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-042.html">TECL-042</a></td><td class="n">S/ 4,400</td><td class="n">S/ 503</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0039</td><td>Cliente 05<br><small>Obra 18 · Lima Centro</small></td>
+      <td>Tijera ≥ 13.3 m</td>
+      <td>15/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-072.html">TECL-072</a></td><td class="n">S/ 4,400</td><td class="n">S/ 152</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0049</td><td>Cliente 13<br><small>Obra 21 · Lima Centro</small></td>
+      <td>Tijera ≥ 9.2 m</td>
+      <td>17/12 → 14/01</td>
+      <td><a class="cod" href="equipos--TECL-013.html">TECL-013</a></td><td class="n">S/ 2,175</td><td class="n">S/ 280</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0023</td><td>Cliente 26<br><small>Obra 05 · Lima Centro</small></td>
+      <td>Tijera ≥ 10.8 m</td>
+      <td>19/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-015.html">TECL-015</a></td><td class="n">S/ 2,940</td><td class="n">S/ 261</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0025</td><td>Cliente 41<br><small>Obra 25 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 6.8 m</td>
+      <td>19/12 → 01/01</td>
+      <td><a class="cod" href="equipos--TECL-047.html">TECL-047</a></td><td class="n">S/ 910</td><td class="n">S/ 380</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0010</td><td>Cliente 33<br><small>Obra 51 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 7.8 m</td>
+      <td>20/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-005.html">TECL-005</a></td><td class="n">S/ 1,755</td><td class="n">S/ 354</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0058</td><td>Cliente 37<br><small>Obra 52 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 7.3 m</td>
+      <td>20/12 → 26/12</td>
+      <td><a class="cod" href="equipos--TECL-001.html">TECL-001</a></td><td class="n">S/ 455</td><td class="n">S/ 380</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0007</td><td>Cliente 08<br><small>Obra 02 · Lima Sur/Este</small></td>
+      <td>Brazo eléctrico ≥ 15.8 m</td>
+      <td>21/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--BECL-001.html">BECL-001</a></td><td class="n">S/ 4,875</td><td class="n">S/ 527</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0031</td><td>Cliente 52<br><small>Obra 33 · Lima Centro</small></td>
+      <td>Tijera ≥ 13.3 m</td>
+      <td>21/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-059.html">TECL-059</a></td><td class="n">S/ 3,575</td><td class="n">S/ 243</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0033</td><td>Cliente 40<br><small>Obra 11 · Provincia</small></td>
+      <td>Tijera ≥ 13.8 m</td>
+      <td>22/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-067.html">TECL-067</a></td><td class="n">S/ 3,438</td><td class="n">S/ 948</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0040</td><td>Cliente 23<br><small>Obra 55 · Callao</small></td>
+      <td>Tijera ≥ 9.8 m</td>
+      <td>27/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-001.html">TECL-001</a></td><td class="n">S/ 1,500</td><td class="n">S/ 100</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0002</td><td>Cliente 09<br><small>Obra 15 · Lima Centro</small></td>
+      <td>Tijera ≥ 5.8 m</td>
+      <td>30/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-030.html">TECL-030</a></td><td class="n">S/ 1,105</td><td class="n">S/ 159</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0011</td><td>Cliente 47<br><small>Obra 40 · Provincia</small></td>
+      <td>Tijera ≥ 10.0 m</td>
+      <td>30/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-014.html">TECL-014</a></td><td class="n">S/ 1,275</td><td class="n">S/ 1,133</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0028</td><td>Cliente 28<br><small>Obra 50 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 15.3 m</td>
+      <td>30/12 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-070.html">TECL-070</a></td><td class="n">S/ 2,550</td><td class="n">S/ 208</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0053</td><td>Cliente 28<br><small>Obra 50 · Provincia</small></td>
+      <td>Tijera ≥ 10.8 m</td>
+      <td>03/01 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-055.html">TECL-055</a></td><td class="n">S/ 1,365</td><td class="n">S/ 1,213</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0036</td><td>Cliente 49<br><small>Obra 58 · Lima Centro</small></td>
+      <td>Brazo eléctrico ≥ 14.2 m</td>
+      <td>05/01 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--BECL-004.html">BECL-004</a></td><td class="n">S/ 1,788</td><td class="n">S/ 170</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0032</td><td>Cliente 04<br><small>Obra 37 · Lima Centro</small></td>
+      <td>Tijera ≥ 10.8 m</td>
+      <td>06/01 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-047.html">TECL-047</a></td><td class="n">S/ 1,050</td><td class="n">S/ 93</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0055</td><td>Cliente 08<br><small>Obra 02 · Lima Centro</small></td>
+      <td>Tijera ≥ 11.3 m</td>
+      <td>08/01 → 13/01</td>
+      <td><a class="cod" href="equipos--TECL-043.html">TECL-043</a></td><td class="n">S/ 630</td><td class="n">S/ 280</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0019</td><td>Cliente 44<br><small>Obra 20 · Lima Centro</small></td>
+      <td>Tijera ≥ 7.8 m</td>
+      <td>11/01 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-049.html">TECL-049</a></td><td class="n">S/ 325</td><td class="n">S/ 47</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0021</td><td>Cliente 06<br><small>Obra 30 · Callao</small></td>
+      <td>Tijera ≥ 7.8 m</td>
+      <td>14/01 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-019.html">TECL-019</a></td><td class="n">S/ 130</td><td class="n">S/ 10</td>
+      <td><span class="chip ok">Al día</span></td></tr><tr>
+      <td class="mono">P-0045</td><td>Cliente 52<br><small>Obra 33 · Lima Sur/Este</small></td>
+      <td>Tijera ≥ 7.8 m</td>
+      <td>14/01 → 15/01 <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span></td>
+      <td><a class="cod" href="equipos--TECL-016.html">TECL-016</a></td><td class="n">S/ 130</td><td class="n">S/ 7</td>
+      <td><span class="chip ok">Al día</span></td></tr></tbody></table>
+  </div>
+</div>
+
+
+
+<div class="card" style="margin-bottom:16px">
+  <div class="hd"><h2>Lo que se puso en operación</h2><span class="muted">plan E3 · aplicado el 17/11/2026</span></div>
+  <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0">Órdenes de trabajo y reservas que el sistema creó o cambió con esta corrida. Se gestionan en <a href="mantenimiento.html">Órdenes de trabajo</a>, <a href="taller.html">Programa del taller</a> y <a href="pedidos.html">Cartera de pedidos</a>.</p></div>
+  <div class="bd grid g2" style="gap:18px">
+    <div>
+      <h3>Mantenimientos</h3>
+      <div class="tabla-wrap"><table><thead><tr><th>OT</th><th>Equipo</th><th>Nivel</th><th>Fecha</th><th>Estado</th><th>Técnico</th></tr></thead><tbody>
+      <tr><td><a href="mantenimiento--82.html" class="mono">OT-0082</a></td><td><a class="cod" href="equipos--TECL-012.html">TECL-012</a></td><td>A+B</td><td>17/11</td><td><span class="chip info">Programada</span></td><td><small>Técnico A</small></td></tr><tr><td><a href="mantenimiento--115.html" class="mono">OT-0115</a></td><td><a class="cod" href="equipos--TECL-062.html">TECL-062</a></td><td>A</td><td>17/11</td><td><span class="chip info">Programada</span></td><td><small>Técnico B</small></td></tr><tr><td><a href="mantenimiento--89.html" class="mono">OT-0089</a></td><td><a class="cod" href="equipos--TECL-057.html">TECL-057</a></td><td>A</td><td>18/11</td><td><span class="chip info">Programada</span></td><td><small>Técnico C</small></td></tr><tr><td><a href="mantenimiento--116.html" class="mono">OT-0116</a></td><td><a class="cod" href="equipos--TECL-007.html">TECL-007</a></td><td>A+B+C</td><td>19/11</td><td><span class="chip info">Programada</span></td><td><small>Técnico B</small></td></tr><tr><td><a href="mantenimiento--80.html" class="mono">OT-0080</a></td><td><a class="cod" href="equipos--TECL-051.html">TECL-051</a></td><td>A</td><td>19/11</td><td><span class="chip info">Programada</span></td><td><small>Técnico C</small></td></tr><tr><td><a href="mantenimiento--117.html" class="mono">OT-0117</a></td><td><a class="cod" href="equipos--TECL-029.html">TECL-029</a></td><td>A+B</td><td>20/11</td><td><span class="chip info">Programada</span></td><td><small>Técnico A</small></td></tr><tr><td><a href="mantenimiento--86.html" class="mono">OT-0086</a></td><td><a class="cod" href="equipos--TECL-041.html">TECL-041</a></td><td>A</td><td>21/11</td><td><span class="chip info">Programada</span></td><td><small>Técnico C</small></td></tr><tr><td><a href="mantenimiento--88.html" class="mono">OT-0088</a></td><td><a class="cod" href="equipos--TECL-042.html">TECL-042</a></td><td>A</td><td>23/11</td><td><span class="chip info">Programada</span></td><td><small>Técnico C</small></td></tr><tr><td><a href="mantenimiento--81.html" class="mono">OT-0081</a></td><td><a class="cod" href="equipos--TECL-074.html">TECL-074</a></td><td>A</td><td>24/11</td><td><span class="chip warn">Pendiente</span></td><td><small>—</small></td></tr><tr><td><a href="mantenimiento--84.html" class="mono">OT-0084</a></td><td><a class="cod" href="equipos--TECL-025.html">TECL-025</a></td><td>A</td><td>26/11</td><td><span class="chip warn">Pendiente</span></td><td><small>—</small></td></tr><tr><td><a href="mantenimiento--87.html" class="mono">OT-0087</a></td><td><a class="cod" href="equipos--TECL-028.html">TECL-028</a></td><td>A+B</td><td>—</td><td><span class="chip none">Cancelada</span></td><td><small>—</small></td></tr><tr><td><a href="mantenimiento--85.html" class="mono">OT-0085</a></td><td><a class="cod" href="equipos--TECL-030.html">TECL-030</a></td><td>A</td><td>—</td><td><span class="chip none">Cancelada</span></td><td><small>—</small></td></tr><tr><td><a href="mantenimiento--79.html" class="mono">OT-0079</a></td><td><a class="cod" href="equipos--TECL-043.html">TECL-043</a></td><td>A+B+C</td><td>—</td><td><span class="chip none">Cancelada</span></td><td><small>—</small></td></tr><tr><td><a href="mantenimiento--83.html" class="mono">OT-0083</a></td><td><a class="cod" href="equipos--TECL-058.html">TECL-058</a></td><td>A+B</td><td>—</td><td><span class="chip none">Cancelada</span></td><td><small>—</small></td></tr><tr><td><a href="mantenimiento--76.html" class="mono">OT-0076</a></td><td><a class="cod" href="equipos--TECL-073.html">TECL-073</a></td><td>A</td><td>—</td><td><span class="chip none">Cancelada</span></td><td><small>—</small></td></tr><tr><td><a href="mantenimiento--77.html" class="mono">OT-0077</a></td><td><a class="cod" href="equipos--TECL-075.html">TECL-075</a></td><td>A</td><td>—</td><td><span class="chip none">Cancelada</span></td><td><small>—</small></td></tr><tr><td><a href="mantenimiento--78.html" class="mono">OT-0078</a></td><td><a class="cod" href="equipos--TECL-076.html">TECL-076</a></td><td>A</td><td>—</td><td><span class="chip none">Cancelada</span></td><td><small>—</small></td></tr>
+      </tbody></table></div>
+      <p class="muted" style="font-size:12.5px">Programada = con fecha y técnico. Pendiente = el modelo propone una fecha posterior a la primera semana; se confirma en la próxima corrida. Cancelada = el modelo no la necesita en el periodo.</p>
+      
+    </div>
+    <div>
+      <h3>Pedidos</h3>
+      <div class="tabla-wrap"><table><thead><tr><th>Pedido</th><th>Cliente</th><th>Inicio</th><th>Equipo</th><th>Estado</th></tr></thead><tbody>
+      <tr><td class="mono">P-0047</td><td><small>Cliente 02</small></td><td>18/11</td><td><a class="cod" href="equipos--TECL-006.html">TECL-006</a></td><td><span class="chip info">Asignado</span></td></tr><tr><td class="mono">P-0014</td><td><small>Cliente 24</small></td><td>20/11</td><td><a class="cod" href="equipos--TECL-043.html">TECL-043</a></td><td><span class="chip info">Asignado</span></td></tr><tr><td class="mono">P-0054</td><td><small>Cliente 09</small></td><td>21/11</td><td><a class="cod" href="equipos--TECL-012.html">TECL-012</a></td><td><span class="chip info">Asignado</span></td></tr><tr><td class="mono">P-0009</td><td><small>Cliente 16</small></td><td>23/11</td><td><a class="cod" href="equipos--TECL-075.html">TECL-075</a></td><td><span class="chip info">Asignado</span></td></tr>
+      </tbody></table></div>
+      <p class="muted" style="font-size:12.5px">Asignado = equipo reservado para ese pedido. No atendido = el modelo recomienda cubrirlo de otra forma.</p>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<form class="card aplicar" method="post" action="#" data-sin-copia="1" data-confirmar="Se programarán las OT preventivas y se reservarán los equipos de los primeros días del plan. ¿Continuar?">
+  <div class="hd"><h2>Poner el plan en operación</h2><span class="muted">horizonte rodante (recomendación 5.2.2)</span></div>
+  <div class="bd" style="display:flex;gap:16px;align-items:end;flex-wrap:wrap">
+    <p style="margin:0;flex:1 1 380px;color:var(--ink-2)">Sólo se ejecutan las decisiones de los primeros días. Se crean o reprograman las OT preventivas con técnicos libres, se reservan los equipos asignados a los pedidos que empiezan en esa ventana y se marcan los que el modelo deja sin atender. Lo demás se recalcula en la próxima corrida, por ejemplo cada lunes con los horómetros y la cartera al día.</p>
+    <div><label>Escenario</label><select name="esc"><option value="E3" selected>E3 · Modelo con valor terminal</option><option value="E2" >E2 · Modelo propuesto</option></select></div>
+    <div><label>Días a ejecutar</label><input type="number" name="ventana" value="7" min="1" max="30" style="width:90px"></div>
+    <button class="btn pri" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/>
+</svg> Plan ya aplicado</button>
+  </div>
+</form>
+
+
+
+<div class="card" style="margin-top:16px">
+  <div class="hd"><h2>Corridas anteriores</h2></div>
+  <div class="bd flush tabla-wrap"><table>
+    <thead><tr><th>Corrida</th><th>Ejecutada</th><th>Horizonte</th><th>Estado</th><th class="n">Duración</th><th>Plan aplicado</th></tr></thead>
+    <tbody><tr class="fila-link sel"><td><a href="optimizacion--4.html">Corrida 4</a></td><td>17/11/2026 19:01</td>
+      <td>17/11 + 60 días</td><td><span class="chip ok">Terminada</span></td><td class="n">33 s</td>
+      <td>E3 · 17/11/2026</td></tr><tr class="fila-link "><td><a href="optimizacion--3.html">Corrida 3</a></td><td>17/11/2026 18:18</td>
+      <td>17/11 + 60 días</td><td><span class="chip ok">Terminada</span></td><td class="n">34 s</td>
+      <td>E3 · 17/11/2026</td></tr><tr class="fila-link "><td><a href="optimizacion--2.html">Corrida 2</a></td><td>17/11/2026 17:57</td>
+      <td>17/11 + 60 días</td><td><span class="chip ok">Terminada</span></td><td class="n">10 s</td>
+      <td>E3 · 17/11/2026</td></tr><tr class="fila-link "><td><a href="optimizacion--1.html">Corrida 1</a></td><td>17/11/2026 17:48</td>
+      <td>17/11 + 60 días</td><td><span class="chip bad">Error</span><br><small>Pulp: Error while trying to execute, use msg=True for more detailsC:/Usuario\AppData\Local\Programs\Python\Python312\Lib\site-packages\pulp\solverdir\cbc\win\64\cbc.exe</small></td><td class="n">490 s</td>
+      <td>—</td></tr></tbody>
+  </table></div>
+</div>
+
+
+  </main>
+</div>
+<script src="static/app.js"></script>
+
+<script>
+(function () {
+  const caja = document.getElementById('en-curso');
+  if (!caja) return;
+  const msg = document.getElementById('msg-curso');
+  const tick = () => fetch(caja.dataset.url).then(r => r.json()).then(d => {
+    msg.textContent = d.mensaje || '';
+    if (d.estado !== 'En curso' || !d.vivo) location.reload(); else setTimeout(tick, 2000);
+  }).catch(() => setTimeout(tick, 4000));
+  setTimeout(tick, 1500);
+})();
+</script>
+
+</body>
+</html>

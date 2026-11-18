@@ -1,0 +1,55 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block titulo %}SGM{% endblock %} · Lift Rental</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+<link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='logo_liftrental.jpg') }}">
+</head>
+<body>
+{% from '_m.html' import icono %}
+<div class="app">
+  <aside class="side">
+    <div class="marca">
+      <img class="logo" src="{{ url_for('static', filename='logo_liftrental.jpg') }}" alt="Lift Rental Solutions" width="64" height="64">
+      <div><b>SGM Lift Rental</b><span>Gestión de mantenimiento</span></div>
+    </div>
+    <a class="nav {{ 'on' if ruta == 'almacen' }}" href="{{ url_for('almacen') }}">{{ icono('almacen') }} Almacén en vivo</a>
+    <a class="nav {{ 'on' if ruta == 'panel' }}" href="{{ url_for('panel') }}">{{ icono('panel') }} Panel de control</a>
+    <a class="nav {{ 'on' if ruta.startswith('estatus') }}" href="{{ url_for('estatus') }}">{{ icono('doc') }} Estatus diario {% if EST.atrasado %}<span class="badge">!</span>{% endif %}</a>
+    <div class="nav-sec">Almacén virtual</div>
+    <a class="nav {{ 'on' if ruta.startswith('equipo') }}" href="{{ url_for('equipos') }}">{{ icono('doc') }} Equipos y expedientes</a>
+    <a class="nav {{ 'on' if ruta in ('alquileres','retorno') }}" href="{{ url_for('alquileres') }}">{{ icono('uso') }} Uso y alquileres</a>
+    <a class="nav {{ 'on' if ruta == 'despacho' }}" href="{{ url_for('despacho') }}">{{ icono('despacho') }} Despachar equipo</a>
+    <div class="nav-sec">Mantenimiento</div>
+    <a class="nav {{ 'on' if ruta.startswith('orden') or ruta == 'mantenimiento' }}" href="{{ url_for('mantenimiento') }}">{{ icono('mant') }} Órdenes de trabajo {% if OT_ABIERTAS %}<span class="badge">{{ OT_ABIERTAS }}</span>{% endif %}</a>
+    <a class="nav {{ 'on' if ruta.startswith('documentos') }}" href="{{ url_for('documentos') }}">{{ icono('doc') }} Documentos de mantto.</a>
+    <a class="nav {{ 'on' if ruta == 'taller' }}" href="{{ url_for('taller') }}">{{ icono('taller') }} Programa del taller</a>
+    <a class="nav {{ 'on' if ruta.startswith('incidente') }}" href="{{ url_for('incidentes') }}">{{ icono('incidente') }} Incidentes en obra</a>
+    <div class="nav-sec">Planificación</div>
+    <a class="nav {{ 'on' if ruta.startswith('pedido') }}" href="{{ url_for('pedidos') }}">{{ icono('doc') }} Cartera de pedidos</a>
+    <a class="nav {{ 'on' if ruta.startswith('optimizacion') }}" href="{{ url_for('optimizacion') }}">{{ icono('optim') }} Optimización (PLEM)</a>
+    <div class="nav-sec">Personal</div>
+    <a class="nav {{ 'on' if ruta in ('personal','tecnico','tecnico_form') }}" href="{{ url_for('personal') }}">{{ icono('personal') }} Técnicos</a>
+    <a class="nav {{ 'on' if ruta == 'configuracion' }}" href="{{ url_for('configuracion') }}">{{ icono('config') }} Configuración</a>
+    <div class="side-pie">
+      Fecha de evaluación<br><b>{{ REF|fecha }}</b>{% if REF_FIJA %} <span class="tag">fija</span>{% endif %}<br>
+      Taller Comas · {{ CFG.capacidad_tecnicos }} técnicos
+      {% if EST.fecha %}<br><span>Estatus real al {{ EST.fecha|fecha('%d/%m/%Y') }}</span>{% endif %}
+      {% if SIM.hasta %}<br><span title="{{ SIM.resumen }}">Simulación {{ SIM.desde|fecha('%d/%m') }} → {{ SIM.hasta|fecha('%d/%m/%Y') }}</span>{% endif %}
+    </div>
+  </aside>
+  <main>
+    {% if REF_FIJA %}<div class="refbar no-print">El sistema evalúa el mantenimiento al <b>{{ REF|fecha }}</b> (fecha fija en <a href="{{ url_for('configuracion') }}">Configuración</a>). Hoy es {{ HOY|fecha }}.</div>{% endif %}
+    {% with msgs = get_flashed_messages(with_categories=true) %}
+      {% for cat, m in msgs %}<div class="flash {{ cat }}">{{ m }}</div>{% endfor %}
+    {% endwith %}
+    {% block contenido %}{% endblock %}
+  </main>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

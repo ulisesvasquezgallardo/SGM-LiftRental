@@ -1,0 +1,1630 @@
+
+
+<!doctype html>
+<html lang="es">
+<head>
+<script>/* copia estática */(function(){var r=history.replaceState;
+history.replaceState=function(){try{return r.apply(history,arguments)}catch(e){}};
+var M='Esta es una copia de consulta del SGM Lift Rental: aquí no se pueden registrar ni modificar datos. Esa acción está disponible en el sistema original.';
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-sin-copia]');
+if(a){e.preventDefault();e.stopImmediatePropagation();alert(M);}},true);
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();alert(M);},true);
+})();</script>
+<style>.aviso-copia{position:sticky;top:0;z-index:50;background:#fff4cc;color:#5a4300;border-bottom:1px solid #f2b200;
+padding:6px 16px;font:12.5px/1.4 "Segoe UI",system-ui,sans-serif;text-align:center}
+@media print{.aviso-copia{display:none}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Almacén virtual · Lift Rental</title>
+<link rel="stylesheet" href="static/estilos.css">
+<link rel="icon" type="image/jpeg" href="static/logo_liftrental.jpg">
+</head>
+<body>
+<div class="aviso-copia">Copia de consulta del SGM Lift Rental generada el 17/11/2026 23:04 · sólo lectura: los formularios y documentos PDF están disponibles en el sistema original.</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="marca">
+      <img class="logo" src="static/logo_liftrental.jpg" alt="Lift Rental Solutions" width="64" height="64">
+      <div><b>SGM Lift Rental</b><span>Gestión de mantenimiento</span></div>
+    </div>
+    <a class="nav on" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Almacén en vivo</a>
+    <a class="nav " href="panel.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+</svg> Panel de control</a>
+    <a class="nav " href="estatus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Estatus diario </a>
+    <div class="nav-sec">Almacén virtual</div>
+    <a class="nav " href="equipos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Equipos y expedientes</a>
+    <a class="nav " href="alquileres.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20l12-7M6 13l12 7M5 10h14M9 10V6h6v4"/>
+</svg> Uso y alquileres</a>
+    <a class="nav " href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+    <div class="nav-sec">Mantenimiento</div>
+    <a class="nav " href="mantenimiento.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> Órdenes de trabajo <span class="badge">10</span></a>
+    <a class="nav " href="documentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Documentos de mantto.</a>
+    <a class="nav " href="taller.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programa del taller</a>
+    <a class="nav " href="incidentes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.2v.3"/>
+</svg> Incidentes en obra</a>
+    <div class="nav-sec">Planificación</div>
+    <a class="nav " href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Cartera de pedidos</a>
+    <a class="nav " href="optimizacion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+</svg> Optimización (PLEM)</a>
+    <div class="nav-sec">Personal</div>
+    <a class="nav " href="personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+</svg> Técnicos</a>
+    <a class="nav " href="configuracion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z"/>
+</svg> Configuración</a>
+    <div class="side-pie">
+      Fecha de evaluación<br><b>17/11/2026</b><br>
+      Taller Comas · 3 técnicos
+      <br><span>Estatus real al 17/11/2026</span>
+      
+    </div>
+  </aside>
+  <main>
+    
+    
+      
+    
+    
+
+
+
+
+
+
+<div class="cab">
+  <div>
+    <h1>Almacén virtual</h1>
+    <p>Dónde está cada uno de los 85 equipos y qué le toca al taller — mar 17/11/2026.
+      <a class="tag" href="estatus.html">Estatus real al 17/11/2026</a>
+      </p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="panel.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+</svg> Panel de control</a>
+    <a class="btn pri" href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+  </div>
+</div>
+
+
+
+<div class="grid g5 kpis-alm" style="margin-bottom:16px">
+  <a class="card kpi" href="#patio"><span class="l">Libres en el patio</span><span class="v">31</span>
+    <span class="s">27 listos para despachar · <b style="color:var(--bad)">4 no aptos</b></span></a>
+  <a class="card kpi" href="#obra"><span class="l">En obra</span><span class="v">53</span>
+    <span class="s">ocupación 62 % · <b style="color:var(--bad)">16</b> con mantenimiento vencido</span></a>
+  <a class="card kpi" href="#taller"><span class="l">En mantenimiento hoy</span><span class="v">0</span>
+    <span class="s">0 en taller · 0 atendidos en obra</span></a>
+  <a class="card kpi" href="#proximos"><span class="l">Entran a taller en 14 días</span><span class="v">17</span>
+    <span class="s">el próximo: TECL-012, mar 17/11</span></a>
+  <a class="card kpi" href="#personal"><span class="l">Técnicos libres hoy</span><span class="v">1<small style="font-size:16px;color:var(--ink-3)"> / 3</small></span>
+    <span class="s">2 trabajando</span></a>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <div class="filtros alm-filtros">
+    <input type="search" id="a-q" placeholder="Buscar código, marca o cliente…">
+    <div class="seg" id="a-cat">
+      <button type="button" data-v="" class="on">Todos</button>
+      <button type="button" data-v="Tijera eléctrica">Tijera</button><button type="button" data-v="Brazo articulado eléctrico">Brazo eléctrico</button><button type="button" data-v="Brazo articulado combustión">Brazo diésel</button><button type="button" data-v="Mástil vertical">Mástil</button>
+    </div>
+    <div class="leyenda" style="margin:0 0 0 auto">
+      <span><i style="background:var(--ok)"></i>Vigente</span><span><i style="background:#e59a1b"></i>Por vencer</span>
+      <span><i style="background:var(--bad)"></i>Vencido</span><span><i style="background:#b9bfca"></i>Sin datos</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> técnico atendiendo</span>
+    </div>
+  </div>
+</div>
+
+<section class="card" id="vista" style="margin-bottom:16px">
+  <div class="hd"><h2>Vista del almacén</h2>
+    <div class="acciones"><span class="muted">Pase el cursor sobre una máquina o un técnico · clic para abrir su ficha</span>
+      <div class="seg" id="esc-zoom"><button type="button" data-z="-1">−</button><button type="button" data-z="0">Ajustar</button><button type="button" data-z="1">+</button></div></div></div>
+  <div class="escena-wrap"><div id="escena"></div><div id="escena-tip" hidden></div></div>
+  <div class="bd leyenda" style="border-top:1px solid var(--line-2);margin:0">
+    <span><b>Máquina:</b></span>
+    <span><i style="background:#f2b200"></i>Tijera</span><span><i style="background:#3b82d6"></i>Brazo eléctrico</span>
+    <span><i style="background:#e8772e"></i>Brazo diésel</span><span><i style="background:#8b5fd0"></i>Mástil</span>
+    <span style="margin-left:10px"><b>Piso (mantenimiento):</b></span>
+    <span><i style="background:var(--ok)"></i>Vigente</span><span><i style="background:#e59a1b"></i>Por vencer</span>
+    <span><i style="background:var(--bad)"></i>Vencido</span><span><i style="background:#9aa1ad"></i>Sin datos</span>
+    <span style="margin-left:10px"><span class="esc-pill">09/11</span> entra a taller en 7 días o menos</span>
+  </div>
+</section>
+<script type="application/json" id="escena-datos">{"maqs": [{"alt": 17.2, "c": "BCCL-001", "cat": "Brazo articulado combusti\u00f3n", "cli": null, "est": "Vigente", "ing": null, "k": "bdi", "mm": "Haulotte HA-18PXNT", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--BCCL-001.html", "vence": "10/01/2027", "zona": "Sin zona"}, {"alt": 15.72, "c": "BCCL-002", "cat": "Brazo articulado combusti\u00f3n", "cli": "Cliente 24", "est": "Vigente", "ing": null, "k": "bdi", "mm": "Jlg 450 AJ", "obra": "Obra 04", "ret": "27/11/2026", "sit": "En obra", "sup": false, "url": "equipos--BCCL-002.html", "vence": "15/02/2027", "zona": "Lima Sur/Este"}, {"alt": null, "c": "BCCL-003", "cat": "Brazo articulado combusti\u00f3n", "cli": "Cliente 08", "est": "Sin datos", "ing": {"d": 29, "dia": "mi\u00e9", "f": "16/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "bdi", "mm": "Haulotte HA16SPX", "obra": "Obra 02", "ret": "15/12/2026", "sit": "En obra", "sup": true, "url": "equipos--BCCL-003.html", "vence": null, "zona": "Callao"}, {"alt": 16.0, "c": "BCCL-004", "cat": "Brazo articulado combusti\u00f3n", "cli": null, "est": "Vigente", "ing": null, "k": "bdi", "mm": "Haulotte HA-16PXNT", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--BCCL-004.html", "vence": "08/02/2027", "zona": "Sin zona"}, {"alt": 15.94, "c": "BECL-001", "cat": "Brazo articulado el\u00e9ctrico", "cli": "Cliente 18", "est": "Vigente", "ing": null, "k": "bel", "mm": "Genie Z-45/25 JDC", "obra": "Obra 08", "ret": "16/12/2026", "sit": "En obra", "sup": false, "url": "equipos--BECL-001.html", "vence": "11/02/2027", "zona": "Lima Norte"}, {"alt": 15.79, "c": "BECL-002", "cat": "Brazo articulado el\u00e9ctrico", "cli": "Cliente 37", "est": "Vigente", "ing": {"d": 34, "dia": "lun", "f": "21/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "bel", "mm": "Jlg E-450 AJ", "obra": "Obra 52", "ret": "27/11/2026", "sit": "En obra", "sup": true, "url": "equipos--BECL-002.html", "vence": "21/12/2026", "zona": "Provincia"}, {"alt": 14.87, "c": "BECL-003", "cat": "Brazo articulado el\u00e9ctrico", "cli": null, "est": "Vigente", "ing": null, "k": "bel", "mm": "Haulotte HA-15IP", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--BECL-003.html", "vence": "20/01/2027", "zona": "Sin zona"}, {"alt": 14.87, "c": "BECL-004", "cat": "Brazo articulado el\u00e9ctrico", "cli": "Cliente 15", "est": "Vigente", "ing": null, "k": "bel", "mm": "Haulotte HA-15IP", "obra": "Obra 19", "ret": "24/11/2026", "sit": "En obra", "sup": true, "url": "equipos--BECL-004.html", "vence": "09/02/2027", "zona": "Lima Sur/Este"}, {"alt": 12.0, "c": "BECL-005", "cat": "Brazo articulado el\u00e9ctrico", "cli": null, "est": "Vigente", "ing": null, "k": "bel", "mm": "Haulotte HA-12IP", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--BECL-005.html", "vence": "13/02/2027", "zona": "Sin zona"}, {"alt": 14.19, "c": "BECL-006", "cat": "Brazo articulado el\u00e9ctrico", "cli": null, "est": "Vigente", "ing": null, "k": "bel", "mm": "Jlg E-40", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--BECL-006.html", "vence": "15/02/2027", "zona": "Sin zona"}, {"alt": null, "c": "BECL-007", "cat": "Brazo articulado el\u00e9ctrico", "cli": null, "est": "Sin datos", "ing": {"d": 6, "dia": "lun", "f": "23/11", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "bel", "mm": "Jlg E40", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--BECL-007.html", "vence": null, "zona": "Sin zona"}, {"alt": null, "c": "BECL-008", "cat": "Brazo articulado el\u00e9ctrico", "cli": "Cliente 40", "est": "Sin datos", "ing": {"d": 13, "dia": "lun", "f": "30/11", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "bel", "mm": "Jlg E40", "obra": "Obra 11", "ret": "30/11/2026", "sit": "En obra", "sup": true, "url": "equipos--BECL-008.html", "vence": null, "zona": "Provincia"}, {"alt": 9.92, "c": "TECL-001", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 41", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-2646", "obra": "Obra 25", "ret": "11/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-001.html", "vence": "07/02/2027", "zona": "Lima Centro"}, {"alt": null, "c": "TECL-002", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 33", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-2632", "obra": "Obra 31", "ret": "13/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-002.html", "vence": "10/02/2027", "zona": "Callao"}, {"alt": 7.79, "c": "TECL-003", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 28", "est": "Vencido", "ing": {"d": 30, "dia": "jue", "f": "17/12", "fuente": "Pron\u00f3stico", "niv": "A+B+C", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-1930", "obra": "Obra 50", "ret": "16/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-003.html", "vence": "22/09/2026", "zona": "Provincia"}, {"alt": 9.92, "c": "TECL-004", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 53", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-2646", "obra": "Obra 45", "ret": "26/11/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-004.html", "vence": "10/01/2027", "zona": "Provincia"}, {"alt": 9.75, "c": "TECL-005", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 32", "est": "Vigente", "ing": null, "k": "tij", "mm": "Skyjack SJIII-3226", "obra": "Obra 57", "ret": "10/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-005.html", "vence": "07/02/2027", "zona": "Lima Sur/Este"}, {"alt": 13.7, "c": "TECL-006", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": {"d": 35, "dia": "mar", "f": "22/12", "fuente": "Pron\u00f3stico", "niv": "A+B", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-4047", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-006.html", "vence": "22/12/2026", "zona": "Sin zona"}, {"alt": 13.7, "c": "TECL-007", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vencido", "ing": {"d": 2, "dia": "jue", "f": "19/11", "fuente": "OT programada", "niv": "A+B+C", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-4047", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-007.html", "vence": "15/11/2026", "zona": "Sin zona"}, {"alt": 14.19, "c": "TECL-008", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Jlg 4069 LE", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-008.html", "vence": "12/01/2027", "zona": "Sin zona"}, {"alt": null, "c": "TECL-009", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 10", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-1930", "obra": "Obra 16", "ret": "12/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-009.html", "vence": "09/02/2027", "zona": "Lima Centro"}, {"alt": 10.0, "c": "TECL-010", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Por vencer", "ing": {"d": 15, "dia": "mi\u00e9", "f": "02/12", "fuente": "Pron\u00f3stico", "niv": "A+B", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Haulotte H-960E", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-010.html", "vence": "02/12/2026", "zona": "Sin zona"}, {"alt": 11.79, "c": "TECL-011", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 50", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-3246", "obra": "Obra 27", "ret": "13/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-011.html", "vence": "10/02/2027", "zona": "Lima Centro"}, {"alt": 12.0, "c": "TECL-012", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Por vencer", "ing": {"d": 0, "dia": "mar", "f": "17/11", "fuente": "OT programada", "niv": "A+B", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Haulotte COMPACT 12", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-012.html", "vence": "29/11/2026", "zona": "Sin zona"}, {"alt": 11.79, "c": "TECL-013", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 53", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-3246", "obra": "Obra 26", "ret": "16/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-013.html", "vence": "17/01/2027", "zona": "Lima Sur/Este"}, {"alt": 11.79, "c": "TECL-014", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 30", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-3246", "obra": "Obra 12", "ret": "02/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-014.html", "vence": "25/01/2027", "zona": "Provincia"}, {"alt": 11.79, "c": "TECL-015", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 53", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-3246", "obra": "Obra 26", "ret": "16/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-015.html", "vence": "27/01/2027", "zona": "Lima Sur/Este"}, {"alt": 11.79, "c": "TECL-016", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 50", "est": "Vigente", "ing": null, "k": "tij", "mm": "Jlg 3246 ES", "obra": "Obra 27", "ret": "13/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-016.html", "vence": "10/02/2027", "zona": "Lima Centro"}, {"alt": 11.79, "c": "TECL-017", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 53", "est": "Vigente", "ing": null, "k": "tij", "mm": "Jlg 3246 ES", "obra": "Obra 45", "ret": "26/11/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-017.html", "vence": "10/01/2027", "zona": "Provincia"}, {"alt": 12.0, "c": "TECL-018", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Haulotte COMPACT 12", "obra": null, "ret": null, "sit": "Fuera de servicio", "sup": false, "url": "equipos--TECL-018.html", "vence": "11/01/2027", "zona": "Sin zona"}, {"alt": 11.79, "c": "TECL-019", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 50", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-3246", "obra": "Obra 27", "ret": "13/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-019.html", "vence": "10/02/2027", "zona": "Lima Centro"}, {"alt": 7.79, "c": "TECL-020", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vencido", "ing": {"d": 6, "dia": "lun", "f": "23/11", "fuente": "Pron\u00f3stico", "niv": "A+B", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Haulotte OPTIMUM 8", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-020.html", "vence": "11/11/2026", "zona": "Sin zona"}, {"alt": 7.79, "c": "TECL-021", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 51", "est": "Vencido", "ing": {"d": 27, "dia": "lun", "f": "14/12", "fuente": "Pron\u00f3stico", "niv": "A+B+C", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-1930", "obra": "Obra 53", "ret": "13/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-021.html", "vence": "03/11/2026", "zona": "Provincia"}, {"alt": 7.79, "c": "TECL-022", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 28", "est": "Vencido", "ing": {"d": 31, "dia": "vie", "f": "18/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-1930", "obra": "Obra 50", "ret": "16/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-022.html", "vence": "22/09/2026", "zona": "Provincia"}, {"alt": 7.79, "c": "TECL-023", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 08", "est": "Vencido", "ing": {"d": 20, "dia": "lun", "f": "07/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Jlg 1930 ES", "obra": "Obra 02", "ret": "07/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-023.html", "vence": "02/08/2026", "zona": "Callao"}, {"alt": 7.79, "c": "TECL-024", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": {"d": 23, "dia": "jue", "f": "10/12", "fuente": "Pron\u00f3stico", "niv": "A+B", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Jlg 1930 ES", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-024.html", "vence": "10/12/2026", "zona": "Sin zona"}, {"alt": 7.79, "c": "TECL-025", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": {"d": 9, "dia": "jue", "f": "26/11", "fuente": "OT pendiente", "niv": "A", "tec": null, "tipo": "Preventivo"}, "k": "tij", "mm": "Jlg 1930 ES", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-025.html", "vence": "10/12/2026", "zona": "Sin zona"}, {"alt": null, "c": "TECL-027", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 10", "est": "Vigente", "ing": null, "k": "tij", "mm": "Jlg 1930 ES", "obra": "Obra 16", "ret": "12/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-027.html", "vence": "09/02/2027", "zona": "Lima Centro"}, {"alt": 10.0, "c": "TECL-028", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Haulotte COMPACT 10", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-028.html", "vence": "18/01/2027", "zona": "Sin zona"}, {"alt": 7.79, "c": "TECL-029", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 49", "est": "Vencido", "ing": {"d": 3, "dia": "vie", "f": "20/11", "fuente": "OT programada", "niv": "A+B", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Skyjack SJIII-3219", "obra": "Obra 58", "ret": "19/11/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-029.html", "vence": "16/11/2026", "zona": "Lima Centro"}, {"alt": 7.79, "c": "TECL-030", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Skyjack SJIII-3219", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-030.html", "vence": "14/02/2027", "zona": "Sin zona"}, {"alt": 7.79, "c": "TECL-031", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 28", "est": "Por vencer", "ing": {"d": 14, "dia": "mar", "f": "01/12", "fuente": "Pron\u00f3stico", "niv": "A+B", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Skyjack SJIII-3219", "obra": "Obra 58", "ret": "30/11/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-031.html", "vence": "01/12/2026", "zona": "Lima Centro"}, {"alt": null, "c": "TECL-032", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 13", "est": "Vigente", "ing": null, "k": "tij", "mm": "Skyjack SJIII3219", "obra": "Obra 21", "ret": "17/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-032.html", "vence": "14/02/2027", "zona": "Lima Sur/Este"}, {"alt": 9.75, "c": "TECL-033", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 06", "est": "Vigente", "ing": null, "k": "tij", "mm": "Skyjack SJIII-3226", "obra": "Obra 46", "ret": "06/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-033.html", "vence": "03/02/2027", "zona": "Callao"}, {"alt": 7.79, "c": "TECL-034", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 22", "est": "Vencido", "ing": {"d": 23, "dia": "jue", "f": "10/12", "fuente": "Pron\u00f3stico", "niv": "A+B+C+D", "tec": "T\u00e9cnico A, T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-1930", "obra": "Obra 50", "ret": "09/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-034.html", "vence": "09/10/2026", "zona": "Provincia"}, {"alt": 7.79, "c": "TECL-035", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Skyjack SJIII-3219", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-035.html", "vence": "14/02/2027", "zona": "Sin zona"}, {"alt": null, "c": "TECL-036", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 22", "est": "Sin datos", "ing": {"d": 22, "dia": "mi\u00e9", "f": "09/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-1930", "obra": "Obra 50", "ret": "09/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-036.html", "vence": null, "zona": "Provincia"}, {"alt": 7.79, "c": "TECL-037", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 33", "est": "Vigente", "ing": null, "k": "tij", "mm": "Skyjack SJIII-3219", "obra": "Obra 31", "ret": "13/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-037.html", "vence": "09/02/2027", "zona": "Callao"}, {"alt": 11.75, "c": "TECL-038", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 33", "est": "Vigente", "ing": {"d": 21, "dia": "mar", "f": "08/12", "fuente": "Pron\u00f3stico", "niv": "A+B", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-3232", "obra": "Obra 51", "ret": "27/11/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-038.html", "vence": "08/12/2026", "zona": "Callao"}, {"alt": 7.79, "c": "TECL-039", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 28", "est": "Vencido", "ing": {"d": 31, "dia": "vie", "f": "18/12", "fuente": "Pron\u00f3stico", "niv": "A+B", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-1930", "obra": "Obra 50", "ret": "16/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-039.html", "vence": "22/09/2026", "zona": "Provincia"}, {"alt": 7.79, "c": "TECL-040", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 28", "est": "Vencido", "ing": {"d": 32, "dia": "s\u00e1b", "f": "19/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-1930", "obra": "Obra 50", "ret": "16/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-040.html", "vence": "22/09/2026", "zona": "Provincia"}, {"alt": 9.92, "c": "TECL-041", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": {"d": 4, "dia": "s\u00e1b", "f": "21/11", "fuente": "OT programada", "niv": "A", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Jlg 2646 ES", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-041.html", "vence": "14/01/2027", "zona": "Sin zona"}, {"alt": 14.19, "c": "TECL-042", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 23", "est": "Por vencer", "ing": {"d": 6, "dia": "lun", "f": "23/11", "fuente": "OT programada", "niv": "A", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Jlg 4069 LE", "obra": "Obra 55", "ret": "22/11/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-042.html", "vence": "22/11/2026", "zona": "Lima Sur/Este"}, {"alt": 14.19, "c": "TECL-043", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Jlg 4069 LE", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-043.html", "vence": "08/02/2027", "zona": "Sin zona"}, {"alt": null, "c": "TECL-044", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 31", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS2032", "obra": "Obra 13", "ret": "12/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-044.html", "vence": "08/02/2027", "zona": "Lima Centro"}, {"alt": 7.79, "c": "TECL-045", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vencido", "ing": {"d": 0, "dia": "mar", "f": "17/11", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Skyjack SJIII-3219", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-045.html", "vence": "11/11/2026", "zona": "Sin zona"}, {"alt": null, "c": "TECL-046", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 40", "est": "Sin datos", "ing": {"d": 13, "dia": "lun", "f": "30/11", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Jlg 4069 LE", "obra": "Obra 11", "ret": "30/11/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-046.html", "vence": null, "zona": "Provincia"}, {"alt": 11.79, "c": "TECL-047", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 28", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-3246", "obra": "Obra 49", "ret": "12/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-047.html", "vence": "02/02/2027", "zona": "Lima Sur/Este"}, {"alt": null, "c": "TECL-048", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 05", "est": "Vigente", "ing": null, "k": "tij", "mm": "Jlg 2646 ES", "obra": "Obra 18", "ret": "16/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-048.html", "vence": "13/02/2027", "zona": "Lima Sur/Este"}, {"alt": 9.8, "c": "TECL-049", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 05", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-2646", "obra": "Obra 18", "ret": "16/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-049.html", "vence": "13/02/2027", "zona": "Lima Sur/Este"}, {"alt": 11.79, "c": "TECL-051", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": {"d": 2, "dia": "jue", "f": "19/11", "fuente": "OT programada", "niv": "A", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Jlg 3246 ES", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-051.html", "vence": "07/01/2027", "zona": "Sin zona"}, {"alt": 7.79, "c": "TECL-053", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 51", "est": "Vencido", "ing": {"d": 28, "dia": "mar", "f": "15/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-1930", "obra": "Obra 53", "ret": "13/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-053.html", "vence": "03/11/2026", "zona": "Provincia"}, {"alt": null, "c": "TECL-054", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 10", "est": "Vigente", "ing": null, "k": "tij", "mm": "Skyjack SJIII3219", "obra": "Obra 16", "ret": "12/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-054.html", "vence": "09/02/2027", "zona": "Lima Centro"}, {"alt": 11.79, "c": "TECL-055", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 33", "est": "Vigente", "ing": null, "k": "tij", "mm": "Genie GS-3246", "obra": "Obra 51", "ret": "27/11/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-055.html", "vence": "25/01/2027", "zona": "Callao"}, {"alt": 11.79, "c": "TECL-056", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 44", "est": "Vencido", "ing": {"d": 28, "dia": "mar", "f": "15/12", "fuente": "Pron\u00f3stico", "niv": "A+B+C", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-3246", "obra": "Obra 20", "ret": "13/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-056.html", "vence": "23/07/2026", "zona": "Lima Sur/Este"}, {"alt": 11.79, "c": "TECL-057", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": {"d": 1, "dia": "mi\u00e9", "f": "18/11", "fuente": "OT programada", "niv": "A", "tec": "T\u00e9cnico C", "tipo": "Preventivo"}, "k": "tij", "mm": "Genie GS-3246", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-057.html", "vence": "11/01/2027", "zona": "Sin zona"}, {"alt": 11.8, "c": "TECL-058", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Snorkel S-3246", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-058.html", "vence": "07/02/2027", "zona": "Sin zona"}, {"alt": 15.8, "c": "TECL-059", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 21", "est": "Por vencer", "ing": {"d": 44, "dia": "jue", "f": "31/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Fork Lift GTJZ14", "obra": "Obra 41", "ret": "25/11/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-059.html", "vence": "31/12/2026", "zona": "Lima Centro"}, {"alt": 15.8, "c": "TECL-060", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 21", "est": "Vigente", "ing": null, "k": "tij", "mm": "Fork Lift GTJZ14", "obra": "Obra 41", "ret": "05/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-060.html", "vence": "02/02/2027", "zona": "Lima Centro"}, {"alt": 13.8, "c": "TECL-061", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 30", "est": "Vigente", "ing": null, "k": "tij", "mm": "Jinan Lift GTJZ12", "obra": "Obra 12", "ret": "02/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-061.html", "vence": "25/01/2027", "zona": "Provincia"}, {"alt": 15.8, "c": "TECL-062", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": {"d": 0, "dia": "mar", "f": "17/11", "fuente": "OT programada", "niv": "A", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Jinan Lift GTJZ14", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-062.html", "vence": "16/12/2026", "zona": "Sin zona"}, {"alt": 15.8, "c": "TECL-063", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Jinan Lift GTJZ14", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-063.html", "vence": "15/02/2027", "zona": "Sin zona"}, {"alt": 15.8, "c": "TECL-064", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 23", "est": "Vencido", "ing": {"d": 21, "dia": "mar", "f": "08/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Jinan Lift GTJZ14", "obra": "Obra 56", "ret": "08/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-064.html", "vence": "19/08/2026", "zona": "Lima Sur/Este"}, {"alt": 13.8, "c": "TECL-065", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": {"d": 21, "dia": "mar", "f": "08/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Haulotte COMPACT 14", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-065.html", "vence": "08/12/2026", "zona": "Sin zona"}, {"alt": 15.8, "c": "TECL-066", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 48", "est": "Vigente", "ing": {"d": 22, "dia": "mi\u00e9", "f": "09/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "tij", "mm": "Lift Rental GTJZ14", "obra": "Obra 39", "ret": "08/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-066.html", "vence": "08/12/2026", "zona": "Lima Sur/Este"}, {"alt": 15.8, "c": "TECL-067", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 25", "est": "Vigente", "ing": null, "k": "tij", "mm": "Lift Rental GTJZ14", "obra": "Obra 06", "ret": "15/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-067.html", "vence": "11/02/2027", "zona": "Lima Sur/Este"}, {"alt": 15.8, "c": "TECL-068", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 08", "est": "Vencido", "ing": {"d": 20, "dia": "lun", "f": "07/12", "fuente": "Pron\u00f3stico", "niv": "A", "tec": "T\u00e9cnico A", "tipo": "Preventivo"}, "k": "tij", "mm": "Lift Rental GTJZ14", "obra": "Obra 02", "ret": "07/12/2026", "sit": "En obra", "sup": true, "url": "equipos--TECL-068.html", "vence": "22/07/2026", "zona": "Callao"}, {"alt": 15.8, "c": "TECL-070", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 25", "est": "Vigente", "ing": null, "k": "tij", "mm": "Lift Rental GTJZ14", "obra": "Obra 06", "ret": "15/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-070.html", "vence": "09/02/2027", "zona": "Lima Sur/Este"}, {"alt": 15.8, "c": "TECL-071", "cat": "Tijera el\u00e9ctrica", "cli": "Cliente 25", "est": "Vigente", "ing": null, "k": "tij", "mm": "Lift Rental GTJZ14", "obra": "Obra 06", "ret": "15/12/2026", "sit": "En obra", "sup": false, "url": "equipos--TECL-071.html", "vence": "11/02/2027", "zona": "Lima Sur/Este"}, {"alt": 13.8, "c": "TECL-072", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Lift Rental GTJZ12", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-072.html", "vence": "23/01/2027", "zona": "Sin zona"}, {"alt": 13.8, "c": "TECL-073", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Lift Rental GTJZ12", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-073.html", "vence": "19/01/2027", "zona": "Sin zona"}, {"alt": 13.8, "c": "TECL-074", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": {"d": 7, "dia": "mar", "f": "24/11", "fuente": "OT pendiente", "niv": "A", "tec": null, "tipo": "Preventivo"}, "k": "tij", "mm": "Lift Rental GTJZ12", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-074.html", "vence": "12/01/2027", "zona": "Sin zona"}, {"alt": 13.8, "c": "TECL-075", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Lift Rental GTJZ12", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-075.html", "vence": "11/02/2027", "zona": "Sin zona"}, {"alt": 13.8, "c": "TECL-076", "cat": "Tijera el\u00e9ctrica", "cli": null, "est": "Vigente", "ing": null, "k": "tij", "mm": "Jinan Lift GTJZ12", "obra": null, "ret": null, "sit": "Disponible", "sup": false, "url": "equipos--TECL-076.html", "vence": "08/02/2027", "zona": "Sin zona"}, {"alt": 7.94, "c": "UPCL-001", "cat": "M\u00e1stil vertical", "cli": "Cliente 09", "est": "Por vencer", "ing": {"d": 13, "dia": "lun", "f": "30/11", "fuente": "Pron\u00f3stico", "niv": "A+B", "tec": "T\u00e9cnico B", "tipo": "Preventivo"}, "k": "mas", "mm": "Jlg 20 MSP", "obra": "Obra 15", "ret": "30/11/2026", "sit": "En obra", "sup": true, "url": "equipos--UPCL-001.html", "vence": "30/11/2026", "zona": "Lima Sur/Este"}], "prox": [{"c": "TECL-012", "f": "mar 17/11", "niv": "A+B", "tec": "T. A"}, {"c": "TECL-045", "f": "mar 17/11", "niv": "A", "tec": "T. C"}, {"c": "TECL-062", "f": "mar 17/11", "niv": "A", "tec": "T. B"}, {"c": "TECL-057", "f": "mi\u00e9 18/11", "niv": "A", "tec": "T. C"}, {"c": "TECL-007", "f": "jue 19/11", "niv": "A+B+C", "tec": "T. B"}, {"c": "TECL-051", "f": "jue 19/11", "niv": "A", "tec": "T. C"}], "ref": "17/11/2026", "tecs": [{"estado": "Trabajando", "n": "T\u00e9cnico A", "nc": "T. A", "ots": [{"c": "TECL-012", "ejec": false, "hasta": "18/11", "niv": "A+B", "obra": false, "ot": "OT-0082", "tipo": "Preventivo"}], "prox": "mi\u00e9 18/11 \u2014 OT: TECL-012", "url": "personal--1.html"}, {"estado": "Trabajando", "n": "T\u00e9cnico B", "nc": "T. B", "ots": [{"c": "TECL-062", "ejec": false, "hasta": "17/11", "niv": "A", "obra": false, "ot": "OT-0115", "tipo": "Preventivo"}], "prox": "jue 19/11 \u2014 OT: TECL-007", "url": "personal--2.html"}, {"estado": "Libre", "n": "T\u00e9cnico C", "nc": "T. C", "ots": [], "prox": "mi\u00e9 18/11 \u2014 OT: TECL-057", "url": "personal--3.html"}], "zonas": ["Callao", "Lima Centro", "Lima Norte", "Lima Sur/Este", "Provincia"]}</script>
+
+<div class="grid g-alm">
+  
+  <section class="card zona-alm" id="patio">
+    <div class="hd"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Patio — taller Comas</h2><span class="muted">31 libres</span></div>
+    <div class="bd stack" style="gap:14px">
+      <div>
+        <h3 class="sub">Listos para despachar <span class="cnt">27</span></h3>
+        <div class="fichas">
+          
+  <a class="ficha ok" href="equipos--BCCL-004.html"
+     data-cat="Brazo articulado combustión" data-texto="bccl-004 haulotte ha-16pxnt "
+     title="BCCL-004 · Haulotte HA-16PXNT · Brazo articulado combustión 16.0 m&#10;Mantenimiento: Vigente (vence el 08/02/2027 por calendario)">
+    <span class="f-cod">BCCL-004</span>
+    <span class="f-tipo">Brazo diésel · 16.0 m</span>
+    <span class="f-lin alerta">vence 08/02</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--BCCL-001.html"
+     data-cat="Brazo articulado combustión" data-texto="bccl-001 haulotte ha-18pxnt "
+     title="BCCL-001 · Haulotte HA-18PXNT · Brazo articulado combustión 17.2 m&#10;Mantenimiento: Vigente (vence el 10/01/2027 por calendario)">
+    <span class="f-cod">BCCL-001</span>
+    <span class="f-tipo">Brazo diésel · 17.2 m</span>
+    <span class="f-lin alerta">vence 10/01</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--BECL-005.html"
+     data-cat="Brazo articulado eléctrico" data-texto="becl-005 haulotte ha-12ip "
+     title="BECL-005 · Haulotte HA-12IP · Brazo articulado eléctrico 12.0 m&#10;Mantenimiento: Vigente (vence el 13/02/2027 por calendario)">
+    <span class="f-cod">BECL-005</span>
+    <span class="f-tipo">Brazo eléctrico · 12.0 m</span>
+    <span class="f-lin alerta">vence 13/02</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--BECL-006.html"
+     data-cat="Brazo articulado eléctrico" data-texto="becl-006 jlg e-40 "
+     title="BECL-006 · Jlg E-40 · Brazo articulado eléctrico 14.2 m&#10;Mantenimiento: Vigente (vence el 15/02/2027 por calendario)">
+    <span class="f-cod">BECL-006</span>
+    <span class="f-tipo">Brazo eléctrico · 14.2 m</span>
+    <span class="f-lin alerta">vence 15/02</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--BECL-003.html"
+     data-cat="Brazo articulado eléctrico" data-texto="becl-003 haulotte ha-15ip "
+     title="BECL-003 · Haulotte HA-15IP · Brazo articulado eléctrico 14.9 m&#10;Mantenimiento: Vigente (vence el 20/01/2027 por calendario)">
+    <span class="f-cod">BECL-003</span>
+    <span class="f-tipo">Brazo eléctrico · 14.9 m</span>
+    <span class="f-lin alerta">vence 20/01</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-024.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-024 jlg 1930 es "
+     title="TECL-024 · Jlg 1930 ES · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vigente (vence el 10/12/2026 por calendario)">
+    <span class="f-cod">TECL-024</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin alerta">vence 10/12</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-025.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-025 jlg 1930 es "
+     title="TECL-025 · Jlg 1930 ES · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vigente (vence el 10/12/2026 por calendario)">
+    <span class="f-cod">TECL-025</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin alerta">vence 10/12</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-030.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-030 skyjack sjiii-3219 "
+     title="TECL-030 · Skyjack SJIII-3219 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vigente (vence el 14/02/2027 por calendario)">
+    <span class="f-cod">TECL-030</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin alerta">vence 14/02</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-035.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-035 skyjack sjiii-3219 "
+     title="TECL-035 · Skyjack SJIII-3219 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vigente (vence el 14/02/2027 por calendario)">
+    <span class="f-cod">TECL-035</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin alerta">vence 14/02</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-041.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-041 jlg 2646 es "
+     title="TECL-041 · Jlg 2646 ES · Tijera eléctrica 9.9 m&#10;Mantenimiento: Vigente (vence el 14/01/2027 por calendario)">
+    <span class="f-cod">TECL-041</span>
+    <span class="f-tipo">Tijera · 9.9 m</span>
+    <span class="f-lin alerta">vence 14/01</span>
+    
+  </a>
+  <a class="ficha warn" href="equipos--TECL-010.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-010 haulotte h-960e "
+     title="TECL-010 · Haulotte H-960E · Tijera eléctrica 10.0 m&#10;Mantenimiento: Por vencer (vence el 02/12/2026 por horas)">
+    <span class="f-cod">TECL-010</span>
+    <span class="f-tipo">Tijera · 10.0 m</span>
+    <span class="f-lin alerta">vence 02/12</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-028.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-028 haulotte compact 10 "
+     title="TECL-028 · Haulotte COMPACT 10 · Tijera eléctrica 10.0 m&#10;Mantenimiento: Vigente (vence el 18/01/2027 por calendario)">
+    <span class="f-cod">TECL-028</span>
+    <span class="f-tipo">Tijera · 10.0 m</span>
+    <span class="f-lin alerta">vence 18/01</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-051.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-051 jlg 3246 es "
+     title="TECL-051 · Jlg 3246 ES · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 07/01/2027 por calendario)">
+    <span class="f-cod">TECL-051</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin alerta">vence 07/01</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-057.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-057 genie gs-3246 "
+     title="TECL-057 · Genie GS-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 11/01/2027 por calendario)">
+    <span class="f-cod">TECL-057</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin alerta">vence 11/01</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-058.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-058 snorkel s-3246 "
+     title="TECL-058 · Snorkel S-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 07/02/2027 por calendario)">
+    <span class="f-cod">TECL-058</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin alerta">vence 07/02</span>
+    
+  </a>
+  <a class="ficha warn" href="equipos--TECL-012.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-012 haulotte compact 12 "
+     title="TECL-012 · Haulotte COMPACT 12 · Tijera eléctrica 12.0 m&#10;Mantenimiento: Por vencer (vence el 29/11/2026 por calendario)">
+    <span class="f-cod">TECL-012</span>
+    <span class="f-tipo">Tijera · 12.0 m</span>
+    <span class="f-lin alerta">vence 29/11</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-006.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-006 genie gs-4047 "
+     title="TECL-006 · Genie GS-4047 · Tijera eléctrica 13.7 m&#10;Mantenimiento: Vigente (vence el 22/12/2026 por calendario)">
+    <span class="f-cod">TECL-006</span>
+    <span class="f-tipo">Tijera · 13.7 m</span>
+    <span class="f-lin alerta">vence 22/12</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-065.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-065 haulotte compact 14 "
+     title="TECL-065 · Haulotte COMPACT 14 · Tijera eléctrica 13.8 m&#10;Mantenimiento: Vigente (vence el 08/12/2026 por calendario)">
+    <span class="f-cod">TECL-065</span>
+    <span class="f-tipo">Tijera · 13.8 m</span>
+    <span class="f-lin alerta">vence 08/12</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-072.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-072 lift rental gtjz12 "
+     title="TECL-072 · Lift Rental GTJZ12 · Tijera eléctrica 13.8 m&#10;Mantenimiento: Vigente (vence el 23/01/2027 por calendario)">
+    <span class="f-cod">TECL-072</span>
+    <span class="f-tipo">Tijera · 13.8 m</span>
+    <span class="f-lin alerta">vence 23/01</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-073.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-073 lift rental gtjz12 "
+     title="TECL-073 · Lift Rental GTJZ12 · Tijera eléctrica 13.8 m&#10;Mantenimiento: Vigente (vence el 19/01/2027 por calendario)">
+    <span class="f-cod">TECL-073</span>
+    <span class="f-tipo">Tijera · 13.8 m</span>
+    <span class="f-lin alerta">vence 19/01</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-074.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-074 lift rental gtjz12 "
+     title="TECL-074 · Lift Rental GTJZ12 · Tijera eléctrica 13.8 m&#10;Mantenimiento: Vigente (vence el 12/01/2027 por calendario)">
+    <span class="f-cod">TECL-074</span>
+    <span class="f-tipo">Tijera · 13.8 m</span>
+    <span class="f-lin alerta">vence 12/01</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-075.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-075 lift rental gtjz12 "
+     title="TECL-075 · Lift Rental GTJZ12 · Tijera eléctrica 13.8 m&#10;Mantenimiento: Vigente (vence el 11/02/2027 por calendario)">
+    <span class="f-cod">TECL-075</span>
+    <span class="f-tipo">Tijera · 13.8 m</span>
+    <span class="f-lin alerta">vence 11/02</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-076.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-076 jinan lift gtjz12 "
+     title="TECL-076 · Jinan Lift GTJZ12 · Tijera eléctrica 13.8 m&#10;Mantenimiento: Vigente (vence el 08/02/2027 por calendario)">
+    <span class="f-cod">TECL-076</span>
+    <span class="f-tipo">Tijera · 13.8 m</span>
+    <span class="f-lin alerta">vence 08/02</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-008.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-008 jlg 4069 le "
+     title="TECL-008 · Jlg 4069 LE · Tijera eléctrica 14.2 m&#10;Mantenimiento: Vigente (vence el 12/01/2027 por calendario)">
+    <span class="f-cod">TECL-008</span>
+    <span class="f-tipo">Tijera · 14.2 m</span>
+    <span class="f-lin alerta">vence 12/01</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-043.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-043 jlg 4069 le "
+     title="TECL-043 · Jlg 4069 LE · Tijera eléctrica 14.2 m&#10;Mantenimiento: Vigente (vence el 08/02/2027 por calendario)">
+    <span class="f-cod">TECL-043</span>
+    <span class="f-tipo">Tijera · 14.2 m</span>
+    <span class="f-lin alerta">vence 08/02</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-062.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-062 jinan lift gtjz14 "
+     title="TECL-062 · Jinan Lift GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Vigente (vence el 16/12/2026 por calendario)">
+    <span class="f-cod">TECL-062</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin alerta">vence 16/12</span>
+    
+  </a>
+  <a class="ficha ok" href="equipos--TECL-063.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-063 jinan lift gtjz14 "
+     title="TECL-063 · Jinan Lift GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Vigente (vence el 15/02/2027 por calendario)">
+    <span class="f-cod">TECL-063</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin alerta">vence 15/02</span>
+    
+  </a>
+          
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="sub" style="color:var(--bad)">No despachables — mantenimiento vencido o sin registro <span class="cnt">4</span></h3>
+        <div class="fichas">
+  <a class="ficha none" href="equipos--BECL-007.html"
+     data-cat="Brazo articulado eléctrico" data-texto="becl-007 jlg e40 "
+     title="BECL-007 · Jlg E40 · Brazo articulado eléctrico — m&#10;Mantenimiento: Sin datos">
+    <span class="f-cod">BECL-007</span>
+    <span class="f-tipo">Brazo eléctrico</span>
+    <span class="f-lin alerta">sin registro de servicio</span>
+    <span class="f-ext">Debe pasar por taller</span>
+  </a>
+  <a class="ficha bad" href="equipos--TECL-007.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-007 genie gs-4047 "
+     title="TECL-007 · Genie GS-4047 · Tijera eléctrica 13.7 m&#10;Mantenimiento: Vencido (venció el 15/11/2026 por calendario)">
+    <span class="f-cod">TECL-007</span>
+    <span class="f-tipo">Tijera · 13.7 m</span>
+    <span class="f-lin alerta">vencido hace 2 d</span>
+    <span class="f-ext">Debe pasar por taller</span>
+  </a>
+  <a class="ficha bad" href="equipos--TECL-020.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-020 haulotte optimum 8 "
+     title="TECL-020 · Haulotte OPTIMUM 8 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 11/11/2026 por calendario)">
+    <span class="f-cod">TECL-020</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin alerta">vencido hace 6 d</span>
+    <span class="f-ext">Debe pasar por taller</span>
+  </a>
+  <a class="ficha bad" href="equipos--TECL-045.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-045 skyjack sjiii-3219 "
+     title="TECL-045 · Skyjack SJIII-3219 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 11/11/2026 por calendario)">
+    <span class="f-cod">TECL-045</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin alerta">vencido hace 6 d</span>
+    <span class="f-ext">Debe pasar por taller</span>
+  </a></div>
+      </div>
+      
+      
+      <div>
+        <h3 class="sub">Fuera de servicio <span class="cnt">1</span></h3>
+        <div class="fichas">
+  <a class="ficha ok" href="equipos--TECL-018.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-018 haulotte compact 12 "
+     title="TECL-018 · Haulotte COMPACT 12 · Tijera eléctrica 12.0 m&#10;Mantenimiento: Vigente (vence el 11/01/2027 por calendario)">
+    <span class="f-cod">TECL-018</span>
+    <span class="f-tipo">Tijera · 12.0 m</span>
+    <span class="f-lin alerta">En reparación (estatus 17/11/2026)</span>
+    
+  </a></div>
+      </div>
+      
+    </div>
+  </section>
+
+  
+  <section class="card zona-alm" id="taller">
+    <div class="hd"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> En mantenimiento</h2><a href="taller.html">Programa →</a></div>
+    
+    <div class="vacio" style="padding:22px 16px">
+      <b style="color:var(--ink-2)">Ningún equipo en el taller hoy.</b><br>
+      El próximo ingreso es <b>TECL-012</b> el mar 17/11/2026
+        .
+      <div class="ayuda" style="margin-top:8px">Con la práctica actual el taller sólo recibe lo que vuelve al patio vencido; con 62 % de la flota en obra, hay días sin trabajo preventivo.</div>
+    </div>
+    
+    
+  </section>
+
+  
+  <section class="card zona-alm" id="personal">
+    <div class="hd"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+</svg> Personal de mantenimiento</h2><a href="personal.html">Ver personal →</a></div>
+    <ul class="lista">
+      
+      <li class="pers">
+        <div class="persona" style="align-items:flex-start">
+          <span class="avatar">TA</span>
+          <div class="stack" style="gap:3px">
+            <span><a href="personal--1.html"><b>Técnico A</b></a>
+              <span class="chip accent">Trabajando</span></span>
+            
+              <small><a class="mono" href="mantenimiento--82.html">OT-0082</a> TECL-012 · Preventivo A+B ·
+                taller · hasta 18/11</small>
+            
+            <div class="semana" aria-label="Próximos 8 días">
+              <span class="ocup hoy" title="mar 17/11: OT: TECL-012">M<b>17</b></span><span class="ocup" title="mié 18/11: OT: TECL-012">M<b>18</b></span><span class="libre" title="jue 19/11: Libre">J<b>19</b></span><span class="ocup" title="vie 20/11: OT: TECL-029">V<b>20</b></span><span class="ocup" title="sáb 21/11: OT: TECL-029">S<b>21</b></span><span class="dom" title="dom 22/11: Domingo: sin turno">D<b>22</b></span><span class="pron" title="lun 23/11: Pronóstico: BECL-007">L<b>23</b></span><span class="pron" title="mar 24/11: Pronóstico: BECL-007">M<b>24</b></span>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <li class="pers">
+        <div class="persona" style="align-items:flex-start">
+          <span class="avatar">TB</span>
+          <div class="stack" style="gap:3px">
+            <span><a href="personal--2.html"><b>Técnico B</b></a>
+              <span class="chip accent">Trabajando</span></span>
+            
+              <small><a class="mono" href="mantenimiento--115.html">OT-0115</a> TECL-062 · Preventivo A ·
+                taller · hasta 17/11</small>
+            
+            <div class="semana" aria-label="Próximos 8 días">
+              <span class="ocup hoy" title="mar 17/11: OT: TECL-062">M<b>17</b></span><span class="libre" title="mié 18/11: Libre">M<b>18</b></span><span class="ocup" title="jue 19/11: OT: TECL-007">J<b>19</b></span><span class="ocup" title="vie 20/11: OT: TECL-007">V<b>20</b></span><span class="ocup" title="sáb 21/11: OT: TECL-007">S<b>21</b></span><span class="dom" title="dom 22/11: Domingo: sin turno">D<b>22</b></span><span class="pron" title="lun 23/11: Pronóstico: TECL-020">L<b>23</b></span><span class="pron" title="mar 24/11: Pronóstico: TECL-020">M<b>24</b></span>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      <li class="pers">
+        <div class="persona" style="align-items:flex-start">
+          <span class="avatar">TC</span>
+          <div class="stack" style="gap:3px">
+            <span><a href="personal--3.html"><b>Técnico C</b></a>
+              <span class="chip ok">Libre</span></span>
+            
+              <small>Próxima asignación: mié 18/11 — OT: TECL-057</small>
+            
+            <div class="semana" aria-label="Próximos 8 días">
+              <span class="pron hoy" title="mar 17/11: Pronóstico: TECL-045">M<b>17</b></span><span class="ocup" title="mié 18/11: OT: TECL-057">M<b>18</b></span><span class="ocup" title="jue 19/11: OT: TECL-051">J<b>19</b></span><span class="libre" title="vie 20/11: Libre">V<b>20</b></span><span class="ocup" title="sáb 21/11: OT: TECL-041">S<b>21</b></span><span class="dom" title="dom 22/11: Domingo: sin turno">D<b>22</b></span><span class="ocup" title="lun 23/11: OT: TECL-042">L<b>23</b></span><span class="libre" title="mar 24/11: Libre">M<b>24</b></span>
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      
+      <li class="pers sup"><div class="persona"><span class="avatar" style="background:#e9ebef;color:var(--ink-2)">SS</span>
+        <div><a href="personal--4.html"><b>Supervisor S.</b></a><br><small>Supervisor / Jefe de mantenimiento · firma la conformidad de cada servicio</small></div></div></li>
+      
+    </ul>
+    <div class="bd leyenda" style="border-top:1px solid var(--line-2);margin:0">
+      <span><i style="background:var(--accent)"></i>OT asignada</span><span><i class="rayado"></i>Pronóstico de ingreso</span>
+      <span><i style="background:#cfe9d7"></i>Libre</span><span><i style="background:#e5e7eb"></i>Domingo</span>
+    </div>
+  </section>
+</div>
+
+
+<section class="card" id="obra" style="margin-top:16px">
+  <div class="hd"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> En obra — 53 equipos en 5 zonas</h2>
+    <span class="muted">retorno según contrato · <span style="color:var(--bad)">16 operando con el mantenimiento vencido</span></span></div>
+  <div class="bd zonas">
+    
+    <div class="zona">
+      <h3 class="sub">Callao <span class="cnt">8</span></h3>
+      <div class="fichas">
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-033.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-033 skyjack sjiii-3226 cliente 06"
+     title="TECL-033 · Skyjack SJIII-3226 · Tijera eléctrica 9.8 m&#10;Mantenimiento: Vigente (vence el 03/02/2027 por calendario)&#10;Cliente 06 — Obra 46">
+    <span class="f-cod">TECL-033</span>
+    <span class="f-tipo">Tijera · 9.8 m</span>
+    <span class="f-lin">Cliente 06</span>
+    <span class="f-ext">↩ 06/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha none" href="equipos--BCCL-003.html"
+     data-cat="Brazo articulado combustión" data-texto="bccl-003 haulotte ha16spx cliente 08"
+     title="BCCL-003 · Haulotte HA16SPX · Brazo articulado combustión — m&#10;Mantenimiento: Sin datos&#10;Cliente 08 — Obra 02">
+    <span class="f-cod">BCCL-003</span>
+    <span class="f-tipo">Brazo diésel</span>
+    <span class="f-lin">Cliente 08</span>
+    <span class="f-ext">↩ 15/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-023.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-023 jlg 1930 es cliente 08"
+     title="TECL-023 · Jlg 1930 ES · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 02/08/2026 por calendario)&#10;Cliente 08 — Obra 02">
+    <span class="f-cod">TECL-023</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 08</span>
+    <span class="f-ext">↩ 07/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-068.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-068 lift rental gtjz14 cliente 08"
+     title="TECL-068 · Lift Rental GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Vencido (venció el 22/07/2026 por calendario)&#10;Cliente 08 — Obra 02">
+    <span class="f-cod">TECL-068</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin">Cliente 08</span>
+    <span class="f-ext">↩ 07/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-002.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-002 genie gs-2632 cliente 33"
+     title="TECL-002 · Genie GS-2632 · Tijera eléctrica — m&#10;Mantenimiento: Vigente (vence el 10/02/2027 por calendario)&#10;Cliente 33 — Obra 31">
+    <span class="f-cod">TECL-002</span>
+    <span class="f-tipo">Tijera</span>
+    <span class="f-lin">Cliente 33</span>
+    <span class="f-ext">↩ 13/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-037.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-037 skyjack sjiii-3219 cliente 33"
+     title="TECL-037 · Skyjack SJIII-3219 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vigente (vence el 09/02/2027 por calendario)&#10;Cliente 33 — Obra 31">
+    <span class="f-cod">TECL-037</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 33</span>
+    <span class="f-ext">↩ 13/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-038.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-038 genie gs-3232 cliente 33"
+     title="TECL-038 · Genie GS-3232 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 08/12/2026 por calendario)&#10;Cliente 33 — Obra 51">
+    <span class="f-cod">TECL-038</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 33</span>
+    <span class="f-ext">↩ 27/11</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-055.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-055 genie gs-3246 cliente 33"
+     title="TECL-055 · Genie GS-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 25/01/2027 por calendario)&#10;Cliente 33 — Obra 51">
+    <span class="f-cod">TECL-055</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 33</span>
+    <span class="f-ext">↩ 27/11</span>
+  </a>
+        
+      </div>
+    </div>
+    
+    <div class="zona">
+      <h3 class="sub">Lima Centro <span class="cnt">12</span></h3>
+      <div class="fichas">
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-009.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-009 genie gs-1930 cliente 10"
+     title="TECL-009 · Genie GS-1930 · Tijera eléctrica — m&#10;Mantenimiento: Vigente (vence el 09/02/2027 por calendario)&#10;Cliente 10 — Obra 16">
+    <span class="f-cod">TECL-009</span>
+    <span class="f-tipo">Tijera</span>
+    <span class="f-lin">Cliente 10</span>
+    <span class="f-ext">↩ 12/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-027.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-027 jlg 1930 es cliente 10"
+     title="TECL-027 · Jlg 1930 ES · Tijera eléctrica — m&#10;Mantenimiento: Vigente (vence el 09/02/2027 por calendario)&#10;Cliente 10 — Obra 16">
+    <span class="f-cod">TECL-027</span>
+    <span class="f-tipo">Tijera</span>
+    <span class="f-lin">Cliente 10</span>
+    <span class="f-ext">↩ 12/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-054.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-054 skyjack sjiii3219 cliente 10"
+     title="TECL-054 · Skyjack SJIII3219 · Tijera eléctrica — m&#10;Mantenimiento: Vigente (vence el 09/02/2027 por calendario)&#10;Cliente 10 — Obra 16">
+    <span class="f-cod">TECL-054</span>
+    <span class="f-tipo">Tijera</span>
+    <span class="f-lin">Cliente 10</span>
+    <span class="f-ext">↩ 12/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha warn" href="equipos--TECL-059.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-059 fork lift gtjz14 cliente 21"
+     title="TECL-059 · Fork Lift GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Por vencer (vence el 31/12/2026 por horas)&#10;Cliente 21 — Obra 41">
+    <span class="f-cod">TECL-059</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin">Cliente 21</span>
+    <span class="f-ext">↩ 25/11</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-060.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-060 fork lift gtjz14 cliente 21"
+     title="TECL-060 · Fork Lift GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Vigente (vence el 02/02/2027 por calendario)&#10;Cliente 21 — Obra 41">
+    <span class="f-cod">TECL-060</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin">Cliente 21</span>
+    <span class="f-ext">↩ 05/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha warn" href="equipos--TECL-031.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-031 skyjack sjiii-3219 cliente 28"
+     title="TECL-031 · Skyjack SJIII-3219 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Por vencer (vence el 01/12/2026 por calendario)&#10;Cliente 28 — Obra 58">
+    <span class="f-cod">TECL-031</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 28</span>
+    <span class="f-ext">↩ 30/11 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-044.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-044 genie gs2032 cliente 31"
+     title="TECL-044 · Genie GS2032 · Tijera eléctrica — m&#10;Mantenimiento: Vigente (vence el 08/02/2027 por calendario)&#10;Cliente 31 — Obra 13">
+    <span class="f-cod">TECL-044</span>
+    <span class="f-tipo">Tijera</span>
+    <span class="f-lin">Cliente 31</span>
+    <span class="f-ext">↩ 12/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-001.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-001 genie gs-2646 cliente 41"
+     title="TECL-001 · Genie GS-2646 · Tijera eléctrica 9.9 m&#10;Mantenimiento: Vigente (vence el 07/02/2027 por calendario)&#10;Cliente 41 — Obra 25">
+    <span class="f-cod">TECL-001</span>
+    <span class="f-tipo">Tijera · 9.9 m</span>
+    <span class="f-lin">Cliente 41</span>
+    <span class="f-ext">↩ 11/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-029.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-029 skyjack sjiii-3219 cliente 49"
+     title="TECL-029 · Skyjack SJIII-3219 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 16/11/2026 por calendario)&#10;Cliente 49 — Obra 58">
+    <span class="f-cod">TECL-029</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 49</span>
+    <span class="f-ext">↩ 19/11 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-011.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-011 genie gs-3246 cliente 50"
+     title="TECL-011 · Genie GS-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 10/02/2027 por calendario)&#10;Cliente 50 — Obra 27">
+    <span class="f-cod">TECL-011</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 50</span>
+    <span class="f-ext">↩ 13/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-016.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-016 jlg 3246 es cliente 50"
+     title="TECL-016 · Jlg 3246 ES · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 10/02/2027 por calendario)&#10;Cliente 50 — Obra 27">
+    <span class="f-cod">TECL-016</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 50</span>
+    <span class="f-ext">↩ 13/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-019.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-019 genie gs-3246 cliente 50"
+     title="TECL-019 · Genie GS-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 10/02/2027 por calendario)&#10;Cliente 50 — Obra 27">
+    <span class="f-cod">TECL-019</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 50</span>
+    <span class="f-ext">↩ 13/12</span>
+  </a>
+        
+      </div>
+    </div>
+    
+    <div class="zona">
+      <h3 class="sub">Lima Norte <span class="cnt">1</span></h3>
+      <div class="fichas">
+        
+          
+          
+  <a class="ficha ok" href="equipos--BECL-001.html"
+     data-cat="Brazo articulado eléctrico" data-texto="becl-001 genie z-45/25 jdc cliente 18"
+     title="BECL-001 · Genie Z-45/25 JDC · Brazo articulado eléctrico 15.9 m&#10;Mantenimiento: Vigente (vence el 11/02/2027 por calendario)&#10;Cliente 18 — Obra 08">
+    <span class="f-cod">BECL-001</span>
+    <span class="f-tipo">Brazo eléctrico · 15.9 m</span>
+    <span class="f-lin">Cliente 18</span>
+    <span class="f-ext">↩ 16/12</span>
+  </a>
+        
+      </div>
+    </div>
+    
+    <div class="zona">
+      <h3 class="sub">Lima Sur/Este <span class="cnt">17</span></h3>
+      <div class="fichas">
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-048.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-048 jlg 2646 es cliente 05"
+     title="TECL-048 · Jlg 2646 ES · Tijera eléctrica — m&#10;Mantenimiento: Vigente (vence el 13/02/2027 por calendario)&#10;Cliente 05 — Obra 18">
+    <span class="f-cod">TECL-048</span>
+    <span class="f-tipo">Tijera</span>
+    <span class="f-lin">Cliente 05</span>
+    <span class="f-ext">↩ 16/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-049.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-049 genie gs-2646 cliente 05"
+     title="TECL-049 · Genie GS-2646 · Tijera eléctrica 9.8 m&#10;Mantenimiento: Vigente (vence el 13/02/2027 por calendario)&#10;Cliente 05 — Obra 18">
+    <span class="f-cod">TECL-049</span>
+    <span class="f-tipo">Tijera · 9.8 m</span>
+    <span class="f-lin">Cliente 05</span>
+    <span class="f-ext">↩ 16/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha warn" href="equipos--UPCL-001.html"
+     data-cat="Mástil vertical" data-texto="upcl-001 jlg 20 msp cliente 09"
+     title="UPCL-001 · Jlg 20 MSP · Mástil vertical 7.9 m&#10;Mantenimiento: Por vencer (vence el 30/11/2026 por calendario)&#10;Cliente 09 — Obra 15">
+    <span class="f-cod">UPCL-001</span>
+    <span class="f-tipo">Mástil · 7.9 m</span>
+    <span class="f-lin">Cliente 09</span>
+    <span class="f-ext">↩ 30/11 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-032.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-032 skyjack sjiii3219 cliente 13"
+     title="TECL-032 · Skyjack SJIII3219 · Tijera eléctrica — m&#10;Mantenimiento: Vigente (vence el 14/02/2027 por calendario)&#10;Cliente 13 — Obra 21">
+    <span class="f-cod">TECL-032</span>
+    <span class="f-tipo">Tijera</span>
+    <span class="f-lin">Cliente 13</span>
+    <span class="f-ext">↩ 17/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--BECL-004.html"
+     data-cat="Brazo articulado eléctrico" data-texto="becl-004 haulotte ha-15ip cliente 15"
+     title="BECL-004 · Haulotte HA-15IP · Brazo articulado eléctrico 14.9 m&#10;Mantenimiento: Vigente (vence el 09/02/2027 por calendario)&#10;Cliente 15 — Obra 19">
+    <span class="f-cod">BECL-004</span>
+    <span class="f-tipo">Brazo eléctrico · 14.9 m</span>
+    <span class="f-lin">Cliente 15</span>
+    <span class="f-ext">↩ 24/11 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha warn" href="equipos--TECL-042.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-042 jlg 4069 le cliente 23"
+     title="TECL-042 · Jlg 4069 LE · Tijera eléctrica 14.2 m&#10;Mantenimiento: Por vencer (vence el 22/11/2026 por calendario)&#10;Cliente 23 — Obra 55">
+    <span class="f-cod">TECL-042</span>
+    <span class="f-tipo">Tijera · 14.2 m</span>
+    <span class="f-lin">Cliente 23</span>
+    <span class="f-ext">↩ 22/11 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-064.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-064 jinan lift gtjz14 cliente 23"
+     title="TECL-064 · Jinan Lift GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Vencido (venció el 19/08/2026 por horas)&#10;Cliente 23 — Obra 56">
+    <span class="f-cod">TECL-064</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin">Cliente 23</span>
+    <span class="f-ext">↩ 08/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--BCCL-002.html"
+     data-cat="Brazo articulado combustión" data-texto="bccl-002 jlg 450 aj cliente 24"
+     title="BCCL-002 · Jlg 450 AJ · Brazo articulado combustión 15.7 m&#10;Mantenimiento: Vigente (vence el 15/02/2027 por calendario)&#10;Cliente 24 — Obra 04">
+    <span class="f-cod">BCCL-002</span>
+    <span class="f-tipo">Brazo diésel · 15.7 m</span>
+    <span class="f-lin">Cliente 24</span>
+    <span class="f-ext">↩ 27/11</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-067.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-067 lift rental gtjz14 cliente 25"
+     title="TECL-067 · Lift Rental GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Vigente (vence el 11/02/2027 por calendario)&#10;Cliente 25 — Obra 06">
+    <span class="f-cod">TECL-067</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin">Cliente 25</span>
+    <span class="f-ext">↩ 15/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-070.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-070 lift rental gtjz14 cliente 25"
+     title="TECL-070 · Lift Rental GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Vigente (vence el 09/02/2027 por calendario)&#10;Cliente 25 — Obra 06">
+    <span class="f-cod">TECL-070</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin">Cliente 25</span>
+    <span class="f-ext">↩ 15/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-071.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-071 lift rental gtjz14 cliente 25"
+     title="TECL-071 · Lift Rental GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Vigente (vence el 11/02/2027 por calendario)&#10;Cliente 25 — Obra 06">
+    <span class="f-cod">TECL-071</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin">Cliente 25</span>
+    <span class="f-ext">↩ 15/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-047.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-047 genie gs-3246 cliente 28"
+     title="TECL-047 · Genie GS-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 02/02/2027 por calendario)&#10;Cliente 28 — Obra 49">
+    <span class="f-cod">TECL-047</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 28</span>
+    <span class="f-ext">↩ 12/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-005.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-005 skyjack sjiii-3226 cliente 32"
+     title="TECL-005 · Skyjack SJIII-3226 · Tijera eléctrica 9.8 m&#10;Mantenimiento: Vigente (vence el 07/02/2027 por calendario)&#10;Cliente 32 — Obra 57">
+    <span class="f-cod">TECL-005</span>
+    <span class="f-tipo">Tijera · 9.8 m</span>
+    <span class="f-lin">Cliente 32</span>
+    <span class="f-ext">↩ 10/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-056.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-056 genie gs-3246 cliente 44"
+     title="TECL-056 · Genie GS-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vencido (venció el 23/07/2026 por horas)&#10;Cliente 44 — Obra 20">
+    <span class="f-cod">TECL-056</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 44</span>
+    <span class="f-ext">↩ 13/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-066.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-066 lift rental gtjz14 cliente 48"
+     title="TECL-066 · Lift Rental GTJZ14 · Tijera eléctrica 15.8 m&#10;Mantenimiento: Vigente (vence el 08/12/2026 por calendario)&#10;Cliente 48 — Obra 39">
+    <span class="f-cod">TECL-066</span>
+    <span class="f-tipo">Tijera · 15.8 m</span>
+    <span class="f-lin">Cliente 48</span>
+    <span class="f-ext">↩ 08/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-013.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-013 genie gs-3246 cliente 53"
+     title="TECL-013 · Genie GS-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 17/01/2027 por calendario)&#10;Cliente 53 — Obra 26">
+    <span class="f-cod">TECL-013</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 53</span>
+    <span class="f-ext">↩ 16/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-015.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-015 genie gs-3246 cliente 53"
+     title="TECL-015 · Genie GS-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 27/01/2027 por calendario)&#10;Cliente 53 — Obra 26">
+    <span class="f-cod">TECL-015</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 53</span>
+    <span class="f-ext">↩ 16/12 (prórroga supuesta)</span>
+  </a>
+        
+      </div>
+    </div>
+    
+    <div class="zona">
+      <h3 class="sub">Provincia <span class="cnt">15</span></h3>
+      <div class="fichas">
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-034.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-034 genie gs-1930 cliente 22"
+     title="TECL-034 · Genie GS-1930 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 09/10/2026 por calendario)&#10;Cliente 22 — Obra 50">
+    <span class="f-cod">TECL-034</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 22</span>
+    <span class="f-ext">↩ 09/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha none" href="equipos--TECL-036.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-036 genie gs-1930 cliente 22"
+     title="TECL-036 · Genie GS-1930 · Tijera eléctrica — m&#10;Mantenimiento: Sin datos&#10;Cliente 22 — Obra 50">
+    <span class="f-cod">TECL-036</span>
+    <span class="f-tipo">Tijera</span>
+    <span class="f-lin">Cliente 22</span>
+    <span class="f-ext">↩ 09/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-003.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-003 genie gs-1930 cliente 28"
+     title="TECL-003 · Genie GS-1930 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 22/09/2026 por calendario)&#10;Cliente 28 — Obra 50">
+    <span class="f-cod">TECL-003</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 28</span>
+    <span class="f-ext">↩ 16/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-022.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-022 genie gs-1930 cliente 28"
+     title="TECL-022 · Genie GS-1930 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 22/09/2026 por calendario)&#10;Cliente 28 — Obra 50">
+    <span class="f-cod">TECL-022</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 28</span>
+    <span class="f-ext">↩ 16/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-039.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-039 genie gs-1930 cliente 28"
+     title="TECL-039 · Genie GS-1930 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 22/09/2026 por calendario)&#10;Cliente 28 — Obra 50">
+    <span class="f-cod">TECL-039</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 28</span>
+    <span class="f-ext">↩ 16/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-040.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-040 genie gs-1930 cliente 28"
+     title="TECL-040 · Genie GS-1930 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 22/09/2026 por calendario)&#10;Cliente 28 — Obra 50">
+    <span class="f-cod">TECL-040</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 28</span>
+    <span class="f-ext">↩ 16/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-014.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-014 genie gs-3246 cliente 30"
+     title="TECL-014 · Genie GS-3246 · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 25/01/2027 por calendario)&#10;Cliente 30 — Obra 12">
+    <span class="f-cod">TECL-014</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 30</span>
+    <span class="f-ext">↩ 02/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-061.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-061 jinan lift gtjz12 cliente 30"
+     title="TECL-061 · Jinan Lift GTJZ12 · Tijera eléctrica 13.8 m&#10;Mantenimiento: Vigente (vence el 25/01/2027 por calendario)&#10;Cliente 30 — Obra 12">
+    <span class="f-cod">TECL-061</span>
+    <span class="f-tipo">Tijera · 13.8 m</span>
+    <span class="f-lin">Cliente 30</span>
+    <span class="f-ext">↩ 02/12</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--BECL-002.html"
+     data-cat="Brazo articulado eléctrico" data-texto="becl-002 jlg e-450 aj cliente 37"
+     title="BECL-002 · Jlg E-450 AJ · Brazo articulado eléctrico 15.8 m&#10;Mantenimiento: Vigente (vence el 21/12/2026 por calendario)&#10;Cliente 37 — Obra 52">
+    <span class="f-cod">BECL-002</span>
+    <span class="f-tipo">Brazo eléctrico · 15.8 m</span>
+    <span class="f-lin">Cliente 37</span>
+    <span class="f-ext">↩ 27/11 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha none" href="equipos--BECL-008.html"
+     data-cat="Brazo articulado eléctrico" data-texto="becl-008 jlg e40 cliente 40"
+     title="BECL-008 · Jlg E40 · Brazo articulado eléctrico — m&#10;Mantenimiento: Sin datos&#10;Cliente 40 — Obra 11">
+    <span class="f-cod">BECL-008</span>
+    <span class="f-tipo">Brazo eléctrico</span>
+    <span class="f-lin">Cliente 40</span>
+    <span class="f-ext">↩ 30/11 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha none" href="equipos--TECL-046.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-046 jlg 4069 le cliente 40"
+     title="TECL-046 · Jlg 4069 LE · Tijera eléctrica — m&#10;Mantenimiento: Sin datos&#10;Cliente 40 — Obra 11">
+    <span class="f-cod">TECL-046</span>
+    <span class="f-tipo">Tijera</span>
+    <span class="f-lin">Cliente 40</span>
+    <span class="f-ext">↩ 30/11 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-021.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-021 genie gs-1930 cliente 51"
+     title="TECL-021 · Genie GS-1930 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 03/11/2026 por calendario)&#10;Cliente 51 — Obra 53">
+    <span class="f-cod">TECL-021</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 51</span>
+    <span class="f-ext">↩ 13/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha bad" href="equipos--TECL-053.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-053 genie gs-1930 cliente 51"
+     title="TECL-053 · Genie GS-1930 · Tijera eléctrica 7.8 m&#10;Mantenimiento: Vencido (venció el 03/11/2026 por calendario)&#10;Cliente 51 — Obra 53">
+    <span class="f-cod">TECL-053</span>
+    <span class="f-tipo">Tijera · 7.8 m</span>
+    <span class="f-lin">Cliente 51</span>
+    <span class="f-ext">↩ 13/12 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-004.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-004 genie gs-2646 cliente 53"
+     title="TECL-004 · Genie GS-2646 · Tijera eléctrica 9.9 m&#10;Mantenimiento: Vigente (vence el 10/01/2027 por calendario)&#10;Cliente 53 — Obra 45">
+    <span class="f-cod">TECL-004</span>
+    <span class="f-tipo">Tijera · 9.9 m</span>
+    <span class="f-lin">Cliente 53</span>
+    <span class="f-ext">↩ 26/11 (prórroga supuesta)</span>
+  </a>
+        
+          
+          
+  <a class="ficha ok" href="equipos--TECL-017.html"
+     data-cat="Tijera eléctrica" data-texto="tecl-017 jlg 3246 es cliente 53"
+     title="TECL-017 · Jlg 3246 ES · Tijera eléctrica 11.8 m&#10;Mantenimiento: Vigente (vence el 10/01/2027 por calendario)&#10;Cliente 53 — Obra 45">
+    <span class="f-cod">TECL-017</span>
+    <span class="f-tipo">Tijera · 11.8 m</span>
+    <span class="f-lin">Cliente 53</span>
+    <span class="f-ext">↩ 26/11 (prórroga supuesta)</span>
+  </a>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="card" id="proximos" style="margin-top:16px">
+  <div class="hd"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+</svg> Qué equipos entran a mantenimiento y cuándo</h2>
+    <span class="muted">38 en los próximos 45 días · ubicados en la capacidad libre de 3 técnicos</span></div>
+  <div class="bd flush tabla-wrap">
+    
+    <table class="tabla-prox">
+      <thead><tr><th>Ingreso a taller</th><th>Equipo</th><th>Dónde está hoy</th><th>Por qué entra</th><th>Servicio</th><th>Técnico</th><th>Sale</th><th>Fuente</th></tr></thead>
+      <tbody>
+      
+        <tr class="" >
+          <td><b>mar 17/11/2026</b><br><small>hoy</small></td>
+          <td><a class="cod" href="equipos--TECL-012.html">TECL-012</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip warn">Por vencer</span> <small>Servicio A+B programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico A</td>
+          <td>18/11</td>
+          <td><a class="mono" href="mantenimiento--82.html">OT-0082</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>mar 17/11/2026</b><br><small>hoy</small></td>
+          <td><a class="cod" href="equipos--TECL-045.html">TECL-045</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip bad">Vencido</span> <small>En patio con el mantenimiento vencido</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico C</td>
+          <td>17/11</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>mar 17/11/2026</b><br><small>hoy</small></td>
+          <td><a class="cod" href="equipos--TECL-062.html">TECL-062</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span> <small>Servicio A programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico B</td>
+          <td>17/11</td>
+          <td><a class="mono" href="mantenimiento--115.html">OT-0115</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>mié 18/11/2026</b><br><small>mañana</small></td>
+          <td><a class="cod" href="equipos--TECL-057.html">TECL-057</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span> <small>Servicio A programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico C</td>
+          <td>18/11</td>
+          <td><a class="mono" href="mantenimiento--89.html">OT-0089</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>jue 19/11/2026</b><br><small>en 2 días</small></td>
+          <td><a class="cod" href="equipos--TECL-007.html">TECL-007</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip bad">Vencido</span> <small>Servicio A+B+C programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A+B+C</b></td>
+          <td>Técnico B</td>
+          <td>21/11</td>
+          <td><a class="mono" href="mantenimiento--116.html">OT-0116</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>jue 19/11/2026</b><br><small>en 2 días</small></td>
+          <td><a class="cod" href="equipos--TECL-051.html">TECL-051</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span> <small>Servicio A programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico C</td>
+          <td>19/11</td>
+          <td><a class="mono" href="mantenimiento--80.html">OT-0080</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>vie 20/11/2026</b><br><small>en 3 días</small></td>
+          <td><a class="cod" href="equipos--TECL-029.html">TECL-029</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna —</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Servicio A+B programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico A</td>
+          <td>21/11</td>
+          <td><a class="mono" href="mantenimiento--117.html">OT-0117</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>sáb 21/11/2026</b><br><small>en 4 días</small></td>
+          <td><a class="cod" href="equipos--TECL-041.html">TECL-041</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span> <small>Servicio A programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico C</td>
+          <td>21/11</td>
+          <td><a class="mono" href="mantenimiento--86.html">OT-0086</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>lun 23/11/2026</b><br><small>en 6 días · espera 6 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--BECL-007.html">BECL-007</a><br><small>Brazo eléctrico</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip none">Sin datos</span> <small>En patio con el mantenimiento sin registro</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico A</td>
+          <td>24/11</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>lun 23/11/2026</b><br><small>en 6 días · espera 6 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-020.html">TECL-020</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip bad">Vencido</span> <small>En patio con el mantenimiento vencido</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico B</td>
+          <td>24/11</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>lun 23/11/2026</b><br><small>en 6 días</small></td>
+          <td><a class="cod" href="equipos--TECL-042.html">TECL-042</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna —</small>
+              </td>
+          <td><span class="chip warn">Por vencer</span> <small>Servicio A programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico C</td>
+          <td>23/11</td>
+          <td><a class="mono" href="mantenimiento--88.html">OT-0088</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>mar 24/11/2026</b><br><small>en 7 días</small></td>
+          <td><a class="cod" href="equipos--TECL-074.html">TECL-074</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span> <small>Servicio A programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>—</td>
+          <td>24/11</td>
+          <td><a class="mono" href="mantenimiento--81.html">OT-0081</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>jue 26/11/2026</b><br><small>en 9 días</small></td>
+          <td><a class="cod" href="equipos--TECL-025.html">TECL-025</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span> <small>Servicio A programado por el modelo de optimización</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>—</td>
+          <td>26/11</td>
+          <td><a class="mono" href="mantenimiento--84.html">OT-0084</a></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>lun 30/11/2026</b><br><small>en 13 días</small></td>
+          <td><a class="cod" href="equipos--BECL-008.html">BECL-008</a><br><small>Brazo eléctrico</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 30/11 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip none">Sin datos</span> <small>Opera en obra sin registro de servicio: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico C</td>
+          <td>01/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>lun 30/11/2026</b><br><small>en 13 días</small></td>
+          <td><a class="cod" href="equipos--TECL-046.html">TECL-046</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 30/11 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip none">Sin datos</span> <small>Opera en obra sin registro de servicio: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico A</td>
+          <td>30/11</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>lun 30/11/2026</b><br><small>en 13 días</small></td>
+          <td><a class="cod" href="equipos--UPCL-001.html">UPCL-001</a><br><small>Mástil</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 30/11 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip warn">Por vencer</span> <small>Vence en obra el 30/11: ingresa al retornar</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico B</td>
+          <td>01/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="" >
+          <td><b>mar 01/12/2026</b><br><small>en 14 días</small></td>
+          <td><a class="cod" href="equipos--TECL-031.html">TECL-031</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 30/11 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip warn">Por vencer</span> <small>Retorna de obra y vence en el patio</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico A</td>
+          <td>02/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mié 02/12/2026</b><br><small>en 15 días</small></td>
+          <td><a class="cod" href="equipos--TECL-010.html">TECL-010</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip warn">Por vencer</span> <small>En patio: el servicio vence por horas</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico C</td>
+          <td>03/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>lun 07/12/2026</b><br><small>en 20 días</small></td>
+          <td><a class="cod" href="equipos--TECL-023.html">TECL-023</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 07/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico B</td>
+          <td>07/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>lun 07/12/2026</b><br><small>en 20 días</small></td>
+          <td><a class="cod" href="equipos--TECL-068.html">TECL-068</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 07/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico A</td>
+          <td>07/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mar 08/12/2026</b><br><small>en 21 días</small></td>
+          <td><a class="cod" href="equipos--TECL-038.html">TECL-038</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 27/11</small>
+              </td>
+          <td><span class="chip ok">Vigente</span> <small>Retorna de obra y vence en el patio</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico C</td>
+          <td>09/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mar 08/12/2026</b><br><small>en 21 días</small></td>
+          <td><a class="cod" href="equipos--TECL-064.html">TECL-064</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 08/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico B</td>
+          <td>08/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mar 08/12/2026</b><br><small>en 21 días</small></td>
+          <td><a class="cod" href="equipos--TECL-065.html">TECL-065</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span> <small>En patio: el servicio vence por calendario</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico A</td>
+          <td>08/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mié 09/12/2026</b><br><small>en 22 días</small></td>
+          <td><a class="cod" href="equipos--TECL-036.html">TECL-036</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 09/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip none">Sin datos</span> <small>Opera en obra sin registro de servicio: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico A</td>
+          <td>09/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mié 09/12/2026</b><br><small>en 22 días · espera 1 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-066.html">TECL-066</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 08/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip ok">Vigente</span> <small>Vence en obra el 08/12: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico B</td>
+          <td>09/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>jue 10/12/2026</b><br><small>en 23 días</small></td>
+          <td><a class="cod" href="equipos--TECL-024.html">TECL-024</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span> <small>En patio: el servicio vence por calendario</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico C</td>
+          <td>11/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>jue 10/12/2026</b><br><small>en 23 días · espera 1 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-034.html">TECL-034</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 09/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A+B+C+D</b></td>
+          <td>Técnico A, Técnico B</td>
+          <td>14/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>lun 14/12/2026</b><br><small>en 27 días · espera 1 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-021.html">TECL-021</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 13/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A+B+C</b></td>
+          <td>Técnico C</td>
+          <td>16/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mar 15/12/2026</b><br><small>en 28 días · espera 2 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-053.html">TECL-053</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 13/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico B</td>
+          <td>15/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mar 15/12/2026</b><br><small>en 28 días · espera 2 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-056.html">TECL-056</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 13/12</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A+B+C</b></td>
+          <td>Técnico A</td>
+          <td>17/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mié 16/12/2026</b><br><small>en 29 días · espera 1 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--BCCL-003.html">BCCL-003</a><br><small>Brazo diésel</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 15/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip none">Sin datos</span> <small>Opera en obra sin registro de servicio: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico B</td>
+          <td>17/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>jue 17/12/2026</b><br><small>en 30 días · espera 1 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-003.html">TECL-003</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 16/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A+B+C</b></td>
+          <td>Técnico C</td>
+          <td>19/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>vie 18/12/2026</b><br><small>en 31 días · espera 2 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-022.html">TECL-022</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 16/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico B</td>
+          <td>18/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>vie 18/12/2026</b><br><small>en 31 días · espera 2 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-039.html">TECL-039</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 16/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico A</td>
+          <td>19/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>sáb 19/12/2026</b><br><small>en 32 días · espera 3 d por capacidad</small></td>
+          <td><a class="cod" href="equipos--TECL-040.html">TECL-040</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 16/12 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip bad">Vencido</span> <small>Opera en obra con el mantenimiento vencido: ingresa al retornar</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico B</td>
+          <td>19/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>lun 21/12/2026</b><br><small>en 34 días</small></td>
+          <td><a class="cod" href="equipos--BECL-002.html">BECL-002</a><br><small>Brazo eléctrico</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 27/11 (prórroga supuesta)</small>
+              </td>
+          <td><span class="chip ok">Vigente</span> <small>Retorna de obra y vence en el patio</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico C</td>
+          <td>22/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>mar 22/12/2026</b><br><small>en 35 días</small></td>
+          <td><a class="cod" href="equipos--TECL-006.html">TECL-006</a><br><small>Tijera</small></td>
+          <td><span class="chip ok">Disponible</span></td>
+          <td><span class="chip ok">Vigente</span> <small>En patio: el servicio vence por calendario</small></td>
+          <td>Preventivo <b>A+B</b></td>
+          <td>Técnico B</td>
+          <td>23/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+        <tr class="lejano" hidden>
+          <td><b>jue 31/12/2026</b><br><small>en 44 días</small></td>
+          <td><a class="cod" href="equipos--TECL-059.html">TECL-059</a><br><small>Tijera</small></td>
+          <td><span class="chip info">En obra</span><br><small>retorna 25/11</small>
+              </td>
+          <td><span class="chip warn">Por vencer</span> <small>Retorna de obra y vence en el patio</small></td>
+          <td>Preventivo <b>A</b></td>
+          <td>Técnico A</td>
+          <td>31/12</td>
+          <td><span class="tag">Pronóstico</span></td>
+        </tr>
+      
+      </tbody>
+    </table>
+    
+    <div class="bd"><button type="button" class="btn sm" id="ver-lejanos">Ver los 21 ingresos posteriores al 01/12</button></div>
+    
+  </div>
+  <div class="bd ayuda" style="border-top:1px solid var(--line-2);margin:0">
+    El pronóstico supone que cada equipo vuelve en la fecha de su contrato (los contratos ya vencidos se suponen prorrogados por 30 días) y que entra a taller si en ese momento tiene el mantenimiento vencido; los que están en el patio entran en su fecha de vencimiento. No crea órdenes: para reservar el taller use <a href="taller.html">Programar</a>.
+  </div>
+</section>
+
+  </main>
+</div>
+<script src="static/app.js"></script>
+
+<script src="static/almacen3d.js"></script>
+<script>
+(function () {
+  const q = document.getElementById('a-q'), seg = document.getElementById('a-cat');
+  let cat = '';
+  function aplicar() {
+    const t = q.value.trim().toLowerCase();
+    document.querySelectorAll('.ficha, .maq, .esc-aviso').forEach((f) => {
+      const ok = (!cat || f.dataset.cat === cat) && (!t || (f.dataset.texto || '').includes(t));
+      f.classList.toggle('apagada', !ok);
+    });
+  }
+  q.addEventListener('input', aplicar);
+  seg.addEventListener('click', (ev) => {
+    const b = ev.target.closest('button'); if (!b) return;
+    cat = b.dataset.v; seg.querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b)); aplicar();
+  });
+  const ver = document.getElementById('ver-lejanos');
+  if (ver) ver.addEventListener('click', () => { document.querySelectorAll('tr.lejano').forEach((r) => r.hidden = false); ver.remove(); });
+})();
+</script>
+
+</body>
+</html>

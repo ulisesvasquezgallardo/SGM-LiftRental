@@ -1,0 +1,59 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, restante, eq_link, icono %}
+{% block titulo %}Órdenes de trabajo{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Órdenes de trabajo</h1>
+    <p>Servicios preventivos (niveles A a A+B+C+D), correctivos e inspecciones del taller de Comas.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('exportar', tabla='ordenes') }}">{{ icono('csv') }} CSV</a>
+    <form method="post" action="{{ url_for('programar') }}"><button class="btn osc">{{ icono('taller') }} Programar automáticamente</button></form>
+    <a class="btn pri" href="{{ url_for('orden_nueva') }}">{{ icono('mas') }} Nueva orden</a>
+  </div>
+</div>
+<div class="tabs">
+  {% set abiertas = (conteo.get('Pendiente', 0) + conteo.get('Programada', 0) + conteo.get('En ejecución', 0)) %}
+  <a href="{{ url_for('mantenimiento') }}" class="{{ 'on' if estado == 'abiertas' }}">Abiertas<span class="cnt">{{ abiertas }}</span></a>
+  {% for s in ('Completada', 'Cancelada') %}
+    <a href="{{ url_for('mantenimiento', estado=s) }}" class="{{ 'on' if estado == s }}">{{ s }}s<span class="cnt">{{ conteo.get(s, 0) }}</span></a>
+  {% endfor %}
+</div>
+
+{% if estado == 'abiertas' and sin_orden %}
+<div class="nota warn" style="margin-bottom:16px">
+  <b>{{ sin_orden|length }} equipos en patio o taller</b> tienen el mantenimiento vencido o por vencer y no tienen orden:
+  {% for e in sin_orden[:14] %}<a class="cod" href="{{ url_for('orden_nueva', equipo=e.codigo) }}">{{ e.codigo }}</a>{{ ', ' if not loop.last }}{% endfor %}{{ '…' if sin_orden|length > 14 }}.
+  Use «Programar automáticamente» para asignarles fecha y técnico.
+</div>
+{% endif %}
+
+<div class="card">
+  <div class="tabla-wrap">
+  {% if filas %}
+  <table>
+    <thead><tr><th>OT</th><th>Equipo</th><th>Tipo · nivel</th><th>Estado</th><th>Prioridad</th><th>{{ 'Ejecutada' if estado == 'Completada' else 'Programada' }}</th><th class="n">Días · téc-días</th><th>Técnicos</th><th class="n">Costo</th><th>Origen</th></tr></thead>
+    <tbody>
+    {% for o in filas %}
+      {% set atrasada = o.estado == 'Programada' and o.fecha_programada and o.fecha_programada < REF.isoformat() %}
+      <tr class="fila-link" data-href="{{ url_for('orden', oid=o.id) }}">
+        <td><a class="mono" href="{{ url_for('orden', oid=o.id) }}">{{ o.id|ot }}</a></td>
+        <td>{{ eq_link(o.codigo) }}<br><small>{{ o.categoria }}</small></td>
+        <td>{{ o.tipo }}{% if o.nivel %} · <b>{{ o.nivel }}</b>{% endif %}</td>
+        <td>{{ chip(o.estado) }}{% if atrasada %} {{ chip('Vencido', 'atrasada') }}{% endif %}</td>
+        <td>{{ chip(o.prioridad or 'Normal') }}</td>
+        <td>{{ (o.fecha_fin if estado == 'Completada' else (o.fecha_inicio if o.estado == 'En ejecución' else o.fecha_programada))|fecha }}</td>
+        <td class="n">{{ o.duracion_dias or 1 }} · {{ o.tecnico_dias|num(0) }}</td>
+        <td>{{ o.tecnicos or '—' }}</td>
+        <td class="n">{{ (o.costo_real or o.costo_estimado)|soles }}</td>
+        <td><small>{{ o.origen or '' }}</small></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}<div class="vacio">No hay órdenes en este estado.</div>{% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,903 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<script>/* copia estática */(function(){var r=history.replaceState;
+history.replaceState=function(){try{return r.apply(history,arguments)}catch(e){}};
+var M='Esta es una copia de consulta del SGM Lift Rental: aquí no se pueden registrar ni modificar datos. Esa acción está disponible en el sistema original.';
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-sin-copia]');
+if(a){e.preventDefault();e.stopImmediatePropagation();alert(M);}},true);
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();alert(M);},true);
+})();</script>
+<style>.aviso-copia{position:sticky;top:0;z-index:50;background:#fff4cc;color:#5a4300;border-bottom:1px solid #f2b200;
+padding:6px 16px;font:12.5px/1.4 "Segoe UI",system-ui,sans-serif;text-align:center}
+@media print{.aviso-copia{display:none}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentos de mantenimiento · Lift Rental</title>
+<link rel="stylesheet" href="static/estilos.css">
+<link rel="icon" type="image/jpeg" href="static/logo_liftrental.jpg">
+</head>
+<body>
+<div class="aviso-copia">Copia de consulta del SGM Lift Rental generada el 17/11/2026 23:04 · sólo lectura: los formularios y documentos PDF están disponibles en el sistema original.</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="marca">
+      <img class="logo" src="static/logo_liftrental.jpg" alt="Lift Rental Solutions" width="64" height="64">
+      <div><b>SGM Lift Rental</b><span>Gestión de mantenimiento</span></div>
+    </div>
+    <a class="nav " href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Almacén en vivo</a>
+    <a class="nav " href="panel.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+</svg> Panel de control</a>
+    <a class="nav " href="estatus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Estatus diario </a>
+    <div class="nav-sec">Almacén virtual</div>
+    <a class="nav " href="equipos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Equipos y expedientes</a>
+    <a class="nav " href="alquileres.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20l12-7M6 13l12 7M5 10h14M9 10V6h6v4"/>
+</svg> Uso y alquileres</a>
+    <a class="nav " href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+    <div class="nav-sec">Mantenimiento</div>
+    <a class="nav " href="mantenimiento.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> Órdenes de trabajo <span class="badge">10</span></a>
+    <a class="nav on" href="documentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Documentos de mantto.</a>
+    <a class="nav " href="taller.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programa del taller</a>
+    <a class="nav " href="incidentes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.2v.3"/>
+</svg> Incidentes en obra</a>
+    <div class="nav-sec">Planificación</div>
+    <a class="nav " href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Cartera de pedidos</a>
+    <a class="nav " href="optimizacion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+</svg> Optimización (PLEM)</a>
+    <div class="nav-sec">Personal</div>
+    <a class="nav " href="personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+</svg> Técnicos</a>
+    <a class="nav " href="configuracion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z"/>
+</svg> Configuración</a>
+    <div class="side-pie">
+      Fecha de evaluación<br><b>17/11/2026</b><br>
+      Taller Comas · 3 técnicos
+      <br><span>Estatus real al 17/11/2026</span>
+      
+    </div>
+  </aside>
+  <main>
+    
+    
+      
+    
+    
+<div class="cab">
+  <div>
+    <h1>Documentos de mantenimiento</h1>
+    <p>El último servicio de cada equipo se toma de su carpeta (<span class="mono">Expedientes</span>): el formato «Plan de Procesos de Mantenimiento» y el certificado de mantenimiento dan la fecha y el horómetro del preventivo; el certificado de operatividad, emitido al despachar, da una lectura de horómetro. Se leen también las subcarpetas y los .zip. Al volver a leer sólo se agrega lo que el sistema aún no tiene.</p>
+  </div>
+  <div class="acciones">
+    <form method="post" action="#" data-sin-copia="1"><button class="btn osc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Volver a leer las carpetas</button></form>
+    <a class="btn" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Almacén en vivo</a>
+  </div>
+</div>
+
+
+<div class="grid g5" style="margin-bottom:16px">
+  <div class="card kpi"><span class="l">Leído el</span><span class="v">17/11</span><span class="s">260 documentos de 82 carpetas</span></div>
+  <div class="card kpi"><span class="l">Servicios desde las carpetas</span><span class="v">25</span><span class="s">que no estaban en el registro del 22/09 · 0 en la última lectura</span></div>
+  <div class="card kpi"><span class="l">Vigentes</span><span class="v" style="color:var(--ok)">59</span><span class="s">6 por vencer</span></div>
+  <div class="card kpi"><span class="l">Vencidos</span><span class="v" style="color:var(--bad)">15</span><span class="s">13 sólo por calendario (90 d) · 2 por horas</span></div>
+  <div class="card kpi"><span class="l">Observaciones</span><span class="v">32</span><span class="s">documentos que no cuadran entre sí</span></div>
+</div>
+
+<div class="card">
+  <div class="hd"><h2>Último servicio por equipo</h2>
+    <div class="seg">
+      <a class="btn-seg on" href="documentos.html">Todos</a>
+      <a class="btn-seg " href="documentos__ver-nuevos.html">Servicios tomados de la carpeta</a>
+      <a class="btn-seg " href="documentos__ver-obs.html">Con observaciones</a>
+    </div>
+  </div>
+  <div class="bd flush tabla-wrap">
+    <table>
+      <thead><tr><th>Equipo</th><th>Último preventivo documentado</th><th>Horómetro</th><th>Último cert. de operatividad</th><th>Estado hoy</th><th>Observaciones</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a class="cod" href="equipos--BCCL-001.html">BCCL-001</a></td>
+          <td style="white-space:nowrap"><b>07/07/2026</b><br><small class="muted">BCCL001 07.07.26.pdf</small></td>
+          <td style="white-space:nowrap">2,200.0 h<br><small class="muted">próximo 2,450.0 h</small></td>
+          <td style="white-space:nowrap">12/10/2026 · 2,215.9 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>54 d · 233 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BCCL-002.html">BCCL-002</a></td>
+          <td style="white-space:nowrap"><b>10/05/2026</b><br><small class="muted">BCCL002 10.05.26.pdf</small></td>
+          <td style="white-space:nowrap">6,840.5 h<br><small class="muted">próximo 7,090.5 h</small></td>
+          <td style="white-space:nowrap">17/11/2026 · 6,875.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>90 d · 216 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BCCL-003.html">BCCL-003</a></td>
+          <td style="white-space:nowrap"><span class="muted">sin formato PM</span></td>
+          <td style="white-space:nowrap">—</td>
+          <td style="white-space:nowrap"><span class="muted">—</span></td>
+          <td style="white-space:nowrap"><span class="chip none">Sin datos</span><br><small><span class="muted">Sin servicio documentado</span></small></td>
+          <td><ul class="obs"><li>El equipo está en el sistema pero no hay carpeta de documentos.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BCCL-004.html">BCCL-004</a></td>
+          <td style="white-space:nowrap"><b>20/07/2026</b><br><small class="muted">BCCL004 20.07.2026.pdf</small></td>
+          <td style="white-space:nowrap">10,900.1 h<br><small class="muted">próximo 11,150.1 h</small></td>
+          <td style="white-space:nowrap">10/11/2026 · 10,925.5 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>83 d · 223 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BECL-001.html">BECL-001</a></td>
+          <td style="white-space:nowrap"><b>05/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">BECL001 05-09-2026.pdf</small></td>
+          <td style="white-space:nowrap">3,378.0 h<br><small class="muted">próximo 3,628.0 h</small></td>
+          <td style="white-space:nowrap">13/11/2026 · 3,494.7 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>86 d · 132 h</small></td>
+          <td><ul class="obs"><li>El servicio del 05/09/2026 tiene el mismo horómetro (3378) que el del 05/05/2026 que ya tenía el sistema: puede ser el mismo formato con la fecha corregida.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BECL-002.html">BECL-002</a></td>
+          <td style="white-space:nowrap"><b>10/07/2026</b><br><small class="muted">BECL002 10.07.26.pdf.pdf</small></td>
+          <td style="white-space:nowrap">3,700.0 h<br><small class="muted">próximo 3,950.0 h</small></td>
+          <td style="white-space:nowrap">22/09/2026 · 3,841.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>34 d · 80 h</small></td>
+          <td><ul class="obs"><li>Certificado de mantenimiento CERTIFICADO DE MANTENIMIENTO BECL-002.pdf: horómetro 3601 para el servicio del 10/07/2026; el otro documento dice 3700.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BECL-003.html">BECL-003</a></td>
+          <td style="white-space:nowrap"><b>20/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">BECL003 20-09-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,032.9 h<br><small class="muted">próximo 1,282.9 h</small></td>
+          <td style="white-space:nowrap">22/10/2026 · 1,035.9 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>64 d · 225 h</small></td>
+          <td><ul class="obs"><li>El servicio del 20/09/2026 marca 1032.9 h, menos que la lectura del 24/07/2026 (12984.5 h, certificado de operatividad): posible cambio de horómetro.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BECL-004.html">BECL-004</a></td>
+          <td style="white-space:nowrap"><b>20/07/2026</b><br><small class="muted">PM BECL-004 20.07.2026.pdf</small></td>
+          <td style="white-space:nowrap">950.0 h<br><small class="muted">próximo 1,200.0 h</small></td>
+          <td style="white-space:nowrap">11/11/2026 · 964.2 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>84 d · 236 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BECL-005.html">BECL-005</a></td>
+          <td style="white-space:nowrap"><b>20/05/2026</b><br><small class="muted">BECL005 05.20.2026.pdf.pdf</small></td>
+          <td style="white-space:nowrap">905.6 h<br><small class="muted">próximo 1,155.6 h</small></td>
+          <td style="white-space:nowrap">15/11/2026 · 930.6 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>88 d · 224 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BECL-006.html">BECL-006</a></td>
+          <td style="white-space:nowrap"><b>01/11/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">BECL006 01.11.2026.pdf</small></td>
+          <td style="white-space:nowrap">470.0 h<br><small class="muted">próximo 720.0 h</small></td>
+          <td style="white-space:nowrap">17/11/2026 · 638.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>90 d · 82 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BECL-007.html">BECL-007</a></td>
+          <td style="white-space:nowrap"><span class="muted">sin formato PM</span></td>
+          <td style="white-space:nowrap">—</td>
+          <td style="white-space:nowrap"><span class="muted">—</span></td>
+          <td style="white-space:nowrap"><span class="chip none">Sin datos</span><br><small><span class="muted">Sin servicio documentado</span></small></td>
+          <td><ul class="obs"><li>El equipo está en el sistema pero no hay carpeta de documentos.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--BECL-008.html">BECL-008</a></td>
+          <td style="white-space:nowrap"><span class="muted">sin formato PM</span></td>
+          <td style="white-space:nowrap">—</td>
+          <td style="white-space:nowrap"><span class="muted">—</span></td>
+          <td style="white-space:nowrap"><span class="chip none">Sin datos</span><br><small><span class="muted">Sin servicio documentado</span></small></td>
+          <td><ul class="obs"><li>El equipo está en el sistema pero no hay carpeta de documentos.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-001.html">TECL-001</a></td>
+          <td style="white-space:nowrap"><b>20/06/2026</b><br><small class="muted">TECL001 20.06-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,560.6 h<br><small class="muted">próximo 1,660.6 h</small></td>
+          <td style="white-space:nowrap">09/11/2026 · 1,578.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>82 d · 82 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-002.html">TECL-002</a></td>
+          <td style="white-space:nowrap"><b>30/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL002 30-09-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,497.0 h<br><small class="muted">próximo 1,597.0 h</small></td>
+          <td style="white-space:nowrap">12/11/2026 · 1,511.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>85 d · 85 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-003.html">TECL-003</a></td>
+          <td style="white-space:nowrap"><b>30/07/2025</b><br><small class="muted">TECL003 30.07.25.pdf.pdf</small></td>
+          <td style="white-space:nowrap">1,461.5 h<br><small class="muted">próximo 1,561.5 h</small></td>
+          <td style="white-space:nowrap">24/06/2026 · 1,487.5 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">56 d vencido</b></small></td>
+          <td><ul class="obs"><li>El certificado de mantenimiento dice «según fecha 15/08/2025» y la tabla del programa dice 30/07/2025; se toma el 30/07/2025.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-004.html">TECL-004</a></td>
+          <td style="white-space:nowrap"><b>17/08/2026</b><br><small class="muted">TECL004 17.08.2026.pdf</small></td>
+          <td style="white-space:nowrap">1,450.0 h<br><small class="muted">próximo 1,550.0 h</small></td>
+          <td style="white-space:nowrap">12/10/2026 · 1,470.9 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>54 d · 58 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-005.html">TECL-005</a></td>
+          <td style="white-space:nowrap"><b>05/05/2026</b><br><small class="muted">TECL005 05-05-2026.pdf</small></td>
+          <td style="white-space:nowrap">635.4 h<br><small class="muted">próximo 735.4 h</small></td>
+          <td style="white-space:nowrap">09/11/2026 · 645.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>82 d · 89 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-006.html">TECL-006</a></td>
+          <td style="white-space:nowrap"><b>25/07/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL006 23-09-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,190.0 h<br><small class="muted">próximo 1,290.0 h</small></td>
+          <td style="white-space:nowrap">23/09/2026 · 1,190.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>35 d · 90 h</small></td>
+          <td><ul class="obs"><li>El archivo «TECL006 23-09-2026.pdf» lleva en el nombre el 23/09/2026 pero el formato dice FECHA 25/07/2026.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-007.html">TECL-007</a></td>
+          <td style="white-space:nowrap"><b>20/05/2026</b><br><small class="muted">TECL007 20.05.26.pdf</small></td>
+          <td style="white-space:nowrap">476.5 h<br><small class="muted">próximo 576.5 h</small></td>
+          <td style="white-space:nowrap">17/08/2026 · 484.8 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">2 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-008.html">TECL-008</a></td>
+          <td style="white-space:nowrap"><b>20/05/2026</b><br><small class="muted">TECL008 05.20.26.pdf</small></td>
+          <td style="white-space:nowrap">960.0 h<br><small class="muted">próximo 1,060.0 h</small></td>
+          <td style="white-space:nowrap">14/10/2026 · 975.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>56 d · 81 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-009.html">TECL-009</a></td>
+          <td style="white-space:nowrap"><b>16/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL009 16-09-2026.pdf</small></td>
+          <td style="white-space:nowrap">602.0 h<br><small class="muted">próximo 702.0 h</small></td>
+          <td style="white-space:nowrap">11/11/2026 · 615.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>84 d · 86 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-010.html">TECL-010</a></td>
+          <td style="white-space:nowrap"><b>10/05/2026</b><br><small class="muted">TECL010 10.05.2026.pdf</small></td>
+          <td style="white-space:nowrap">893.6 h<br><small class="muted">próximo 993.6 h</small></td>
+          <td style="white-space:nowrap">20/10/2026 · 965.8 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip warn">Por vencer</span><br><small>62 d · 10 h</small></td>
+          <td><ul class="obs"><li>Servicio del 10/05/2026: la leyenda indica cada 250 h pero el próximo está a 100 h (993.6).</li><li>El último formato indica servicio cada 250 h; el sistema usa 100 h para este equipo.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-011.html">TECL-011</a></td>
+          <td style="white-space:nowrap"><b>10/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL011 10-09-2026.pdf</small></td>
+          <td style="white-space:nowrap">13,269.2 h<br><small class="muted">próximo 13,519.2 h</small></td>
+          <td style="white-space:nowrap">12/11/2026 · 13,272.2 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>85 d · 246 h</small></td>
+          <td><ul class="obs"><li>El certificado de mantenimiento es del 10/09/2026 pero el formato PM anexado es del 10/05/2026 (h 12464.8): anexo desactualizado.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-012.html">TECL-012</a></td>
+          <td style="white-space:nowrap"><b>20/07/2026</b><br><small class="muted">PM TECL-012 20-07-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,194.0 h<br><small class="muted">próximo 1,294.0 h</small></td>
+          <td style="white-space:nowrap">31/08/2026 · 1,198.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip warn">Por vencer</span><br><small>12 d · 91 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-013.html">TECL-013</a></td>
+          <td style="white-space:nowrap"><b>25/07/2026</b><br><small class="muted">TECL013 28-07-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,780.0 h<br><small class="muted">próximo 1,880.0 h</small></td>
+          <td style="white-space:nowrap">19/10/2026 · 1,791.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>61 d · 83 h</small></td>
+          <td><ul class="obs"><li>El archivo «TECL013 28-07-2026.pdf» lleva en el nombre el 28/07/2026 pero el formato dice FECHA 25/07/2026.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-014.html">TECL-014</a></td>
+          <td style="white-space:nowrap"><b>27/06/2026</b><br><small class="muted">TECL014 27.06.26.pdf</small></td>
+          <td style="white-space:nowrap">1,315.0 h<br><small class="muted">próximo 1,415.0 h</small></td>
+          <td style="white-space:nowrap">27/10/2026 · 1,347.8 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>69 d · 66 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-015.html">TECL-015</a></td>
+          <td style="white-space:nowrap"><b>10/05/2026</b><br><small class="muted">TECL015 10.05.26.pdf.pdf</small></td>
+          <td style="white-space:nowrap">1,330.0 h<br><small class="muted">próximo 1,430.0 h</small></td>
+          <td style="white-space:nowrap">29/10/2026 · 1,361.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>71 d · 68 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-016.html">TECL-016</a></td>
+          <td style="white-space:nowrap"><b>20/06/2026</b><br><small class="muted">TECL016 20.06.2026.pdf</small></td>
+          <td style="white-space:nowrap">1,505.0 h<br><small class="muted">próximo 1,605.0 h</small></td>
+          <td style="white-space:nowrap">12/11/2026 · 1,515.8 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>85 d · 89 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-017.html">TECL-017</a></td>
+          <td style="white-space:nowrap"><b>09/01/2026</b><br><small class="muted">TECL017 09.01.2026.pdf</small></td>
+          <td style="white-space:nowrap">1,256.5 h<br><small class="muted">próximo 1,356.5 h</small></td>
+          <td style="white-space:nowrap">12/10/2026 · 1,294.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>54 d · 57 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-018.html">TECL-018</a></td>
+          <td style="white-space:nowrap"><b>24/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL018 24.09.26.pdf</small></td>
+          <td style="white-space:nowrap">1,777.0 h<br><small class="muted">próximo 1,877.0 h</small></td>
+          <td style="white-space:nowrap">13/10/2026 · 1,777.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>55 d · 97 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-019.html">TECL-019</a></td>
+          <td style="white-space:nowrap"><b>01/10/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL019 01.10.2026.pdf</small></td>
+          <td style="white-space:nowrap">737.0 h<br><small class="muted">próximo 837.0 h</small></td>
+          <td style="white-space:nowrap">12/11/2026 · 740.6 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>85 d · 94 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-020.html">TECL-020</a></td>
+          <td style="white-space:nowrap"><b>20/05/2026</b><br><small class="muted">TECL020 08-05-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,147.0 h<br><small class="muted">próximo 1,247.0 h</small></td>
+          <td style="white-space:nowrap">13/08/2026 · 1,157.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">6 d vencido</b></small></td>
+          <td><ul class="obs"><li>El archivo «TECL020 08-05-2026.pdf» lleva en el nombre el 08/05/2026 pero el formato dice FECHA 20/05/2026.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-021.html">TECL-021</a></td>
+          <td style="white-space:nowrap"><b>20/06/2026</b><br><small class="muted">TECL021 20.06.2026.pdf</small></td>
+          <td style="white-space:nowrap">474.0 h<br><small class="muted">próximo 574.0 h</small></td>
+          <td style="white-space:nowrap">05/08/2026 · 474.7 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">14 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-022.html">TECL-022</a></td>
+          <td style="white-space:nowrap"><b>05/04/2026</b><br><small class="muted">TECL022 05.04.26.pdf</small></td>
+          <td style="white-space:nowrap">327.1 h<br><small class="muted">próximo 427.1 h</small></td>
+          <td style="white-space:nowrap">24/06/2026 · 338.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">56 d vencido</b></small></td>
+          <td><ul class="obs"><li>Servicio del 05/04/2026: la leyenda indica cada 250 h pero el próximo está a 100 h (427.1).</li><li>El último formato indica servicio cada 250 h; el sistema usa 100 h para este equipo.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-023.html">TECL-023</a></td>
+          <td style="white-space:nowrap"><b>15/03/2026</b><br><small class="muted">TECL023 15-03-2026.pdf.pdf</small></td>
+          <td style="white-space:nowrap">1,063.2 h<br><small class="muted">próximo 1,163.2 h</small></td>
+          <td style="white-space:nowrap">04/05/2026 · 1,080.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">107 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-024.html">TECL-024</a></td>
+          <td style="white-space:nowrap"><b>20/06/2026</b><br><small class="muted">TECL024 20.06.2026.pdf.pdf</small></td>
+          <td style="white-space:nowrap">550.7 h<br><small class="muted">próximo 650.7 h</small></td>
+          <td style="white-space:nowrap">11/09/2026 · 570.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>23 d · 65 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-025.html">TECL-025</a></td>
+          <td style="white-space:nowrap"><b>20/06/2026</b><br><small class="muted">TECL025 20.06.2026.pdf</small></td>
+          <td style="white-space:nowrap">1,373.3 h<br><small class="muted">próximo 1,473.3 h</small></td>
+          <td style="white-space:nowrap">11/09/2026 · 1,401.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>23 d · 50 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-027.html">TECL-027</a></td>
+          <td style="white-space:nowrap"><b>09/10/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL027 09.10.26.pdf.pdf</small></td>
+          <td style="white-space:nowrap">789.7 h<br><small class="muted">próximo 889.7 h</small></td>
+          <td style="white-space:nowrap">11/11/2026 · 789.7 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>84 d · 99 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-028.html">TECL-028</a></td>
+          <td style="white-space:nowrap"><b>20/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL028 20.09.26.pdf.pdf</small></td>
+          <td style="white-space:nowrap">820.0 h<br><small class="muted">próximo 920.0 h</small></td>
+          <td style="white-space:nowrap">20/10/2026 · 820.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>62 d · 97 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-029.html">TECL-029</a></td>
+          <td style="white-space:nowrap"><b>20/05/2026</b><br><small class="muted">TECL029 20.05.26.pdf</small></td>
+          <td style="white-space:nowrap">535.1 h<br><small class="muted">próximo 635.1 h</small></td>
+          <td style="white-space:nowrap">18/08/2026 · 545.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">1 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-030.html">TECL-030</a></td>
+          <td style="white-space:nowrap"><b>10/05/2026</b><br><small class="muted">TECL030 10.05.26.pdf.pdf</small></td>
+          <td style="white-space:nowrap">322.0 h<br><small class="muted">próximo 422.0 h</small></td>
+          <td style="white-space:nowrap">16/11/2026 · 340.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>89 d · 82 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-031.html">TECL-031</a></td>
+          <td style="white-space:nowrap"><b>20/05/2026</b><br><small class="muted">TECL031 20.05.26.pdf</small></td>
+          <td style="white-space:nowrap">550.0 h<br><small class="muted">próximo 650.0 h</small></td>
+          <td style="white-space:nowrap">02/09/2026 · 555.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip warn">Por vencer</span><br><small>14 d · 91 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-032.html">TECL-032</a></td>
+          <td style="white-space:nowrap"><b>25/08/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL032 25-08-2026.pdf</small></td>
+          <td style="white-space:nowrap">338.0 h<br><small class="muted">próximo 438.0 h</small></td>
+          <td style="white-space:nowrap">16/11/2026 · 348.9 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>89 d · 89 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-033.html">TECL-033</a></td>
+          <td style="white-space:nowrap"><b>05/05/2026</b><br><small class="muted">TECL033.pdf.pdf</small></td>
+          <td style="white-space:nowrap">504.3 h<br><small class="muted">próximo 604.3 h</small></td>
+          <td style="white-space:nowrap">05/11/2026 · 544.8 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>78 d · 58 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-034.html">TECL-034</a></td>
+          <td style="white-space:nowrap"><b>22/06/2026</b><br><small class="muted">TECL034 22.06.26.pdf</small></td>
+          <td style="white-space:nowrap">993.1 h<br><small class="muted">próximo 1,093.1 h</small></td>
+          <td style="white-space:nowrap">11/07/2026 · 993.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">39 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-035.html">TECL-035</a></td>
+          <td style="white-space:nowrap"><b>10/05/2026</b><br><small class="muted">TECL035 10.05.2026.pdf</small></td>
+          <td style="white-space:nowrap">360.0 h<br><small class="muted">próximo 460.0 h</small></td>
+          <td style="white-space:nowrap">16/11/2026 · 375.2 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>89 d · 85 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-036.html">TECL-036</a></td>
+          <td style="white-space:nowrap"><span class="muted">sin formato PM</span></td>
+          <td style="white-space:nowrap">—</td>
+          <td style="white-space:nowrap"><span class="muted">—</span></td>
+          <td style="white-space:nowrap"><span class="chip none">Sin datos</span><br><small><span class="muted">Sin servicio documentado</span></small></td>
+          <td><ul class="obs"><li>El equipo está en el sistema pero no hay carpeta de documentos.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-037.html">TECL-037</a></td>
+          <td style="white-space:nowrap"><b>20/07/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL037 20.07.26.pdf</small></td>
+          <td style="white-space:nowrap">345.0 h<br><small class="muted">próximo 445.0 h</small></td>
+          <td style="white-space:nowrap">11/11/2026 · 296.8 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>84 d · 148 h</small></td>
+          <td><ul class="obs"><li>El horómetro baja de 345 (servicio del 20/07/2026) a 296.8 (certificado de operatividad del 11/11/2026).</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-038.html">TECL-038</a></td>
+          <td style="white-space:nowrap"><b>05/04/2026</b><br><small class="muted">TECL038 05-04-2026.pdf.pdf</small></td>
+          <td style="white-space:nowrap">840.9 h<br><small class="muted">próximo 940.9 h</small></td>
+          <td style="white-space:nowrap">09/09/2026 · 855.8 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>21 d · 79 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-039.html">TECL-039</a></td>
+          <td style="white-space:nowrap"><b>15/06/2026</b><br><small class="muted">TECL039 15-06-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,123.3 h<br><small class="muted">próximo 1,223.3 h</small></td>
+          <td style="white-space:nowrap">24/06/2026 · 1,123.3 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">56 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-040.html">TECL-040</a></td>
+          <td style="white-space:nowrap"><b>15/06/2026</b><br><small class="muted">TECL040 15-06-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,510.5 h<br><small class="muted">próximo 1,610.5 h</small></td>
+          <td style="white-space:nowrap">24/06/2026 · 1,510.5 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">56 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-041.html">TECL-041</a></td>
+          <td style="white-space:nowrap"><b>20/07/2026</b><br><small class="muted">TECL041 20.07.2026.pdf</small></td>
+          <td style="white-space:nowrap">673.0 h<br><small class="muted">próximo 773.0 h</small></td>
+          <td style="white-space:nowrap">16/10/2026 · 681.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>58 d · 91 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-042.html">TECL-042</a></td>
+          <td style="white-space:nowrap"><b>20/06/2026</b><br><small class="muted">TECL042 20.06.2026.pdf</small></td>
+          <td style="white-space:nowrap">300.2 h<br><small class="muted">próximo 400.2 h</small></td>
+          <td style="white-space:nowrap">24/08/2026 · 311.3 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip warn">Por vencer</span><br><small>5 d · 74 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-043.html">TECL-043</a></td>
+          <td style="white-space:nowrap"><b>20/07/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL043 20.07.2026.pdf</small></td>
+          <td style="white-space:nowrap">510.0 h<br><small class="muted">próximo 610.0 h</small></td>
+          <td style="white-space:nowrap">10/11/2026 · 520.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>83 d · 90 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-044.html">TECL-044</a></td>
+          <td style="white-space:nowrap"><b>30/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL044 30-09-2026.pdf</small></td>
+          <td style="white-space:nowrap">1,381.6 h<br><small class="muted">próximo 1,481.6 h</small></td>
+          <td style="white-space:nowrap">10/11/2026 · 1,392.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>83 d · 89 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-045.html">TECL-045</a></td>
+          <td style="white-space:nowrap"><b>20/05/2026</b><br><small class="muted">TECL045 20.05.2026.pdf</small></td>
+          <td style="white-space:nowrap">342.0 h<br><small class="muted">próximo 442.0 h</small></td>
+          <td style="white-space:nowrap">13/08/2026 · 342.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">6 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-046.html">TECL-046</a></td>
+          <td style="white-space:nowrap"><span class="muted">sin formato PM</span></td>
+          <td style="white-space:nowrap">—</td>
+          <td style="white-space:nowrap"><span class="muted">—</span></td>
+          <td style="white-space:nowrap"><span class="chip none">Sin datos</span><br><small><span class="muted">Sin servicio documentado</span></small></td>
+          <td><ul class="obs"><li>El equipo está en el sistema pero no hay carpeta de documentos.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-047.html">TECL-047</a></td>
+          <td style="white-space:nowrap"><b>22/07/2026</b><br><small class="muted">TECL047 22.07.26.pdf</small></td>
+          <td style="white-space:nowrap">1,830.0 h<br><small class="muted">próximo 1,930.0 h</small></td>
+          <td style="white-space:nowrap">04/11/2026 · 1,890.8 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>77 d · 37 h</small></td>
+          <td><ul class="obs"><li>El certificado de mantenimiento dice «según fecha 22/07/2026» y la tabla del programa dice 22/07/2025; se toma el 22/07/2026.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-048.html">TECL-048</a></td>
+          <td style="white-space:nowrap"><b>13/11/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL048 13.11.2026.pdf</small></td>
+          <td style="white-space:nowrap">19,050.0 h<br><small class="muted">próximo 19,300.0 h</small></td>
+          <td style="white-space:nowrap">15/11/2026 · 19,050.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>88 d · 100 h</small></td>
+          <td><ul class="obs"><li>El último formato indica servicio cada 250 h; el sistema usa 100 h para este equipo.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-049.html">TECL-049</a></td>
+          <td style="white-space:nowrap"><b>20/05/2026</b><br><small class="muted">TECL049 20.05.26.pdf</small></td>
+          <td style="white-space:nowrap">1,040.7 h<br><small class="muted">próximo 1,140.7 h</small></td>
+          <td style="white-space:nowrap">15/11/2026 · 1,065.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>88 d · 75 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-050.html">TECL-050</a><br><small class="muted">fuera de flota</small></td>
+          <td style="white-space:nowrap"><b>10/05/2026</b><br><small class="muted">TECL050 10.05.2026.pdf</small></td>
+          <td style="white-space:nowrap">890.4 h<br><small class="muted">próximo 990.4 h</small></td>
+          <td style="white-space:nowrap">18/05/2026 · 890.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">93 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-051.html">TECL-051</a></td>
+          <td style="white-space:nowrap"><b>04/07/2026</b><br><small class="muted">TECL051 04.07.26.pdf</small></td>
+          <td style="white-space:nowrap">1,005.0 h<br><small class="muted">próximo 1,105.0 h</small></td>
+          <td style="white-space:nowrap">09/10/2026 · 1,023.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>51 d · 74 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-053.html">TECL-053</a></td>
+          <td style="white-space:nowrap"><b>20/06/2026</b><br><small class="muted">TECL053 20.06.2026.pdf</small></td>
+          <td style="white-space:nowrap">670.0 h<br><small class="muted">próximo 770.0 h</small></td>
+          <td style="white-space:nowrap">05/08/2026 · 675.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">14 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-054.html">TECL-054</a></td>
+          <td style="white-space:nowrap"><b>30/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL054 30-09-2026.pdf</small></td>
+          <td style="white-space:nowrap">363.0 h<br><small class="muted">próximo 463.0 h</small></td>
+          <td style="white-space:nowrap">11/11/2026 · 370.7 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>84 d · 92 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-055.html">TECL-055</a></td>
+          <td style="white-space:nowrap"><b>20/07/2026</b><br><small class="muted">TECL055 22.07.26.pdf</small></td>
+          <td style="white-space:nowrap">1,088.0 h<br><small class="muted">próximo 1,188.0 h</small></td>
+          <td style="white-space:nowrap">27/10/2026 · 1,111.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>69 d · 77 h</small></td>
+          <td><ul class="obs"><li>El archivo «TECL055 22.07.26.pdf» lleva en el nombre el 22/07/2026 pero el formato dice FECHA 20/07/2026.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-056.html">TECL-056</a></td>
+          <td style="white-space:nowrap"><b>22/07/2025</b><br><small class="muted">TECL056 22.07.25.pdf</small></td>
+          <td style="white-space:nowrap">495.3 h<br><small class="muted">próximo 595.3 h</small></td>
+          <td style="white-space:nowrap">09/11/2026 · 625.7 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">33 h excedido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-057.html">TECL-057</a></td>
+          <td style="white-space:nowrap"><b>05/05/2026</b><br><small class="muted">TECL057 05-05-2026.pdf.pdf</small></td>
+          <td style="white-space:nowrap">98.0 h<br><small class="muted">próximo 198.0 h</small></td>
+          <td style="white-space:nowrap">13/10/2026 · 138.5 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>55 d · 52 h</small></td>
+          <td><ul class="obs"><li>El certificado de mantenimiento dice «según fecha 05/05/2026» y la tabla del programa dice 05/05/2025; se toma el 05/05/2026.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-058.html">TECL-058</a></td>
+          <td style="white-space:nowrap"><b>10/05/2026</b><br><small class="muted">TECL058 10.05.26.pdf</small></td>
+          <td style="white-space:nowrap">1,100.3 h<br><small class="muted">próximo 1,200.3 h</small></td>
+          <td style="white-space:nowrap">09/11/2026 · 1,113.9 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>82 d · 86 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-059.html">TECL-059</a></td>
+          <td style="white-space:nowrap"><b>26/12/2025</b><br><small class="muted">TECL059 20.06.2026.pdf</small></td>
+          <td style="white-space:nowrap">1,003.9 h<br><small class="muted">próximo 1,103.9 h</small></td>
+          <td style="white-space:nowrap">29/10/2026 · 1,085.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip warn">Por vencer</span><br><small>71 d · 13 h</small></td>
+          <td><ul class="obs"><li>El archivo «TECL059 20.06.2026.pdf» lleva en el nombre el 20/06/2026 pero el formato dice FECHA 26/12/2025.</li><li>Servicio del 26/12/2025: la leyenda indica cada 250 h pero el próximo está a 100 h (1103.9).</li><li>El último formato indica servicio cada 250 h; el sistema usa 100 h para este equipo.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-060.html">TECL-060</a></td>
+          <td style="white-space:nowrap"><b>25/04/2026</b><br><small class="muted">TECL060 25-04-2026.pdf.pdf</small></td>
+          <td style="white-space:nowrap">1,221.9 h<br><small class="muted">próximo 1,471.9 h</small></td>
+          <td style="white-space:nowrap">04/11/2026 · 1,245.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>77 d · 217 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-061.html">TECL-061</a></td>
+          <td style="white-space:nowrap"><b>19/10/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL061 19.10.2026.pdf.pdf</small></td>
+          <td style="white-space:nowrap">260.0 h<br><small class="muted">próximo 360.0 h</small></td>
+          <td style="white-space:nowrap">27/10/2026 · 260.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>69 d · 100 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-062.html">TECL-062</a></td>
+          <td style="white-space:nowrap"><b>08/08/2026</b><br><small class="muted">TECL062 08.08.25.pdf.pdf.pdf</small></td>
+          <td style="white-space:nowrap">160.0 h<br><small class="muted">próximo 260.0 h</small></td>
+          <td style="white-space:nowrap">17/09/2026 · 165.6 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>29 d · 86 h</small></td>
+          <td><ul class="obs"><li>El archivo «TECL062 08.08.25.pdf.pdf.pdf» lleva en el nombre el 08/08/2025 pero el formato dice FECHA 08/08/2026.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-063.html">TECL-063</a></td>
+          <td style="white-space:nowrap"><b>20/05/2026</b><br><small class="muted">TECL063 20.05.2026.pdf</small></td>
+          <td style="white-space:nowrap">147.3 h<br><small class="muted">próximo 247.3 h</small></td>
+          <td style="white-space:nowrap">17/11/2026 · 172.1 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>90 d · 75 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-064.html">TECL-064</a></td>
+          <td style="white-space:nowrap"><b>10/05/2026</b><br><small class="muted">TECL064 10-05-2026.pdf</small></td>
+          <td style="white-space:nowrap">100.0 h<br><small class="muted">próximo 200.5 h</small></td>
+          <td style="white-space:nowrap">10/08/2026 · 190.2 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">9 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-065.html">TECL-065</a></td>
+          <td style="white-space:nowrap"><b>10/05/2026</b><br><small class="muted">TECL065 10.05.2026.pdf</small></td>
+          <td style="white-space:nowrap">350.0 h<br><small class="muted">próximo 450.0 h</small></td>
+          <td style="white-space:nowrap">09/09/2026 · 380.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>21 d · 53 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-066.html">TECL-066</a></td>
+          <td style="white-space:nowrap"><b>20/06/2026</b><br><small class="muted">LR - Plan de Procesos de Mntto Tijeras TECL066.pdf</small></td>
+          <td style="white-space:nowrap">40.0 h<br><small class="muted">próximo 140.0 h</small></td>
+          <td style="white-space:nowrap">09/09/2026 · 50.3 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>21 d · 81 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-067.html">TECL-067</a></td>
+          <td style="white-space:nowrap"><b>12/12/2025</b><br><small class="muted">TECL067 05.08.2026.pdf</small></td>
+          <td style="white-space:nowrap">0.0 h<br><small class="muted">próximo 100.0 h</small></td>
+          <td style="white-space:nowrap">13/11/2026 · 51.4 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>86 d · 48 h</small></td>
+          <td><ul class="obs"><li>El archivo «TECL067 05.08.2026.pdf» lleva en el nombre el 05/08/2026 pero el formato dice FECHA 12/12/2025.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-068.html">TECL-068</a></td>
+          <td style="white-space:nowrap"><b>12/12/2025</b><br><small class="muted">TECL068.pdf</small></td>
+          <td style="white-space:nowrap">0.0 h<br><small class="muted">próximo 100.0 h</small></td>
+          <td style="white-space:nowrap">23/04/2026 · 18.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip bad">Vencido</span><br><small><b style="color:var(--bad)">118 d vencido</b></small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-069.html">TECL-069</a><br><small class="muted">fuera de flota</small></td>
+          <td style="white-space:nowrap"><b>06/11/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL069 06-11-2026.pdf</small></td>
+          <td style="white-space:nowrap">42.2 h<br><small class="muted">próximo 292.2 h</small></td>
+          <td style="white-space:nowrap">06/11/2026 · 42.2 h</td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>79 d · 96 h</small></td>
+          <td><ul class="obs"><li>El certificado de mantenimiento dice «según fecha 06/11/2026» y la tabla del programa dice 07/11/2026; se toma el 06/11/2026.</li><li>El último formato indica servicio cada 250 h; el sistema usa 100 h para este equipo.</li><li>El servicio del 06/11/2026 marca 42.2 h, menos que la lectura del 04/05/2026 (45 h, certificado de operatividad): revise la fecha o el horómetro del formato.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-070.html">TECL-070</a></td>
+          <td style="white-space:nowrap"><b>12/08/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL070 12.08.2026.pdf</small></td>
+          <td style="white-space:nowrap">70.0 h<br><small class="muted">próximo 170.0 h</small></td>
+          <td style="white-space:nowrap">11/11/2026 · 75.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>84 d · 94 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-071.html">TECL-071</a></td>
+          <td style="white-space:nowrap"><b>12/07/2026</b><br><small class="muted">TECL071.pdf</small></td>
+          <td style="white-space:nowrap">60.0 h<br><small class="muted">próximo 160.0 h</small></td>
+          <td style="white-space:nowrap">13/11/2026 · 80.2 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>86 d · 79 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-072.html">TECL-072</a></td>
+          <td style="white-space:nowrap"><b>15/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL072.pdf</small></td>
+          <td style="white-space:nowrap">63.0 h<br><small class="muted">próximo 163.0 h</small></td>
+          <td style="white-space:nowrap">25/10/2026 · 63.2 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>67 d · 97 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-073.html">TECL-073</a></td>
+          <td style="white-space:nowrap"><b>15/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL073.pdf</small></td>
+          <td style="white-space:nowrap">30.0 h<br><small class="muted">próximo 130.0 h</small></td>
+          <td style="white-space:nowrap">21/10/2026 · 30.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>63 d · 98 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-074.html">TECL-074</a></td>
+          <td style="white-space:nowrap"><b>15/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL074.pdf.pdf</small></td>
+          <td style="white-space:nowrap">46.0 h<br><small class="muted">próximo 146.0 h</small></td>
+          <td style="white-space:nowrap">14/10/2026 · 47.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>56 d · 90 h</small></td>
+          <td><ul class="obs"><li>El servicio del 15/09/2026 marca 46 h, menos que la lectura del 13/07/2026 (55 h, certificado de operatividad): revise la fecha o el horómetro del formato.</li></ul></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-075.html">TECL-075</a></td>
+          <td style="white-space:nowrap"><b>15/09/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL075.pdf</small></td>
+          <td style="white-space:nowrap">58.0 h<br><small class="muted">próximo 158.0 h</small></td>
+          <td style="white-space:nowrap">13/11/2026 · 60.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>86 d · 98 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--TECL-076.html">TECL-076</a></td>
+          <td style="white-space:nowrap"><b>15/07/2026</b> <span class="chip info plain">de la carpeta</span><br><small class="muted">TECL076.pdf</small></td>
+          <td style="white-space:nowrap">40.0 h<br><small class="muted">próximo 140.0 h</small></td>
+          <td style="white-space:nowrap">10/11/2026 · 40.0 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip ok">Vigente</span><br><small>83 d · 99 h</small></td>
+          <td><span class="muted">—</span></td>
+        </tr>
+      
+        <tr>
+          <td><a class="cod" href="equipos--UPCL-001.html">UPCL-001</a></td>
+          <td style="white-space:nowrap"><b>04/07/2026</b><br><small class="muted">UPCL001 04.07.26.pdf</small></td>
+          <td style="white-space:nowrap">285.9 h<br><small class="muted">próximo 385.9 h</small></td>
+          <td style="white-space:nowrap">01/09/2026 · 284.7 h<br><small class="muted">renueva el plazo</small></td>
+          <td style="white-space:nowrap"><span class="chip warn">Por vencer</span><br><small>13 d · 92 h</small></td>
+          <td><ul class="obs"><li>El horómetro baja de 285.9 (servicio del 04/07/2026) a 284.7 (certificado de operatividad del 01/09/2026).</li></ul></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="nota" style="margin-top:12px">El semáforo usa el intervalo de calendario de <a href="configuracion.html">Configuración</a> y la frecuencia en horas de cada equipo, lo que ocurra primero. El plazo de calendario corre desde el último certificado de operatividad emitido después del preventivo (la inspección al despachar lo renueva); las horas se cuentan siempre desde el preventivo.</div>
+
+
+  </main>
+</div>
+<script src="static/app.js"></script>
+
+</body>
+</html>

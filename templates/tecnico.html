@@ -1,0 +1,38 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% from '_m.html' import chip, eq_link %}
+{% block titulo %}{{ t.nombre }}{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div class="persona">
+    <span class="avatar" style="width:52px;height:52px;font-size:18px">{{ t.nombre[:1] }}{{ t.nombre.split(' ')[-1][:1] }}</span>
+    <div><div class="migas"><a href="{{ url_for('personal') }}">Personal</a></div><h1>{{ t.nombre }}</h1><p>{{ t.cargo or '' }}{% if t.especialidad %} · {{ t.especialidad }}{% endif %}</p></div>
+  </div>
+  <div class="acciones"><a class="btn" href="{{ url_for('tecnico_form', tid=t.id) }}">Editar</a></div>
+</div>
+<div class="grid g-12">
+  <div class="stack">
+    <div class="card"><div class="hd"><h2>Datos</h2>{{ chip('Disponible' if t.activo else 'Cancelada', 'Activo' if t.activo else 'Inactivo') }}</div>
+      <div class="bd"><dl class="dl">
+        <dt>DNI</dt><dd>{{ t.dni or '—' }}</dd><dt>Teléfono</dt><dd>{{ t.telefono or '—' }}</dd>
+        <dt>Correo</dt><dd>{{ t.correo or '—' }}</dd><dt>Ingreso</dt><dd>{{ t.fecha_ingreso|fecha }}</dd>
+      </dl>{% if t.notas %}<div class="nota" style="margin-top:10px">{{ t.notas }}</div>{% endif %}</div></div>
+    <div class="card"><div class="hd"><h2>Servicios por categoría</h2></div>
+      <ul class="lista">{% for c, n in por_cat.items() %}<li><span>{{ c }}</span><b>{{ n }}</b></li>{% endfor %}
+        {% if not por_cat %}<li class="muted">Sin servicios completados.</li>{% endif %}</ul></div>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Órdenes asignadas</h2><span class="muted">{{ ords|length }}</span></div>
+    <div class="bd flush tabla-wrap">
+      {% if ords %}
+      <table><thead><tr><th>OT</th><th>Equipo</th><th>Tipo · nivel</th><th>Estado</th><th>Fecha</th><th class="n">Horómetro</th></tr></thead>
+      <tbody>{% for o in ords %}
+        <tr class="fila-link" data-href="{{ url_for('orden', oid=o.id) }}"><td><a class="mono" href="{{ url_for('orden', oid=o.id) }}">{{ o.id|ot }}</a></td><td>{{ eq_link(o.codigo) }}</td>
+          <td>{{ o.tipo }} {{ o.nivel or '' }}</td><td>{{ chip(o.estado) }}</td><td>{{ (o.fecha_fin or o.fecha_programada)|fecha }}</td>
+          <td class="n">{{ o.horometro|num(1) if o.horometro is not none else '—' }}</td></tr>
+      {% endfor %}</tbody></table>
+      {% else %}<div class="vacio">Sin órdenes asignadas.</div>{% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

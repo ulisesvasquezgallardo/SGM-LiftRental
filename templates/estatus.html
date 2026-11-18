@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% from '_m.html' import chip, eq_link, icono %}
+{% block titulo %}Estatus de equipos{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Estatus de equipos</h1>
+    <p>El libro «Estatus de los equipos» que emite operaciones cada día es la fuente de dónde está cada equipo. Al cargarlo, el sistema abre, actualiza y cierra los contratos, marca los equipos vendidos y registra los horómetros confiables. También cruza los días seguidos entre sí: lo que no cuadra de un día a otro y los datos que faltan quedan abajo para revisarlos con operaciones.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('almacen') }}">{{ icono('almacen') }} Almacén en vivo</a>
+    <a class="btn pri" href="{{ url_for('optimizacion') }}">{{ icono('optim') }} Optimizar con el estatus</a>
+  </div>
+</div>
+
+{% if EST.atrasado %}<div class="flash warn">El último estatus cargado es del {{ EST.fecha|fecha }}; hoy es {{ HOY|fecha }}. Cargue el libro de hoy para que el almacén y el modelo partan de la situación actual.</div>{% endif %}
+
+<form class="card" method="post" action="{{ url_for('estatus_importar') }}" enctype="multipart/form-data" style="margin-bottom:16px">
+  <div class="hd"><h2>Cargar estatus</h2>{% if EST.fecha %}<span class="tag">último: {{ EST.fecha|fecha }} · {{ EST.archivo }}</span>{% endif %}</div>
+  <div class="bd stack" style="gap:12px">
+    {% if libros %}
+    <div>
+      <label>Libros encontrados</label>
+      {% for p in libros %}
+      <label class="check ancho"><input type="radio" name="ruta" value="{{ p }}" {{ 'checked' if loop.first }}>
+        <span><b>{{ p.name }}</b> <small class="muted">· {{ p.parent.name }} · modificado {{ p.stat().st_mtime|fecha_archivo }}</small></span></label>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="campos">
+      <div><label>… o adjuntar otro libro (.xlsx)</label><input type="file" name="archivo" accept=".xlsx"></div>
+    </div>
+    {% if modo_sim or not EST.fecha %}
+    <div class="nota">La base tiene hoy la <b>operación simulada</b> del 22/09 en adelante. La primera carga la reemplaza: parte del registro real del 22/09/2026 (expedientes y contratos) y aplica encima las hojas del libro en orden de fecha. Se conservan la configuración, las corridas del modelo y los pedidos registrados a mano; la cartera calibrada se regenera con los contratos reales.</div>
+    <input type="hidden" name="reconstruir" value="1">
+    {% else %}
+    <label class="check ancho"><input type="checkbox" name="reconstruir" value="1"> Recargar todo desde el registro del 22/09/2026. Si no se marca, sólo se aplican las hojas posteriores al {{ EST.fecha|fecha }}. Al recargar se pierden las órdenes, lecturas y despachos ingresados a mano.</label>
+    {% endif %}
+    <div class="acciones"><button class="btn osc">{{ icono('doc') }} Cargar estatus</button></div>
+  </div>
+</form>
+
+{% if inf %}
+{% set k = inf.cuenta %}
+<div class="grid g5" style="margin-bottom:16px">
+  <div class="card kpi"><span class="l">Estatus al</span><span class="v">{{ inf.fecha|fecha('%d/%m') }}</span><span class="s">hojas {{ inf.hojas|join(', ') }} · desde el {{ inf.desde|fecha }}</span></div>
+  <div class="card kpi"><span class="l">En obra</span><span class="v">{{ inf.flota.obra }}</span><span class="s">de {{ inf.flota.total }} equipos activos · ocupación {{ (inf.flota.obra / inf.flota.total * 100)|num(0) }} %</span></div>
+  <div class="card kpi"><span class="l">En el patio</span><span class="v">{{ inf.flota.patio }}</span><span class="s">{% if inf.flota.fuera %}{{ inf.flota.fuera }} fuera de servicio{% else %}disponibles{% endif %}</span></div>
+  <div class="card kpi"><span class="l">Contratos</span><span class="v">{{ k.nuevos }}</span><span class="s">nuevos · {{ k.cerrados }} devueltos · {{ k.actualizados }} actualizados</span></div>
+  <div class="card kpi"><span class="l">Para revisar</span><span class="v" style="color:var(--bad)">{{ (k.coherencia or 0) + (k.alertas or 0) }}</span><span class="s">incoherencias · {{ k.vencidos or 0 }} contratos vencidos · {{ k.lagunas or 0 }} lagunas</span></div>
+</div>
+
+{% set secciones = [
+  ('coherencia', 'Incoherencias entre los días', 'Lo que un estatus dice y el siguiente contradice, filas con datos de un contrato anterior, columnas que cambian de un día a otro y equipos de terceros. Ninguna detiene la carga, pero conviene corregirlas en el libro.'),
+  ('vencidos', 'Contratos vencidos que siguen en obra', 'El estatus no registra la prórroga ni el recojo. El modelo supone que se renuevan por 30 días (supuesto del informe) hasta que el estatus diga otra cosa.'),
+  ('lagunas', 'Lagunas de información', 'Datos que el último estatus no trae (vencimiento, salida, accesorios, serie) y retornos cuyo día real no se conoce.'),
+  ('alertas', 'Otras observaciones', 'Notas escritas en el libro y series distintas a las del expediente.'),
+  ('vendidos', 'Equipos vendidos', 'Salen de la flota activa; su historia se conserva.'),
+  ('transferidos', 'Contratos reasignados', 'El libro aclara que el equipo en obra es otro código.'),
+  ('nuevos', 'Contratos nuevos', 'Abiertos con la fecha de salida del libro. El estado de mantenimiento a la salida se calcula con el último servicio documentado.'),
+  ('actualizados', 'Contratos actualizados', 'Prórrogas (nuevo vencimiento) y traslados de obra.'),
+  ('reabiertos', 'Contratos reabiertos', 'Un estatus intermedio mostraba el equipo en el taller y el siguiente lo vuelve a mostrar en la misma obra.'),
+  ('cerrados', 'Equipos devueltos', 'La fecha de retorno sale de MOVILIZACIONES cuando el recojo coincide con el cliente u obra; si no, se estima con la regla del informe (renovación por periodos de 30 días) entre los dos estatus.'),
+  ('lecturas', 'Horómetros del libro', 'Sólo se registran los que superan la última lectura y no son valores copiados en varios equipos.'),
+  ('supuestos', 'Supuestos aplicados', 'Fechas que el libro no trae.'),
+  ('situacion', 'Cambios de situación', 'En obra, patio o fuera de servicio.')] %}
+{% for clave, titulo, ayuda in secciones %}{% set filas = inf.detalle.get(clave) or [] %}{% if filas %}
+<details class="card" style="margin-bottom:12px" {{ 'open' if clave in ('coherencia','vencidos','vendidos','transferidos') }}>
+  <summary class="hd"><h2>{{ titulo }}</h2><span class="tag">{{ filas|length }}</span></summary>
+  <div class="bd flush tabla-wrap">
+    <p class="nota" style="margin:12px 16px">{{ ayuda }}</p>
+    <table>
+      <thead><tr><th>Equipo</th><th>Fecha</th><th>Detalle</th></tr></thead>
+      <tbody>{% for x in filas if not x.equipo %}
+        <tr><td><span class="muted">General</span></td><td style="white-space:nowrap">{{ x.fecha|fecha }}</td><td>{{ x.texto }}</td></tr>
+      {% endfor %}{% for x in (filas|selectattr('equipo')|sort(attribute='dias' if clave == 'vencidos' else 'equipo', reverse=clave == 'vencidos')) %}
+        <tr><td>{{ eq_link(x.equipo) }}</td><td style="white-space:nowrap">{{ x.fecha|fecha }}</td><td>{{ x.texto }}</td></tr>
+      {% endfor %}</tbody>
+    </table>
+  </div>
+</details>
+{% endif %}{% endfor %}
+
+<div class="nota" style="margin-top:12px">
+  Libro: <span class="mono">{{ inf.archivo }}</span> · se usan sólo las hojas diarias ({{ inf.hojas|join(', ') }}){% if inf.ignoradas %}; no se leen {{ inf.ignoradas|join(', ') }}{% endif %}.
+  {% if inf.cartera %}Cartera calibrada regenerada con los contratos reales: {{ inf.cartera.pedidos }} pedidos en 60 días ({{ inf.cartera.tasa }} por día, ley de Little).{% endif %}
+  <br>El libro no registra los mantenimientos hechos desde el 22/09: el estado de cada equipo se calcula con su último servicio documentado. Registre los servicios realizados en <a href="{{ url_for('mantenimiento') }}">Órdenes de trabajo</a> para que el semáforo y el modelo reflejen la flota real.
+</div>
+{% else %}
+<div class="card"><div class="vacio">Aún no se ha cargado ningún estatus. El sistema muestra la operación simulada desde el registro del 22/09/2026.</div></div>
+{% endif %}
+{% endblock %}

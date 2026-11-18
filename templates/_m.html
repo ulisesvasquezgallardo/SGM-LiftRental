@@ -1,0 +1,43 @@
+{# Macros compartidas #}
+{% macro chip(e, texto=None) -%}<span class="chip {{ e|clase }}">{{ texto or e }}</span>{%- endmacro %}
+
+{% macro restante(m) -%}
+  {%- if m.estado == 'Sin datos' -%}<span class="muted">Sin servicio documentado</span>
+  {%- elif m.dias_rest is not none and m.dias_rest <= 0 -%}<b style="color:var(--bad)">{{ -m.dias_rest }} d vencido</b>
+  {%- elif m.horas_rest is not none and m.horas_rest <= 0 -%}<b style="color:var(--bad)">{{ -m.horas_rest|num(0) }} h excedido</b>
+  {%- else -%}{{ m.dias_rest }} d · {{ m.horas_rest|num(0) }} h{%- endif -%}
+{%- endmacro %}
+
+{% macro medidor(etq, usado, total, unidad) -%}
+  {% set p = ((usado or 0) / total * 100) if total else 0 %}
+  {% set c = 'bad' if p >= 100 else ('warn' if p >= 80 else 'ok') %}
+  <div class="medidor">
+    <div class="fila"><span>{{ etq }}</span><span><b>{{ usado|num(0 if unidad == 'd' else 1) }}</b> / {{ total|num(0) }} {{ unidad }}</span></div>
+    <div class="prog"><span class="{{ c }}" style="width: {{ [p, 100]|min }}%"></span></div>
+  </div>
+{%- endmacro %}
+
+{% macro eq_link(codigo) -%}<a class="cod" href="{{ url_for('equipo', codigo=codigo) }}">{{ codigo }}</a>{%- endmacro %}
+
+{% macro icono(n) -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+{%- if n == 'panel' %}<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+{%- elif n == 'almacen' %}<path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+{%- elif n == 'uso' %}<path d="M4 20h16M6 20l12-7M6 13l12 7M5 10h14M9 10V6h6v4"/>
+{%- elif n == 'despacho' %}<path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+{%- elif n == 'mant' %}<path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+{%- elif n == 'taller' %}<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+{%- elif n == 'personal' %}<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+{%- elif n == 'incidente' %}<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.2v.3"/>
+{%- elif n == 'config' %}<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z"/>
+{%- elif n == 'optim' %}<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+{%- elif n == 'mas' %}<path d="M12 5v14M5 12h14"/>
+{%- elif n == 'csv' %}<path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>
+{%- elif n == 'print' %}<path d="M6 9V3h12v6M6 18H4v-7h16v7h-2"/><rect x="6" y="14" width="12" height="7"/>
+{%- elif n == 'ok' %}<path d="M5 12.5l4.5 4.5L19 7.5"/>
+{%- elif n == 'x' %}<path d="M6 6l12 12M18 6L6 18"/>
+{%- elif n == 'reloj' %}<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+{%- elif n == 'doc' %}<path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+{%- endif %}
+</svg>
+{%- endmacro %}

@@ -1,0 +1,601 @@
+
+
+<!doctype html>
+<html lang="es">
+<head>
+<script>/* copia estática */(function(){var r=history.replaceState;
+history.replaceState=function(){try{return r.apply(history,arguments)}catch(e){}};
+var M='Esta es una copia de consulta del SGM Lift Rental: aquí no se pueden registrar ni modificar datos. Esa acción está disponible en el sistema original.';
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-sin-copia]');
+if(a){e.preventDefault();e.stopImmediatePropagation();alert(M);}},true);
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();alert(M);},true);
+})();</script>
+<style>.aviso-copia{position:sticky;top:0;z-index:50;background:#fff4cc;color:#5a4300;border-bottom:1px solid #f2b200;
+padding:6px 16px;font:12.5px/1.4 "Segoe UI",system-ui,sans-serif;text-align:center}
+@media print{.aviso-copia{display:none}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programa del taller · Lift Rental</title>
+<link rel="stylesheet" href="static/estilos.css">
+<link rel="icon" type="image/jpeg" href="static/logo_liftrental.jpg">
+</head>
+<body>
+<div class="aviso-copia">Copia de consulta del SGM Lift Rental generada el 17/11/2026 23:04 · sólo lectura: los formularios y documentos PDF están disponibles en el sistema original.</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="marca">
+      <img class="logo" src="static/logo_liftrental.jpg" alt="Lift Rental Solutions" width="64" height="64">
+      <div><b>SGM Lift Rental</b><span>Gestión de mantenimiento</span></div>
+    </div>
+    <a class="nav " href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v11H3z"/><path d="M7 20v-7h10v7M7 16h10"/>
+</svg> Almacén en vivo</a>
+    <a class="nav " href="panel.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>
+</svg> Panel de control</a>
+    <a class="nav " href="estatus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Estatus diario </a>
+    <div class="nav-sec">Almacén virtual</div>
+    <a class="nav " href="equipos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Equipos y expedientes</a>
+    <a class="nav " href="alquileres.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20l12-7M6 13l12 7M5 10h14M9 10V6h6v4"/>
+</svg> Uso y alquileres</a>
+    <a class="nav " href="#" data-sin-copia="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+</svg> Despachar equipo</a>
+    <div class="nav-sec">Mantenimiento</div>
+    <a class="nav " href="mantenimiento.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>
+</svg> Órdenes de trabajo <span class="badge">10</span></a>
+    <a class="nav " href="documentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Documentos de mantto.</a>
+    <a class="nav on" href="taller.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programa del taller</a>
+    <a class="nav " href="incidentes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.2v.3"/>
+</svg> Incidentes en obra</a>
+    <div class="nav-sec">Planificación</div>
+    <a class="nav " href="pedidos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>
+</svg> Cartera de pedidos</a>
+    <a class="nav " href="optimizacion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M3 7l6-4 6 7 6-3"/>
+</svg> Optimización (PLEM)</a>
+    <div class="nav-sec">Personal</div>
+    <a class="nav " href="personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.8 3 2.6 3.5 5.2"/>
+</svg> Técnicos</a>
+    <a class="nav " href="configuracion.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z"/>
+</svg> Configuración</a>
+    <div class="side-pie">
+      Fecha de evaluación<br><b>17/11/2026</b><br>
+      Taller Comas · 3 técnicos
+      <br><span>Estatus real al 17/11/2026</span>
+      
+    </div>
+  </aside>
+  <main>
+    
+    
+      
+    
+    
+<div class="cab">
+  <div>
+    <h1>Programa del taller</h1>
+    <p>Agenda por técnico y carga diaria frente a la capacidad de 3 técnico-días por día hábil. Los domingos el taller no opera.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="taller__desde-2027-01-25_dias-21.html">← Semana</a>
+    <a class="btn" href="taller.html">Hoy</a>
+    <a class="btn" href="taller__desde-2027-02-08_dias-21.html">Semana →</a>
+    <form method="post" action="#" data-sin-copia="1"><button class="btn osc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>
+</svg> Programar automáticamente</button></form>
+  </div>
+</div>
+
+<div class="grid g4" style="margin-bottom:16px">
+  <div class="card kpi"><span class="l">Utilización del periodo</span><span class="v">0 %</span><span class="s">0.0 de 54 técnico-días</span></div>
+  <div class="card kpi"><span class="l">Técnicos activos</span><span class="v">3</span><span class="s">capacidad configurada: 3</span></div>
+  <div class="card kpi alerta"><span class="l">Órdenes pendientes sin fecha</span><span class="v">2</span></div>
+  <div class="card kpi "><span class="l">Programadas sin técnico</span><span class="v">0</span></div>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <div class="hd"><h2>01/02/2027 — 21/02/2027</h2>
+    <span class="leyenda" style="margin:0"><span><i style="background:#2f6fd6"></i>Preventivo</span><span><i style="background:#c2410c"></i>Correctivo</span><span><i style="background:#6d28d9"></i>Inspección</span><span><i style="background:#fff;outline:2px solid var(--accent)"></i>En ejecución</span></span></div>
+  <div class="tabla-wrap">
+    <table class="gantt" style="min-width: 1388px">
+      <thead>
+        <tr><th class="tec">Técnico</th>
+          <th class=" ">lun<span class="dn">1</span></th><th class=" ">mar<span class="dn">2</span></th><th class=" ">mié<span class="dn">3</span></th><th class=" ">jue<span class="dn">4</span></th><th class=" ">vie<span class="dn">5</span></th><th class=" ">sáb<span class="dn">6</span></th><th class="dom ">dom<span class="dn">7</span></th><th class=" ">lun<span class="dn">8</span></th><th class=" ">mar<span class="dn">9</span></th><th class=" ">mié<span class="dn">10</span></th><th class=" ">jue<span class="dn">11</span></th><th class=" ">vie<span class="dn">12</span></th><th class=" ">sáb<span class="dn">13</span></th><th class="dom ">dom<span class="dn">14</span></th><th class=" ">lun<span class="dn">15</span></th><th class=" ">mar<span class="dn">16</span></th><th class=" ">mié<span class="dn">17</span></th><th class=" ">jue<span class="dn">18</span></th><th class=" ">vie<span class="dn">19</span></th><th class=" ">sáb<span class="dn">20</span></th><th class="dom ">dom<span class="dn">21</span></th></tr>
+      </thead>
+      <tbody>
+        
+        <tr><td class="tec"><a href="personal--1.html">Técnico A</a></td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class="dom ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class="dom ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class="dom ">
+              
+            </td>
+          
+        </tr>
+        
+        <tr><td class="tec"><a href="personal--2.html">Técnico B</a></td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class="dom ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class="dom ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class="dom ">
+              
+            </td>
+          
+        </tr>
+        
+        <tr><td class="tec"><a href="personal--3.html">Técnico C</a></td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class="dom ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class="dom ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class=" ">
+              
+            </td>
+          
+            <td class="dom ">
+              
+            </td>
+          
+        </tr>
+        
+        <tr><td class="tec">Carga del taller<br><small class="muted">técnico-días</small></td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="dom">
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="dom">
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="">
+              
+              <div class="carga" title="0.0 de 3">
+                <em></em>
+                <span class="" style="height: 0.0%"></span>
+              </div>
+              
+            </td>
+          
+            
+            <td class="dom">
+              
+            </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="grid g2">
+  <div class="card">
+    <div class="hd"><h2>Pendientes sin fecha</h2></div>
+    <ul class="lista">
+      
+        <li><span><a class="mono" href="mantenimiento--81.html">OT-0081</a> <a class="cod" href="equipos--TECL-074.html">TECL-074</a> <small>Preventivo A · Optimización PLEM · corrida 3 (E3)</small></span><span class="chip bad">Alta</span></li>
+      
+        <li><span><a class="mono" href="mantenimiento--84.html">OT-0084</a> <a class="cod" href="equipos--TECL-025.html">TECL-025</a> <small>Preventivo A · Optimización PLEM · corrida 3 (E3)</small></span><span class="chip bad">Alta</span></li>
+      
+      
+    </ul>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Programadas sin técnico</h2></div>
+    <ul class="lista">
+      
+      <li class="muted">Todas las órdenes programadas tienen técnico.</li>
+    </ul>
+  </div>
+</div>
+
+  </main>
+</div>
+<script src="static/app.js"></script>
+
+</body>
+</html>

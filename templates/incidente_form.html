@@ -1,0 +1,31 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% block titulo %}Registrar incidente{% endblock %}
+{% block contenido %}
+<div class="cab"><div>
+  <div class="migas"><a href="{{ url_for('incidentes') }}">Incidentes</a></div>
+  <h1>Registrar incidente en obra</h1>
+  <p>El sistema determina automáticamente si el mantenimiento estaba vencido en la fecha de la falla.</p>
+</div></div>
+<form method="post" class="card" style="max-width:900px">
+  <div class="bd">
+    <div class="campos">
+      <div class="ancho"><label>Equipo</label>
+        <select name="equipo_id" required>
+          <option value="">Seleccione…</option>
+          {% for e in equipos %}<option value="{{ e.id }}" {{ 'selected' if sel and sel|string == e.id|string }}>{{ e.codigo }} — {{ e.categoria }} ({{ e.situacion|lower }})</option>{% endfor %}
+        </select></div>
+      <div><label>Fecha de la falla</label><input type="date" name="fecha" value="{{ REF.isoformat() }}" required></div>
+      <div><label>Horómetro (h)</label><input type="number" step="0.1" name="horometro"></div>
+      <div><label>Técnico desplazado</label><select name="tecnico_id"><option value="">—</option>{% for t in tecnicos %}<option value="{{ t.id }}">{{ t.nombre }}</option>{% endfor %}</select></div>
+      <div><label>Costo de atención (S/)</label><input type="number" step="any" name="costo"></div>
+      <div><label>Días de equipo parado</label><input type="number" step="0.5" name="dias_parado"></div>
+      <div class="ancho"><label>Descripción de la falla</label><textarea name="descripcion" required placeholder="Síntoma, componente afectado, acción tomada…"></textarea></div>
+      <label class="check ancho"><input type="checkbox" name="crear_ot" value="1" checked> Generar una orden de trabajo correctiva</label>
+    </div>
+  </div>
+  <div class="bd acciones" style="border-top:1px solid var(--line-2)">
+    <button class="btn pri">Registrar</button><a class="btn" href="{{ url_for('incidentes') }}">Cancelar</a>
+  </div>
+</form>
+{% endblock %}

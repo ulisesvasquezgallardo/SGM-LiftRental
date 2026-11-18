@@ -1,0 +1,355 @@
+{% extends 'base.html' %}
+{% from '_m.html' import chip, eq_link, icono %}
+{% block titulo %}Optimización PLEM{% endblock %}
+{% macro dif(a, b, mejor_alto=True, soles=False) -%}
+  {%- set d = (b - a) -%}
+  {%- if d|abs < 0.5 -%}<span class="muted">=</span>
+  {%- else -%}{%- set bueno = (d > 0) == mejor_alto -%}<span class="{{ 'ok-t' if bueno else 'bad-t' }}">{{ '+' if d > 0 else '−' }}{{ (d|abs)|soles if soles else (d|abs)|num(0) }}</span>{%- endif -%}
+{%- endmacro %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <h1>Optimización del mantenimiento y la asignación</h1>
+    <p>Modelo de programación lineal entera mixta del proyecto (informe, apartado 4.1). En una sola decisión elige qué equipo atiende cada pedido y qué día entra cada equipo a taller. Respeta el doble disparador de horas y calendario, la capacidad del taller por día hábil y la compatibilidad técnica. Se resuelve con PuLP y CBC.</p>
+  </div>
+  <div class="acciones">
+    <a class="btn" href="{{ url_for('pedidos') }}">{{ icono('doc') }} Cartera de pedidos</a>
+    {% if v %}<a class="btn" href="{{ url_for('optimizacion_exportar', cid=corrida.id) }}">{{ icono('csv') }} Exportar resultados</a>{% endif %}
+  </div>
+</div>
+
+{% if sin_pulp %}<div class="nota bad" style="margin-bottom:14px">No está instalada la librería del solver. Ejecute <span class="mono">pip install pulp==2.9.0</span> y reinicie el sistema.</div>{% endif %}
+
+<details class="card" style="margin-bottom:16px" {{ 'open' if not v }}>
+  <summary class="hd" style="cursor:pointer"><h2>Nueva corrida</h2><span class="muted">{{ pend.n }} pedidos por atender en la cartera{% if pend.n %}, del {{ pend.a|fecha('%d/%m') }} al {{ pend.b|fecha('%d/%m/%Y') }}{% endif %}</span></summary>
+  <form class="bd" method="post" action="{{ url_for('optimizacion_correr') }}">
+    {% if previa %}
+    <div class="grid g4" style="margin-bottom:14px">
+      <div class="kpi mini"><span class="l">Máquinas (M)</span><span class="v">{{ previa.maquinas }}</span><span class="s">{{ previa.en_obra }} en obra, {{ previa.en_obra_vencidos }} de ellas vencidas</span></div>
+      <div class="kpi mini"><span class="l">Pedidos en 60 días (J)</span><span class="v">{{ previa.pedidos }}</span><span class="s">{{ previa.pares }} pares máquina-pedido compatibles</span></div>
+      <div class="kpi mini"><span class="l">Capacidad del taller</span><span class="v">{{ previa.cap_total|num(0) }}</span><span class="s">técnico-días libres ({{ cap_tec|num(0) }} técnicos, lunes a sábado)</span></div>
+      <div class="kpi mini"><span class="l">Puesta al día de la flota</span><span class="v">{{ previa.tecdias_puesta|num(0) }}</span><span class="s">técnico-días para {{ previa.necesitan }} equipos que vencen en el horizonte</span></div>
+    </div>
+    {% endif %}
+    <div class="campos">
+      <div><label>Inicio del horizonte</label><input type="date" name="desde" value="{{ REF|sumar_dias(0) }}"></div>
+      <div><label>Horizonte (días)</label><input type="number" name="horizonte" value="60" min="14" max="90"></div>
+      <div><label>Brecha de optimalidad (%)</label><input type="number" name="gap" value="1" step="0.1" min="0"></div>
+      <div><label>Tiempo límite E1/E2 (s)</label><input type="number" name="tlim" value="120" min="10"></div>
+      <div><label>Tiempo límite E3 (s)</label><input type="number" name="tlim_e3" value="180" min="10"></div>
+      <div><label>P(falla | vencido) para valorar (%)</label><input type="number" name="pi_v" value="{{ (PI_VENC * 100)|num(0) }}" step="1" min="0" max="100"></div>
+      <label class="check ancho"><input type="checkbox" name="e3" value="1" checked> Resolver también E3 (valor terminal, ecuación 14): usa la capacidad ociosa del taller para poner al día la flota.</label>
+    </div>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:flex-end;align-items:center">
+      <span class="muted">E0 y E1 toman segundos; E2 y E3, entre 10 s y 3 min. La corrida sigue aunque cierre esta página.</span>
+      <button class="btn pri" {{ 'disabled' if sin_pulp or (corrida and corrida.estado == 'En curso') }}>{{ icono('optim') }} Resolver el modelo</button>
+    </div>
+  </form>
+</details>
+
+{% if corrida and corrida.estado == 'En curso' %}
+<div class="card" id="en-curso" data-url="{{ url_for('optimizacion_estado', cid=corrida.id) }}">
+  <div class="bd" style="display:flex;gap:14px;align-items:center">
+    <span class="girando"></span>
+    <div><b>Corrida {{ corrida.id }} en curso</b><br><span id="msg-curso" class="muted">{{ corrida.mensaje }}</span></div>
+  </div>
+</div>
+{% elif corrida and corrida.estado == 'Error' %}
+<div class="nota bad" style="margin-bottom:16px">La corrida {{ corrida.id }} no terminó: {{ corrida.mensaje }}</div>
+{% endif %}
+
+{% if v %}
+{% set E = v.E %}{% set R = v.res %}{% set S = R.solver %}{% set P = 'E3' if 'E3' in E else 'E2' %}
+<div class="cab" style="margin:6px 0 12px">
+  <div><h2 style="font-size:17px">Corrida {{ corrida.id }}: del {{ v.T0|fecha }} al {{ v.dias[-1]|fecha }} ({{ v.inst.T }} días)</h2>
+    <p class="muted" style="margin:2px 0 0">Ejecutada el {{ corrida.creado|fecha('%d/%m/%Y') }} {{ corrida.creado[11:16] }} · {{ corrida.duracion_seg|num(0) }} s · {{ R.resumen.maquinas }} máquinas, {{ R.resumen.pedidos }} pedidos, {{ R.resumen.pares }} pares compatibles
+    {% if corrida.aplicada %} · <b>plan {{ corrida.aplicada_esc }} aplicado el {{ corrida.aplicada|fecha }}</b>{% endif %}</p></div>
+</div>
+{% set X = v.X %}{% set A = X.aplicado %}
+
+<div class="card resumen-opt" style="margin-bottom:16px">
+  <div class="hd"><h2>En resumen</h2><span class="muted">lo que dice esta corrida, sin tecnicismos</span></div>
+  <div class="bd">
+    <ol class="pasos">
+      <li><b>Qué se analizó.</b> Los próximos {{ v.inst.T }} días (del {{ v.T0|fecha }} al {{ v.dias[-1]|fecha }}): los {{ R.resumen.maquinas }} equipos de la flota —{{ R.resumen.en_obra }} en obra y {{ R.resumen.maquinas - R.resumen.en_obra }} en el patio o el taller— y {{ R.resumen.pedidos }} pedidos de alquiler de la cartera. Al empezar, {{ X.vencidos0 }} equipos tenían el mantenimiento vencido{% if X.sin_datos0 %} y {{ X.sin_datos0 }} no tienen ningún servicio registrado{% endif %}.</li>
+      <li><b>Qué recomienda.</b> Seguir el plan <b>{{ P }} · {{ ESC[P] }}</b>: hacer <b>{{ E[P].servicios }} mantenimientos preventivos</b> en el taller (usa {{ E[P].tecdias|num(0) }} de los {{ X.cap_total|num(0) }} técnico-días disponibles) y atender <b>{{ E[P].atendidos }} de los {{ R.resumen.pedidos }} pedidos</b>{% if E[P].dm_vencido == 0 %} sin que ningún equipo trabaje en obra con el mantenimiento vencido{% else %}, con {{ E[P].dm_vencido }} días-máquina con el mantenimiento vencido{% endif %}.</li>
+      <li><b>Frente a cómo se trabaja hoy (E0).</b> Con la práctica actual se atenderían {{ E.E0.atendidos }} pedidos, pero {{ E.E0.ped_riesgo }} de ellos con un equipo que debería estar en el taller ({{ E.E0.dm_vencido }} días-máquina en riesgo). El plan baja el costo esperado de fallas en obra de {{ E.E0.costo_falla|soles }} a {{ E[P].costo_falla|soles }} y deja un resultado económico de {{ E[P].margen_deuda|soles }}, <b class="{{ 'ok-t' if X.gana >= 0 else 'bad-t' }}">{{ (X.gana|abs)|soles }} {{ 'más' if X.gana >= 0 else 'menos' }}</b> que E0 (ya descontado lo que queda por mantener al final).</li>
+      {% if E[P].no_atendidos %}<li><b>Pedidos que no cubre.</b> {{ E[P].no_atendidos }} pedidos no se atienden con equipos propios{% if v.esc == P %}:
+        {% for m, n in X.motivos %}{{ n }} porque {{ m[:1]|lower }}{{ m[1:] }}{{ '; ' if not loop.last else '.' }}{% endfor %}{% else %}.{% endif %} Se pueden subarrendar, negociar otra fecha o rechazar.</li>{% endif %}
+      <li><b>Cómo deja la flota.</b> Al terminar el periodo {{ 'queda' if E[P].venc_cierre == 1 else 'quedan' }} {{ E[P].venc_cierre }} equipo{{ '' if E[P].venc_cierre == 1 else 's' }} con el mantenimiento vencido (trabajo pendiente por {{ E[P].deuda|soles }}), frente a {{ E.E0.venc_cierre }} con la práctica actual.</li>
+      <li><b>¿Es confiable?</b> {% if X.optimo %}El programa encontró la mejor solución posible (óptimo){% else %}El programa se detuvo por tiempo con una solución buena, aunque no necesariamente la mejor{% endif %} en {{ X.seg|num(0) }} s. {% if X.verif_ok %}La verificación día por día no encontró equipos trabajando vencidos, equipos en dos lugares a la vez, taller sobrecargado ni trabajo en domingo.{% else %}<span class="bad-t">La verificación encontró problemas: revise la tabla «Verificación de la solución».</span>{% endif %}</li>
+      {% if A %}<li><b>Qué se hizo con el plan.</b> El {{ corrida.aplicada|fecha }} se aplicaron los primeros días del plan {{ corrida.aplicada_esc }}: {{ A.programadas|length }} órdenes de mantenimiento programadas con técnico, {{ A.reservas|length }} equipos reservados para pedidos{% if A.pendientes %}, {{ A.pendientes|length }} órdenes en «Pendiente» con la fecha que propone el modelo{% endif %}{% if A.canceladas %} y {{ A.canceladas|length }} órdenes canceladas porque el modelo no las necesita en el periodo{% endif %}. El detalle está en «Lo que se puso en operación», al final de la página.</li>
+      {% else %}<li><b>Siguiente paso.</b> El plan aún no se ha aplicado. Revise los resultados y use «Poner el plan en operación», al final de la página, para programar la primera semana.</li>{% endif %}
+    </ol>
+  </div>
+</div>
+
+<details class="card guia" style="margin-bottom:16px">
+  <summary class="hd" style="cursor:pointer"><h2>Cómo leer esta página</h2><span class="muted">escenarios y términos usados · clic para abrir</span></summary>
+  <div class="bd grid g2" style="gap:18px">
+    <div>
+      <h3>Los cuatro escenarios</h3>
+      <p class="muted" style="margin-top:0">El sistema resuelve el mismo periodo, con los mismos equipos y pedidos, de cuatro maneras y las mide con la misma regla. Así la comparación es justa.</p>
+      <dl class="glosario">
+        <dt>E0 · {{ ESC.E0 }}</dt><dd>Cómo se trabaja hoy: a cada pedido se le da el primer equipo compatible libre, sin mirar su mantenimiento, y un equipo entra al taller recién cuando está vencido en el patio. Es la referencia.</dd>
+        <dt>E1 · {{ ESC.E1 }}</dt><dd>Elige el mejor equipo para cada pedido, pero no programa mantenimiento. No se recomienda: sirve sólo para medir cuánto aporta optimizar la asignación por sí sola.</dd>
+        <dt>E2 · {{ ESC.E2 }}</dt><dd>Decide a la vez qué equipo va a cada pedido y qué día entra cada equipo al taller. Ningún equipo puede trabajar vencido y nunca se programa más trabajo del que el taller puede hacer.</dd>
+        <dt>E3 · {{ ESC.E3 }}</dt><dd>Igual que E2, pero además aprovecha los días libres del taller para dejar la flota al día al final del periodo. Evita que el ahorro de hoy sea trabajo acumulado para mañana. Es el plan recomendado.</dd>
+      </dl>
+    </div>
+    <div>
+      <h3>Términos</h3>
+      <dl class="glosario">
+        <dt>Día-máquina con mantenimiento vencido</dt><dd>Cada día que un equipo trabaja en obra después de pasar su límite de horas o de días sin servicio. 3 equipos vencidos durante 10 días = 30.</dd>
+        <dt>Pedido en riesgo</dt><dd>Pedido atendido, al menos un día, con un equipo vencido.</dd>
+        <dt>Costo esperado de falla</dt><dd>Lo que se espera gastar por fallas en obra (reparación, reemplazo, penalidad). Se calcula con la probabilidad de falla: {{ ((corrida.parametros|fromjson).get('pi_v', 0.25) * 100)|num(0) }} % por pedido si el equipo está vencido y 5 % si está al día.</dd>
+        <dt>Técnico-día</dt><dd>Un técnico trabajando un día. Con {{ v.inst.tecnicos|num(0) }} técnicos, el taller tiene {{ v.inst.tecnicos|num(0) }} técnico-días por día hábil (lunes a sábado).</dd>
+        <dt>Deuda de mantenimiento</dt><dd>Costo de los servicios que quedan pendientes al terminar el periodo. Es trabajo que no desaparece: sólo se pospone.</dd>
+        <dt>Margen neto</dt><dd>Ingreso por alquiler menos traslados, mantenimiento hecho y costo esperado de falla.</dd>
+        <dt>Margen descontada la deuda</dt><dd>El margen neto menos la deuda. Es la cifra para comparar escenarios, porque castiga al que «ahorra» dejando equipos sin mantener.</dd>
+        <dt>Horizonte rodante</dt><dd>Se planifican {{ v.inst.T }} días pero sólo se ejecuta la primera semana; luego se vuelve a correr con los datos al día.</dd>
+      </dl>
+    </div>
+  </div>
+</details>
+
+<div class="grid g4" style="margin-bottom:16px">
+  <div class="card kpi"><span class="l">Días-máquina con mantenimiento vencido</span><span class="v">{{ E[P].dm_vencido }}</span><span class="s">frente a {{ E.E0.dm_vencido }} con la práctica actual ({{ E.E0.ped_riesgo }} pedidos en riesgo)</span></div>
+  <div class="card kpi"><span class="l">Pedidos atendidos</span><span class="v">{{ E[P].atendidos }} <small style="font-size:14px">de {{ R.resumen.pedidos }}</small></span><span class="s">práctica actual: {{ E.E0.atendidos }} · {{ dif(E.E0.atendidos, E[P].atendidos) }}</span></div>
+  <div class="card kpi"><span class="l">Costo esperado de falla</span><span class="v" style="font-size:24px">{{ E[P].costo_falla|soles }}</span><span class="s">{% if E.E0.costo_falla %}{{ ((1 - E[P].costo_falla / E.E0.costo_falla) * 100)|num(0) }} % menos que la práctica actual{% endif %}</span></div>
+  <div class="card kpi {{ 'alerta' if E[P].margen_deuda < E.E0.margen_deuda }}"><span class="l">Margen descontada la deuda</span><span class="v" style="font-size:24px">{{ E[P].margen_deuda|soles }}</span><span class="s">{{ P }} frente a E0: {{ dif(E.E0.margen_deuda, E[P].margen_deuda, soles=True) }}</span></div>
+</div>
+<p class="explica" style="margin:-6px 0 16px"><b>Las cuatro cifras clave del plan {{ P }}.</b> La primera mide el riesgo: cuántos días trabajarían equipos vencidos (lo ideal es 0). La segunda, cuánta demanda se cubre. La tercera, cuánto se espera perder por fallas en obra. La cuarta resume el resultado económico del periodo: lo que queda después de pagar traslados, mantenimiento y fallas, y de descontar el mantenimiento que queda pendiente. Debajo de cada cifra se compara con la práctica actual (E0): en verde si mejora, en rojo si empeora.</p>
+
+<div class="grid g-21" style="margin-bottom:16px">
+  <div class="card">
+    <div class="hd"><h2>Comparación de escenarios sobre la misma cartera</h2><span class="muted">evaluador único · informe, tabla 7</span></div>
+    <div class="bd flush tabla-wrap">
+      <table class="tabla-esc">
+        <thead><tr><th>Indicador</th>{% for k in E %}<th class="n {{ 'col-rec' if k == P }}" title="{{ ESC[k] }}">{{ k }}<br><small>{{ ESC[k] }}</small>{% if k == P %}<br><span class="tag">recomendado</span>{% endif %}</th>{% endfor %}</tr></thead>
+        <tbody>
+        {% for grupo, claves in [('Atención de la demanda', ['atendidos','no_atendidos','ingreso']),
+                                 ('Exposición al riesgo', ['dm_vencido','ped_riesgo','costo_falla']),
+                                 ('Gestión del taller', ['servicios','costo_mant','tecdias','venc_cierre','deuda']),
+                                 ('Resultado económico del horizonte', ['traslado','margen','margen_deuda'])] %}
+          <tr class="grupo"><td colspan="{{ E|length + 1 }}">{{ grupo }}</td></tr>
+          {% for clave, etq in INDICADORES if clave in claves %}
+          <tr class="{{ 'fuerte' if clave in ('margen_deuda','dm_vencido') }}"><td>{{ etq }}{% if QUE_MIDE[clave] %}<br><small class="muted">{{ QUE_MIDE[clave][0] }}</small>{% endif %}</td>
+            {% for k in E %}<td class="n {{ 'bad-t' if clave in ('dm_vencido','ped_riesgo') and E[k][clave] > 0 }} {{ 'mejor' if k in X.mejor.get(clave, []) }} {{ 'col-rec' if k == P }}">{{ E[k][clave]|num(0) }}</td>{% endfor %}</tr>
+          {% endfor %}
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="bd"><p class="explica" style="margin:0 0 10px"><b>Cómo leerla.</b> Cada columna es una forma de planificar el mismo periodo; cada fila, una medida con su explicación debajo. La celda en verde es el mejor valor de la fila entre E0, E2 y E3 (E1 sólo es referencia). La columna con fondo azul es el plan recomendado. Para decidir, mire primero «Días-máquina con mantenimiento vencido» (riesgo) y «Margen neto descontada la deuda» (dinero).{% if E[P].atendidos < E.E0.atendidos %} El plan atiende {{ E.E0.atendidos - E[P].atendidos }} pedidos menos que E0: son pedidos que con la práctica actual se cubrirían con equipos vencidos o que no cubren su costo.{% endif %}</p>
+    <p class="nota" style="margin:0">El margen neto es el ingreso menos los costos de traslado, de mantenimiento ejecutado y de falla esperada (P(falla) {{ ((corrida.parametros|fromjson).get('pi_v', 0.25) * 100)|num(0) }} % con mantenimiento vencido y 5 % vigente). El margen descontada la deuda resta además los servicios pendientes al cierre. Es la medida que permite comparar escenarios que ejecutan un número distinto de servicios.</p></div>
+  </div>
+
+  <div class="stack">
+    <div class="card">
+      <div class="hd"><h2>Descomposición del beneficio</h2><span class="muted">tabla 8</span></div>
+      <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0"><b>¿De dónde sale la ganancia?</b> Separa el beneficio en partes: cuánto se gana sólo por elegir mejor qué equipo va a cada obra (E0 → E1), cuánto aporta además controlar el mantenimiento (E1 → E2) y el total de cada plan frente a hoy. Verde = gana; rojo = pierde. La columna de la derecha es la que cuenta.</p></div>
+      <div class="bd flush"><table>
+        <thead><tr><th>Componente</th><th class="n">Margen neto</th><th class="n">Descontada la deuda</th></tr></thead>
+        <tbody>{% for d in R.descomposicion %}<tr><td>{{ d.componente }}<br><small>{{ d.de }} → {{ d.a }}</small></td>
+          <td class="n {{ 'ok-t' if d.margen > 0 else 'bad-t' }}">{{ d.margen|soles }}</td><td class="n {{ 'ok-t' if d.margen_deuda > 0 else 'bad-t' }}"><b>{{ d.margen_deuda|soles }}</b></td></tr>{% endfor %}</tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Implementación computacional</h2><span class="muted">PuLP + CBC</span></div>
+      <div class="bd flush"><table>
+        <caption class="explica-cap">Tamaño del problema que resolvió el programa (CBC) y si llegó a la mejor solución. «Óptimo» significa que no existe un plan mejor con estos datos; «Factible» que se detuvo por tiempo con un plan bueno.</caption>
+        <thead><tr><th></th><th class="n">Variables</th><th class="n">Restricciones</th><th class="n">Tiempo</th><th>Estado</th></tr></thead>
+        <tbody>{% for k, s in S.items() %}<tr><td><b>{{ k }}</b></td><td class="n">{{ s.nvars|num(0) }}</td><td class="n">{{ s.ncons|num(0) }}</td><td class="n">{{ s.seg|num(1) }} s</td>
+          <td>{% if s.optimo %}{{ chip('Completada', 'Óptimo') }}{% elif s.status == 'Optimal' %}{{ chip('Pendiente', 'Factible (tiempo límite)') }}{% else %}{{ chip('Error', s.status) }}{% endif %}{% if s.cierre %}<br><small>+{{ s.cierre }} servicios en la fase de cierre</small>{% endif %}</td></tr>{% endfor %}</tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <div class="hd"><h2>Verificación de la solución</h2><span class="muted">4.3.5</span></div>
+      <div class="bd flush"><table>
+        <caption class="explica-cap">Después de resolver, el sistema recorre el plan día por día y cuenta errores. Un ✓ 0 significa que el plan se puede cumplir tal cual.</caption>
+        <thead><tr><th>Comprobación</th>{% for k in E %}<th class="n">{{ k }}</th>{% endfor %}</tr></thead>
+        <tbody>
+        {% for clave, etq in [('violaciones','Días operados fuera del tope de horas o calendario'),('solapes','Equipo en dos lugares el mismo día'),('dias_exceso','Días con el taller sobre su capacidad'),('serv_domingo','Días de servicio en domingo')] %}
+          <tr><td>{{ etq }}</td>{% for k in E %}{% set x = E[k].verif[clave] %}<td class="n">{% if x == 0 %}<span class="ok-t">✓ 0</span>{% else %}<span class="{{ 'bad-t' if k in ('E2','E3') or clave != 'violaciones' else 'muted' }}">{{ x }}</span>{% endif %}</td>{% endfor %}</tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <p class="muted" style="margin:8px 16px 12px;font-size:12.5px">E0 y E1 no controlan el mantenimiento, así que en ellos sí se espera operación fuera del tope. E2 y E3 deben marcar cero en todo.</p></div>
+    </div>
+  </div>
+</div>
+
+{# ---------- carga del taller #}
+<div class="card" style="margin-bottom:16px">
+  <div class="hd"><h2>Carga diaria del taller</h2><span class="muted">técnico-días por día frente a la capacidad · figura 8</span></div>
+  <div class="bd">
+    <p class="explica" style="margin:0 0 12px"><b>Qué muestra.</b> Cada barra es un día; su altura, cuántos técnicos trabajan en mantenimiento ese día. La línea punteada es el máximo que el taller puede hacer ({{ v.inst.tecnicos|num(0) }} técnicos); los domingos (gris) no se trabaja. Una barra roja sería un día con más trabajo del posible.
+    <br><b>En esta corrida.</b> El plan {{ P }} ocupa al taller {{ X.taller[P].dias }} días{% if X.taller[P].llenos %} ({{ X.taller[P].llenos }} con el taller lleno){% endif %} y usa el {{ X.taller[P].uso|num(0) }} % de su capacidad del periodo. La práctica actual (E0) lo ocupa {{ X.taller.E0.dias }} días y usa el {{ X.taller.E0.uso|num(0) }} %{% if X.taller.E0.uso > X.taller[P].uso %}: trabaja más porque los equipos llegan vencidos y se atienden tarde{% else %}: trabaja menos porque deja equipos operando vencidos{% endif %}.</p>
+    {% set W = 12 %}{% set Hh = 64 %}{% set capmax = [v.inst.tecnicos, 1]|max %}
+    {% for k in E if k != 'E1' %}
+    <div class="carga-fila">
+      <div class="carga-etq"><b>{{ k }}</b><br><small>{{ E[k].servicios }} servicios · {{ E[k].tecdias|num(0) }} técnico-días</small></div>
+      <svg viewBox="0 0 {{ v.inst.T * W }} {{ Hh + 14 }}" preserveAspectRatio="none" class="carga-svg">
+        {% for t in range(v.inst.T) %}
+          {% if t in v.inst.domingos %}<rect x="{{ t * W }}" y="0" width="{{ W }}" height="{{ Hh }}" fill="var(--line-2)"/>{% endif %}
+          {% set c = E[k].carga[t] %}
+          {% if c > 0 %}<rect x="{{ t * W + 1.5 }}" y="{{ Hh - c / capmax * Hh }}" width="{{ W - 3 }}" height="{{ c / capmax * Hh }}" rx="1.5" fill="{{ 'var(--bad)' if c > v.inst.cap[t] + 0.001 else ('var(--accent)' if k == 'E0' else '#2563eb') }}"><title>{{ v.dias[t]|fecha('%d/%m') }}: {{ c|num(2) }} de {{ v.inst.cap[t]|num(1) }} técnico-días</title></rect>{% endif %}
+          {% if v.dias[t].weekday() == 0 %}<text x="{{ t * W + 1 }}" y="{{ Hh + 12 }}" class="carga-tx">{{ v.dias[t]|fecha('%d/%m') }}</text>{% endif %}
+        {% endfor %}
+        <polyline fill="none" stroke="var(--ink)" stroke-dasharray="4 3" stroke-width="1" points="{% for t in range(v.inst.T) %}{{ t * W }},{{ Hh - v.inst.cap[t] / capmax * Hh }} {{ (t + 1) * W }},{{ Hh - v.inst.cap[t] / capmax * Hh }} {% endfor %}"/>
+      </svg>
+    </div>
+    {% endfor %}
+    <div class="leyenda" style="margin-top:6px"><span><i style="background:#2563eb"></i>Servicio programado por el modelo</span><span><i style="background:var(--accent)"></i>Taller reactivo (práctica actual)</span><span><i style="background:transparent;border-top:1px dashed var(--ink);height:0;border-radius:0"></i>Capacidad libre</span><span><i style="background:var(--line-2)"></i>Domingo (no se trabaja)</span></div>
+  </div>
+</div>
+
+{# ---------- sensibilidad #}
+<div class="grid g2" style="margin-bottom:16px">
+  <div class="card">
+    <div class="hd"><h2>Sensibilidad a la probabilidad de falla con mantenimiento vencido</h2><span class="muted">tabla 9</span></div>
+    <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0"><b>¿Y si las fallas fueran más o menos frecuentes?</b> No se sabe con exactitud con qué probabilidad falla en obra un equipo vencido (se usó {{ ((corrida.parametros|fromjson).get('pi_v', 0.25) * 100)|num(0) }} %, fila resaltada). Esta tabla repite la cuenta con otros valores. «Beneficio» es cuánto gana el plan frente a la práctica actual: si es verde en todas las filas, la recomendación no depende de ese supuesto.{% if R.umbral_pi is not none and R.umbral_pi <= 0.0001 %} <b>En esta corrida el plan gana en todas.</b>{% endif %}</p></div>
+    <div class="bd flush"><table>
+      <thead><tr><th>P(falla | vencido)</th><th class="n">Falla E0</th><th class="n">Falla E2</th><th class="n">Margen − deuda E0</th><th class="n">Beneficio E2</th>{% if 'E3' in E %}<th class="n">Beneficio E3</th>{% endif %}</tr></thead>
+      <tbody>{% for f in R.sensibilidad %}<tr class="{{ 'fuerte' if (f.pi - 0.25)|abs < 0.001 }}"><td>{{ (f.pi * 100)|num(0) }} %</td><td class="n">{{ f.E0.falla|soles }}</td><td class="n">{{ f.E2.falla|soles }}</td><td class="n">{{ f.E0.margen_deuda|soles }}</td>
+        <td class="n {{ 'ok-t' if f.beneficio > 0 else 'bad-t' }}">{{ f.beneficio|soles }}</td>{% if 'E3' in E %}<td class="n {{ 'ok-t' if f.beneficio_e3 > 0 else 'bad-t' }}">{{ f.beneficio_e3|soles }}</td>{% endif %}</tr>{% endfor %}</tbody>
+    </table></div>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Lectura de los resultados</h2></div>
+    <div class="bd lectura">
+      <p><b>Riesgo.</b> {{ P }} opera <b>{{ E[P].dm_vencido }}</b> días-máquina con el mantenimiento vencido, frente a <b>{{ E.E0.dm_vencido }}</b> de la práctica actual. Con la práctica actual, <b>{{ E.E0.ped_riesgo }}</b> de los {{ E.E0.atendidos }} pedidos atendidos se cubren en algún momento con un equipo que, según el plan, debería estar en taller.</p>
+      <p><b>Asignación.</b> Descontada la deuda, optimizar sólo la asignación (E0 → E1) cambia el margen en {{ R.descomposicion[0].margen_deuda|soles }}. Su margen neto parece mayor ({{ R.descomposicion[0].margen|soles }}), pero E1 no ejecuta ningún servicio y deja {{ E.E1.venc_cierre }} equipos vencidos al cierre.</p>
+      <p><b>Economía.</b>
+      {% if R.umbral_pi is not none and R.umbral_pi <= 0.0001 %}Con esta cartera el modelo propuesto supera a la práctica actual con cualquier probabilidad de falla examinada.
+      {% elif R.umbral_pi is not none %}El modelo propuesto supera a la práctica actual cuando la probabilidad de falla con mantenimiento vencido es mayor que <b>{{ (R.umbral_pi * 100)|num(0) }} %</b>{% if R.umbral_pi_e3 is not none and R.umbral_pi_e3 <= 0.0001 %}; con el valor terminal (E3) la supera con cualquier valor examinado{% elif R.umbral_pi_e3 is not none %} ({{ (R.umbral_pi_e3 * 100)|num(0) }} % con E3){% endif %}.
+      {% else %}En el rango examinado (10 a 80 %), la práctica actual obtiene un margen mayor porque atiende más pedidos.{% endif %}
+      La conclusión sobre el riesgo no depende de ese parámetro. Para medirlo hay que llevar el <a href="{{ url_for('incidentes') }}">registro de incidentes</a>.</p>
+      <p><b>Taller.</b> Poner al día los {{ R.resumen.necesitan }} equipos que vencen en el horizonte exige {{ R.resumen.tecdias_puesta|num(0) }} técnico-días, el {{ (R.resumen.tecdias_puesta / R.resumen.cap_total * 100)|num(0) if R.resumen.cap_total else 0 }} % de los {{ R.resumen.cap_total|num(0) }} disponibles. E3 utiliza {{ E[P].tecdias|num(0) }}.</p>
+    </div>
+  </div>
+</div>
+
+{# ---------- plan #}
+<div class="card" style="margin-bottom:16px">
+  <div class="hd" style="flex-wrap:wrap">
+    <h2>Plan del escenario</h2>
+    <div class="seg">{% for k in E %}<a class="{{ 'on' if v.esc == k }}" href="{{ url_for('optimizacion', cid=corrida.id, esc=k) }}#plan">{{ k }}</a>{% endfor %}</div>
+  </div>
+  <div class="bd" id="plan">
+    <p class="muted" style="margin:0 0 6px">{{ ESC[v.esc] }}: {{ v.plan.serv|length }} servicios, {{ v.plan.asig|length }} pedidos asignados, {{ v.plan.no_atendidos|length }} sin atender con flota propia.</p>
+    <p class="explica" style="margin:0 0 12px"><b>Cómo leerlo.</b> Cada fila es un equipo y cada columna un día del periodo. Gris: el equipo sigue en una obra con contrato vigente. Azul: el plan lo envía a un pedido nuevo. Naranja: entra al taller para su mantenimiento. Rojo: trabajaría con el mantenimiento vencido (no debería aparecer en E2 ni E3). El punto junto al código es su estado de mantenimiento al inicio. Pase el cursor sobre una barra para ver el cliente o el servicio. Use los botones E0 a E3 para ver el plan de cada escenario.</p>
+    <div class="gantt-opt">
+      <div class="go-cab"><div class="go-eq"></div><div class="go-dias">{% for d in v.dias %}<span class="{{ 'dom' if d.weekday() == 6 }}" style="left:{{ loop.index0 / v.inst.T * 100 }}%;width:{{ 100 / v.inst.T }}%">{% if d.weekday() == 0 or loop.first %}{{ d|fecha('%d/%m') }}{% endif %}</span>{% endfor %}</div></div>
+      {% for f in v.gantt %}
+      <div class="go-fila">
+        <div class="go-eq">{{ eq_link(f.q.codigo) }} <small>{{ CORTO.get(f.q.categoria, '') }}{% if f.q.h_trab %} {{ f.q.h_trab|num(1) }} m{% endif %}</small> <i class="pto {{ f.q.estado0|clase }}" title="Al inicio: {{ f.q.estado0 }}"></i></div>
+        <div class="go-pista">{% for b in f.barras %}<span class="go-b {{ b.k }}" style="left:{{ b.a / v.inst.T * 100 }}%;width:{{ (b.b - b.a + 1) / v.inst.T * 100 }}%" title="{{ b.t }}"></span>{% endfor %}</div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="leyenda" style="margin-top:8px"><span><i style="background:#cbd5e1"></i>En obra al inicio (contrato vigente)</span><span><i style="background:#2563eb"></i>Pedido asignado</span><span><i style="background:var(--bad)"></i>Pedido con el mantenimiento vencido</span><span><i style="background:var(--accent)"></i>Servicio en taller</span><span><i class="pto bad" style="border-radius:50%"></i>Estado de mantenimiento al inicio</span></div>
+  </div>
+</div>
+
+<div class="grid g2" style="margin-bottom:16px">
+  <div class="card">
+    <div class="hd"><h2>Programa de mantenimiento ({{ v.esc }})</h2><span class="muted">{{ v.plan.serv|length }} servicios</span></div>
+    <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0">Qué equipo entra al taller, qué servicio recibe (A, A+B, …: más letras = servicio más completo según sus horas), cuándo y cuánto cuesta. «Técnico-días» es el trabajo que requiere.</p></div>
+    <div class="bd flush tabla-wrap" style="max-height:420px">
+      {% if v.plan.serv %}<table><thead><tr><th>Equipo</th><th>Nivel</th><th>Inicio</th><th>Fin</th><th class="n">Técnico-días</th><th class="n">Costo</th></tr></thead>
+      <tbody>{% for s in v.plan.serv %}<tr><td>{{ eq_link(s.codigo) }}</td><td>{{ s.nivel }}</td><td>{{ v.dias[s.t]|dia }} {{ v.dias[s.t]|fecha('%d/%m') }}</td><td>{{ v.dias[s.fin]|fecha('%d/%m') }}</td><td class="n">{{ s.td|num(0) }}</td><td class="n">{{ s.costo|soles }}</td></tr>{% endfor %}</tbody></table>
+      {% else %}<div class="vacio">Este escenario no ejecuta servicios.</div>{% endif %}
+    </div>
+  </div>
+  <div class="card">
+    <div class="hd"><h2>Pedidos sin atender con flota propia ({{ v.esc }})</h2><span class="muted">{{ v.plan.no_atendidos|length }}</span></div>
+    <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0">Pedidos que el plan no cubre con equipos propios y por qué. «No cubre el traslado y el riesgo de falla» quiere decir que atenderlo costaría más de lo que paga. «Ningún equipo compatible está libre» quiere decir que todos los que sirven (tipo y altura) están en otras obras o en taller. Se pueden subarrendar, mover de fecha o rechazar.</p></div>
+    <div class="bd flush tabla-wrap" style="max-height:420px">
+      {% if v.plan.no_atendidos %}<table><thead><tr><th>Pedido</th><th>Requiere</th><th>Inicio</th><th>Motivo</th></tr></thead>
+      <tbody>{% for n in v.plan.no_atendidos %}{% set o = v.PD[n.j] %}<tr><td class="mono">P-{{ '%04d'|format(o.id) }}<br><small>{{ o.cliente or '' }}</small></td><td>{{ CORTO.get(o.categoria, o.categoria) }} ≥ {{ o.hreq|num(1) }} m</td><td>{{ v.dias[o.s]|fecha('%d/%m') }}</td><td><small>{{ n.motivo }}</small><br><small class="muted">ingreso {{ o.r|soles }} · traslado {{ o.g|soles }}</small></td></tr>{% endfor %}</tbody></table>
+      {% else %}<div class="vacio">Todos los pedidos se atienden.</div>{% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <div class="hd"><h2>Asignación de equipos a pedidos ({{ v.esc }})</h2><span class="muted">{{ v.plan.asig|length }} pedidos</span></div>
+  <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0">Qué equipo se envía a cada pedido. «Requiere» es el tipo de equipo y la altura mínima que pide el cliente; «continúa» indica que el contrato sigue después del periodo analizado (sólo se cuenta la parte de adentro). La última columna confirma si el equipo estará al día durante todo el pedido.</p></div>
+  <div class="bd flush tabla-wrap" style="max-height:460px">
+    <table><thead><tr><th>Pedido</th><th>Cliente · obra</th><th>Requiere</th><th>Periodo en el horizonte</th><th>Equipo</th><th class="n">Ingreso</th><th class="n">Traslado</th><th>Mantenimiento</th></tr></thead>
+    <tbody>{% for a in v.plan.asig %}{% set o = v.PD[a.j] %}<tr>
+      <td class="mono">P-{{ '%04d'|format(o.id) }}</td><td>{{ o.cliente or '—' }}<br><small>{{ o.obra or '' }} · {{ o.zona or '' }}</small></td>
+      <td>{{ CORTO.get(o.categoria, o.categoria) }} ≥ {{ o.hreq|num(1) }} m</td>
+      <td>{{ v.dias[a.s]|fecha('%d/%m') }} → {{ v.dias[a.e]|fecha('%d/%m') }}{% if o.frac < 1 %} <span class="tag" title="El contrato sigue después del horizonte: se cuenta la parte dentro de la ventana">continúa</span>{% endif %}</td>
+      <td>{{ eq_link(a.codigo) }}</td><td class="n">{{ o.r|soles }}</td><td class="n">{{ o.g|soles }}</td>
+      <td>{% if a.dias_vencido %}{{ chip('Vencido', a.dias_vencido ~ ' días vencido') }}{% else %}{{ chip('Vigente', 'Al día') }}{% endif %}</td></tr>{% endfor %}</tbody></table>
+  </div>
+</div>
+
+{# ---------- lo aplicado #}
+{% if A %}
+<div class="card" style="margin-bottom:16px">
+  <div class="hd"><h2>Lo que se puso en operación</h2><span class="muted">plan {{ corrida.aplicada_esc }} · aplicado el {{ corrida.aplicada|fecha }}</span></div>
+  <div class="bd" style="padding-bottom:0"><p class="explica" style="margin:0">Órdenes de trabajo y reservas que el sistema creó o cambió con esta corrida. Se gestionan en <a href="{{ url_for('mantenimiento') }}">Órdenes de trabajo</a>, <a href="{{ url_for('taller') }}">Programa del taller</a> y <a href="{{ url_for('pedidos') }}">Cartera de pedidos</a>.</p></div>
+  <div class="bd grid g2" style="gap:18px">
+    <div>
+      <h3>Mantenimientos</h3>
+      {% if A.ots %}<div class="tabla-wrap"><table><thead><tr><th>OT</th><th>Equipo</th><th>Nivel</th><th>Fecha</th><th>Estado</th><th>Técnico</th></tr></thead><tbody>
+      {% for o in A.ots %}<tr><td><a href="{{ url_for('orden', oid=o.id) }}" class="mono">OT-{{ '%04d'|format(o.id) }}</a></td><td>{{ eq_link(o.codigo) }}</td><td>{{ o.nivel }}</td><td>{{ o.fecha_programada|fecha('%d/%m') if o.fecha_programada else '—' }}</td><td>{{ chip(o.estado) }}</td><td><small>{{ o.tecnicos or '—' }}</small></td></tr>{% endfor %}
+      </tbody></table></div>
+      <p class="muted" style="font-size:12.5px">Programada = con fecha y técnico. Pendiente = el modelo propone una fecha posterior a la primera semana; se confirma en la próxima corrida. Cancelada = el modelo no la necesita en el periodo.</p>
+      {% else %}<div class="vacio">Esta corrida no creó órdenes.</div>{% endif %}
+    </div>
+    <div>
+      <h3>Pedidos</h3>
+      {% if A.pedidos %}<div class="tabla-wrap"><table><thead><tr><th>Pedido</th><th>Cliente</th><th>Inicio</th><th>Equipo</th><th>Estado</th></tr></thead><tbody>
+      {% for p in A.pedidos %}<tr><td class="mono">P-{{ '%04d'|format(p.id) }}</td><td><small>{{ p.cliente or '—' }}</small></td><td>{{ p.fecha_inicio|fecha('%d/%m') }}</td><td>{{ eq_link(p.codigo) if p.codigo else '—' }}</td><td>{{ chip(p.estado) }}</td></tr>{% endfor %}
+      </tbody></table></div>
+      <p class="muted" style="font-size:12.5px">Asignado = equipo reservado para ese pedido. No atendido = el modelo recomienda cubrirlo de otra forma.</p>
+      {% else %}<div class="vacio">Ningún pedido empieza en la primera semana.</div>{% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{# ---------- aplicar #}
+<form class="card aplicar" method="post" action="{{ url_for('optimizacion_aplicar', cid=corrida.id) }}" data-confirmar="Se programarán las OT preventivas y se reservarán los equipos de los primeros días del plan. ¿Continuar?">
+  <div class="hd"><h2>Poner el plan en operación</h2><span class="muted">horizonte rodante (recomendación 5.2.2)</span></div>
+  <div class="bd" style="display:flex;gap:16px;align-items:end;flex-wrap:wrap">
+    <p style="margin:0;flex:1 1 380px;color:var(--ink-2)">Sólo se ejecutan las decisiones de los primeros días. Se crean o reprograman las OT preventivas con técnicos libres, se reservan los equipos asignados a los pedidos que empiezan en esa ventana y se marcan los que el modelo deja sin atender. Lo demás se recalcula en la próxima corrida, por ejemplo cada lunes con los horómetros y la cartera al día.</p>
+    <div><label>Escenario</label><select name="esc">{% for k in ('E3', 'E2') if k in E %}<option value="{{ k }}" {{ 'selected' if k == P }}>{{ k }} · {{ ESC[k] }}</option>{% endfor %}</select></div>
+    <div><label>Días a ejecutar</label><input type="number" name="ventana" value="7" min="1" max="30" style="width:90px"></div>
+    <button class="btn pri" {{ 'disabled' if corrida.aplicada }}>{{ icono('ok') }} {{ 'Plan ya aplicado' if corrida.aplicada else 'Aplicar la primera semana' }}</button>
+  </div>
+</form>
+{% endif %}
+
+{% if historial %}
+<div class="card" style="margin-top:16px">
+  <div class="hd"><h2>Corridas anteriores</h2></div>
+  <div class="bd flush tabla-wrap"><table>
+    <thead><tr><th>Corrida</th><th>Ejecutada</th><th>Horizonte</th><th>Estado</th><th class="n">Duración</th><th>Plan aplicado</th></tr></thead>
+    <tbody>{% for h in historial %}<tr class="fila-link {{ 'sel' if corrida and h.id == corrida.id }}"><td><a href="{{ url_for('optimizacion', cid=h.id) }}">Corrida {{ h.id }}</a></td><td>{{ h.creado|fecha }} {{ h.creado[11:16] }}</td>
+      <td>{{ h.fecha_inicio|fecha('%d/%m') }} + {{ h.horizonte }} días</td><td>{{ chip(h.estado) }}{% if h.estado == 'Error' %}<br><small>{{ h.mensaje }}</small>{% endif %}</td><td class="n">{{ h.duracion_seg|num(0) if h.duracion_seg else '—' }} s</td>
+      <td>{{ (h.aplicada_esc ~ ' · ' ~ (h.aplicada|fecha)) if h.aplicada else '—' }}</td></tr>{% endfor %}</tbody>
+  </table></div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+  const caja = document.getElementById('en-curso');
+  if (!caja) return;
+  const msg = document.getElementById('msg-curso');
+  const tick = () => fetch(caja.dataset.url).then(r => r.json()).then(d => {
+    msg.textContent = d.mensaje || '';
+    if (d.estado !== 'En curso' || !d.vivo) location.reload(); else setTimeout(tick, 2000);
+  }).catch(() => setTimeout(tick, 4000));
+  setTimeout(tick, 1500);
+})();
+</script>
+{% endblock %}

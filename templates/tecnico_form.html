@@ -1,0 +1,29 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% block titulo %}{{ t.nombre or 'Nuevo técnico' }}{% endblock %}
+{% block contenido %}
+<div class="cab"><div>
+  <div class="migas"><a href="{{ url_for('personal') }}">Personal</a></div>
+  <h1>{{ 'Editar ' ~ t.nombre if t.id else 'Registrar técnico' }}</h1>
+</div></div>
+<form method="post" class="card" style="max-width:900px">
+  <div class="bd">
+    <div class="campos">
+      <div class="ancho"><label>Nombre completo</label><input name="nombre" value="{{ t.nombre or '' }}" required></div>
+      <div><label>Cargo</label><input name="cargo" value="{{ t.cargo or '' }}"></div>
+      <div><label>Especialidad</label><input name="especialidad" value="{{ t.especialidad or '' }}" placeholder="Tijeras, brazos, sistemas hidráulicos…"></div>
+      <div><label>DNI</label><input name="dni" value="{{ t.dni or '' }}"></div>
+      <div><label>Teléfono</label><input name="telefono" value="{{ t.telefono or '' }}"></div>
+      <div><label>Correo</label><input type="email" name="correo" value="{{ t.correo or '' }}"></div>
+      <div><label>Fecha de ingreso</label><input type="date" name="fecha_ingreso" value="{{ t.fecha_ingreso or '' }}"></div>
+      <div><label>Estado</label><select name="activo"><option value="1" {{ 'selected' if t.activo }}>Activo</option><option value="0" {{ 'selected' if not t.activo }}>Inactivo</option></select></div>
+      <div><label>Función en el taller</label><select name="ejecuta"><option value="1" {{ 'selected' if t.ejecuta != 0 }}>Ejecuta servicios</option><option value="0" {{ 'selected' if t.ejecuta == 0 }}>Supervisa (no cuenta en la capacidad)</option></select></div>
+      <div class="ancho"><label>Notas</label><textarea name="notas">{{ t.notas or '' }}</textarea></div>
+    </div>
+  </div>
+  <div class="bd acciones" style="border-top:1px solid var(--line-2)">
+    <button class="btn pri">Guardar</button>
+    <a class="btn" href="{{ url_for('tecnico', tid=t.id) if t.id else url_for('personal') }}">Cancelar</a>
+  </div>
+</form>
+{% endblock %}

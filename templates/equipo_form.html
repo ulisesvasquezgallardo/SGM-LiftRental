@@ -1,0 +1,63 @@
+{# <div style="position:fixed;inset:0;z-index:99;background:#fff;padding:40px;font:18px Segoe UI,sans-serif;color:#8f1c1c"><b>Esto es un archivo de plantilla del sistema, no el sistema.</b><br><br>Para usar SGM Lift Rental haga doble clic en <b>iniciar.bat</b> (carpeta SGM_LiftRental) y se abrirá en <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</div> #}
+{% extends 'base.html' %}
+{% block titulo %}{{ 'Nuevo equipo' if nuevo else 'Editar ' ~ eq.codigo }}{% endblock %}
+{% block contenido %}
+<div class="cab">
+  <div>
+    <div class="migas"><a href="{{ url_for('equipos') }}">Almacén</a>{% if not nuevo %} / <a href="{{ url_for('equipo', codigo=eq.codigo) }}">{{ eq.codigo }}</a>{% endif %}</div>
+    <h1>{{ 'Incorporar equipo al almacén' if nuevo else 'Editar ' ~ eq.codigo }}</h1>
+  </div>
+</div>
+<form method="post" class="card">
+  <div class="bd stack">
+    <fieldset>
+      <legend>Identificación</legend>
+      <div class="campos">
+        <div><label>Código</label><input name="codigo" value="{{ eq.codigo or '' }}" placeholder="TECL-077" {{ 'readonly' if not nuevo }} required>
+          <div class="ayuda">TECL tijera · BECL brazo eléctrico · BCCL brazo combustión · UPCL mástil</div></div>
+        <div><label>Categoría</label><select name="categoria" required>{% for c in CATEGORIAS %}<option {{ 'selected' if eq.categoria == c }}>{{ c }}</option>{% endfor %}</select></div>
+        <div><label>Marca</label><input name="marca" value="{{ eq.marca or '' }}"></div>
+        <div><label>Modelo</label><input name="modelo" value="{{ eq.modelo or '' }}"></div>
+        <div><label>Serie</label><input name="serie" value="{{ eq.serie or '' }}"></div>
+        <div><label>Año de fabricación</label><input type="number" name="anio" value="{{ eq.anio or '' }}"></div>
+        <div><label>Valor asegurado (US$)</label><input type="number" step="any" name="valor_usd" value="{{ eq.valor_usd or '' }}"></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Características técnicas</legend>
+      <div class="campos">
+        <div><label>Altura de plataforma (m)</label><input type="number" step="0.01" name="altura_plataforma" value="{{ eq.altura_plataforma or '' }}"></div>
+        <div><label>Altura de trabajo (m)</label><input type="number" step="0.01" name="altura_trabajo" value="{{ eq.altura_trabajo or '' }}"></div>
+        <div><label>Capacidad de carga (kg)</label><input type="number" step="any" name="capacidad_kg" value="{{ eq.capacidad_kg or '' }}"></div>
+        <div><label>Peso (kg)</label><input type="number" step="any" name="peso_kg" value="{{ eq.peso_kg or '' }}"></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Plan de mantenimiento</legend>
+      <div class="campos">
+        <div><label>Frecuencia por horas (h)</label><input type="number" step="any" name="frecuencia_h" value="{{ eq.frecuencia_h or '' }}" placeholder="100 tijeras · 250 brazos"></div>
+        <div><label>Tasa de uso (h/día)</label><input type="number" step="0.0001" name="tasa_uso" value="{{ eq.tasa_uso if eq.tasa_uso is not none else '' }}" placeholder="0.13"></div>
+        {% if nuevo %}
+        <div><label>Fecha del último servicio</label><input type="date" name="fecha_pm"></div>
+        <div><label>Horómetro del último servicio</label><input type="number" step="0.1" name="horometro_pm"></div>
+        {% endif %}
+      </div>
+      <div class="ayuda" style="margin-top:8px">El intervalo de calendario se define por categoría en Configuración (90 días por defecto).</div>
+    </fieldset>
+    <fieldset>
+      <legend>Situación</legend>
+      <div class="campos">
+        <div><label>Situación</label><select name="situacion">{% for s in SITUACIONES %}<option {{ 'selected' if eq.situacion == s }}>{{ s }}</option>{% endfor %}</select>
+          <div class="ayuda">«En obra» se asigna desde el despacho; «En taller», al iniciar una orden.</div></div>
+        <div><label>Detalle de ubicación</label><input name="ubicacion_detalle" value="{{ eq.ubicacion_detalle or '' }}" placeholder="Reparación externa, patio B…"></div>
+        <div class="ancho"><label>Notas</label><textarea name="notas">{{ eq.notas or '' }}</textarea></div>
+        {% if not nuevo %}<label class="check ancho"><input type="checkbox" name="baja" value="1" {{ 'checked' if eq.activo == 0 }}> Dar de baja (deja de figurar en el almacén activo)</label>{% endif %}
+      </div>
+    </fieldset>
+  </div>
+  <div class="bd acciones" style="border-top:1px solid var(--line-2)">
+    <button class="btn pri">Guardar</button>
+    <a class="btn" href="{{ url_for('equipos') if nuevo else url_for('equipo', codigo=eq.codigo) }}">Cancelar</a>
+  </div>
+</form>
+{% endblock %}
